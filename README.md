@@ -11,7 +11,13 @@ Repository index:
 https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/repository.json
 ```
 
-Current curated Source Pack:
+Expanded Source Pack:
+
+```text
+https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/keiyoushi-core-expanded/source-pack.json
+```
+
+Curated Source Pack:
 
 ```text
 https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-curated/source-pack.json
@@ -26,6 +32,11 @@ extensions/
   source-master/  # Curated pack inputs
   packs/          # App-installable Source Pack artifacts
 ```
+
+## Current Packs
+
+- `keiyoushi-core-expanded`: 431 generated Source Definitions from currently supported connector families
+- `yomira-curated`: 9 hand-curated Source Definitions used for focused source iteration
 
 ## Adding a Source
 

@@ -10,6 +10,27 @@
   "updatedAt": "2026-05-23T00:00:00Z",
   "sourcePacks": [
     {
+      "packId": "keiyoushi-core-expanded",
+      "displayName": "Keiyoushi Expanded Core Source Pack",
+      "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
+      "version": "2026.05.23",
+      "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/keiyoushi-core-expanded/source-pack.json",
+      "checksum": "e03dc19879d14c3b1e86d80d3719038a88dbb562512130847067d09eb9b91055",
+      "checksumAlgorithm": "sha256",
+      "language": "multi",
+      "region": "global",
+      "nsfw": true,
+      "supportedPlatforms": [
+        "ios_app_store",
+        "desktop",
+        "self_hosted",
+        "internal"
+      ],
+      "sourceCount": 431,
+      "artifactKind": "source_pack",
+      "updatedAt": "2026-05-23T00:00:00Z"
+    },
+    {
       "packId": "yomira-curated",
       "displayName": "Yomira Curated Source Pack",
       "description": "Curated Yomira-compatible source definitions maintained separately from the app.",
@@ -32,4 +53,3 @@
     }
   ]
 }
-
