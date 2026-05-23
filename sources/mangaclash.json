@@ -1,0 +1,15 @@
+{
+  "extends": "madara",
+  "id": "mangaclash",
+  "name": "MangaClash",
+  "version": "1.0.0",
+  "base_url": "https://mangaclash.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "English manga & manhwa translations with daily updates",
+  "tags": ["Manga", "Manhwa", "Madara", "Free"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": false
+  }
+}

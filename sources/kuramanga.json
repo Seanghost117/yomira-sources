@@ -1,0 +1,15 @@
+{
+  "extends": "madara",
+  "id": "kuramanga",
+  "name": "KuraManga",
+  "version": "1.0.0",
+  "base_url": "https://kuramanga.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "Madara-based manga source with regular chapter updates",
+  "tags": ["Manga", "Manhwa", "Madara", "Free"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": false
+  }
+}

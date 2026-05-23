@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.mangakatana",
+  "sourceId": "keiyoushi.en.mangakatana",
+  "name": "MangaKatana",
+  "displayName": "MangaKatana",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://mangakatana.com",
+  "baseUrl": "https://mangakatana.com",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "Selector source definition normalized from the existing MangaKatana config and current Keiyoushi metadata.",
+  "tags": [
+    "Keiyoushi",
+    "Selector",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/page/{page}?search={query}&search_by=book_name",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/manga/page/1",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/page/1",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": "div#book_list > div.item",
+      "title": "div.text > h3 > a@text || h3.title a@text || h3 a@text",
+      "cover": "img@src",
+      "link": "div.text > h3 > a@href || h3.title a@href || h3 a@href"
+    },
+    "manga_details": {
+      "title": "h1.heading@text || h1@text",
+      "cover": "div.media div.cover img@src || .cover img@src || .info .cover img@src",
+      "description": ".summary > p@text || .summary@text || div.summary@text",
+      "authors": ".author@text || .info .d49:contains('Author') a@text",
+      "genres": ".genres > a@text || .genres a@text || .info .d49:contains('Genres') a@text",
+      "status": ".value.status@text || .info .d49:contains('Status') .d48@text"
+    },
+    "chapter_list": {
+      "container": ".chapter_list tr, .chapters table tr",
+      "title": "a@text",
+      "link": "a@href",
+      "date": ".update_time@text || td:last-child@text || .chapter_date@text",
+      "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|/c([0-9]+(?:\\.[0-9]+)?)$"
+    },
+    "page_list": {
+      "container": "#imgs",
+      "image": "img@data-src || img@src",
+      "exclude": [
+        ".svg",
+        "logo",
+        "icon",
+        "avatar"
+      ]
+    }
+  },
+  "headers": {
+    "Referer": "https://mangakatana.com/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/mangakatana",
+    "originalFamily": "HttpSource",
+    "originalLanguage": "en",
+    "originalSourceName": "mangakatana",
+    "originalVersion": "12",
+    "originalExtClass": ".MangaKatana",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

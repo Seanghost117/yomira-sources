@@ -1,0 +1,77 @@
+{
+  "id": "asmhentai",
+  "name": "AsmHentai",
+  "version": "1.0.0",
+  "base_url": "https://asmhentai.com",
+  "language": "en",
+  "nsfw": true,
+  "description": "Hentai manga and doujinshi reader with a massive gallery catalog",
+  "tags": ["Hentai", "Doujinshi", "18+", "NSFW", "Free"],
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search/?q={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/popular/",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/g/{id}/",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/g/{id}/",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{base}/g/{id}/",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".thumbnail, .gallery",
+      "title": ".caption@text || a@title || .title@text",
+      "cover": "img@src || img@data-src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text || .info h1@text",
+      "cover": "#cover img@src || .cover img@src",
+      "description": ".tag-container:contains('Tags') a@text",
+      "authors": ".tag-container:contains('Artists') a span@text",
+      "genres": ".tag-container:contains('Tags') a span@text",
+      "status": ""
+    },
+    "chapter_list": {
+      "container": "",
+      "title": "",
+      "link": "",
+      "_note": "Gallery-based — single gallery per entry, no chapters"
+    },
+    "page_list": {
+      "container": "#thumbnail-container, .thumbs",
+      "image": "a img@data-src || a img@src",
+      "image_transform": "replace('t.jpg','.jpg')||replace('t.png','.png')",
+      "exclude": [".svg", "data:", "logo", "icon", "avatar", "blank"]
+    }
+  },
+  "headers": {
+    "Referer": "https://asmhentai.com/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "_note": "nhentai-style gallery site. Each entry is a single gallery, not a multi-chapter manga."
+}

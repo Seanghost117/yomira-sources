@@ -1,0 +1,75 @@
+{
+  "id": "manganato",
+  "name": "MangaNato",
+  "version": "1.1.0",
+  "base_url": "https://manganato.gg",
+  "language": "en",
+  "nsfw": false,
+  "description": "Popular manga aggregator with multi-language support",
+  "tags": ["Manga", "Manhwa", "Manhua", "Free", "Aggregator"],
+  "flags": {
+    "is_madara": false,
+    "uses_cloudflare": true
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search/story/{query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/genre-all?type=topview",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/genre-all",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".search-story-item, .content-genres-item",
+      "title": "h3 a@text || .item-title a@text || a.item-img@title",
+      "cover": "img@src || a.item-img img@src",
+      "link": "h3 a@href || .item-title a@href || a.item-img@href"
+    },
+    "manga_details": {
+      "title": ".story-info-right h1@text || .panel-story-info .story-info-right h1@text",
+      "cover": ".info-image img@src",
+      "description": ".panel-story-info-description@text || #panel-story-info-description@text",
+      "authors": ".variations-tableInfo tr:contains('Author') a@text",
+      "genres": ".variations-tableInfo tr:contains('Genres') a@text",
+      "status": ".variations-tableInfo tr:contains('Status') td.table-value@text"
+    },
+    "chapter_list": {
+      "container": "li.a-h, .row-content-chapter li",
+      "title": "a@text",
+      "link": "a@href",
+      "date": ".chapter-time@title || span.chapter-time@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".container-chapter-reader",
+      "image": "img@src",
+      "exclude": [".svg", "data:", "logo", "icon", "avatar"]
+    }
+  },
+  "headers": {
+    "Referer": "https://manganato.gg/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  }
+}

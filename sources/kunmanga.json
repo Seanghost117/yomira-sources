@@ -1,0 +1,19 @@
+{
+  "extends": "madara",
+  "id": "kunmanga",
+  "name": "KunManga",
+  "version": "1.0.0",
+  "base_url": "https://kunmanga.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "Madara-based source focused on manhwa and Korean webtoons",
+  "tags": ["Manhwa", "Manga", "Madara", "Webtoon", "Free"],
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://kunmanga.com",
+  "sessionScopeDomain": "kunmanga.com",
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  }
+}

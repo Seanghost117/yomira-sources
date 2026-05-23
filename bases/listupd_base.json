@@ -1,0 +1,76 @@
+{
+  "id": "_listupd_base",
+  "name": "Listupd Base",
+  "version": "1.0.0",
+  "base_url": "",
+  "language": "en",
+  "tags": ["Madara", "Listupd"],
+
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+
+  "endpoints": {
+    "search": {
+      "url": "{base}/?s={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/manga/?order=popular",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/manga/?order=update",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}/",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}/",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+
+  "selectors": {
+    "manga_list": {
+      "container": ".bsx",
+      "title": "a@title || .tt@text",
+      "cover": "img@src || img@data-src || img@data-lazy-src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1.entry-title@text || .seriestuhead h1@text",
+      "cover": ".seriestucontent img@src || .thumb img@src || .seriestucontent img@data-src",
+      "description": ".entry-content p@text || .wd-full p@text || .summary__content p@text",
+      "authors": ".imptdt:contains('Author') i@text || .fmed i@text",
+      "artists": ".imptdt:contains('Artist') i@text",
+      "genres": ".mgen a@text || .seriestugenres a@text",
+      "status": ".imptdt:contains('Status') i@text"
+    },
+    "chapter_list": {
+      "container": "#chapterlist li",
+      "title": ".chapternum@text || a@text",
+      "link": "a@href",
+      "date": ".chapterdate@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": "#readerarea",
+      "image": "img@src || img@data-src || img@data-lazy-src",
+      "exclude": [".svg", "data:", "logo", "icon", "avatar", "gravatar"]
+    }
+  },
+
+  "pagination": {
+    "param": "page",
+    "start": 1
+  }
+}

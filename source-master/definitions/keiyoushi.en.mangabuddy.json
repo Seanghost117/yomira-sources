@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.mangabuddy",
+  "sourceId": "keiyoushi.en.mangabuddy",
+  "name": "MangaBuddy",
+  "displayName": "MangaBuddy",
+  "version": "1.1.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://mangak.io",
+  "baseUrl": "https://mangak.io",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "MangaBuddy source definition normalized to its current MangaK/Next.js reader flow.",
+  "tags": [
+    "Keiyoushi",
+    "Selector",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "endpoints": {
+    "search": {
+      "url": "https://mangabuddy.com/search?q={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "https://mangabuddy.com/popular",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "https://mangabuddy.com/latest",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".book-item",
+      "title": ".title h3 a@title || .title h3 a@text || .thumb a@title",
+      "cover": ".thumb img@data-src || .thumb img@src",
+      "link": ".title h3 a@href || .thumb a@href"
+    },
+    "manga_details": {
+      "title": "h1@text || meta[property='og:title']@content",
+      "cover": "meta[property='og:image']@content",
+      "description": "meta[name='description']@content || meta[property='og:description']@content",
+      "authors": "a[href*='/authors/']@text",
+      "genres": "a[href*='/genres/']@text",
+      "status": ".status-pill@text"
+    },
+    "chapter_list": {
+      "container": ".__yomira-next-data-fallback",
+      "title": "a@text",
+      "link": "a@href",
+      "date": "time@datetime",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".__yomira-next-data-fallback",
+      "image": "img@src",
+      "exclude": [
+        "logo",
+        "icon",
+        "avatar"
+      ]
+    }
+  },
+  "headers": {
+    "Referer": "https://mangak.io/"
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/mangabuddy",
+    "originalFamily": "MadTheme",
+    "originalLanguage": "en",
+    "originalSourceName": "mangabuddy",
+    "originalExtClass": ".MangaBuddy",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

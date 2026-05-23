@@ -1,0 +1,15 @@
+{
+  "extends": "madara",
+  "id": "arvenscans",
+  "name": "Arven Scans",
+  "version": "1.0.0",
+  "base_url": "https://arvenscans.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "Madara-based scanlation site with manhwa and manga translations",
+  "tags": ["Manga", "Manhwa", "Madara", "Scanlation", "Free"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": true
+  }
+}

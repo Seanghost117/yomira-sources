@@ -1,0 +1,49 @@
+{
+  "extends": "madara",
+  "id": "lilymanga",
+  "name": "LilyManga",
+  "version": "1.1.0",
+  "base_url": "https://lilymanga.net",
+  "language": "en",
+  "nsfw": false,
+  "description": "Yuri, GL, shoujo-ai, and girls' love manga with curated English translations",
+  "tags": ["Yuri", "GL", "Shoujo-ai", "Girls Love", "Madara", "Free"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": false
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/?s={query}&post_type=wp-manga",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/gl/?m_orderby=views",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/gl/?m_orderby=latest",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}/",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}/",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".c-tabs-item__content, .page-item-detail",
+      "title": ".post-title a@text || a[title]@title || h3 a@text",
+      "cover": "img@data-src || img@data-lazy-src || img@src",
+      "link": ".post-title a@href || a@href"
+    }
+  }
+}

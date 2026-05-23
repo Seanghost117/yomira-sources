@@ -1,0 +1,75 @@
+{
+  "id": "mangabuddy",
+  "name": "MangaBuddy",
+  "version": "1.1.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://mangak.io",
+  "language": "en",
+  "nsfw": false,
+  "description": "MangaBuddy/MangaK reader using declarative selectors and static Next.js page data",
+  "tags": ["Manga", "Manhwa", "Manhua", "Selector", "Free"],
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+  "endpoints": {
+    "search": {
+      "url": "https://mangabuddy.com/search?q={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "https://mangabuddy.com/popular",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "https://mangabuddy.com/latest",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".book-item",
+      "title": ".title h3 a@title || .title h3 a@text || .thumb a@title",
+      "cover": ".thumb img@data-src || .thumb img@src",
+      "link": ".title h3 a@href || .thumb a@href"
+    },
+    "manga_details": {
+      "title": "h1@text || meta[property='og:title']@content",
+      "cover": "meta[property='og:image']@content",
+      "description": "meta[name='description']@content || meta[property='og:description']@content",
+      "authors": "a[href*='/authors/']@text",
+      "genres": "a[href*='/genres/']@text",
+      "status": ".status-pill@text"
+    },
+    "chapter_list": {
+      "container": ".__yomira-next-data-fallback",
+      "title": "a@text",
+      "link": "a@href",
+      "date": "time@datetime",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".__yomira-next-data-fallback",
+      "image": "img@src",
+      "exclude": ["logo", "icon", "avatar"]
+    }
+  },
+  "headers": {
+    "Referer": "https://mangak.io/"
+  },
+  "rate_limit_ms": 1000
+}

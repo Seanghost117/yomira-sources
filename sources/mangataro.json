@@ -1,0 +1,77 @@
+{
+  "id": "mangataro",
+  "name": "MangaTaro",
+  "version": "1.0.0",
+  "base_url": "https://mangataro.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "Manga reader (formerly MangaPeak) with clean UI and reading history",
+  "tags": ["Manga", "Manhwa", "Aggregator", "Free"],
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search?q={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/manga?order=popular",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/manga?order=latest",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".manga-item, .item, .card",
+      "title": "a@title || .title@text || h3 a@text",
+      "cover": "img@src || img@data-src || img@data-lazy-src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text || .manga-title@text",
+      "cover": ".manga-cover img@src || .poster img@src || .cover img@src",
+      "description": ".description@text || .synopsis p@text || .summary@text",
+      "authors": ".info:contains('Author') a@text || .author@text",
+      "genres": ".genre a@text || .tags a@text || .info:contains('Genre') a@text",
+      "status": ".info:contains('Status') span@text || .status@text"
+    },
+    "chapter_list": {
+      "container": ".chapter-list li, .chapters li, .chapter-item",
+      "title": "a@text || span.chapter-title@text",
+      "link": "a@href",
+      "date": ".date@text || time@datetime || .chapter-date@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|ch\\.?\\s*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".reader-area, .chapter-reader, .reading-content",
+      "image": "img@src || img@data-src || img@data-lazy-src",
+      "exclude": [".svg", "data:", "logo", "icon", "avatar", "blank"]
+    }
+  },
+  "headers": {
+    "Referer": "https://mangataro.com/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "_note": "Formerly known as MangaPeak. TLS issues may occur — CF protected."
+}

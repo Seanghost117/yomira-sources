@@ -1,0 +1,16 @@
+{
+  "extends": "madara",
+  "id": "harimanga",
+  "name": "HariManga",
+  "version": "1.1.0",
+  "base_url": "https://harimanga.me",
+  "language": "en",
+  "logo_url": "https://harimanga.me/wp-content/uploads/2022/02/cropped-logo-1.png",
+  "nsfw": false,
+  "description": "Manhwa & Manga — Madara-based reader with large catalog of translated Korean/Japanese titles",
+  "tags": ["Manhwa", "Manga", "Madara", "Free", "Webtoon"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": false
+  }
+}

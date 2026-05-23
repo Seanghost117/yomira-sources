@@ -1,0 +1,31 @@
+{
+  "extends": "madara",
+  "id": "zinmanga",
+  "name": "ZinManga",
+  "version": "1.3.0",
+  "base_url": "https://www.zinmanga.net",
+  "language": "en",
+  "nsfw": false,
+  "description": "Large manga and manhwa aggregator with broad genre coverage",
+  "tags": ["Manga", "Manhwa", "Madara", "Free"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": true
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".c-tabs-item__content, .page-item-detail, .c-tabs-item .row",
+      "title": ".post-title a@text || a[title]@title || h3 a@text",
+      "cover": "img@data-src || img@data-lazy-src || img@data-cfsrc || img@src",
+      "link": ".post-title a@href || h3 a@href || a@href"
+    },
+    "manga_details": {
+      "title": ".post-title h1@text || h1@text",
+      "cover": ".summary_image img@data-src || .summary_image img@data-lazy-src || .summary_image img@data-cfsrc || .summary_image img@src || .tab-summary img@src",
+      "description": ".summary__content p@text || .manga-excerpt p@text || .description-summary p@text",
+      "authors": ".author-content a@text",
+      "genres": ".genres-content a@text",
+      "status": ".post-status .summary-content@text"
+    }
+  }
+}

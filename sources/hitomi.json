@@ -1,0 +1,68 @@
+{
+  "id": "hitomi",
+  "name": "Hitomi.la",
+  "version": "1.1.0",
+  "base_url": "https://hitomi.la",
+  "language": "en",
+  "nsfw": true,
+  "description": "Hentai manga and doujinshi gallery — requires JS bridge (not yet supported)",
+  "tags": ["Doujinshi", "Hentai", "Adult", "NSFW", "Japanese", "Gallery"],
+  "flags": {
+    "is_madara": false,
+    "requires_js": true,
+    "uses_cloudflare": false
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search.html?{query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/manga-all-1.html",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/index-english.html",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".gallery-content > div",
+      "title": "h1 a@text || a@text",
+      "cover": "img@data-src || img@src",
+      "link": "h1 a@href || a@href"
+    },
+    "manga_details": {
+      "title": "h1@text",
+      "cover": ".cover img@src || img@src",
+      "description": "",
+      "genres": "td:contains('Tags') a@text || .artist-list a@text || .tag-list a@text",
+      "status": ""
+    },
+    "chapter_list": {
+      "container": ".gallery-content > div",
+      "title": "h1 a@text || a@text",
+      "link": "h1 a@href || a@href",
+      "date": ".date@text",
+      "number_regex": "([0-9]+)\\.html$"
+    },
+    "page_list": {
+      "container": ".img-url",
+      "image": "@text",
+      "exclude": ["data:", "blank", "logo", "icon"]
+    }
+  }
+}

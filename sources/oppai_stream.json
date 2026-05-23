@@ -1,0 +1,15 @@
+{
+  "extends": "madara",
+  "id": "oppai_stream",
+  "name": "Oppai Stream",
+  "version": "1.0.0",
+  "base_url": "https://oppai.stream",
+  "language": "en",
+  "nsfw": true,
+  "description": "NSFW ecchi/hentai manga reader using the Madara theme",
+  "tags": ["Hentai", "Ecchi", "Madara", "18+", "NSFW"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": true
+  }
+}

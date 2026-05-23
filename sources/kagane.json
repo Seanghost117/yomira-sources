@@ -1,0 +1,15 @@
+{
+  "extends": "madara",
+  "id": "kagane",
+  "name": "Kagane",
+  "version": "1.0.0",
+  "base_url": "https://kagane.org",
+  "language": "en",
+  "nsfw": false,
+  "description": "Madara-based manga reader with a growing catalog of translated titles",
+  "tags": ["Manga", "Manhwa", "Madara", "Free"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": true
+  }
+}

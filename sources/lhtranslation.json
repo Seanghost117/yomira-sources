@@ -1,0 +1,15 @@
+{
+  "extends": "madara",
+  "id": "lhtranslation",
+  "name": "LHTranslation",
+  "version": "1.0.0",
+  "base_url": "https://lhtranslation.net",
+  "language": "en",
+  "nsfw": false,
+  "description": "Madara-based translation group with manga, manhwa, and manhua releases",
+  "tags": ["Manga", "Manhwa", "Manhua", "Madara", "Scanlation", "Free"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": true
+  }
+}

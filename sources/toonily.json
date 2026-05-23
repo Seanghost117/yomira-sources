@@ -1,0 +1,16 @@
+{
+  "extends": "madara",
+  "id": "toonily",
+  "name": "Toonily",
+  "version": "1.0.0",
+  "base_url": "https://toonily.com",
+  "language": "en",
+  "logo_url": "https://toonily.com/wp-content/uploads/2020/01/cropped-toonly_favicon.png",
+  "nsfw": true,
+  "description": "Adult manhwa & webtoons — one of the largest NSFW Korean comic platforms",
+  "tags": ["Manhwa", "Madara", "Webtoon", "NSFW", "Adult"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": true
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.hiperdex",
+  "sourceId": "keiyoushi.en.hiperdex",
+  "name": "Hiperdex",
+  "displayName": "Hiperdex",
+  "version": "1.0.0",
+  "extends": "madara",
+  "connectorEngine": "madara",
+  "sourceType": "madara",
+  "base_url": "https://hiperdex.com",
+  "baseUrl": "https://hiperdex.com",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "Madara source definition normalized from the existing Hiperdex config and Keiyoushi metadata.",
+  "tags": [
+    "Keiyoushi",
+    "Madara",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://hiperdex.com",
+  "sessionScopeDomain": "hiperdex.com",
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".page-item-detail",
+      "title": "a[title]@title || .post-title a@text",
+      "cover": "img@src || img@data-src",
+      "link": ".post-title a@href || a@href"
+    }
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/hiperdex",
+    "originalFamily": "Madara",
+    "originalLanguage": "en",
+    "originalSourceName": "hiperdex",
+    "originalExtClass": ".Hiperdex",
+    "analyzerBucket": "curated_profile_overlay"
+  }
+}

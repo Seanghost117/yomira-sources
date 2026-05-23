@@ -1,0 +1,77 @@
+{
+  "id": "fanfox",
+  "name": "FanFox (MangaFox)",
+  "version": "1.2.0",
+  "base_url": "https://fanfox.net",
+  "language": "en",
+  "nsfw": false,
+  "description": "MangaFox / FanFox — large manga aggregator with extensive back-catalog",
+  "tags": ["Manga", "Manhwa", "Manhua", "Free", "Aggregator"],
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search?title={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/directory/?type=1",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/directory/?type=2",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}/",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}/",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".manga-list-4-list li, .line-list li",
+      "title": "a@title || .manga-list-4-item-title a@text || a.title@text || p.title a@text",
+      "cover": "img@src || img@data-src || a.manga-list-4-cover img@src",
+      "link": "a.manga-list-4-item-title@href || p.title a@href || a@href"
+    },
+    "manga_details": {
+      "title": ".detail-info-right-title-font@text || h2@text",
+      "cover": ".detail-info-cover-img img@src || .detail-info-cover img@src || img.detail-info-cover-img@src",
+      "description": ".fullcontent@text || p.fullcontent@text",
+      "authors": ".detail-info-right-say a@text",
+      "genres": ".detail-info-right-tag-list a@text",
+      "status": ".detail-info-right-title-tip@text"
+    },
+    "chapter_list": {
+      "container": ".detail-main-list li, ul.detail-main-list li",
+      "title": "a@title || a .title3@text || a p.title3@text || a@text",
+      "link": "a@href",
+      "date": ".detail-main-list-main p.title2@text || span.date@text",
+      "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|/c([0-9]+(?:\\.[0-9]+)?)",
+      "reverse": true
+    },
+    "page_list": {
+      "container": "#viewer",
+      "image": "img.reader-main-img@src || img@src",
+      "exclude": [".svg", "data:", "logo", "icon", "avatar", "static.fanfox"]
+    }
+  },
+  "headers": {
+    "Referer": "https://fanfox.net/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  }
+}

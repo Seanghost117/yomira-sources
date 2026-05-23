@@ -1,0 +1,15 @@
+{
+  "extends": "madara",
+  "id": "mangadot",
+  "name": "MangaDot",
+  "version": "1.0.0",
+  "base_url": "https://mangadot.net",
+  "language": "en",
+  "nsfw": false,
+  "description": "Madara-based manga aggregator with a wide catalog of English translations",
+  "tags": ["Manga", "Manhwa", "Manhua", "Madara", "Free"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": false
+  }
+}

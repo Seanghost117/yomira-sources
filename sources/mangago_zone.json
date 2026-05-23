@@ -1,0 +1,77 @@
+{
+  "id": "mangago_zone",
+  "name": "MangaGo Zone",
+  "version": "1.0.0",
+  "base_url": "https://www.mangago.zone",
+  "language": "en",
+  "nsfw": false,
+  "description": "Webtoon and manga reader with romance, fantasy, and BL series",
+  "tags": ["Manga", "Manhwa", "Webtoon", "BL", "Romance", "Free"],
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/r/l_search/?name={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/topmanga/",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/list/latest/all/1/",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/read-manga/{id}/",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/read-manga/{id}/",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".manga-list li, .updatesli, .pic_list li",
+      "title": "a@title || .title@text || h3 a@text",
+      "cover": "img@src || img@data-src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": ".w-title h1@text || h1@text",
+      "cover": ".cover img@src || .manga-cover img@src",
+      "description": ".manga-summary@text || .summary@text || #show p@text",
+      "authors": ".manga-info:contains('Author') a@text || .elem:contains('Author') a@text",
+      "genres": ".manga-info:contains('Genre') a@text || .elem:contains('Genre') a@text",
+      "status": ".manga-info:contains('Status')@text || .elem:contains('Status')@text"
+    },
+    "chapter_list": {
+      "container": "#chapter_table tr, .chapter_list li, .listing-chapters_wrap li",
+      "title": "a@text",
+      "link": "a@href",
+      "date": ".date@text || td:last-child@text",
+      "number_regex": "(?i)ch\\.?[\\s]*([0-9]+(?:\\.[0-9]+)?)|chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": "#page, .reader-img, #viewer",
+      "image": "img@src || img@data-src",
+      "exclude": [".svg", "data:", "logo", "icon", "avatar", "blank"]
+    }
+  },
+  "headers": {
+    "Referer": "https://www.mangago.zone/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "_note": "Mirror/variant of mangago.me with its own domain and chapter URLs"
+}

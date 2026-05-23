@@ -1,0 +1,76 @@
+{
+  "id": "ehentai",
+  "name": "E-Hentai",
+  "version": "1.1.0",
+  "base_url": "https://e-hentai.org",
+  "language": "en",
+  "nsfw": true,
+  "description": "The largest doujinshi and hentai manga gallery archive with millions of entries",
+  "tags": ["Doujinshi", "Hentai", "Adult", "NSFW", "Gallery", "Manga"],
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/?f_search={query}&f_apply=Apply+Filter",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/popular",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": "table.itg tr.gtr0, table.itg tr.gtr1, table.itg .gl1t",
+      "title": ".glink@text || .gl4e a .glink@text",
+      "cover": ".glthumb img@src || .gl1e img@src || img@src",
+      "link": ".gl2e a@href || .gl3e a@href || a@href"
+    },
+    "manga_details": {
+      "title": "h1#gn@text || h1#gj@text",
+      "cover": "#gd1 div@style || #gd1 img@src",
+      "description": "#comment_0 .c6@text",
+      "genres": "#taglist a@text",
+      "status": "#gdd tr:contains('Length') td.gdt2@text"
+    },
+    "chapter_list": {
+      "container": "#gdt div.gdtl, #gdt div.gdtm, #gdt div",
+      "title": "a@title || a img@alt || a@text",
+      "link": "a@href",
+      "date": "",
+      "number_regex": "([0-9]+)$"
+    },
+    "page_list": {
+      "container": "#i3",
+      "image": "img#img@src || #img@src",
+      "exclude": ["blank.gif", "logo", "icon", "data:"]
+    }
+  },
+  "headers": {
+    "Referer": "https://e-hentai.org/",
+    "Cookie": "nw=1"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 0
+  }
+}

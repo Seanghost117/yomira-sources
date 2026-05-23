@@ -1,0 +1,72 @@
+{
+  "id": "mangapill",
+  "name": "MangaPill",
+  "version": "1.1.0",
+  "base_url": "https://mangapill.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "Clean, fast manga reader with a large English catalog and chapter-based navigation",
+  "tags": ["Manga", "Free", "Aggregator"],
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search?q={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/titles?type=manga&status=",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".container .grid > div, .my-3.grid > div, .grid.gap-3 > div",
+      "title": "a div@text || a@text || a img@alt",
+      "cover": "a figure img@data-src || a img@data-src || img@src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text",
+      "cover": "img[alt]@data-src || img[alt]@src || figure img@data-src || figure img@src",
+      "description": "p.text--secondary@text || .text-sm.text--secondary@text || div.limit-html p@text",
+      "genres": "a[href*='/genre/']@text || a[href*='/type/']@text",
+      "status": "label.text-secondary@text || .badge@text"
+    },
+    "chapter_list": {
+      "container": "#chapters div, div[id*='chapter'] div",
+      "title": "a@text",
+      "link": "a@href",
+      "date": "span@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|/chapter[s]?/([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": "chapter-page, .container picture, .container img[chapter-page]",
+      "image": "img@src || img@data-src",
+      "exclude": [".svg", "data:", "logo", "icon"]
+    }
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  }
+}

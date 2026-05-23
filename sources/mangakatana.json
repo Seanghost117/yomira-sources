@@ -1,0 +1,76 @@
+{
+  "id": "mangakatana",
+  "name": "MangaKatana",
+  "version": "1.1.0",
+  "base_url": "https://mangakatana.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "Classic manga aggregator with a broad catalog and UIkit-based layout",
+  "tags": ["Manga", "Manhwa", "Manhua", "Free", "Aggregator"],
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/?search={query}&search_by=book_name",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/?filter=hot",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": "#book_list .item, .item_list .item",
+      "title": "h3.title a@text || .text h3 a@text || h3 a@text",
+      "cover": ".wrap_img img@src || img@src",
+      "link": "h3.title a@href || h3 a@href || a@href"
+    },
+    "manga_details": {
+      "title": "h1.heading@text || h1@text",
+      "cover": ".cover img@src || .info .cover img@src",
+      "description": ".summary p@text || .summary@text || div.summary@text",
+      "authors": ".author a@text || .info .d49:contains('Author') a@text",
+      "genres": ".genres a@text || .info .d49:contains('Genres') a@text",
+      "status": ".value.status@text || .info .d49:contains('Status') .d48@text"
+    },
+    "chapter_list": {
+      "container": ".chapter_list tr, .chapters table tr",
+      "title": "a@text",
+      "link": "a@href",
+      "date": "td:last-child@text || .chapter_date@text",
+      "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|/c([0-9]+(?:\\.[0-9]+)?)$"
+    },
+    "page_list": {
+      "container": "#imgs",
+      "image": "img@data-src || img@src",
+      "exclude": [".svg", "data:", "logo", "icon", "avatar"]
+    }
+  },
+  "headers": {
+    "Referer": "https://mangakatana.com/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  }
+}

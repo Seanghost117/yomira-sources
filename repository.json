@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0",
+  "repositoryId": "yomira.sources",
+  "displayName": "Yomira Sources",
+  "description": "Curated Yomira-compatible Source Packs maintained outside the app.",
+  "maintainerName": "Yomira",
+  "maintainerUrl": "https://github.com/Seanghost117",
+  "homepageUrl": "https://github.com/Seanghost117/yomira-sources",
+  "termsUrl": "https://github.com/Seanghost117/yomira-sources",
+  "updatedAt": "2026-05-23T00:00:00Z",
+  "sourcePacks": [
+    {
+      "packId": "yomira-curated",
+      "displayName": "Yomira Curated Source Pack",
+      "description": "Curated Yomira-compatible source definitions maintained separately from the app.",
+      "version": "2026.05.23",
+      "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-curated/source-pack.json",
+      "checksum": "732c7dab2d70fbf540095d6eeb70df2e53add8e65d5ff2df995d952d96da1d78",
+      "checksumAlgorithm": "sha256",
+      "language": "en",
+      "region": "en",
+      "nsfw": true,
+      "supportedPlatforms": [
+        "ios_app_store",
+        "desktop",
+        "self_hosted",
+        "internal"
+      ],
+      "sourceCount": 9,
+      "artifactKind": "source_pack",
+      "updatedAt": "2026-05-23T00:00:00Z"
+    }
+  ]
+}
+

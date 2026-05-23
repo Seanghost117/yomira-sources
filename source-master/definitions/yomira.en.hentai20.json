@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.hentai20",
+  "sourceId": "yomira.en.hentai20",
+  "name": "Hentai20",
+  "displayName": "Hentai20",
+  "version": "1.2.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://hentai20.io",
+  "baseUrl": "https://hentai20.io",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "Adult manhwa, manga, and webtoon source normalized from the existing Hentai20 selector config.",
+  "tags": [
+    "Yomira",
+    "Selector",
+    "Curated",
+    "18+"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://hentai20.io",
+  "sessionScopeDomain": "hentai20.io",
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/?s={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/manga/?status=&type=&order=popular",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/manga/?status=&type=&order=update",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}/",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}/",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".bsx",
+      "title": "a@title || .tt@text",
+      "cover": "img@src || img@data-src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1.entry-title@text || .seriestuhead h1@text",
+      "cover": ".seriestucontent img@src || .seriestucontent img@data-src",
+      "description": ".entry-content p@text || .wd-full p@text",
+      "authors": ".imptdt:contains('Author') i@text || .fmed i@text",
+      "genres": ".mgen a@text",
+      "status": ".imptdt:contains('Status') i@text"
+    },
+    "chapter_list": {
+      "container": "#chapterlist li",
+      "title": ".chapternum@text || a@text",
+      "link": "a@href",
+      "date": ".chapterdate@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|([0-9]+(?:\\.[0-9]+)?)\\s*$"
+    },
+    "page_list": {
+      "container": "#readerarea",
+      "image": "img@src || img@data-src || img@data-lazy-src",
+      "exclude": [
+        ".svg",
+        "logo",
+        "icon",
+        "avatar"
+      ]
+    }
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "Selector",
+    "originalLanguage": "en",
+    "originalSourceName": "hentai20",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

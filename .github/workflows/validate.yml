@@ -1,0 +1,49 @@
+name: Validate Yomira Sources
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate repository index and source packs
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          root = Path(".")
+          repo = json.loads((root / "repository.json").read_text())
+          assert repo["schemaVersion"] == "1.0"
+          assert repo["repositoryId"] == "yomira.sources"
+          packs = repo.get("sourcePacks") or []
+          assert packs, "repository.json must list at least one source pack"
+
+          for entry in packs:
+              pack_id = entry["packId"]
+              pack_path = root / "packs" / pack_id / "source-pack.json"
+              assert pack_path.exists(), f"missing {pack_path}"
+              raw = pack_path.read_bytes()
+              digest = hashlib.sha256(raw).hexdigest()
+              assert digest == entry.get("checksum"), f"checksum mismatch for {pack_id}"
+              pack = json.loads(raw)
+              assert pack["schemaVersion"] == "1.0"
+              assert pack["packId"] == pack_id
+              definitions = pack.get("definitions") or []
+              assert definitions, f"{pack_id} has no definitions"
+              assert pack.get("sourceCount") == len(definitions)
+              for idx, definition in enumerate(definitions):
+                  assert definition.get("sourceId") or definition.get("id"), f"{pack_id}[{idx}] missing source id"
+                  assert definition.get("displayName") or definition.get("name"), f"{pack_id}[{idx}] missing display name"
+                  assert definition.get("baseUrl") or definition.get("base_url"), f"{pack_id}[{idx}] missing base URL"
+                  assert definition.get("connectorEngine"), f"{pack_id}[{idx}] missing connector engine"
+                  assert definition.get("appStoreSafe") is True, f"{pack_id}[{idx}] must be App Store safe"
+                  assert definition.get("containsExecutableCode") is False, f"{pack_id}[{idx}] must not contain executable code"
+                  assert definition.get("requiresExternalBridge") is False, f"{pack_id}[{idx}] must not require an external bridge"
+          PY

@@ -1,0 +1,867 @@
+{
+  "schemaVersion": "1.0",
+  "packId": "yomira-curated",
+  "displayName": "Yomira Curated Source Pack",
+  "description": "Curated Yomira-compatible source definitions maintained separately from the app.",
+  "packKind": "source_pack",
+  "languageScope": [
+    "en"
+  ],
+  "generatedFrom": [
+    "extensions/source-master/definitions"
+  ],
+  "sourceCount": 9,
+  "definitions": [
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://harimanga.me",
+      "base_url": "https://harimanga.me",
+      "connectorEngine": "madara",
+      "containsExecutableCode": false,
+      "description": "Madara source definition normalized from the existing HariManga config and Keiyoushi metadata.",
+      "displayName": "HariManga",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.en.harimanga",
+      "language": "en",
+      "name": "HariManga",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "curated_source_master_overlay",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".Harimanga",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "harimanga",
+        "originalSourcePath": "src/en/harimanga",
+        "originalVersion": "4"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.en.harimanga",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Curated"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": false,
+      "appStoreSafe": true,
+      "baseUrl": "https://hiperdex.com",
+      "base_url": "https://hiperdex.com",
+      "browserVerificationRequired": true,
+      "connectorEngine": "madara",
+      "containsExecutableCode": false,
+      "description": "Madara source definition normalized from the existing Hiperdex config and Keiyoushi metadata.",
+      "displayName": "Hiperdex",
+      "extends": "madara",
+      "flags": {
+        "browserVerificationRequired": true,
+        "is_madara": true,
+        "uses_cloudflare": true
+      },
+      "id": "keiyoushi.en.hiperdex",
+      "language": "en",
+      "name": "Hiperdex",
+      "nsfw": false,
+      "provenance": {
+        "analyzerBucket": "curated_profile_overlay",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".Hiperdex",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "hiperdex",
+        "originalSourcePath": "src/en/hiperdex"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "manga_list": {
+          "container": ".page-item-detail",
+          "cover": "img@src || img@data-src",
+          "link": ".post-title a@href || a@href",
+          "title": "a[title]@title || .post-title a@text"
+        }
+      },
+      "sessionScopeDomain": "hiperdex.com",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "keiyoushi.en.hiperdex",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Curated"
+      ],
+      "verificationUrl": "https://hiperdex.com",
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://kunmanga.com",
+      "base_url": "https://kunmanga.com",
+      "browserVerificationRequired": true,
+      "connectorEngine": "madara",
+      "containsExecutableCode": false,
+      "description": "Madara source definition normalized from the existing KunManga config and Keiyoushi metadata.",
+      "displayName": "Kun Manga",
+      "extends": "madara",
+      "flags": {
+        "browserVerificationRequired": true,
+        "isMadara": true,
+        "uses_cloudflare": true
+      },
+      "id": "keiyoushi.en.kunmanga",
+      "language": "en",
+      "name": "Kun Manga",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "direct_multisrc_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".KunManga",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "kunmanga",
+        "originalSourcePath": "src/en/kunmanga",
+        "originalVersion": "1"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "sessionScopeDomain": "kunmanga.com",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.en.kunmanga",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Curated"
+      ],
+      "verificationUrl": "https://kunmanga.com",
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": false,
+      "appStoreSafe": true,
+      "baseUrl": "https://mangak.io",
+      "base_url": "https://mangak.io",
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "MangaBuddy source definition normalized to its current MangaK/Next.js reader flow.",
+      "displayName": "MangaBuddy",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/{id}"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/{id}"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "https://mangabuddy.com/latest"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "https://mangabuddy.com/popular"
+        },
+        "search": {
+          "method": "GET",
+          "url": "https://mangabuddy.com/search?q={query}"
+        }
+      },
+      "flags": {
+        "is_madara": false,
+        "requires_js": false,
+        "uses_cloudflare": false
+      },
+      "headers": {
+        "Referer": "https://mangak.io/"
+      },
+      "id": "keiyoushi.en.mangabuddy",
+      "language": "en",
+      "name": "MangaBuddy",
+      "nsfw": false,
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".MangaBuddy",
+        "originalFamily": "MadTheme",
+        "originalLanguage": "en",
+        "originalSourceName": "mangabuddy",
+        "originalSourcePath": "src/en/mangabuddy"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": ".__yomira-next-data-fallback",
+          "date": "time@datetime",
+          "link": "a@href",
+          "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
+          "title": "a@text"
+        },
+        "manga_details": {
+          "authors": "a[href*='/authors/']@text",
+          "cover": "meta[property='og:image']@content",
+          "description": "meta[name='description']@content || meta[property='og:description']@content",
+          "genres": "a[href*='/genres/']@text",
+          "status": ".status-pill@text",
+          "title": "h1@text || meta[property='og:title']@content"
+        },
+        "manga_list": {
+          "container": ".book-item",
+          "cover": ".thumb img@data-src || .thumb img@src",
+          "link": ".title h3 a@href || .thumb a@href",
+          "title": ".title h3 a@title || .title h3 a@text || .thumb a@title"
+        },
+        "page_list": {
+          "container": ".__yomira-next-data-fallback",
+          "exclude": [
+            "logo",
+            "icon",
+            "avatar"
+          ],
+          "image": "img@src"
+        }
+      },
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "keiyoushi.en.mangabuddy",
+      "sourceType": "selector",
+      "tags": [
+        "Keiyoushi",
+        "Selector",
+        "Curated"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://www.mangakakalot.gg",
+      "base_url": "https://www.mangakakalot.gg",
+      "browserVerificationRequired": true,
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "MangaBox-style source definition normalized from the existing Mangakakalot config and current Keiyoushi metadata.",
+      "displayName": "Mangakakalot",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/manga/{id}"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/manga/{id}"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/manga_list?type=latest"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/manga_list?type=topview"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/search/story/{query}"
+        }
+      },
+      "flags": {
+        "browserVerificationRequired": true,
+        "is_madara": false,
+        "uses_cloudflare": true
+      },
+      "headers": {
+        "Referer": "https://www.mangakakalot.gg/"
+      },
+      "id": "keiyoushi.en.mangakakalot",
+      "language": "en",
+      "name": "Mangakakalot",
+      "nsfw": true,
+      "pagination": {
+        "param": "page",
+        "start": 1
+      },
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".Mangakakalot",
+        "originalFamily": "MangaBox",
+        "originalLanguage": "en",
+        "originalSourceName": "mangakakalot",
+        "originalSourcePath": "src/en/mangakakalot",
+        "originalVersion": "7"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": ".chapter-list .row",
+          "date": "span[title]@title || span@text",
+          "link": "a@href",
+          "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
+          "title": "a@text"
+        },
+        "manga_details": {
+          "authors": ".manga-info-text li:contains('Author(s)') a@text",
+          "cover": ".manga-info-pic img@src",
+          "description": "#noidungm@text",
+          "genres": ".manga-info-text li:contains('Genres') a@text",
+          "status": ".manga-info-text li:contains('Status')@text",
+          "title": ".manga-info-text h1@text || ul.manga-info-text li h1@text"
+        },
+        "manga_list": {
+          "container": ".list-truyen-item-wrap",
+          "cover": "img@src || img@data-src",
+          "link": "h3 a@href || a@href",
+          "title": "h3 a@text || a@title"
+        },
+        "page_list": {
+          "container": ".container-chapter-reader",
+          "exclude": [
+            ".svg",
+            "logo",
+            "icon",
+            "avatar"
+          ],
+          "image": "img@src || img@data-src"
+        }
+      },
+      "sessionScopeDomain": "www.mangakakalot.gg",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "keiyoushi.en.mangakakalot",
+      "sourceType": "selector",
+      "tags": [
+        "Keiyoushi",
+        "MangaBox",
+        "Selector",
+        "Curated"
+      ],
+      "verificationUrl": "https://www.mangakakalot.gg",
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://mangakatana.com",
+      "base_url": "https://mangakatana.com",
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "Selector source definition normalized from the existing MangaKatana config and current Keiyoushi metadata.",
+      "displayName": "MangaKatana",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/manga/{id}"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/manga/{id}"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/page/1"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/manga/page/1"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/page/{page}?search={query}&search_by=book_name"
+        }
+      },
+      "flags": {
+        "is_madara": false,
+        "requires_js": false,
+        "uses_cloudflare": false
+      },
+      "headers": {
+        "Referer": "https://mangakatana.com/"
+      },
+      "id": "keiyoushi.en.mangakatana",
+      "language": "en",
+      "name": "MangaKatana",
+      "nsfw": true,
+      "pagination": {
+        "param": "page",
+        "start": 1
+      },
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".MangaKatana",
+        "originalFamily": "HttpSource",
+        "originalLanguage": "en",
+        "originalSourceName": "mangakatana",
+        "originalSourcePath": "src/en/mangakatana",
+        "originalVersion": "12"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": ".chapter_list tr, .chapters table tr",
+          "date": ".update_time@text || td:last-child@text || .chapter_date@text",
+          "link": "a@href",
+          "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|/c([0-9]+(?:\\.[0-9]+)?)$",
+          "title": "a@text"
+        },
+        "manga_details": {
+          "authors": ".author@text || .info .d49:contains('Author') a@text",
+          "cover": "div.media div.cover img@src || .cover img@src || .info .cover img@src",
+          "description": ".summary > p@text || .summary@text || div.summary@text",
+          "genres": ".genres > a@text || .genres a@text || .info .d49:contains('Genres') a@text",
+          "status": ".value.status@text || .info .d49:contains('Status') .d48@text",
+          "title": "h1.heading@text || h1@text"
+        },
+        "manga_list": {
+          "container": "div#book_list > div.item",
+          "cover": "img@src",
+          "link": "div.text > h3 > a@href || h3.title a@href || h3 a@href",
+          "title": "div.text > h3 > a@text || h3.title a@text || h3 a@text"
+        },
+        "page_list": {
+          "container": "#imgs",
+          "exclude": [
+            ".svg",
+            "logo",
+            "icon",
+            "avatar"
+          ],
+          "image": "img@data-src || img@src"
+        }
+      },
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "keiyoushi.en.mangakatana",
+      "sourceType": "selector",
+      "tags": [
+        "Keiyoushi",
+        "Selector",
+        "Curated"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://www.natomanga.com",
+      "base_url": "https://www.natomanga.com",
+      "browserVerificationRequired": true,
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "MangaBox-style source definition normalized from the existing MangaNato config and current Keiyoushi metadata.",
+      "displayName": "Manganato",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/{id}"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/{id}"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/genre-all"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/genre-all?type=topview"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/search/story/{query}"
+        }
+      },
+      "flags": {
+        "browserVerificationRequired": true,
+        "is_madara": false,
+        "uses_cloudflare": true
+      },
+      "headers": {
+        "Referer": "https://www.natomanga.com/"
+      },
+      "id": "keiyoushi.en.manganelo",
+      "language": "en",
+      "name": "Manganato",
+      "nsfw": true,
+      "pagination": {
+        "param": "page",
+        "start": 1
+      },
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".Manganato",
+        "originalFamily": "MangaBox",
+        "originalLanguage": "en",
+        "originalSourceName": "manganelo",
+        "originalSourcePath": "src/en/manganelo",
+        "originalVersion": "5"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": "li.a-h, .row-content-chapter li",
+          "date": ".chapter-time@title || span.chapter-time@text",
+          "link": "a@href",
+          "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
+          "title": "a@text"
+        },
+        "manga_details": {
+          "authors": ".variations-tableInfo tr:contains('Author') a@text",
+          "cover": ".info-image img@src",
+          "description": ".panel-story-info-description@text || #panel-story-info-description@text",
+          "genres": ".variations-tableInfo tr:contains('Genres') a@text",
+          "status": ".variations-tableInfo tr:contains('Status') td.table-value@text",
+          "title": ".story-info-right h1@text || .panel-story-info .story-info-right h1@text"
+        },
+        "manga_list": {
+          "container": ".search-story-item, .content-genres-item",
+          "cover": "img@src || a.item-img img@src",
+          "link": "h3 a@href || .item-title a@href || a.item-img@href",
+          "title": "h3 a@text || .item-title a@text || a.item-img@title"
+        },
+        "page_list": {
+          "container": ".container-chapter-reader",
+          "exclude": [
+            ".svg",
+            "logo",
+            "icon",
+            "avatar"
+          ],
+          "image": "img@src"
+        }
+      },
+      "sessionScopeDomain": "www.natomanga.com",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "keiyoushi.en.manganelo",
+      "sourceType": "selector",
+      "tags": [
+        "Keiyoushi",
+        "MangaBox",
+        "Selector",
+        "Curated"
+      ],
+      "verificationUrl": "https://www.natomanga.com",
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://weebcentral.com",
+      "base_url": "https://weebcentral.com",
+      "browserVerificationRequired": true,
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "Selector source definition normalized from the current Keiyoushi Weeb Central HttpSource metadata.",
+      "displayName": "Weeb Central",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/series/{id}/full-chapter-list"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/series/{id}"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/search/data?sort=Latest+Updates&order=Descending&official=Any&display_mode=Full+Display&limit=32&offset=0"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}/images?is_prev=False&reading_style=long_strip"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/search/data?sort=Popularity&order=Descending&official=Any&display_mode=Full+Display&limit=32&offset=0"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/search/data?text={query}&sort=Best+Match&order=Ascending&official=Any&display_mode=Full+Display&limit=32&offset=0"
+        }
+      },
+      "flags": {
+        "browserVerificationRequired": true,
+        "is_madara": false,
+        "requires_js": false,
+        "sourceSessionRequired": true,
+        "uses_cloudflare": true
+      },
+      "headers": {
+        "Accept": "image/avif,image/webp,*/*",
+        "Referer": "https://weebcentral.com/"
+      },
+      "id": "keiyoushi.en.weebcentral",
+      "language": "en",
+      "name": "Weeb Central",
+      "nsfw": true,
+      "pagination": {
+        "param": "offset",
+        "start": 0
+      },
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".WeebCentral",
+        "originalFamily": "HttpSource",
+        "originalLanguage": "en",
+        "originalSourceName": "weebcentral",
+        "originalSourcePath": "src/en/weebcentral",
+        "originalVersion": "21"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": "div[x-data] > a",
+          "date": "time[datetime]@datetime",
+          "link": "@href",
+          "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
+          "title": "span.flex > span@text || @text"
+        },
+        "manga_details": {
+          "authors": "li:contains('Author') a@text",
+          "cover": "source@srcset || img@src",
+          "description": "li:contains('Description')@text",
+          "genres": "li:contains('Tag') a@text || li:contains('Type') a@text",
+          "status": "li:contains('Status') a@text || li:contains('Status') span@text",
+          "title": "h1@text"
+        },
+        "manga_list": {
+          "container": "article > section > a",
+          "cover": "source@srcset || img@src",
+          "link": "@href",
+          "title": "div:not([class]):last-child@text || @text"
+        },
+        "page_list": {
+          "container": "section[x-data~=scroll]",
+          "exclude": [
+            ".svg",
+            "logo",
+            "icon",
+            "avatar",
+            "blank"
+          ],
+          "image": "img@src"
+        }
+      },
+      "sessionScopeDomain": "weebcentral.com",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "keiyoushi.en.weebcentral",
+      "sourceSessionRequired": true,
+      "sourceType": "selector",
+      "tags": [
+        "Keiyoushi",
+        "Selector",
+        "Curated"
+      ],
+      "verificationUrl": "https://weebcentral.com",
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://hentai20.io",
+      "base_url": "https://hentai20.io",
+      "browserVerificationRequired": true,
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "Adult manhwa, manga, and webtoon source normalized from the existing Hentai20 selector config.",
+      "displayName": "Hentai20",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/manga/{id}/"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/manga/{id}/"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/manga/?status=&type=&order=update"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/manga/?status=&type=&order=popular"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/?s={query}"
+        }
+      },
+      "flags": {
+        "browserVerificationRequired": true,
+        "is_madara": false,
+        "requires_js": false,
+        "uses_cloudflare": true
+      },
+      "id": "yomira.en.hentai20",
+      "language": "en",
+      "name": "Hentai20",
+      "nsfw": true,
+      "pagination": {
+        "param": "page",
+        "start": 1
+      },
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "yomira",
+        "originalFamily": "Selector",
+        "originalLanguage": "en",
+        "originalSourceName": "hentai20"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": "#chapterlist li",
+          "date": ".chapterdate@text",
+          "link": "a@href",
+          "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|([0-9]+(?:\\.[0-9]+)?)\\s*$",
+          "title": ".chapternum@text || a@text"
+        },
+        "manga_details": {
+          "authors": ".imptdt:contains('Author') i@text || .fmed i@text",
+          "cover": ".seriestucontent img@src || .seriestucontent img@data-src",
+          "description": ".entry-content p@text || .wd-full p@text",
+          "genres": ".mgen a@text",
+          "status": ".imptdt:contains('Status') i@text",
+          "title": "h1.entry-title@text || .seriestuhead h1@text"
+        },
+        "manga_list": {
+          "container": ".bsx",
+          "cover": "img@src || img@data-src",
+          "link": "a@href",
+          "title": "a@title || .tt@text"
+        },
+        "page_list": {
+          "container": "#readerarea",
+          "exclude": [
+            ".svg",
+            "logo",
+            "icon",
+            "avatar"
+          ],
+          "image": "img@src || img@data-src || img@data-lazy-src"
+        }
+      },
+      "sessionScopeDomain": "hentai20.io",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "yomira.en.hentai20",
+      "sourceType": "selector",
+      "tags": [
+        "Yomira",
+        "Selector",
+        "Curated",
+        "18+"
+      ],
+      "verificationUrl": "https://hentai20.io",
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "familiesIncluded": [
+      "HttpSource",
+      "MadTheme",
+      "Madara",
+      "MangaBox",
+      "Selector"
+    ],
+    "convertedDefinitionSets": [
+      "extensions/source-master"
+    ]
+  },
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false
+}

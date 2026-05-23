@@ -1,0 +1,83 @@
+{
+  "id": "_madara_base",
+  "name": "Madara Base",
+  "version": "1.0.0",
+  "base_url": "",
+  "language": "en",
+  "tags": ["Madara"],
+
+  "flags": {
+    "is_madara": true,
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+
+  "endpoints": {
+    "search": {
+      "url": "{base}/?s={query}&post_type=wp-manga",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/manga/?m_orderby=views",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/manga/?m_orderby=latest",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}/",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}/",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+
+  "selectors": {
+    "manga_list": {
+      "container": ".c-tabs-item__content, .page-item-detail",
+      "title": "a[title]@title || .post-title a@text || h3 a@text",
+      "cover": "img@data-src || img@data-lazy-src || img@src",
+      "link": ".post-title a@href || h3 a@href || a@href"
+    },
+    "manga_details": {
+      "title": ".post-title h1@text || h1@text",
+      "cover": ".summary_image img@data-src || .summary_image img@data-lazy-src || .summary_image img@src || .tab-summary img@data-src || .tab-summary img@src",
+      "description": ".summary__content p@text || .manga-excerpt p@text || .description-summary p@text",
+      "authors": ".author-content a@text",
+      "artists": ".artist-content a@text",
+      "genres": ".genres-content a@text",
+      "status": ".post-status .summary-content@text"
+    },
+    "chapter_list": {
+      "container": "li.wp-manga-chapter",
+      "title": "a@text",
+      "link": "a@href",
+      "date": ".chapter-release-date i@title || .chapter-release-date a@title || time@datetime || .chapter-release-date@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
+      "ajax_chapters": {
+        "post_id_selector": "[data-id]@data-id || [data-post]@data-post",
+        "url": "{base}/wp-admin/admin-ajax.php",
+        "body": "action=manga_get_chapters&manga={post_id}",
+        "content_type": "application/x-www-form-urlencoded",
+        "fallback_url": "{base}/manga/{id}/ajax/chapters/"
+      }
+    },
+    "page_list": {
+      "container": ".reading-content",
+      "image": "img@data-src || img@data-lazy-src || img@data-cfsrc || img@data-original || img@src",
+      "exclude": [".svg", "data:", "logo", "icon", "avatar", "gravatar"]
+    }
+  },
+
+  "pagination": {
+    "param": "page",
+    "start": 1
+  }
+}

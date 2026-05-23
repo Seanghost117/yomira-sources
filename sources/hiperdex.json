@@ -1,0 +1,23 @@
+{
+  "extends": "madara",
+  "id": "hiperdex",
+  "name": "Hiperdex",
+  "version": "1.0.0",
+  "base_url": "https://hiperdex.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "Action and isekai manhwa with frequent chapter updates",
+  "tags": ["Manhwa", "Madara", "Action", "Isekai", "Free"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": true
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".page-item-detail",
+      "title": "a[title]@title || .post-title a@text",
+      "cover": "img@src || img@data-src",
+      "link": ".post-title a@href || a@href"
+    }
+  }
+}

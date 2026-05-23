@@ -1,0 +1,15 @@
+{
+  "extends": "madara",
+  "id": "manhwatop",
+  "name": "ManhwaTop",
+  "version": "1.0.0",
+  "base_url": "https://manhwatop.com",
+  "language": "en",
+  "nsfw": true,
+  "description": "Adult manhwa & webtoons with extensive genre library",
+  "tags": ["Manhwa", "Madara", "Webtoon", "NSFW", "Adult"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": false
+  }
+}

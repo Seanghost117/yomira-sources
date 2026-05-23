@@ -1,0 +1,75 @@
+{
+  "id": "mangafire",
+  "name": "MangaFire",
+  "version": "1.0.0",
+  "base_url": "https://mangafire.to",
+  "language": "en",
+  "nsfw": false,
+  "description": "High-quality manga aggregator with clean UI and fast servers",
+  "tags": ["Manga", "Manhwa", "Manhua", "Free", "Aggregator"],
+  "flags": {
+    "is_madara": false,
+    "uses_cloudflare": true
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/filter?keyword={query}&type=&status=&country=&sort=most_relevance&genres=",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/filter?sort=most_viewed&type=manga",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/updated",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".original .unit, .manga-list .unit, .item",
+      "title": ".info a@text || .content a@text || a@title",
+      "cover": "img@src || img@data-src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": ".detail .name h1@text || h1@text",
+      "cover": ".poster img@src || .cover img@src || .info-image img@src",
+      "description": ".synopsis p@text || .summary .entry-content p@text",
+      "authors": ".detail .meta p:contains('Author') a@text || .author@text",
+      "genres": ".detail .meta p:contains('Genre') a@text || .genre a@text",
+      "status": ".detail .meta p:contains('Status') span@text || .status@text"
+    },
+    "chapter_list": {
+      "container": "#chapter-list li, .chapter-list-detail li",
+      "title": "a@text || span@text",
+      "link": "a@href",
+      "date": "span.date@text || time@datetime",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|ep[.\\s]?([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".read-content, .chapter-images",
+      "image": "img@src || img@data-src || img@data-lazy",
+      "exclude": [".svg", "data:", "logo", "icon", "avatar", "blank"]
+    }
+  },
+  "headers": {
+    "Referer": "https://mangafire.to/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  }
+}

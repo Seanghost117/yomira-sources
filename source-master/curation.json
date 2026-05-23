@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "1.0",
+  "description": "Curated source-master input for the next Yomira source pack compilation. Files under definitions/ are source-pack-ready overlays; other entries document HTTP targets that need connector/profile work before they should be advertised as installable.",
+  "readyDefinitions": [
+    {
+      "sourceId": "keiyoushi.en.harimanga",
+      "displayName": "HariManga",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.harimanga.json",
+      "status": "ready",
+      "notes": [
+        "Existing hand-authored config worked in testing.",
+        "Keiyoushi metadata confirms a simple Madara source at https://harimanga.me.",
+        "Keiyoushi marks this source NSFW, so the normalized definition does too."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.kunmanga",
+      "displayName": "Kun Manga",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.kunmanga.json",
+      "status": "ready",
+      "notes": [
+        "Already present in the generated expanded pack.",
+        "Tracked here as a curated overlay so future master compilation preserves current Keiyoushi metadata and NSFW handling."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.mangakakalot",
+      "displayName": "Mangakakalot",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangakakalot.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Keiyoushi metadata confirms MangaBox lineage at https://www.mangakakalot.gg.",
+        "Normalized as an inline selector Source Definition so it does not require an external bridge.",
+        "Browser Verification is declared because the existing hand-authored config marked the source as Cloudflare-sensitive."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.manganelo",
+      "displayName": "Manganato",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.manganelo.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Keiyoushi tracks this source under src/en/manganelo with user-facing name Manganato.",
+        "The source base URL was updated from the stale hand-authored value to https://www.natomanga.com.",
+        "Normalized as an inline selector Source Definition so it does not require an external bridge."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.mangakatana",
+      "displayName": "MangaKatana",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangakatana.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Keiyoushi confirms a custom HttpSource at https://mangakatana.com with NSFW enabled.",
+        "Normalized as an inline selector Source Definition and paired with native static script image-array parsing.",
+        "No external bridge or executable runtime is required."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.hiperdex",
+      "displayName": "Hiperdex",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.hiperdex.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Keiyoushi metadata confirms Hiperdex at https://hiperdex.com.",
+        "Normalized as a Madara Source Definition with a curated search card selector override.",
+        "Browser Verification is declared as a possible recovery path, but normal requests are attempted first."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.mangabuddy",
+      "displayName": "MangaBuddy",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangabuddy.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "The previously generated profile treated MangaBuddy as a theme connector, but the live site search redirects into a MangaK/Next.js reader flow.",
+        "Normalized as an inline selector Source Definition with static Next.js data fallback for chapter and page lists.",
+        "No external bridge or executable runtime is required."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.hentai20",
+      "displayName": "Hentai20",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.hentai20.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Normalized from the existing Hentai20 selector config.",
+        "Marked 18+ and app-store-safe because it is declarative and contains no executable bridge code.",
+        "Browser Verification is declared as a possible recovery path, but normal requests are attempted first."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.weebcentral",
+      "displayName": "Weeb Central",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.weebcentral.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Keiyoushi metadata confirms a custom HttpSource at https://weebcentral.com with NSFW enabled.",
+        "Normalized as an inline selector Source Definition using the current search/detail/chapter/image endpoint hints.",
+        "Browser Verification and Source Session Recovery are declared up front because the previous hand-authored source was Cloudflare-sensitive."
+      ]
+    }
+  ],
+  "alreadyCoveredByGeneratedPack": [
+    {
+      "sourceId": "keiyoushi.en.manhwatop",
+      "displayName": "Manhwatop",
+      "connectorEngine": "madara"
+    },
+    {
+      "sourceId": "keiyoushi.en.mangakakalotfun",
+      "displayName": "Mangakakalot.fun",
+      "connectorEngine": "mangahub"
+    },
+    {
+      "sourceId": "keiyoushi.en.manhuaplus",
+      "displayName": "Manhua Plus",
+      "connectorEngine": "madara"
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwaclan",
+      "displayName": "ManhwaClan",
+      "connectorEngine": "madara"
+    },
+    {
+      "sourceId": "keiyoushi.en.lhtranslation",
+      "displayName": "LHTranslation",
+      "connectorEngine": "madara"
+    },
+    {
+      "sourceId": "keiyoushi.en.mangagg",
+      "displayName": "MangaGG",
+      "connectorEngine": "madara"
+    },
+    {
+      "sourceId": "keiyoushi.en.toonilyme",
+      "displayName": "Toonily.me",
+      "connectorEngine": "madtheme"
+    },
+    {
+      "sourceId": "keiyoushi.en.zinmanganet",
+      "displayName": "Zinmanga.net",
+      "connectorEngine": "madara"
+    }
+  ],
+  "needsConnectorOrSelectorValidation": [
+    {
+      "sourceKey": "mangafire",
+      "recommendedSourceId": "keiyoushi.en.mangafire",
+      "displayName": "MangaFire",
+      "currentHandConfig": "extensions/sources/mangafire.json",
+      "status": "blocked",
+      "reason": "Custom HTTP/API behavior is outside the current converted connector set. Needs native profile work instead of a blind selector import."
+    }
+  ],
+  "recommendedNextIteration": [
+    "Device-validate Mangakakalot, Manganato, MangaKatana, Hiperdex, Hentai20, and Weeb Central search/detail/chapter/page routes after importing the curated source-master preview pack.",
+    "Review MangaFire separately because its Keiyoushi implementation is more custom than a direct declarative source profile."
+  ]
+}

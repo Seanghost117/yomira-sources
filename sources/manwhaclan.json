@@ -1,0 +1,16 @@
+{
+  "extends": "madara",
+  "id": "manwhaclan",
+  "name": "ManwhaClan",
+  "version": "1.0.0",
+  "base_url": "https://manwhaclan.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "ManwhaClan — manhwa reader, mirrors KunManga catalog without Cloudflare",
+  "tags": ["Manhwa", "Manga", "Madara", "Webtoon", "Free"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": false
+  },
+  "_note": "Believed to share catalog with KunManga but operates independently without CF protection"
+}

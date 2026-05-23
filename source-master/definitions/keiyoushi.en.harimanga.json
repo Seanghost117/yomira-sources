@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "converted_keiyoushi",
+  "id": "keiyoushi.en.harimanga",
+  "sourceId": "keiyoushi.en.harimanga",
+  "name": "HariManga",
+  "displayName": "HariManga",
+  "version": "1.0.0",
+  "extends": "madara",
+  "connectorEngine": "madara",
+  "sourceType": "madara",
+  "base_url": "https://harimanga.me",
+  "baseUrl": "https://harimanga.me",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "Madara source definition normalized from the existing HariManga config and Keiyoushi metadata.",
+  "tags": [
+    "Keiyoushi",
+    "Madara",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "flags": {
+    "isMadara": true
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/harimanga",
+    "originalFamily": "Madara",
+    "originalLanguage": "en",
+    "originalSourceName": "harimanga",
+    "originalVersion": "4",
+    "originalExtClass": ".Harimanga",
+    "analyzerBucket": "curated_source_master_overlay",
+    "baseUrlSource": "build_gradle"
+  }
+}

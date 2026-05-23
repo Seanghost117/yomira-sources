@@ -1,0 +1,76 @@
+{
+  "id": "comix",
+  "name": "Comix",
+  "version": "1.0.0",
+  "base_url": "https://comix.to",
+  "language": "en",
+  "nsfw": false,
+  "description": "Modern manga aggregator with personalized libraries and advanced filtering",
+  "tags": ["Manga", "Manhwa", "Manhua", "Aggregator", "Free"],
+  "flags": {
+    "is_madara": false,
+    "requires_js": true,
+    "uses_cloudflare": false
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search?keyword={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/home",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/home",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/comic/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/comic/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".comic-item, .manga-item, .item",
+      "title": ".title a@text || a@title || h3@text",
+      "cover": "img@src || img@data-src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text || .comic-title@text",
+      "cover": ".comic-cover img@src || .poster img@src",
+      "description": ".description@text || .summary@text || .synopsis p@text",
+      "authors": ".author a@text || .info:contains('Author') span@text",
+      "genres": ".genre a@text || .tags a@text",
+      "status": ".status@text || .info:contains('Status') span@text"
+    },
+    "chapter_list": {
+      "container": ".chapter-list li, .chapters li, .chapter-item",
+      "title": "a@text || span@text",
+      "link": "a@href",
+      "date": ".date@text || time@datetime",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|ch\\.?\\s*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".reader-area, .chapter-images, .reading-content",
+      "image": "img@src || img@data-src || img@data-lazy",
+      "exclude": [".svg", "data:", "logo", "icon", "avatar", "blank"]
+    }
+  },
+  "headers": {
+    "Referer": "https://comix.to/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  }
+}

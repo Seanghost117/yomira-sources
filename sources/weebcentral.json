@@ -1,0 +1,77 @@
+{
+  "id": "weebcentral",
+  "name": "WeebCentral",
+  "version": "1.0.0",
+  "base_url": "https://weebcentral.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "Successor to MangaSee/MangaLife — large catalog with high-quality scans",
+  "tags": ["Manga", "Manhwa", "Manhua", "Aggregator", "Free"],
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search/data?text={query}&sort=Best+Match&order=Ascending&official=Any&display_mode=Full+Display",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/search/data?sort=Popularity&order=Descending&official=Any&display_mode=Full+Display",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/search/data?sort=Update+Date&order=Descending&official=Any&display_mode=Full+Display",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/series/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/series/{id}/full-chapter-list",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".flex.border, .series-item, article",
+      "title": "a.font-bold@text || .title@text || a@title",
+      "cover": "img@src || img@data-src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text || .series-title@text",
+      "cover": ".cover img@src || img.series-cover@src",
+      "description": ".description@text || .summary@text || p.leading-relaxed@text",
+      "authors": "li:contains('Author') a@text || .author@text",
+      "genres": "li:contains('Genre') a@text || .genre a@text || .tag@text",
+      "status": "li:contains('Status') span@text || .status@text"
+    },
+    "chapter_list": {
+      "container": ".chapter a, .chapter-list a, a[href*='chapter']",
+      "title": "span@text || @text",
+      "link": "@href",
+      "date": "time@datetime || .date@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".chapter-reader, .reader-content, .image-container",
+      "image": "img@src || img@data-src",
+      "exclude": [".svg", "data:", "logo", "icon", "avatar", "blank"]
+    }
+  },
+  "headers": {
+    "Referer": "https://weebcentral.com/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "_note": "Successor to MangaSee/MangaLife. Custom-built site, not Madara or WordPress."
+}

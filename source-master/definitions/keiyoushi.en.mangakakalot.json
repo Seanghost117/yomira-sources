@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.mangakakalot",
+  "sourceId": "keiyoushi.en.mangakakalot",
+  "name": "Mangakakalot",
+  "displayName": "Mangakakalot",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://www.mangakakalot.gg",
+  "baseUrl": "https://www.mangakakalot.gg",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "MangaBox-style source definition normalized from the existing Mangakakalot config and current Keiyoushi metadata.",
+  "tags": [
+    "Keiyoushi",
+    "MangaBox",
+    "Selector",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://www.mangakakalot.gg",
+  "sessionScopeDomain": "www.mangakakalot.gg",
+  "flags": {
+    "is_madara": false,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search/story/{query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/manga_list?type=topview",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/manga_list?type=latest",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".list-truyen-item-wrap",
+      "title": "h3 a@text || a@title",
+      "cover": "img@src || img@data-src",
+      "link": "h3 a@href || a@href"
+    },
+    "manga_details": {
+      "title": ".manga-info-text h1@text || ul.manga-info-text li h1@text",
+      "cover": ".manga-info-pic img@src",
+      "description": "#noidungm@text",
+      "authors": ".manga-info-text li:contains('Author(s)') a@text",
+      "genres": ".manga-info-text li:contains('Genres') a@text",
+      "status": ".manga-info-text li:contains('Status')@text"
+    },
+    "chapter_list": {
+      "container": ".chapter-list .row",
+      "title": "a@text",
+      "link": "a@href",
+      "date": "span[title]@title || span@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".container-chapter-reader",
+      "image": "img@src || img@data-src",
+      "exclude": [
+        ".svg",
+        "logo",
+        "icon",
+        "avatar"
+      ]
+    }
+  },
+  "headers": {
+    "Referer": "https://www.mangakakalot.gg/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/mangakakalot",
+    "originalFamily": "MangaBox",
+    "originalLanguage": "en",
+    "originalSourceName": "mangakakalot",
+    "originalVersion": "7",
+    "originalExtClass": ".Mangakakalot",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

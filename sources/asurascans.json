@@ -1,0 +1,16 @@
+{
+  "extends": "listupd",
+  "id": "asurascans",
+  "name": "Asura Scans",
+  "version": "1.0.0",
+  "base_url": "https://asurascans.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "Popular manhwa and webcomic scanlation site featuring action and isekai series",
+  "tags": ["Manhwa", "Webtoon", "Scanlator", "Action", "Isekai"],
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true
+  }
+}

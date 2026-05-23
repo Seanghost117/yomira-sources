@@ -1,0 +1,15 @@
+{
+  "extends": "madara",
+  "id": "manhuaplus",
+  "name": "ManhuaPlus",
+  "version": "1.0.0",
+  "base_url": "https://manhuaplus.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "Chinese manhua translations — Madara-based with extensive catalog",
+  "tags": ["Manhua", "Madara", "Free", "Chinese"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": false
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.manganelo",
+  "sourceId": "keiyoushi.en.manganelo",
+  "name": "Manganato",
+  "displayName": "Manganato",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://www.natomanga.com",
+  "baseUrl": "https://www.natomanga.com",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "MangaBox-style source definition normalized from the existing MangaNato config and current Keiyoushi metadata.",
+  "tags": [
+    "Keiyoushi",
+    "MangaBox",
+    "Selector",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://www.natomanga.com",
+  "sessionScopeDomain": "www.natomanga.com",
+  "flags": {
+    "is_madara": false,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search/story/{query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/genre-all?type=topview",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/genre-all",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".search-story-item, .content-genres-item",
+      "title": "h3 a@text || .item-title a@text || a.item-img@title",
+      "cover": "img@src || a.item-img img@src",
+      "link": "h3 a@href || .item-title a@href || a.item-img@href"
+    },
+    "manga_details": {
+      "title": ".story-info-right h1@text || .panel-story-info .story-info-right h1@text",
+      "cover": ".info-image img@src",
+      "description": ".panel-story-info-description@text || #panel-story-info-description@text",
+      "authors": ".variations-tableInfo tr:contains('Author') a@text",
+      "genres": ".variations-tableInfo tr:contains('Genres') a@text",
+      "status": ".variations-tableInfo tr:contains('Status') td.table-value@text"
+    },
+    "chapter_list": {
+      "container": "li.a-h, .row-content-chapter li",
+      "title": "a@text",
+      "link": "a@href",
+      "date": ".chapter-time@title || span.chapter-time@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".container-chapter-reader",
+      "image": "img@src",
+      "exclude": [
+        ".svg",
+        "logo",
+        "icon",
+        "avatar"
+      ]
+    }
+  },
+  "headers": {
+    "Referer": "https://www.natomanga.com/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/manganelo",
+    "originalFamily": "MangaBox",
+    "originalLanguage": "en",
+    "originalSourceName": "manganelo",
+    "originalVersion": "5",
+    "originalExtClass": ".Manganato",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

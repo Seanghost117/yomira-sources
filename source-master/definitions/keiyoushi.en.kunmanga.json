@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "converted_keiyoushi",
+  "id": "keiyoushi.en.kunmanga",
+  "sourceId": "keiyoushi.en.kunmanga",
+  "name": "Kun Manga",
+  "displayName": "Kun Manga",
+  "version": "1.0.0",
+  "extends": "madara",
+  "connectorEngine": "madara",
+  "sourceType": "madara",
+  "base_url": "https://kunmanga.com",
+  "baseUrl": "https://kunmanga.com",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "Madara source definition normalized from the existing KunManga config and Keiyoushi metadata.",
+  "tags": [
+    "Keiyoushi",
+    "Madara",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://kunmanga.com",
+  "sessionScopeDomain": "kunmanga.com",
+  "flags": {
+    "isMadara": true,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/kunmanga",
+    "originalFamily": "Madara",
+    "originalLanguage": "en",
+    "originalSourceName": "kunmanga",
+    "originalVersion": "1",
+    "originalExtClass": ".KunManga",
+    "analyzerBucket": "direct_multisrc_candidate",
+    "baseUrlSource": "build_gradle"
+  }
+}

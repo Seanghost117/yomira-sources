@@ -1,0 +1,93 @@
+{
+  "id": "nhentai",
+  "name": "NHentai",
+  "version": "1.2.0",
+  "base_url": "https://nhentai.net",
+  "language": "en",
+  "nsfw": true,
+  "description": "Large hentai doujinshi database with tagging, search, and reader",
+  "tags": [
+    "Doujinshi",
+    "Hentai",
+    "Adult",
+    "NSFW",
+    "Japanese"
+  ],
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search/?q={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/?sort=popular",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".gallery",
+      "title": ".caption@text",
+      "cover": "img@data-src || img@src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1.title@text || h2.title@text",
+      "cover": "#cover img@data-src || #cover img@src",
+      "description": "",
+      "genres": "#tags .tag .name@text",
+      "status": ""
+    },
+    "chapter_list": {
+      "oneshot": true,
+      "container": "",
+      "title": "",
+      "link": "",
+      "date": "",
+      "number_regex": ""
+    },
+    "page_list": {
+      "container": "#thumbnail-container",
+      "image": ".gallerythumb img@data-src || .gallerythumb img@src || .thumb-container img@data-src || .thumb-container img@src",
+      "exclude": [
+        "data:",
+        "blank",
+        "logo",
+        "icon"
+      ],
+      "url_rewrite": [
+        ["t([5-9]|[1-9]\\d+)\\.nhentai\\.net", "i3.nhentai.net"],
+        ["t(\\d+)\\.nhentai\\.net", "i$1.nhentai.net"],
+        ["(\\d+)t\\.(jpg|png|gif|webp|avif)", "$1.$2"],
+        ["\\.(jpg|png|gif|webp|avif)\\.(jpg|png|gif|webp|avif)$", ".$2"]
+      ]
+    }
+  },
+  "headers": {
+    "Referer": "https://nhentai.net/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  }
+}

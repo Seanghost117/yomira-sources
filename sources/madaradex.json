@@ -1,0 +1,15 @@
+{
+  "extends": "madara",
+  "id": "madaradex",
+  "name": "MadaraDex",
+  "version": "1.0.0",
+  "base_url": "https://madaradex.org",
+  "language": "en",
+  "nsfw": false,
+  "description": "Madara-based multi-source manga aggregator with broad content coverage",
+  "tags": ["Manga", "Manhwa", "Madara", "Free", "Aggregator"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": true
+  }
+}

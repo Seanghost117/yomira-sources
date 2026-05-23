@@ -1,0 +1,15 @@
+{
+  "extends": "madara",
+  "id": "mangagg",
+  "name": "MangaGG",
+  "version": "1.0.0",
+  "base_url": "https://mangagg.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "Madara-based site with a broad catalog of manga, manhwa, and manhua",
+  "tags": ["Manga", "Manhwa", "Manhua", "Madara", "Free"],
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": false
+  }
+}
