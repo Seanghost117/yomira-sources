@@ -108,6 +108,54 @@
         "Normalized as an inline selector Source Definition using the current search/detail/chapter/image endpoint hints.",
         "Browser Verification and Source Session Recovery are declared up front because the previous hand-authored source was Cloudflare-sensitive."
       ]
+    },
+    {
+      "sourceId": "keiyoushi.en.madaradex",
+      "displayName": "MadaraDex",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.madaradex.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Existing local source config was present but not part of the curated pack.",
+        "Keiyoushi metadata confirms a Madara source at https://madaradex.org with custom browser-like handling.",
+        "Browser Verification and Source Session Recovery are declared because direct requests currently return a Cloudflare challenge."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.mangagg",
+      "displayName": "MangaGG",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangagg.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Previously only covered by the generated pack; now tracked as a curated overlay because live requests currently require Browser Verification.",
+        "Keiyoushi metadata confirms a direct Madara source at https://mangagg.com.",
+        "The shared Madara base was updated to find current AJAX chapter holder markup."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.kuramanga",
+      "displayName": "KuraManga",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.kuramanga.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Existing local source config incorrectly treated KuraManga as Madara.",
+        "Keiyoushi metadata confirms a custom HttpSource at https://kuramanga.com.",
+        "Normalized as an inline selector Source Definition with JSON search and HTML detail/chapter/page selectors."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwaden",
+      "displayName": "ManhwaDen",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.manhwaden.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Already present in the generated expanded pack, but now tracked as a curated overlay for current AJAX chapter markup.",
+        "Keiyoushi metadata confirms a direct Madara source at https://www.manhwaden.com.",
+        "Live testing confirmed its chapter list loads through the per-detail /ajax/chapters route."
+      ]
     }
   ],
   "alreadyCoveredByGeneratedPack": [
@@ -134,11 +182,6 @@
     {
       "sourceId": "keiyoushi.en.lhtranslation",
       "displayName": "LHTranslation",
-      "connectorEngine": "madara"
-    },
-    {
-      "sourceId": "keiyoushi.en.mangagg",
-      "displayName": "MangaGG",
       "connectorEngine": "madara"
     },
     {

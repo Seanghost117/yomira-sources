@@ -5,11 +5,17 @@
   "version": "1.0.0",
   "base_url": "https://madaradex.org",
   "language": "en",
-  "nsfw": false,
-  "description": "Madara-based multi-source manga aggregator with broad content coverage",
+  "nsfw": true,
+  "description": "Madara-based multi-source manga aggregator with broad content coverage. Requires Browser Verification when Cloudflare challenges requests.",
   "tags": ["Manga", "Manhwa", "Madara", "Free", "Aggregator"],
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://madaradex.org",
+  "sessionScopeDomain": "madaradex.org",
   "flags": {
     "is_madara": true,
-    "uses_cloudflare": true
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true
   }
 }

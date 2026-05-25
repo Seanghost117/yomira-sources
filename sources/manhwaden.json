@@ -1,0 +1,19 @@
+{
+  "extends": "madara",
+  "id": "manhwaden",
+  "name": "ManhwaDen",
+  "version": "1.0.0",
+  "base_url": "https://www.manhwaden.com",
+  "language": "en",
+  "nsfw": true,
+  "description": "Madara-based manhwa source using the current AJAX chapter route.",
+  "tags": ["Manga", "Manhwa", "Madara", "Free"],
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://www.manhwaden.com",
+  "sessionScopeDomain": "www.manhwaden.com",
+  "flags": {
+    "is_madara": true,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  }
+}

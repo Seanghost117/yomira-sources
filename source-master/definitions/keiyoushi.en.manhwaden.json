@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "converted_keiyoushi",
+  "id": "keiyoushi.en.manhwaden",
+  "sourceId": "keiyoushi.en.manhwaden",
+  "name": "ManhwaDen",
+  "displayName": "ManhwaDen",
+  "version": "1.1.0",
+  "extends": "madara",
+  "connectorEngine": "madara",
+  "sourceType": "madara",
+  "base_url": "https://www.manhwaden.com",
+  "baseUrl": "https://www.manhwaden.com",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "Madara source definition normalized from Keiyoushi metadata and updated for the current AJAX chapter holder markup.",
+  "tags": [
+    "Keiyoushi",
+    "Madara",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://www.manhwaden.com",
+  "sessionScopeDomain": "www.manhwaden.com",
+  "flags": {
+    "isMadara": true,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/manhwaden",
+    "originalFamily": "Madara",
+    "originalLanguage": "en",
+    "originalSourceName": "manhwaden",
+    "originalVersion": "0",
+    "originalExtClass": ".ManhwaDen",
+    "analyzerBucket": "curated_source_master_overlay",
+    "baseUrlSource": "build_gradle"
+  }
+}

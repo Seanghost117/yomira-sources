@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "converted_keiyoushi",
+  "id": "keiyoushi.en.mangagg",
+  "sourceId": "keiyoushi.en.mangagg",
+  "name": "MangaGG",
+  "displayName": "MangaGG",
+  "version": "1.1.0",
+  "extends": "madara",
+  "connectorEngine": "madara",
+  "sourceType": "madara",
+  "base_url": "https://mangagg.com",
+  "baseUrl": "https://mangagg.com",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "Madara source definition normalized from Keiyoushi metadata with Browser Verification enabled for the current Cloudflare challenge.",
+  "tags": [
+    "Keiyoushi",
+    "Madara",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://mangagg.com",
+  "sessionScopeDomain": "mangagg.com",
+  "userAgentPolicy": "browser_session",
+  "flags": {
+    "isMadara": true,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/mangagg",
+    "originalFamily": "Madara",
+    "originalLanguage": "en",
+    "originalSourceName": "mangagg",
+    "originalVersion": "2",
+    "originalExtClass": ".MangaGG",
+    "analyzerBucket": "curated_source_master_overlay",
+    "baseUrlSource": "build_gradle"
+  }
+}

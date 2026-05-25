@@ -10,7 +10,7 @@
   "generatedFrom": [
     "extensions/source-master/definitions"
   ],
-  "sourceCount": 9,
+  "sourceCount": 13,
   "definitions": [
     {
       "adultContent": true,
@@ -167,6 +167,177 @@
       "version": "1.0.0"
     },
     {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://kuramanga.com",
+      "base_url": "https://kuramanga.com",
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "Selector source definition normalized from the current Keiyoushi KuraManga HttpSource metadata.",
+      "displayName": "KuraManga",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/{id}"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/{id}"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/search?name={query}&offset=0&ajax=1"
+        }
+      },
+      "flags": {
+        "is_madara": false,
+        "requires_js": false,
+        "uses_cloudflare": false
+      },
+      "id": "keiyoushi.en.kuramanga",
+      "language": "en",
+      "name": "KuraManga",
+      "nsfw": true,
+      "pagination": {
+        "param": "offset",
+        "start": 0
+      },
+      "presentation": {
+        "latestLabel": "Latest Updates",
+        "latestStyle": "sliding_list",
+        "popularLabel": "Popular",
+        "popularStyle": "carousel",
+        "primaryListing": "latest"
+      },
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".KuraManga",
+        "originalFamily": "HttpSource",
+        "originalLanguage": "en",
+        "originalSourceName": "kuramanga",
+        "originalSourcePath": "src/en/kuramanga"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": ".chapter-list .chapter-item",
+          "date": "time@datetime || time@text",
+          "link": "a@href",
+          "number_regex": "(?i)(?:chapter[\\s/\\-_]*|/chapter-)([0-9]+(?:\\.[0-9]+)?)",
+          "title": "a@text"
+        },
+        "manga_details": {
+          "artists": ".meta-grid div:contains('Artist:') a@text || .meta-grid div:contains('Artist:')@text",
+          "authors": ".meta-grid div:contains('Author:') a@text || .meta-grid div:contains('Author:')@text",
+          "cover": "img.manga-thumb@src || meta[property='og:image']@content",
+          "description": ".summary-inner@text || meta[name='description']@content",
+          "genres": ".genre-list a.genre-chip@text",
+          "status": ".meta-grid div:contains('Status:')@text",
+          "title": "h1.manga-title@text || meta[property='og:title']@content"
+        },
+        "manga_list": {
+          "container": ".update-list .update-row, .popular-glide .manga-card",
+          "cover": ".update-thumb img@src || img.manga-thumb@src || img@src",
+          "link": "a.update-series-link@href || .update-thumb@href || a@href",
+          "title": "a.update-series-link@text || .manga-title@text || a@title || a@text"
+        },
+        "page_list": {
+          "container": ".chapter-images, #chapterImages",
+          "exclude": [
+            ".svg",
+            "logo",
+            "icon",
+            "avatar",
+            "blank"
+          ],
+          "image": "img@data-src || img@src"
+        }
+      },
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "keiyoushi.en.kuramanga",
+      "sourceType": "selector",
+      "tags": [
+        "Keiyoushi",
+        "Selector",
+        "Curated"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://madaradex.org",
+      "base_url": "https://madaradex.org",
+      "browserVerificationRequired": true,
+      "connectorEngine": "madara",
+      "containsExecutableCode": false,
+      "description": "Madara source definition normalized from Keiyoushi metadata with Browser Verification enabled for the current Cloudflare challenge.",
+      "displayName": "MadaraDex",
+      "extends": "madara",
+      "flags": {
+        "browserVerificationRequired": true,
+        "isMadara": true,
+        "sourceSessionRequired": true,
+        "uses_cloudflare": true
+      },
+      "id": "keiyoushi.en.madaradex",
+      "language": "en",
+      "name": "MadaraDex",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "curated_source_master_overlay",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".MadaraDex",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "madaradex",
+        "originalSourcePath": "src/en/madaradex",
+        "originalVersion": "3",
+        "profileOverride": true
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "sessionScopeDomain": "madaradex.org",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "keiyoushi.en.madaradex",
+      "sourceSessionRequired": true,
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Curated"
+      ],
+      "userAgentPolicy": "browser_session",
+      "verificationUrl": "https://madaradex.org",
+      "version": "1.0.0"
+    },
+    {
       "adultContent": false,
       "appStoreSafe": true,
       "baseUrl": "https://mangak.io",
@@ -270,6 +441,60 @@
         "Selector",
         "Curated"
       ],
+      "version": "1.1.0"
+    },
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://mangagg.com",
+      "base_url": "https://mangagg.com",
+      "browserVerificationRequired": true,
+      "connectorEngine": "madara",
+      "containsExecutableCode": false,
+      "description": "Madara source definition normalized from Keiyoushi metadata with Browser Verification enabled for the current Cloudflare challenge.",
+      "displayName": "MangaGG",
+      "extends": "madara",
+      "flags": {
+        "browserVerificationRequired": true,
+        "isMadara": true,
+        "sourceSessionRequired": true,
+        "uses_cloudflare": true
+      },
+      "id": "keiyoushi.en.mangagg",
+      "language": "en",
+      "name": "MangaGG",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "curated_source_master_overlay",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".MangaGG",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "mangagg",
+        "originalSourcePath": "src/en/mangagg",
+        "originalVersion": "2"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "sessionScopeDomain": "mangagg.com",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.en.mangagg",
+      "sourceSessionRequired": true,
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Curated"
+      ],
+      "userAgentPolicy": "browser_session",
+      "verificationUrl": "https://mangagg.com",
       "version": "1.1.0"
     },
     {
@@ -615,6 +840,57 @@
       ],
       "verificationUrl": "https://www.natomanga.com",
       "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://www.manhwaden.com",
+      "base_url": "https://www.manhwaden.com",
+      "browserVerificationRequired": true,
+      "connectorEngine": "madara",
+      "containsExecutableCode": false,
+      "description": "Madara source definition normalized from Keiyoushi metadata and updated for the current AJAX chapter holder markup.",
+      "displayName": "ManhwaDen",
+      "extends": "madara",
+      "flags": {
+        "browserVerificationRequired": true,
+        "isMadara": true,
+        "uses_cloudflare": true
+      },
+      "id": "keiyoushi.en.manhwaden",
+      "language": "en",
+      "name": "ManhwaDen",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "curated_source_master_overlay",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".ManhwaDen",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "manhwaden",
+        "originalSourcePath": "src/en/manhwaden",
+        "originalVersion": "0"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "sessionScopeDomain": "www.manhwaden.com",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.en.manhwaden",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Curated"
+      ],
+      "verificationUrl": "https://www.manhwaden.com",
+      "version": "1.1.0"
     },
     {
       "adultContent": true,

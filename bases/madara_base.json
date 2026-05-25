@@ -62,7 +62,7 @@
       "date": ".chapter-release-date i@title || .chapter-release-date a@title || time@datetime || .chapter-release-date@text",
       "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
       "ajax_chapters": {
-        "post_id_selector": "[data-id]@data-id || [data-post]@data-post",
+        "post_id_selector": "#manga-chapters-holder@data-id || [id='manga-chapters-holder']@data-id || [data-id]@data-id || [data-post]@data-post",
         "url": "{base}/wp-admin/admin-ajax.php",
         "body": "action=manga_get_chapters&manga={post_id}",
         "content_type": "application/x-www-form-urlencoded",

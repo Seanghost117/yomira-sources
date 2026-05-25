@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.madaradex",
+  "sourceId": "keiyoushi.en.madaradex",
+  "name": "MadaraDex",
+  "displayName": "MadaraDex",
+  "version": "1.0.0",
+  "extends": "madara",
+  "connectorEngine": "madara",
+  "sourceType": "madara",
+  "base_url": "https://madaradex.org",
+  "baseUrl": "https://madaradex.org",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "Madara source definition normalized from Keiyoushi metadata with Browser Verification enabled for the current Cloudflare challenge.",
+  "tags": [
+    "Keiyoushi",
+    "Madara",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://madaradex.org",
+  "sessionScopeDomain": "madaradex.org",
+  "userAgentPolicy": "browser_session",
+  "flags": {
+    "isMadara": true,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/madaradex",
+    "originalFamily": "Madara",
+    "originalLanguage": "en",
+    "originalSourceName": "madaradex",
+    "originalVersion": "3",
+    "originalExtClass": ".MadaraDex",
+    "analyzerBucket": "curated_source_master_overlay",
+    "profileOverride": true
+  }
+}

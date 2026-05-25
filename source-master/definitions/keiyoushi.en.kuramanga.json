@@ -1,17 +1,37 @@
 {
-  "id": "kuramanga",
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.kuramanga",
+  "sourceId": "keiyoushi.en.kuramanga",
   "name": "KuraManga",
+  "displayName": "KuraManga",
   "version": "1.0.0",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "base_url": "https://kuramanga.com",
+  "baseUrl": "https://kuramanga.com",
   "language": "en",
+  "region": "en",
   "nsfw": true,
-  "description": "Selector-based source with JSON search and HTML detail/chapter/page routes.",
-  "tags": ["Manga", "Manhwa", "Selector", "Free"],
+  "adultContent": true,
+  "description": "Selector source definition normalized from the current Keiyoushi KuraManga HttpSource metadata.",
+  "tags": [
+    "Keiyoushi",
+    "Selector",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
   "flags": {
     "is_madara": false,
+    "requires_js": false,
     "uses_cloudflare": false
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
   },
   "endpoints": {
     "search": {
@@ -65,7 +85,33 @@
     "page_list": {
       "container": ".chapter-images, #chapterImages",
       "image": "img@data-src || img@src",
-      "exclude": [".svg", "logo", "icon", "avatar", "blank"]
+      "exclude": [
+        ".svg",
+        "logo",
+        "icon",
+        "avatar",
+        "blank"
+      ]
     }
+  },
+  "pagination": {
+    "param": "offset",
+    "start": 0
+  },
+  "presentation": {
+    "primaryListing": "latest",
+    "latestLabel": "Latest Updates",
+    "latestStyle": "sliding_list",
+    "popularLabel": "Popular",
+    "popularStyle": "carousel"
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/kuramanga",
+    "originalFamily": "HttpSource",
+    "originalLanguage": "en",
+    "originalSourceName": "kuramanga",
+    "originalExtClass": ".KuraManga",
+    "analyzerBucket": "curated_selector_profile"
   }
 }

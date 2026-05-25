@@ -2,14 +2,20 @@
   "extends": "madara",
   "id": "mangagg",
   "name": "MangaGG",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "base_url": "https://mangagg.com",
   "language": "en",
-  "nsfw": false,
-  "description": "Madara-based site with a broad catalog of manga, manhwa, and manhua",
+  "nsfw": true,
+  "description": "Madara-based site with a broad catalog of manga, manhwa, and manhua. Requires Browser Verification when Cloudflare challenges requests.",
   "tags": ["Manga", "Manhwa", "Manhua", "Madara", "Free"],
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://mangagg.com",
+  "sessionScopeDomain": "mangagg.com",
   "flags": {
     "is_madara": true,
-    "uses_cloudflare": false
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true
   }
 }
