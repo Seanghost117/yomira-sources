@@ -15,7 +15,7 @@
       "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
       "version": "2026.05.25",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/keiyoushi-core-expanded/source-pack.json",
-      "checksum": "aefebaa219a02de1dce1ba0eb96d3d53ac099fa9256d77c0c516ceb0d5d278ca",
+      "checksum": "e89de017a703d7222f09abe011c11150ce70f98050087a7bb17c6a5086f5fb24",
       "checksumAlgorithm": "sha256",
       "language": "multi",
       "region": "global",
@@ -26,7 +26,7 @@
         "self_hosted",
         "internal"
       ],
-      "sourceCount": 435,
+      "sourceCount": 436,
       "artifactKind": "source_pack",
       "updatedAt": "2026-05-25T00:00:00Z"
     },
@@ -36,7 +36,7 @@
       "description": "Curated Yomira-compatible source definitions maintained separately from the app.",
       "version": "2026.05.25",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-curated/source-pack.json",
-      "checksum": "b9a4b13eda7beb30847df4c473b2e05e992097f3c4fb424199f1c4601ed9dcb3",
+      "checksum": "8f0fe669af7af0468d7e5026a39b743a3ab601c0abe355d8dee6b522584af1a1",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "en",
@@ -47,7 +47,7 @@
         "self_hosted",
         "internal"
       ],
-      "sourceCount": 13,
+      "sourceCount": 14,
       "artifactKind": "source_pack",
       "updatedAt": "2026-05-25T00:00:00Z"
     }

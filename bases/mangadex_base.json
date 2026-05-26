@@ -1,0 +1,18 @@
+{
+  "id": "_mangadex_base",
+  "name": "MangaDex Base",
+  "version": "1.0.0",
+  "base_url": "https://api.mangadex.org",
+  "language": "en",
+  "connectorEngine": "mangadex",
+  "sourceType": "mangadex",
+  "tags": ["MangaDex", "API"],
+  "description": "Declarative base profile for MangaDex Source Definitions. Runtime calls are handled by Yomira's built-in MangaDex connector engine.",
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "flags": {
+    "requires_js": false,
+    "uses_cloudflare": false
+  }
+}

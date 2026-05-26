@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.mangadex",
+  "sourceId": "yomira.en.mangadex",
+  "name": "MangaDex",
+  "displayName": "MangaDex",
+  "version": "1.0.0",
+  "extends": "mangadex",
+  "connectorEngine": "mangadex",
+  "sourceType": "mangadex",
+  "base_url": "https://api.mangadex.org",
+  "baseUrl": "https://api.mangadex.org",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "MangaDex Source Definition powered by Yomira's built-in MangaDex connector engine.",
+  "tags": [
+    "Yomira",
+    "MangaDex",
+    "API",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "MangaDex",
+    "analyzerBucket": "curated_source_master_overlay"
+  }
+}

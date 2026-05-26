@@ -1,8 +1,8 @@
 {
   "packId": "yomira-curated",
   "state": "Valid",
-  "sourceCount": 13,
-  "installableCount": 13,
+  "sourceCount": 14,
+  "installableCount": 14,
   "blockedCount": 0,
   "rejectedCount": 0,
   "duplicateSourceIds": [],
@@ -13,6 +13,7 @@
     "blocked_count": 0,
     "connector_engine_counts": {
       "madara": 6,
+      "mangadex": 1,
       "selector": 7
     },
     "definitions": [
@@ -327,6 +328,30 @@
         "state": "valid",
         "version": "1.2.0",
         "warnings": []
+      },
+      {
+        "app_store_safe": true,
+        "base_profile_id": "mangadex",
+        "base_url": "https://api.mangadex.org",
+        "conflict": null,
+        "connector_engine": "mangadex",
+        "contains_executable_code": false,
+        "display_name": "MangaDex",
+        "errors": [],
+        "installable": true,
+        "language": "en",
+        "nsfw": false,
+        "region": "en",
+        "requires_external_bridge": false,
+        "runtime_error_code": null,
+        "runtime_error_message": null,
+        "runtime_ready": true,
+        "schema_valid": true,
+        "source_definition_kind": "curated_source_config",
+        "source_id": "yomira.en.mangadex",
+        "state": "valid",
+        "version": "1.0.0",
+        "warnings": []
       }
     ],
     "diagnostic_summary": {
@@ -336,27 +361,27 @@
       "pack_id": "yomira-curated",
       "rejected_source_count": 0,
       "runtime_missing_count": 0,
-      "runtime_ready_count": 13,
-      "schema_valid_count": 13,
-      "source_count": 13,
+      "runtime_ready_count": 14,
+      "schema_valid_count": 14,
+      "source_count": 14,
       "unsupported_connector_count": 0,
       "unsupported_source_count": 0,
-      "valid_source_count": 13,
+      "valid_source_count": 14,
       "warning_count": 0
     },
     "diagnostics": [],
     "errors": [],
-    "import_trace_id": "spimp_20260525061628_1",
-    "installable_count": 13,
+    "import_trace_id": "spimp_20260526024353_1",
+    "installable_count": 14,
     "language_counts": {
-      "en": 13
+      "en": 14
     },
     "nsfw_source_count": 11,
     "rejected_count": 0,
     "runtime_missing_count": 0,
-    "runtime_ready_count": 13,
-    "schema_valid_count": 13,
-    "source_count": 13,
+    "runtime_ready_count": 14,
+    "schema_valid_count": 14,
+    "source_count": 14,
     "source_pack": {
       "display_name": "Yomira Curated Source Pack",
       "maintainer": null,

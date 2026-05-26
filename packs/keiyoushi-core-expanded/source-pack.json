@@ -36,6 +36,7 @@
     "extensions/source-master/definitions/keiyoushi.en.manhwaden.json",
     "extensions/source-master/definitions/keiyoushi.en.weebcentral.json",
     "extensions/source-master/definitions/yomira.en.hentai20.json",
+    "extensions/source-master/definitions/yomira.en.mangadex.json",
     "tmp/yomira-source-definitions/comiciviewer-alt-direct",
     "tmp/yomira-source-definitions/comiciviewer-alt-overrides-tier2",
     "tmp/yomira-source-definitions/iken-direct",
@@ -54,7 +55,7 @@
     "tmp/yomira-source-definitions/pizzareader-direct",
     "tmp/yomira-source-definitions/pizzareader-overrides-tier2"
   ],
-  "sourceCount": 435,
+  "sourceCount": 436,
   "definitions": [
     {
       "adultContent": true,
@@ -22012,6 +22013,44 @@
       ],
       "verificationUrl": "https://hentai20.io",
       "version": "1.2.0"
+    },
+    {
+      "adultContent": false,
+      "appStoreSafe": true,
+      "baseUrl": "https://api.mangadex.org",
+      "base_url": "https://api.mangadex.org",
+      "connectorEngine": "mangadex",
+      "containsExecutableCode": false,
+      "description": "MangaDex Source Definition powered by Yomira's built-in MangaDex connector engine.",
+      "displayName": "MangaDex",
+      "extends": "mangadex",
+      "id": "yomira.en.mangadex",
+      "language": "en",
+      "name": "MangaDex",
+      "nsfw": false,
+      "provenance": {
+        "analyzerBucket": "curated_source_master_overlay",
+        "ecosystem": "yomira",
+        "originalFamily": "MangaDex"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "yomira.en.mangadex",
+      "sourceType": "mangadex",
+      "tags": [
+        "Yomira",
+        "MangaDex",
+        "API",
+        "Curated"
+      ],
+      "version": "1.0.0"
     }
   ],
   "provenance": {
@@ -22026,30 +22065,14 @@
       "Madara",
       "MangaBox",
       "MangaCatalog",
+      "MangaDex",
       "MangaHub",
       "MangaThemesia",
       "PizzaReader",
       "Selector"
     ],
     "convertedDefinitionSets": [
-      "extensions/source-master",
-      "tmp/yomira-source-definitions/comiciviewer-alt-direct",
-      "tmp/yomira-source-definitions/comiciviewer-alt-overrides-tier2",
-      "tmp/yomira-source-definitions/iken-direct",
-      "tmp/yomira-source-definitions/iken-overrides-tier2",
-      "tmp/yomira-source-definitions/keyoapp-direct",
-      "tmp/yomira-source-definitions/keyoapp-overrides-tier2",
-      "tmp/yomira-source-definitions/lectormoe-direct",
-      "tmp/yomira-source-definitions/madara-direct",
-      "tmp/yomira-source-definitions/madara-overrides-tier2",
-      "tmp/yomira-source-definitions/madtheme-direct",
-      "tmp/yomira-source-definitions/mangacatalog-direct",
-      "tmp/yomira-source-definitions/mangacatalog-overrides-tier2",
-      "tmp/yomira-source-definitions/mangahub-direct",
-      "tmp/yomira-source-definitions/mangathemesia-direct",
-      "tmp/yomira-source-definitions/mangathemesia-overrides-tier2",
-      "tmp/yomira-source-definitions/pizzareader-direct",
-      "tmp/yomira-source-definitions/pizzareader-overrides-tier2"
+      "tmp/yomira-pack-staging-expanded-current"
     ]
   },
   "appStoreSafe": true,

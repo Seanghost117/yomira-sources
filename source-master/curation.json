@@ -86,6 +86,18 @@
       ]
     },
     {
+      "sourceId": "yomira.en.mangadex",
+      "displayName": "MangaDex",
+      "connectorEngine": "mangadex",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.mangadex.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added to the source master list rather than as an always-loaded bundled app source.",
+        "Runtime calls are handled by Yomira's built-in MangaDex connector engine only after the Source Definition is installed.",
+        "No external bridge or executable runtime is required."
+      ]
+    },
+    {
       "sourceId": "yomira.en.hentai20",
       "displayName": "Hentai20",
       "connectorEngine": "selector",

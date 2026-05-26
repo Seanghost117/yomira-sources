@@ -1,7 +1,7 @@
 {
   "packId": "keiyoushi-core-expanded",
   "displayName": "Keiyoushi Expanded Core Source Pack",
-  "sourceCount": 435,
+  "sourceCount": 436,
   "familyCounts": {
     "ComiciViewerAlt": 11,
     "HttpSource": 3,
@@ -9,20 +9,20 @@
     "Keyoapp": 19,
     "LectorMoe": 14,
     "MadTheme": 20,
-    "Madara": 219,
+    "Madara": 222,
     "MangaBox": 2,
     "MangaCatalog": 14,
+    "MangaDex": 1,
     "MangaHub": 11,
-    "MangaThemesia": 100,
+    "MangaThemesia": 102,
     "PizzaReader": 8,
-    "Selector": 1,
-    "SourceFactory": 5
+    "Selector": 1
   },
   "languageCounts": {
     "all": 14,
     "ar": 21,
     "cs": 1,
-    "en": 213,
+    "en": 214,
     "es": 45,
     "fr": 20,
     "id": 27,
@@ -42,7 +42,7 @@
   "requiresExternalBridge": false,
   "sourcePackPath": "extensions/packs/keiyoushi-core-expanded/source-pack.json",
   "validationState": "Valid",
-  "installableCount": 435,
+  "installableCount": 436,
   "blockedCount": 0,
   "rejectedCount": 0,
   "warningCount": 0,
