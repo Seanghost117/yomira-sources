@@ -5141,11 +5141,11 @@
       {
         "app_store_safe": true,
         "base_profile_id": "madara",
-        "base_url": "https://s2manga.com",
+        "base_url": "https://s2read.com",
         "conflict": null,
         "connector_engine": "madara",
         "contains_executable_code": false,
-        "display_name": "S2Manga",
+        "display_name": "S2Read",
         "errors": [],
         "installable": true,
         "language": "en",
@@ -5159,7 +5159,7 @@
         "source_definition_kind": "converted_keiyoushi",
         "source_id": "keiyoushi.en.s2manga",
         "state": "valid",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "warnings": []
       },
       {

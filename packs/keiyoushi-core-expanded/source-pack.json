@@ -11207,18 +11207,18 @@
     },
     {
       "adultContent": true,
-      "baseUrl": "https://s2manga.com",
-      "base_url": "https://s2manga.com",
+      "baseUrl": "https://s2read.com",
+      "base_url": "https://s2read.com",
       "connectorEngine": "madara",
       "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
-      "displayName": "S2Manga",
+      "displayName": "S2Read",
       "extends": "madara",
       "flags": {
         "isMadara": true
       },
       "id": "keiyoushi.en.s2manga",
       "language": "en",
-      "name": "S2Manga",
+      "name": "S2Read",
       "nsfw": true,
       "provenance": {
         "analyzerBucket": "direct_multisrc_candidate",
@@ -11246,7 +11246,7 @@
         "Madara",
         "Converted"
       ],
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "adultContent": true,
