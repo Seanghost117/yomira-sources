@@ -26,6 +26,44 @@
   "containsExecutableCode": false,
   "requiresExternalBridge": false,
   "rate_limit_ms": 1000,
+  "presentation": {
+    "primaryListing": "popular_new",
+    "sections": [
+      "popular_new",
+      "latest",
+      "recent",
+      "seasonal",
+      "popular"
+    ],
+    "listingLabels": {
+      "popular_new": "Popular New Titles",
+      "latest": "Latest Updated",
+      "recent": "Recently Added",
+      "seasonal": "Seasonal Titles",
+      "popular": "Popular"
+    },
+    "listingSubtitles": {
+      "popular_new": "New titles gaining traction on MangaDex",
+      "latest": "Fresh uploads from MangaDex titles/latest",
+      "recent": "Newly added MangaDex titles/recent",
+      "seasonal": "Current-year seasonal picks",
+      "popular": "Most-followed MangaDex titles"
+    },
+    "listingIcons": {
+      "popular_new": "chart.line.uptrend.xyaxis",
+      "latest": "clock.fill",
+      "recent": "sparkles",
+      "seasonal": "leaf.fill",
+      "popular": "flame.fill"
+    },
+    "listingStyles": {
+      "popular_new": "featured",
+      "latest": "list",
+      "recent": "carousel",
+      "seasonal": "carousel",
+      "popular": "carousel"
+    }
+  },
   "rateLimit": {
     "minDelayMs": 1000,
     "requestsPerMinute": 60

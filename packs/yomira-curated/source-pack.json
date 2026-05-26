@@ -1137,6 +1137,44 @@
       "language": "en",
       "name": "MangaDex",
       "nsfw": false,
+      "presentation": {
+        "listingIcons": {
+          "latest": "clock.fill",
+          "popular": "flame.fill",
+          "popular_new": "chart.line.uptrend.xyaxis",
+          "recent": "sparkles",
+          "seasonal": "leaf.fill"
+        },
+        "listingLabels": {
+          "latest": "Latest Updated",
+          "popular": "Popular",
+          "popular_new": "Popular New Titles",
+          "recent": "Recently Added",
+          "seasonal": "Seasonal Titles"
+        },
+        "listingStyles": {
+          "latest": "list",
+          "popular": "carousel",
+          "popular_new": "featured",
+          "recent": "carousel",
+          "seasonal": "carousel"
+        },
+        "listingSubtitles": {
+          "latest": "Fresh uploads from MangaDex titles/latest",
+          "popular": "Most-followed MangaDex titles",
+          "popular_new": "New titles gaining traction on MangaDex",
+          "recent": "Newly added MangaDex titles/recent",
+          "seasonal": "Current-year seasonal picks"
+        },
+        "primaryListing": "popular_new",
+        "sections": [
+          "popular_new",
+          "latest",
+          "recent",
+          "seasonal",
+          "popular"
+        ]
+      },
       "provenance": {
         "analyzerBucket": "curated_source_master_overlay",
         "ecosystem": "yomira",
