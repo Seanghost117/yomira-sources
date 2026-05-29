@@ -1,0 +1,78 @@
+{
+  "id": "readallcomics",
+  "name": "ReadAllComics",
+  "version": "1.0.0",
+  "base_url": "https://readallcomics.com",
+  "language": "en",
+  "nsfw": false,
+  "description": "English comics archive with simple catalog, detail, chapter, and direct image selectors.",
+  "tags": ["Comics", "Keiyoushi", "Browser Verification"],
+  "flags": {
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true,
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/?story={query}&s=&type=comic&page={page}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/?paged={page}",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/?paged={page}",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": "ul.list-story.categories li",
+      "title": "a.cat-title@text || a@text",
+      "cover": "img.book-cover@src || img@src",
+      "link": "a.cat-title@href || a@href"
+    },
+    "manga_details": {
+      "title": ".description-archive h1@text || h1@text",
+      "cover": ".description-archive p img@src || img.book-cover@src || img@src",
+      "description": "#hidden-description@text || .description-archive@text",
+      "authors": ".description-archive .b > p strong:last-child@text",
+      "genres": ".description-archive .b > p strong:first-child@text",
+      "status": ""
+    },
+    "chapter_list": {
+      "container": ".list-story a",
+      "title": "a@text || @text",
+      "link": "a@href || @href",
+      "date": "",
+      "number_regex": "(?i)(?:chapter|issue|#)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|\\(([0-9]{4})\\)"
+    },
+    "page_list": {
+      "container": "body",
+      "image": "body img@src || img@src",
+      "exclude": ["logo", "avatar", "icon", "ads"]
+    }
+  },
+  "headers": {
+    "Referer": "https://readallcomics.com/"
+  },
+  "pagination": {
+    "param": "paged",
+    "start": 1
+  }
+}

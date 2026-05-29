@@ -7,15 +7,15 @@
   "maintainerUrl": "https://github.com/Seanghost117",
   "homepageUrl": "https://github.com/Seanghost117/yomira-sources",
   "termsUrl": "https://github.com/Seanghost117/yomira-sources",
-  "updatedAt": "2026-05-26T00:00:00Z",
+  "updatedAt": "2026-05-29T00:00:00Z",
   "sourcePacks": [
     {
       "packId": "keiyoushi-core-expanded",
       "displayName": "Keiyoushi Expanded Core Source Pack",
       "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
-      "version": "2026.05.26.1",
+      "version": "2026.05.29.1",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/keiyoushi-core-expanded/source-pack.json",
-      "checksum": "fbdb50b325467d7d36ab7db6baae738d3ee0db36f1e72369ef333fd2ff5e870d",
+      "checksum": "sha256:db30656bbc3307a3e271ac63d6a09d637810043476e2cbaab3e90a748cb7f3cf",
       "checksumAlgorithm": "sha256",
       "language": "multi",
       "region": "global",
@@ -26,17 +26,17 @@
         "self_hosted",
         "internal"
       ],
-      "sourceCount": 436,
+      "sourceCount": 438,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-05-26T00:00:00Z"
+      "updatedAt": "2026-05-29T00:00:00Z"
     },
     {
       "packId": "yomira-curated",
       "displayName": "Yomira Curated Source Pack",
       "description": "Curated Yomira-compatible source definitions maintained separately from the app.",
-      "version": "2026.05.26",
+      "version": "2026.05.29",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-curated/source-pack.json",
-      "checksum": "478417322c6a5d91a68d08f378ea3b6e3e8725c512c3bf9a0cfa77ba559ed03c",
+      "checksum": "sha256:986b380ebd5cbe8a7a265a3f030d215294553535036f189e879c0d8d51a43528",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "en",
@@ -47,9 +47,9 @@
         "self_hosted",
         "internal"
       ],
-      "sourceCount": 14,
+      "sourceCount": 16,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-05-26T00:00:00Z"
+      "updatedAt": "2026-05-29T00:00:00Z"
     }
   ]
 }

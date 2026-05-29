@@ -1,0 +1,235 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.readcomiconline",
+  "sourceId": "keiyoushi.en.readcomiconline",
+  "name": "ReadComicOnline",
+  "displayName": "ReadComicOnline",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://readcomiconline.li",
+  "baseUrl": "https://readcomiconline.li",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "English comics catalog with advanced genre, status, and year filters. Browser Verification is required before browsing or reading.",
+  "tags": [
+    "Keiyoushi",
+    "Comics",
+    "Manga",
+    "Selector",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://readcomiconline.li",
+  "sessionScopeDomain": "readcomiconline.li",
+  "userAgentPolicy": "browser_session",
+  "flags": {
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true,
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true
+  },
+  "rate_limit_ms": 1200,
+  "rateLimit": {
+    "minDelayMs": 1200,
+    "requestsPerMinute": 45
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/AdvanceSearch?comicName={query}&page={page}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/ComicList/MostPopular?page={page}",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/ComicList/LatestUpdate?page={page}",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}?s=&quality=hq&readType=1",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".list-comic > .item",
+      "title": "a:first-child@text || a:first-child@title",
+      "cover": "a:first-child img@src || a:first-child img@data-src || img@src",
+      "link": "a:first-child@href || a@href"
+    },
+    "manga_details": {
+      "title": "div.barContent a.bigChar@text || a.bigChar@text || h1@text",
+      "cover": ".rightBox img@src || .rightBox img@data-src",
+      "description": "p:contains('Summary:')@text || div.barContent p@text",
+      "authors": "p:contains('Writer:') a@text",
+      "artists": "p:contains('Artist:') a@text",
+      "genres": "p:contains('Genres:') a@text",
+      "status": "p:contains('Status:')@text"
+    },
+    "chapter_list": {
+      "container": "table.listing tr",
+      "title": "a@text",
+      "link": "a@href",
+      "date": "td@text",
+      "number_regex": "(?i)(?:chapter|issue|#)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": "body",
+      "image": "img@data-src || img@src",
+      "exclude": [
+        "logo",
+        "avatar",
+        "icon",
+        "ads"
+      ]
+    }
+  },
+  "filters": [
+    {
+      "name": "Genres & Tags",
+      "param": "ig",
+      "field": "genre",
+      "filter_type": "select",
+      "options": [
+        { "label": "Action", "value": "1" },
+        { "label": "Adventure", "value": "2" },
+        { "label": "Anthology", "value": "38" },
+        { "label": "Anthropomorphic", "value": "46" },
+        { "label": "Biography", "value": "41" },
+        { "label": "Children", "value": "49" },
+        { "label": "Comedy", "value": "3" },
+        { "label": "Crime", "value": "17" },
+        { "label": "Drama", "value": "19" },
+        { "label": "Family", "value": "25" },
+        { "label": "Fantasy", "value": "20" },
+        { "label": "Fighting", "value": "31" },
+        { "label": "Graphic Novels", "value": "5" },
+        { "label": "Historical", "value": "28" },
+        { "label": "Horror", "value": "15" },
+        { "label": "Leading Ladies", "value": "35" },
+        { "label": "LGBTQ", "value": "51" },
+        { "label": "Literature", "value": "44" },
+        { "label": "Manga", "value": "40" },
+        { "label": "Martial Arts", "value": "4" },
+        { "label": "Mature", "value": "8" },
+        { "label": "Military", "value": "33" },
+        { "label": "Mini-Series", "value": "56" },
+        { "label": "Movies & TV", "value": "47" },
+        { "label": "Music", "value": "55" },
+        { "label": "Mystery", "value": "23" },
+        { "label": "Mythology", "value": "21" },
+        { "label": "Political", "value": "42" },
+        { "label": "Post-Apocalyptic", "value": "43" },
+        { "label": "Psychological", "value": "27" },
+        { "label": "Pulp", "value": "39" },
+        { "label": "Robots", "value": "9" },
+        { "label": "Romance", "value": "32" },
+        { "label": "School Life", "value": "52" },
+        { "label": "Sci-Fi", "value": "16" },
+        { "label": "Slice of Life", "value": "50" },
+        { "label": "Sport", "value": "54" },
+        { "label": "Spy", "value": "30" },
+        { "label": "Superhero", "value": "22" },
+        { "label": "Supernatural", "value": "24" },
+        { "label": "Suspense", "value": "29" },
+        { "label": "Thriller", "value": "18" },
+        { "label": "Vampires", "value": "34" },
+        { "label": "Video Games", "value": "37" },
+        { "label": "War", "value": "26" },
+        { "label": "Western", "value": "45" },
+        { "label": "Zombies", "value": "36" }
+      ]
+    },
+    {
+      "name": "Excluded Genres",
+      "param": "eg",
+      "field": "excluded_genre",
+      "filter_type": "select",
+      "options": [
+        { "label": "Mature", "value": "8" },
+        { "label": "Horror", "value": "15" },
+        { "label": "Thriller", "value": "18" },
+        { "label": "Vampires", "value": "34" },
+        { "label": "Zombies", "value": "36" }
+      ]
+    },
+    {
+      "name": "Status",
+      "param": "status",
+      "field": "status",
+      "filter_type": "select",
+      "options": [
+        { "label": "Completed", "value": "Completed" },
+        { "label": "Ongoing", "value": "Ongoing" }
+      ]
+    },
+    {
+      "name": "Publish Year",
+      "param": "pubDate",
+      "field": "year",
+      "filter_type": "select",
+      "options": [
+        { "label": "2026", "value": "2026" },
+        { "label": "2025", "value": "2025" },
+        { "label": "2024", "value": "2024" },
+        { "label": "2023", "value": "2023" },
+        { "label": "2022", "value": "2022" },
+        { "label": "2021", "value": "2021" },
+        { "label": "2020", "value": "2020" },
+        { "label": "2019", "value": "2019" },
+        { "label": "2018", "value": "2018" },
+        { "label": "2017", "value": "2017" },
+        { "label": "2016", "value": "2016" },
+        { "label": "2015", "value": "2015" },
+        { "label": "2014", "value": "2014" },
+        { "label": "2013", "value": "2013" },
+        { "label": "2012", "value": "2012" },
+        { "label": "2011", "value": "2011" },
+        { "label": "2010", "value": "2010" }
+      ]
+    }
+  ],
+  "headers": {
+    "Referer": "https://readcomiconline.li/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "presentation": {
+    "latestLabel": "Latest Updates",
+    "latestStyle": "sliding_list",
+    "popularLabel": "Most Popular",
+    "popularStyle": "sliding_list",
+    "primaryListing": "latest",
+    "genreLabel": "Genres"
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/readcomiconline",
+    "originalFamily": "HttpSource",
+    "originalLanguage": "en",
+    "originalSourceName": "readcomiconline",
+    "originalExtClass": ".Readcomiconline",
+    "analyzerBucket": "curated_selector_profile",
+    "notes": "Selectors and filter values are based on local Keiyoushi analysis and current upstream source metadata."
+  }
+}

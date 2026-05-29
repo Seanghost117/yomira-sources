@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.readallcomicscom",
+  "sourceId": "keiyoushi.en.readallcomicscom",
+  "name": "ReadAllComics",
+  "displayName": "ReadAllComics",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://readallcomics.com",
+  "baseUrl": "https://readallcomics.com",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "English comics archive with simple catalog, detail, chapter, and direct image selectors. Browser Verification is required before browsing or reading.",
+  "tags": [
+    "Keiyoushi",
+    "Comics",
+    "Selector",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://readallcomics.com",
+  "sessionScopeDomain": "readallcomics.com",
+  "userAgentPolicy": "browser_session",
+  "flags": {
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true,
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true
+  },
+  "rate_limit_ms": 1200,
+  "rateLimit": {
+    "minDelayMs": 1200,
+    "requestsPerMinute": 45
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/?story={query}&s=&type=comic&page={page}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/?paged={page}",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/?paged={page}",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": "ul.list-story.categories li",
+      "title": "a.cat-title@text || a@text",
+      "cover": "img.book-cover@src || img@src",
+      "link": "a.cat-title@href || a@href"
+    },
+    "manga_details": {
+      "title": ".description-archive h1@text || h1@text",
+      "cover": ".description-archive p img@src || img.book-cover@src || img@src",
+      "description": "#hidden-description@text || .description-archive@text",
+      "authors": ".description-archive .b > p strong:last-child@text",
+      "genres": ".description-archive .b > p strong:first-child@text",
+      "status": ""
+    },
+    "chapter_list": {
+      "container": ".list-story a",
+      "title": "a@text || @text",
+      "link": "a@href || @href",
+      "date": "",
+      "number_regex": "(?i)(?:chapter|issue|#)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|\\(([0-9]{4})\\)"
+    },
+    "page_list": {
+      "container": "body",
+      "image": "body img@src || img@src",
+      "exclude": [
+        "logo",
+        "avatar",
+        "icon",
+        "ads"
+      ]
+    }
+  },
+  "headers": {
+    "Referer": "https://readallcomics.com/"
+  },
+  "pagination": {
+    "param": "paged",
+    "start": 1
+  },
+  "presentation": {
+    "latestLabel": "Recent Comics",
+    "latestStyle": "sliding_list",
+    "popularLabel": "Archive",
+    "popularStyle": "sliding_list",
+    "primaryListing": "popular"
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/readallcomicscom",
+    "originalFamily": "HttpSource",
+    "originalLanguage": "en",
+    "originalSourceName": "readallcomicscom",
+    "originalExtClass": ".ReadAllComics",
+    "analyzerBucket": "curated_selector_profile",
+    "notes": "Selectors are based on local Keiyoushi analysis and current upstream source metadata."
+  }
+}

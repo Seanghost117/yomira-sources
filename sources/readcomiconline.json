@@ -1,0 +1,79 @@
+{
+  "id": "readcomiconline",
+  "name": "ReadComicOnline",
+  "version": "1.0.0",
+  "base_url": "https://readcomiconline.li",
+  "language": "en",
+  "nsfw": false,
+  "description": "English comics catalog with advanced genre, status, and year filters.",
+  "tags": ["Comics", "Manga", "Keiyoushi", "Browser Verification"],
+  "flags": {
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true,
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/AdvanceSearch?comicName={query}&page={page}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/ComicList/MostPopular?page={page}",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/ComicList/LatestUpdate?page={page}",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}?s=&quality=hq&readType=1",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".list-comic > .item",
+      "title": "a:first-child@text || a:first-child@title",
+      "cover": "a:first-child img@src || a:first-child img@data-src || img@src",
+      "link": "a:first-child@href || a@href"
+    },
+    "manga_details": {
+      "title": "div.barContent a.bigChar@text || a.bigChar@text || h1@text",
+      "cover": ".rightBox img@src || .rightBox img@data-src",
+      "description": "p:contains('Summary:')@text || div.barContent p@text",
+      "authors": "p:contains('Writer:') a@text",
+      "artists": "p:contains('Artist:') a@text",
+      "genres": "p:contains('Genres:') a@text",
+      "status": "p:contains('Status:')@text"
+    },
+    "chapter_list": {
+      "container": "table.listing tr",
+      "title": "a@text",
+      "link": "a@href",
+      "date": "td@text",
+      "number_regex": "(?i)(?:chapter|issue|#)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": "body",
+      "image": "img@data-src || img@src",
+      "exclude": ["logo", "avatar", "icon", "ads"]
+    }
+  },
+  "headers": {
+    "Referer": "https://readcomiconline.li/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  }
+}
