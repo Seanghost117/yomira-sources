@@ -1,25 +1,25 @@
 {
   "packId": "yomira-curated",
   "displayName": "Yomira Curated Source Pack",
-  "sourceCount": 14,
+  "sourceCount": 17,
   "familyCounts": {
-    "HttpSource": 3,
+    "HttpSource": 5,
     "MadTheme": 1,
-    "Madara": 6,
+    "Madara": 7,
     "MangaBox": 2,
     "MangaDex": 1,
     "Selector": 1
   },
   "languageCounts": {
-    "en": 14
+    "en": 17
   },
-  "nsfwCount": 11,
+  "nsfwCount": 12,
   "appStoreSafe": true,
   "containsExecutableCode": false,
   "requiresExternalBridge": false,
   "sourcePackPath": "extensions/packs/yomira-curated/source-pack.json",
   "validationState": "Valid",
-  "installableCount": 14,
+  "installableCount": 17,
   "blockedCount": 0,
   "rejectedCount": 0,
   "warningCount": 0,

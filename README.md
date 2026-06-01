@@ -35,8 +35,8 @@ extensions/
 
 ## Current Packs
 
-- `keiyoushi-core-expanded`: 438 generated and curated Source Definitions from currently supported connector families
-- `yomira-curated`: 16 hand-curated Source Definitions used for focused source iteration
+- `keiyoushi-core-expanded`: 439 generated and curated Source Definitions from currently supported connector families
+- `yomira-curated`: 17 hand-curated Source Definitions used for focused source iteration
 
 ## Adding a Source
 

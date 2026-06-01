@@ -86,6 +86,19 @@
       ]
     },
     {
+      "sourceId": "keiyoushi.en.mangaclash",
+      "displayName": "MangaClash",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangaclash.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Existing embedded config already covered MangaClash as a Madara source at https://mangaclash.com.",
+        "Keiyoushi metadata confirms MangaClash uses the Madara family with a MM/dd/yy chapter date format.",
+        "Live HTTP checks currently return a Cloudflare 403, so Browser Verification and Source Session Recovery are declared up front.",
+        "Promoted to the source repository as a declarative Source Definition so the iOS app can install it without an external bridge."
+      ]
+    },
+    {
       "sourceId": "yomira.en.mangadex",
       "displayName": "MangaDex",
       "connectorEngine": "mangadex",
