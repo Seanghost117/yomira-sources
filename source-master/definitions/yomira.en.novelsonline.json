@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.novelsonline",
+  "sourceId": "yomira.en.novelsonline",
+  "name": "NovelsOnline",
+  "displayName": "NovelsOnline",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "contentKind": "light_novel",
+  "base_url": "https://novelsonline.org",
+  "baseUrl": "https://novelsonline.org",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "English light novel and web novel source with latest update, top novel, category, and prose chapter pages.",
+  "tags": ["Yomira", "Selector", "Light Novel", "Novel"],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "rate_limit_ms": 1200,
+  "rateLimit": {
+    "minDelayMs": 1200,
+    "requestsPerMinute": 45
+  },
+  "endpoints": {
+    "search": { "url": "{base}/search?keyword={query}", "method": "GET" },
+    "popular": { "url": "{base}/top-novel", "method": "GET" },
+    "latest": { "url": "{base}/latest-updates", "method": "GET" },
+    "list": { "url": "{base}/novel-list", "method": "GET" },
+    "details": { "url": "{base}/{id}", "method": "GET" },
+    "chapters": { "url": "{base}/{id}", "method": "GET" },
+    "pages": { "url": "{chapter_url}", "method": "GET" }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".novel || article || .post || .hot-novel-list li || .list-novel .row",
+      "title": "h1 a@text || h3 a@text || a@title || img@alt",
+      "cover": ".novel-cover img@src || img@src || img@data-src",
+      "link": "h1 a@href || h3 a@href || a@href"
+    },
+    "manga_details": {
+      "title": ".novel h1@text || h1@text || meta[property='og:title']@content",
+      "cover": ".novel-cover img@src || meta[property='og:image']@content",
+      "description": ".novel-description@text || .entry-content p@text || meta[name='description']@content",
+      "authors": "a[href*='/author/']@text",
+      "genres": "a[href*='/category/']@text",
+      "status": ".status@text"
+    },
+    "chapter_list": {
+      "container": "select option || .chapter-list li || a[href*='/chapter-'] || a[href*='/chapter/']",
+      "title": "@text || a@text",
+      "link": "@value || a@href || @href",
+      "number_regex": "(?i)(?:ch|chapter)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".chapter-content3 || .chapter-content || article",
+      "text": "p@text || div@text",
+      "html": ".chapter-content3 || .chapter-content || article"
+    }
+  },
+  "pagination": { "param": "page", "start": 1 },
+  "presentation": {
+    "primaryListing": "latest",
+    "sections": ["latest", "popular", "list"],
+    "listingLabels": {
+      "latest": "Latest NovelsOnline Updates",
+      "popular": "Top NovelsOnline Novels",
+      "list": "NovelsOnline Library"
+    },
+    "listingStyles": {
+      "latest": "list",
+      "popular": "carousel",
+      "list": "grid"
+    }
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "Selector",
+    "originalLanguage": "en",
+    "originalSourceName": "NovelsOnline",
+    "analyzerBucket": "curated_light_novel_source"
+  }
+}

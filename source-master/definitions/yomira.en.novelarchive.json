@@ -1,0 +1,182 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.novelarchive",
+  "sourceId": "yomira.en.novelarchive",
+  "name": "NovelArchive",
+  "displayName": "NovelArchive",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "contentKind": "light_novel",
+  "base_url": "https://novelarchive.cc",
+  "baseUrl": "https://novelarchive.cc",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "English light novel and web novel source using NovelArchive's public JSON catalog endpoints.",
+  "tags": [
+    "Yomira",
+    "Selector",
+    "Light Novel",
+    "Novel",
+    "JSON"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://novelarchive.cc",
+  "sessionScopeDomain": "novelarchive.cc",
+  "flags": {
+    "requires_js": false,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 55
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/api/novels?search={query}&limit=24&page={page}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/api/novels/trending?limit=24&page={page}",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/api/novels/recently-updated?limit=24&page={page}",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/api/novels/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/api/novels/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{base}/api/novels/{id}/chapters/{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".yomira-json-list-fallback",
+      "title": "a@text",
+      "cover": "img@src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text",
+      "cover": "img@src",
+      "description": ".description@text",
+      "authors": ".author@text",
+      "genres": ".genres@text",
+      "status": ".status@text"
+    },
+    "chapter_list": {
+      "container": ".yomira-json-chapter-fallback",
+      "title": "a@text",
+      "link": "a@href",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|([0-9]+(?:\\.[0-9]+)?)\\s*$"
+    },
+    "page_list": {
+      "container": ".yomira-json-page-fallback",
+      "title": "h1@text",
+      "text": "p@text",
+      "html": ".chapter-content"
+    }
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "filters": [
+    {
+      "name": "Status",
+      "param": "status",
+      "filter_type": "select",
+      "options": [
+        {
+          "label": "Any",
+          "value": ""
+        },
+        {
+          "label": "Ongoing",
+          "value": "ongoing"
+        },
+        {
+          "label": "Completed",
+          "value": "completed"
+        }
+      ]
+    },
+    {
+      "name": "Genre",
+      "param": "genre",
+      "filter_type": "select",
+      "options": [
+        {
+          "label": "Any",
+          "value": ""
+        },
+        {
+          "label": "Fantasy",
+          "value": "Fantasy"
+        },
+        {
+          "label": "Romance",
+          "value": "Romance"
+        },
+        {
+          "label": "Slice of Life",
+          "value": "Slice of Life"
+        },
+        {
+          "label": "Martial Arts",
+          "value": "Martial Arts"
+        },
+        {
+          "label": "Supernatural",
+          "value": "Supernatural"
+        }
+      ]
+    }
+  ],
+  "presentation": {
+    "primaryListing": "latest",
+    "sections": [
+      "latest",
+      "popular"
+    ],
+    "listingLabels": {
+      "latest": "Latest NovelArchive Updates",
+      "popular": "Trending NovelArchive Novels"
+    },
+    "listingSubtitles": {
+      "latest": "Fresh prose chapters from NovelArchive",
+      "popular": "Popular web novels from NovelArchive"
+    },
+    "listingIcons": {
+      "latest": "text.book.closed.fill",
+      "popular": "flame.fill"
+    },
+    "listingStyles": {
+      "latest": "list",
+      "popular": "carousel"
+    }
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "Selector",
+    "originalLanguage": "en",
+    "originalSourceName": "NovelArchive",
+    "analyzerBucket": "curated_light_novel_source"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.scansgg",
+  "sourceId": "yomira.en.scansgg",
+  "name": "ScansGG",
+  "displayName": "Scans.gg",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://scans.gg",
+  "baseUrl": "https://scans.gg",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "Basic Scans.gg Source Definition. Browser Verification is required before browsing because direct HTTP currently returns a Cloudflare challenge.",
+  "tags": ["Yomira", "Selector", "Manga", "Scans"],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://scans.gg",
+  "sessionScopeDomain": "scans.gg",
+  "userAgentPolicy": "browser_session",
+  "flags": {
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true,
+    "uses_cloudflare": true
+  },
+  "rate_limit_ms": 1300,
+  "rateLimit": {
+    "minDelayMs": 1300,
+    "requestsPerMinute": 40
+  },
+  "endpoints": {
+    "search": { "url": "{base}/?s={query}", "method": "GET" },
+    "popular": { "url": "{base}/series/", "method": "GET" },
+    "latest": { "url": "{base}/", "method": "GET" },
+    "details": { "url": "{base}/series/{id}/", "method": "GET" },
+    "chapters": { "url": "{base}/series/{id}/", "method": "GET" },
+    "pages": { "url": "{chapter_url}", "method": "GET" }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".series-list article || .bs || article || a[href*='/series/']",
+      "title": "h3@text || .tt@text || img@alt || @title",
+      "cover": "img@data-src || img@src",
+      "link": "a@href || @href"
+    },
+    "manga_details": {
+      "title": "h1@text || meta[property='og:title']@content",
+      "cover": "meta[property='og:image']@content || img@data-src || img@src",
+      "description": ".entry-content@text || .summary@text || meta[name='description']@content",
+      "authors": "a[href*='/author/']@text",
+      "genres": "a[href*='/genre/']@text || a[href*='/tag/']@text",
+      "status": ".status@text"
+    },
+    "chapter_list": {
+      "container": ".chapter-list a || .eplister li || a[href*='/chapter-']",
+      "title": "a@text || @text",
+      "link": "a@href || @href",
+      "date": ".date@text || time@datetime",
+      "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".reading-content || .chapter-content || body",
+      "image": "img@data-src || img@src",
+      "exclude": ["logo", "icon", "avatar"]
+    }
+  },
+  "presentation": {
+    "primaryListing": "latest",
+    "sections": ["latest", "popular"],
+    "listingLabels": {
+      "latest": "Latest Scans.gg Updates",
+      "popular": "Scans.gg Series"
+    },
+    "listingStyles": {
+      "latest": "list",
+      "popular": "grid"
+    }
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "Selector",
+    "originalLanguage": "en",
+    "originalSourceName": "Scans.gg",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

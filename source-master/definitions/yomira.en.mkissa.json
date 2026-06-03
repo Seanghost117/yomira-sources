@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.mkissa",
+  "sourceId": "yomira.en.mkissa",
+  "name": "MKissa",
+  "displayName": "MKissa",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "allanime_graphql",
+  "base_url": "https://mkissa.to",
+  "baseUrl": "https://mkissa.to",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "MKissa manga/manhwa catalog using the AllAnime GraphQL API for browsing, details, and chapter metadata. Chapter pages use Browser Verification's short-lived rendered-page snapshot path when the site withholds page URLs from native HTTP.",
+  "tags": ["Yomira", "GraphQL", "Manga", "Manhwa", "Manhua"],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://mkissa.to/manga",
+  "sessionScopeDomain": "mkissa.to",
+  "userAgentPolicy": "browser_session",
+  "flags": {
+    "requires_js": true,
+    "uses_cloudflare": false,
+    "browserVerificationRequired": true
+  },
+  "rate_limit_ms": 1100,
+  "rateLimit": {
+    "minDelayMs": 1100,
+    "requestsPerMinute": 45
+  },
+  "endpoints": {
+    "search": {
+      "url": "https://api.allanime.day/api",
+      "method": "POST",
+      "content_type": "application/json",
+      "headers": {
+        "Origin": "https://mkissa.to",
+        "Referer": "https://mkissa.to/"
+      },
+      "body": "{\"variables\":{\"search\":{\"query\":{query_json},\"sortBy\":null,\"genres\":null,\"excludeGenres\":null,\"isManga\":true,\"allowAdult\":false,\"allowUnknown\":false},\"size\":24,\"page\":{page},\"translationType\":\"sub\",\"countryOrigin\":\"ALL\"},\"query\":\"query ($search: SearchInput, $size: Int, $page: Int, $translationType: VaildTranslationTypeMangaEnumType, $countryOrigin: VaildCountryOriginEnumType) { mangas(search: $search, limit: $size, page: $page, translationType: $translationType, countryOrigin: $countryOrigin) { edges { _id name thumbnail englishName nativeName status genres tags chapterCount availableChapters lastChapterInfo lastUpdateEnd } } }\"}"
+    },
+    "popular": {
+      "url": "https://api.allanime.day/api",
+      "method": "POST",
+      "content_type": "application/json",
+      "headers": {
+        "Origin": "https://mkissa.to",
+        "Referer": "https://mkissa.to/"
+      },
+      "body": "{\"variables\":{\"type\":\"manga\",\"size\":24,\"dateRange\":0,\"page\":{page},\"allowAdult\":false,\"allowUnknown\":false},\"query\":\"query ($type: VaildPopularTypeEnumType!, $size: Int!, $page: Int, $dateRange: Int, $allowAdult: Boolean, $allowUnknown: Boolean) { queryPopular(type: $type, size: $size, dateRange: $dateRange, page: $page, allowAdult: $allowAdult, allowUnknown: $allowUnknown) { recommendations { anyCard { _id name thumbnail englishName nativeName status genres tags chapterCount availableChapters lastChapterInfo lastUpdateEnd } } } }\"}"
+    },
+    "latest": {
+      "url": "https://api.allanime.day/api",
+      "method": "POST",
+      "content_type": "application/json",
+      "headers": {
+        "Origin": "https://mkissa.to",
+        "Referer": "https://mkissa.to/"
+      },
+      "body": "{\"variables\":{\"search\":{\"query\":null,\"sortBy\":null,\"genres\":null,\"excludeGenres\":null,\"isManga\":true,\"allowAdult\":false,\"allowUnknown\":false},\"size\":24,\"page\":{page},\"translationType\":\"sub\",\"countryOrigin\":\"ALL\"},\"query\":\"query ($search: SearchInput, $size: Int, $page: Int, $translationType: VaildTranslationTypeMangaEnumType, $countryOrigin: VaildCountryOriginEnumType) { mangas(search: $search, limit: $size, page: $page, translationType: $translationType, countryOrigin: $countryOrigin) { edges { _id name thumbnail englishName nativeName status genres tags chapterCount availableChapters lastChapterInfo lastUpdateEnd } } }\"}"
+    },
+    "details": {
+      "url": "https://api.allanime.day/api",
+      "method": "POST",
+      "content_type": "application/json",
+      "headers": {
+        "Origin": "https://mkissa.to",
+        "Referer": "https://mkissa.to/"
+      },
+      "body": "{\"variables\":{\"id\":\"{id}\"},\"query\":\"query ($id: String!) { manga(_id: $id) { _id name thumbnail description authors genres tags status altNames englishName nativeName chapterCount availableChapters availableChaptersDetail averageScore rating countryOfOrigin type } }\"}"
+    },
+    "chapters": {
+      "url": "https://api.allanime.day/api",
+      "method": "POST",
+      "content_type": "application/json",
+      "headers": {
+        "Origin": "https://mkissa.to",
+        "Referer": "https://mkissa.to/"
+      },
+      "body": "{\"variables\":{\"id\":\"{id}\",\"showId\":\"{show_id}\"},\"query\":\"query ($id: String!, $showId: String!) { manga(_id: $id) { _id name availableChaptersDetail } episodeInfos(showId: $showId, episodeNumStart: 0, episodeNumEnd: 9999) { episodeIdNum notes uploadDates } }\"}"
+    },
+    "pages": {
+      "url": "{base}/manga/{manga_id}/chapter-{chapter_string}-{translation_type}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".yomira-json-list-fallback",
+      "title": "a@text",
+      "cover": "img@src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text",
+      "cover": "img@src",
+      "description": ".description@text",
+      "authors": ".author@text",
+      "genres": ".genres@text",
+      "status": ".status@text"
+    },
+    "chapter_list": {
+      "container": ".yomira-json-chapter-fallback",
+      "title": "a@text",
+      "link": "a@href",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".yomira-json-page-fallback",
+      "image": "img@src"
+    }
+  },
+  "presentation": {
+    "primaryListing": "popular",
+    "sections": ["popular", "latest"],
+    "listingLabels": {
+      "popular": "Popular MKissa Titles",
+      "latest": "Latest MKissa Updates"
+    },
+    "listingStyles": {
+      "popular": "carousel",
+      "latest": "list"
+    }
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalFamily": "HttpSource",
+    "originalLanguage": "en",
+    "originalSourceName": "AllManga",
+    "analyzerBucket": "curated_graphql_profile"
+  }
+}

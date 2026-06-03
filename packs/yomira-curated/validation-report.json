@@ -1,8 +1,8 @@
 {
   "packId": "yomira-curated",
   "state": "Valid",
-  "sourceCount": 16,
-  "installableCount": 16,
+  "sourceCount": 18,
+  "installableCount": 18,
   "blockedCount": 0,
   "rejectedCount": 0,
   "duplicateSourceIds": [],
@@ -14,7 +14,7 @@
     "connector_engine_counts": {
       "madara": 7,
       "mangadex": 1,
-      "selector": 8
+      "selector": 10
     },
     "definitions": [
       {
@@ -379,6 +379,30 @@
       },
       {
         "app_store_safe": true,
+        "base_profile_id": null,
+        "base_url": "https://allmanga.to",
+        "conflict": null,
+        "connector_engine": "selector",
+        "contains_executable_code": false,
+        "display_name": "AllManga",
+        "errors": [],
+        "installable": true,
+        "language": "en",
+        "nsfw": false,
+        "region": "en",
+        "requires_external_bridge": false,
+        "runtime_error_code": null,
+        "runtime_error_message": null,
+        "runtime_ready": true,
+        "schema_valid": true,
+        "source_definition_kind": "curated_source_config",
+        "source_id": "yomira.en.allmanga",
+        "state": "valid",
+        "version": "1.0.0",
+        "warnings": []
+      },
+      {
+        "app_store_safe": true,
         "base_profile_id": "mangadex",
         "base_url": "https://api.mangadex.org",
         "conflict": null,
@@ -400,6 +424,30 @@
         "state": "valid",
         "version": "1.0.0",
         "warnings": []
+      },
+      {
+        "app_store_safe": true,
+        "base_profile_id": null,
+        "base_url": "https://mkissa.to",
+        "conflict": null,
+        "connector_engine": "selector",
+        "contains_executable_code": false,
+        "display_name": "MKissa",
+        "errors": [],
+        "installable": true,
+        "language": "en",
+        "nsfw": false,
+        "region": "en",
+        "requires_external_bridge": false,
+        "runtime_error_code": null,
+        "runtime_error_message": null,
+        "runtime_ready": true,
+        "schema_valid": true,
+        "source_definition_kind": "curated_source_config",
+        "source_id": "yomira.en.mkissa",
+        "state": "valid",
+        "version": "1.0.0",
+        "warnings": []
       }
     ],
     "diagnostic_summary": {
@@ -409,29 +457,29 @@
       "pack_id": "yomira-curated",
       "rejected_source_count": 0,
       "runtime_missing_count": 0,
-      "runtime_ready_count": 16,
-      "schema_valid_count": 16,
-      "source_count": 16,
+      "runtime_ready_count": 18,
+      "schema_valid_count": 18,
+      "source_count": 18,
       "unsupported_connector_count": 0,
       "unsupported_source_count": 0,
-      "valid_source_count": 16,
+      "valid_source_count": 18,
       "warning_count": 0
     },
     "diagnostics": [],
     "errors": [],
-    "import_trace_id": "spimp_20260603093748_1",
-    "installable_count": 16,
+    "import_trace_id": "spimp_20260603142005_1",
+    "installable_count": 18,
     "language_counts": {
-      "en": 16
+      "en": 18
     },
     "nsfw_source_count": 11,
     "rejected_count": 0,
     "runtime_missing_count": 0,
-    "runtime_ready_count": 16,
-    "schema_valid_count": 16,
-    "source_count": 16,
+    "runtime_ready_count": 18,
+    "schema_valid_count": 18,
+    "source_count": 18,
     "source_pack": {
-      "display_name": "Yomira Curated Source Pack",
+      "display_name": "Yomira Curated",
       "maintainer": null,
       "pack_id": "yomira-curated",
       "schema_version": "1.0",

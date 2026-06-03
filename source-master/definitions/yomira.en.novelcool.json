@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.novelcool",
+  "sourceId": "yomira.en.novelcool",
+  "name": "NovelCool",
+  "displayName": "NovelCool",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "contentKind": "light_novel",
+  "base_url": "https://en.novelcool.com",
+  "baseUrl": "https://en.novelcool.com",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "NovelCool English catalog with latest, new, popular, original, and search listings.",
+  "tags": ["Yomira", "Selector", "Light Novel", "Novel", "Keiyoushi"],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "rate_limit_ms": 1200,
+  "rateLimit": {
+    "minDelayMs": 1200,
+    "requestsPerMinute": 45
+  },
+  "endpoints": {
+    "search": { "url": "{base}/search/?keyword={query}", "method": "GET" },
+    "popular": { "url": "{base}/category/popular.html", "method": "GET" },
+    "latest": { "url": "{base}/category/latest.html", "method": "GET" },
+    "new": { "url": "{base}/category/new_list.html", "method": "GET" },
+    "original": { "url": "{base}/category/original.html", "method": "GET" },
+    "details": { "url": "{base}/{id}", "method": "GET" },
+    "chapters": { "url": "{base}/{id}", "method": "GET" },
+    "pages": { "url": "{chapter_url}", "method": "GET" }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".book-list .book-item || .book-item || li.book-item",
+      "title": ".bookinfo-title a@text || .bookinfo-title@text || .book-pic a@title || img@alt",
+      "cover": ".book-pic img@data-src || .book-pic img@src || img@data-src || img@src",
+      "link": ".bookinfo-title a@href || .book-pic a@href || a@href"
+    },
+    "manga_details": {
+      "title": "h1.bookinfo-title@text || h1@text || meta[property='og:title']@content",
+      "cover": ".bookinfo-pic-img img@src || .bookinfo-pic-img@src || meta[property='og:image']@content",
+      "description": "div.bk-summary-txt@text || .summary@text || meta[name='description']@content",
+      "authors": ".bookinfo-author a@text || a[href*='/author/']@text",
+      "genres": ".bookinfo-category-list a@text || a[href*='/category/']@text",
+      "status": ".bookinfo-status@text || .bookinfo-meta@text"
+    },
+    "chapter_list": {
+      "container": ".chapter-item-list a || .chapter-list a || a[href*='/chapter']",
+      "title": "@text || a@text",
+      "link": "@href || a@href",
+      "date": ".chapter-item-time@text || time@datetime",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".mangaread-main || .chapter-content || article",
+      "text": "p@text || div@text",
+      "html": ".mangaread-main || .chapter-content || article",
+      "image": ".mangaread-manga-pic img@data-src || .mangaread-manga-pic img@src || img@src"
+    }
+  },
+  "presentation": {
+    "primaryListing": "latest",
+    "sections": ["popular", "latest", "new", "original"],
+    "listingLabels": {
+      "popular": "Popular NovelCool Titles",
+      "latest": "Latest NovelCool Updates",
+      "new": "New NovelCool Titles",
+      "original": "Original NovelCool Titles"
+    },
+    "listingStyles": {
+      "popular": "carousel",
+      "latest": "list",
+      "new": "carousel",
+      "original": "carousel"
+    }
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalFamily": "NovelCool",
+    "originalLanguage": "en",
+    "originalSourceName": "NovelCool",
+    "analyzerBucket": "curated_light_novel_source"
+  }
+}

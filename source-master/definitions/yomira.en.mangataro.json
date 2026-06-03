@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.mangataro",
+  "sourceId": "yomira.en.mangataro",
+  "name": "MangaTaro",
+  "displayName": "MangaTaro",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://mangataro.org",
+  "baseUrl": "https://mangataro.org",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "MangaTaro catalog with popular, latest, followed, high-score, and collection sections.",
+  "tags": ["Yomira", "Selector", "Manga", "Manhwa", "Collections"],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "rate_limit_ms": 1100,
+  "rateLimit": {
+    "minDelayMs": 1100,
+    "requestsPerMinute": 50
+  },
+  "endpoints": {
+    "search": { "url": "{base}/search?q={query}", "method": "GET" },
+    "popular": { "url": "{base}/home", "method": "GET" },
+    "latest": { "url": "{base}/home", "method": "GET" },
+    "most_followed_month": { "url": "{base}/home", "method": "GET" },
+    "most_followed_week": { "url": "{base}/home", "method": "GET" },
+    "most_followed_day": { "url": "{base}/home", "method": "GET" },
+    "most_followed_new_week": { "url": "{base}/home", "method": "GET" },
+    "most_followed_new_month": { "url": "{base}/home", "method": "GET" },
+    "most_followed_new_3_months": { "url": "{base}/home", "method": "GET" },
+    "high_score": { "url": "{base}/home", "method": "GET" },
+    "collections": { "url": "{base}/collections/", "method": "GET" },
+    "details": { "url": "{base}/manga/{id}", "method": "GET" },
+    "chapters": { "url": "{base}/manga/{id}", "method": "GET" },
+    "pages": { "url": "{chapter_url}", "method": "GET" }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": "a[href*='/manga/'] || a[href*='/tag/']",
+      "title": "h3@text || img@alt || @title || @text",
+      "cover": "img@data-src || img@src",
+      "link": "@href || a@href"
+    },
+    "manga_details": {
+      "title": "h1@text || meta[property='og:title']@content",
+      "cover": "meta[property='og:image']@content || img[src*='/content/media/']@src",
+      "description": "meta[name='description']@content || .description@text || .summary@text",
+      "authors": "a[href*='/author/']@text",
+      "artists": "a[href*='/artist/']@text",
+      "genres": "a[href*='/tag/']@text",
+      "status": "a[href*='/status/']@text || .status@text"
+    },
+    "chapter_list": {
+      "container": "a[href*='/read/'] || .chapter-list a",
+      "title": "@text || a@text",
+      "link": "@href || a@href",
+      "date": "time@datetime || .date@text",
+      "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": "body",
+      "image": "img[data-src*='/content/media/']@data-src || img[src*='/content/media/']@src || img@data-src || img@src",
+      "exclude": ["logo", "icon", "avatar", "favicon"]
+    }
+  },
+  "presentation": {
+    "primaryListing": "popular",
+    "sections": [
+      "popular",
+      "latest",
+      "most_followed_month",
+      "most_followed_week",
+      "most_followed_day",
+      "most_followed_new_week",
+      "most_followed_new_month",
+      "most_followed_new_3_months",
+      "high_score",
+      "collections"
+    ],
+    "listingLabels": {
+      "popular": "Most Popular MangaTaro Titles",
+      "latest": "Latest MangaTaro Updates",
+      "most_followed_month": "Most Followed This Month",
+      "most_followed_week": "Most Followed This Week",
+      "most_followed_day": "Most Followed Today",
+      "most_followed_new_week": "New Manga Followed This Week",
+      "most_followed_new_month": "New Manga Followed This Month",
+      "most_followed_new_3_months": "New Manga Followed In 3 Months",
+      "high_score": "High Score Manga",
+      "collections": "MangaTaro Collections"
+    },
+    "listingSubtitles": {
+      "collections": "Curated collection cards with title counts and short descriptions"
+    },
+    "listingStyles": {
+      "popular": "carousel",
+      "latest": "list",
+      "most_followed_month": "carousel",
+      "most_followed_week": "carousel",
+      "most_followed_day": "carousel",
+      "most_followed_new_week": "carousel",
+      "most_followed_new_month": "carousel",
+      "most_followed_new_3_months": "carousel",
+      "high_score": "carousel",
+      "collections": "collection_cards"
+    }
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "Selector",
+    "originalLanguage": "en",
+    "originalSourceName": "MangaTaro",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

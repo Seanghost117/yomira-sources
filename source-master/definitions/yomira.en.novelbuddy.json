@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.novelbuddy",
+  "sourceId": "yomira.en.novelbuddy",
+  "name": "NovelBuddy",
+  "displayName": "NovelBuddy",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "contentKind": "light_novel",
+  "base_url": "https://novelbuddy.com",
+  "baseUrl": "https://novelbuddy.com",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "English web novel source using NovelBuddy's server-rendered catalog and reader pages.",
+  "tags": [
+    "Yomira",
+    "Selector",
+    "Light Novel",
+    "Novel",
+    "Next.js"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://novelbuddy.com",
+  "sessionScopeDomain": "novelbuddy.com",
+  "flags": {
+    "requires_js": false,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  },
+  "rate_limit_ms": 1200,
+  "rateLimit": {
+    "minDelayMs": 1200,
+    "requestsPerMinute": 50
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search?q={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/popular",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/latest",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".group.flex.flex-col.h-full",
+      "title": "a[href]:not([href*='/chapter-'])@title || a[href]:not([href*='/chapter-'])@text",
+      "cover": "img@src",
+      "link": "a[href]:not([href*='/chapter-'])@href"
+    },
+    "manga_details": {
+      "title": "h1@text",
+      "cover": "img@src",
+      "description": "[class*='line-clamp']@text || .prose@text || .summary@text",
+      "authors": "a[href*='/authors/']@text",
+      "genres": "a[href*='/genres/']@text || a[href*='/tags/']@text",
+      "status": "a[href*='/status/']@text || [class*='status']@text"
+    },
+    "chapter_list": {
+      "container": "a[href*='/chapter-']",
+      "title": "@text || a@text",
+      "link": "@href || a@href",
+      "date": "time@datetime || time@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|([0-9]+(?:\\.[0-9]+)?)\\s*$"
+    },
+    "page_list": {
+      "container": ".novel-reader-content || .novel-tts-content || article",
+      "title": "h1@text || h2@text || title@text",
+      "text": ".novel-tts-content p@text || .novel-reader-content p@text || article p@text || p@text",
+      "html": ".novel-tts-content || .novel-reader-content || article"
+    }
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "filters": [
+    {
+      "name": "Status",
+      "param": "status",
+      "filter_type": "select",
+      "options": [
+        {
+          "label": "Any",
+          "value": ""
+        },
+        {
+          "label": "Ongoing",
+          "value": "ongoing"
+        },
+        {
+          "label": "Completed",
+          "value": "completed"
+        }
+      ]
+    },
+    {
+      "name": "Genre",
+      "param": "genre",
+      "filter_type": "select",
+      "options": [
+        {
+          "label": "Any",
+          "value": ""
+        },
+        {
+          "label": "Romance",
+          "value": "romance"
+        },
+        {
+          "label": "Fantasy",
+          "value": "fantasy"
+        },
+        {
+          "label": "Yaoi",
+          "value": "yaoi"
+        },
+        {
+          "label": "Adult",
+          "value": "adult"
+        }
+      ]
+    }
+  ],
+  "presentation": {
+    "primaryListing": "latest",
+    "sections": [
+      "latest",
+      "popular"
+    ],
+    "listingLabels": {
+      "latest": "Latest NovelBuddy Updates",
+      "popular": "Popular NovelBuddy Novels"
+    },
+    "listingSubtitles": {
+      "latest": "Freshly updated prose chapters from NovelBuddy",
+      "popular": "Popular web novels from NovelBuddy"
+    },
+    "listingIcons": {
+      "latest": "text.book.closed.fill",
+      "popular": "flame.fill"
+    },
+    "listingStyles": {
+      "latest": "list",
+      "popular": "carousel"
+    }
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "Selector",
+    "originalLanguage": "en",
+    "originalSourceName": "NovelBuddy",
+    "analyzerBucket": "curated_light_novel_source"
+  }
+}

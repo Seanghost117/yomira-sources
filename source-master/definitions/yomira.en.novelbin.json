@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.novelbin",
+  "sourceId": "yomira.en.novelbin",
+  "name": "NovelBin",
+  "displayName": "NovelBin",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "contentKind": "light_novel",
+  "base_url": "https://novelbin.com",
+  "baseUrl": "https://novelbin.com",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "English web novel catalog. Browser Verification is required before browsing because direct HTTP currently returns a Cloudflare challenge.",
+  "tags": ["Yomira", "Selector", "Light Novel", "Novel"],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://novelbin.com",
+  "sessionScopeDomain": "novelbin.com",
+  "userAgentPolicy": "browser_session",
+  "flags": {
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true,
+    "uses_cloudflare": true
+  },
+  "rate_limit_ms": 1300,
+  "rateLimit": {
+    "minDelayMs": 1300,
+    "requestsPerMinute": 40
+  },
+  "endpoints": {
+    "search": { "url": "{base}/search?keyword={query}", "method": "GET" },
+    "popular": { "url": "{base}/novel-list/hot", "method": "GET" },
+    "latest": { "url": "{base}/novel-list/latest", "method": "GET" },
+    "list": { "url": "{base}/novel-list", "method": "GET" },
+    "details": { "url": "{base}/{id}", "method": "GET" },
+    "chapters": { "url": "{base}/{id}", "method": "GET" },
+    "pages": { "url": "{chapter_url}", "method": "GET" }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".list.list-novel .row || .list-truyen .row || .novel-item",
+      "title": ".truyen-title a@text || h3 a@text || a@title",
+      "cover": ".book img@src || img@data-src || img@src",
+      "link": ".truyen-title a@href || h3 a@href || a@href"
+    },
+    "manga_details": {
+      "title": ".novel h3.title@text || h1@text || meta[property='og:title']@content",
+      "cover": ".book img@src || meta[property='og:image']@content",
+      "description": ".desc-text@text || .desc@text || meta[name='description']@content",
+      "authors": ".info a[href*='/author/']@text || a[href*='/author/']@text",
+      "genres": ".info a[href*='/genre/']@text || a[href*='/genre/']@text",
+      "status": ".text-primary@text || .info@text"
+    },
+    "chapter_list": {
+      "container": ".list-chapter li || ul.list-chapter li || .chapter-list li",
+      "title": "a@text",
+      "link": "a@href",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": "#chr-content || .chr-c || .chapter-content",
+      "text": "p@text || div@text",
+      "html": "#chr-content || .chr-c || .chapter-content"
+    }
+  },
+  "presentation": {
+    "primaryListing": "latest",
+    "sections": ["latest", "popular", "list"],
+    "listingStyles": {
+      "latest": "list",
+      "popular": "carousel",
+      "list": "grid"
+    }
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "Selector",
+    "originalLanguage": "en",
+    "originalSourceName": "NovelBin",
+    "analyzerBucket": "curated_light_novel_source"
+  }
+}

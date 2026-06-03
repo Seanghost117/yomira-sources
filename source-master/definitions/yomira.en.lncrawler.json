@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.lncrawler",
+  "sourceId": "yomira.en.lncrawler",
+  "name": "LNCrawler",
+  "displayName": "LNCrawler",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "contentKind": "light_novel",
+  "base_url": "https://api.lncrawler.monster",
+  "baseUrl": "https://api.lncrawler.monster",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "Public light novel catalog API that indexes multiple prose sources. Yomira stores the selected source slug in the remote ID for deterministic chapter loading.",
+  "tags": ["Yomira", "Selector", "Light Novel", "Novel", "JSON"],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "rate_limit_ms": 1100,
+  "rateLimit": {
+    "minDelayMs": 1100,
+    "requestsPerMinute": 50
+  },
+  "endpoints": {
+    "search": { "url": "{base}/novels/search?q={query}&page={page}&sort_by=popularity&sort_order=desc", "method": "GET" },
+    "popular": { "url": "{base}/novels/search?page={page}&sort_by=popularity&sort_order=desc", "method": "GET" },
+    "latest": { "url": "{base}/novels/search?page={page}&sort_by=last_chapter_update&sort_order=desc", "method": "GET" },
+    "home": { "url": "{base}/novels/home/", "method": "GET" },
+    "details": { "url": "{base}/novels/{id}", "method": "GET" },
+    "chapters": { "url": "{base}/novels/{id}/chapters", "method": "GET" },
+    "pages": { "url": "{chapter_url}", "method": "GET" }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".yomira-json-list-fallback",
+      "title": "a@text",
+      "cover": "img@src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text",
+      "cover": "img@src",
+      "description": ".description@text",
+      "authors": ".author@text",
+      "genres": ".genres@text",
+      "status": ".status@text"
+    },
+    "chapter_list": {
+      "container": ".yomira-json-chapter-fallback",
+      "title": "a@text",
+      "link": "a@href",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|([0-9]+(?:\\.[0-9]+)?)\\s*$"
+    },
+    "page_list": {
+      "container": "#chapter-content || .chapter-content || .chr-c || .chapter-c || article",
+      "text": "p@text || div@text",
+      "html": "#chapter-content || .chapter-content || .chr-c || .chapter-c || article"
+    }
+  },
+  "pagination": { "param": "page", "start": 1 },
+  "presentation": {
+    "primaryListing": "popular",
+    "sections": ["popular", "latest", "home"],
+    "listingLabels": {
+      "popular": "Popular LNCrawler Novels",
+      "latest": "Latest Indexed Novel Updates",
+      "home": "LNCrawler Highlights"
+    },
+    "listingStyles": {
+      "popular": "carousel",
+      "latest": "list",
+      "home": "carousel"
+    }
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "SelectorJson",
+    "originalLanguage": "en",
+    "originalSourceName": "LNCrawler",
+    "analyzerBucket": "curated_light_novel_source"
+  }
+}

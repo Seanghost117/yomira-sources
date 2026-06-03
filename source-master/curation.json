@@ -136,6 +136,30 @@
       ]
     },
     {
+      "sourceId": "yomira.en.novelarchive",
+      "displayName": "NovelArchive",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.novelarchive.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added to the Yomira Novels Source Pack only.",
+        "Uses conventional JSON list/detail/chapter-content endpoints through Yomira's built-in selector engine.",
+        "Browser Verification is declared because the site is Cloudflare-backed, but direct API checks currently return catalog data."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.novelbuddy",
+      "displayName": "NovelBuddy",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.novelbuddy.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added to the Yomira Novels Source Pack only.",
+        "Uses server-rendered NovelBuddy catalog pages with Next.js fallback support for chapter lists.",
+        "Browser Verification is declared because the site is Cloudflare-backed."
+      ]
+    },
+    {
       "sourceId": "keiyoushi.en.weebcentral",
       "displayName": "Weeb Central",
       "connectorEngine": "selector",
@@ -193,6 +217,162 @@
         "Already present in the generated expanded pack, but now tracked as a curated overlay for current AJAX chapter markup.",
         "Keiyoushi metadata confirms a direct Madara source at https://www.manhwaden.com.",
         "Live testing confirmed its chapter list loads through the per-detail /ajax/chapters route."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.lightnovelworld",
+      "displayName": "LightNovelWorld",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.lightnovelworld.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added to the Yomira Novels Source Pack only.",
+        "Live HTTP checks returned accessible catalog pages for ranking and updates.",
+        "Uses declarative prose selectors for detail, chapter list, and text extraction."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.novelsonline",
+      "displayName": "NovelsOnline",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.novelsonline.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added to the Yomira Novels Source Pack only.",
+        "Live HTTP checks confirmed top/latest pages and chapter text pages are accessible.",
+        "Marked mature because its public category list includes adult-oriented genres."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.novelcool",
+      "displayName": "NovelCool",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.novelcool.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added to the Yomira Novels Source Pack only.",
+        "Keiyoushi metadata confirms NovelCool endpoint and selector hints.",
+        "Chapter pages may include image/PDF-like content on some titles, so device validation should check prose and non-prose chapters."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.novelfull",
+      "displayName": "NovelFull",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.novelfull.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added to the Yomira Novels Source Pack only.",
+        "Browser Verification is declared because direct HTTP currently returns Cloudflare.",
+        "Uses conventional NovelFull list/detail/chapter text selectors."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.novelbin",
+      "displayName": "NovelBin",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.novelbin.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added to the Yomira Novels Source Pack only.",
+        "Browser Verification is declared because direct HTTP currently returns Cloudflare.",
+        "Uses conventional NovelBin list/detail/chapter text selectors."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.lncrawler",
+      "displayName": "LNCrawler",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.lncrawler.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added to the Yomira Novels Source Pack only.",
+        "Uses LNCrawler's public JSON API and stores novel/source slugs together for deterministic chapter loading.",
+        "Core JSON fallback was expanded to read nested preferred-source metadata."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.mangataro",
+      "displayName": "MangaTaro",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.mangataro.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added as a curated Source Definition with popular, latest, followed, high-score, and collection section metadata.",
+        "Live HTTP checks confirmed MangaTaro home and collection markup is accessible.",
+        "Collections are advertised with collection_cards style for the app to render as medium cards."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.mangaball",
+      "displayName": "MangaBall",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangaball.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added to the Yomira NSFW Source Pack because local Keiyoushi metadata marks it NSFW.",
+        "Keiyoushi API hints were used for search, advanced title search, chapter listing, and detail selectors.",
+        "Browser Verification is declared because direct HTTP currently returns Cloudflare."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.onisaga",
+      "displayName": "OniSaga",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.onisaga.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added as a curated Source Definition with latest, popular day/week/month/year, fan favorites, and top rated section metadata.",
+        "Browser Verification is declared because direct HTTP currently returns a Cloudflare challenge.",
+        "Includes initial adaptive filter metadata for type, status, and genre."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.scansgg",
+      "displayName": "Scans.gg",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.scansgg.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added as a basic curated Source Definition.",
+        "Browser Verification is declared because direct HTTP currently returns a Cloudflare challenge.",
+        "Uses broad series/detail/chapter/page selectors for device validation."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.all.ninemanga",
+      "displayName": "NineManga",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.all.ninemanga.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added to the Yomira NSFW Source Pack because local Keiyoushi metadata marks NineManga NSFW.",
+        "Keiyoushi selector hints were used for list/detail/chapter/page extraction.",
+        "Browser Verification is declared because direct HTTP currently returns Cloudflare."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.allmanga",
+      "displayName": "AllManga",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.allmanga.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added as a curated GraphQL Source Definition based on the local Keiyoushi AllManga implementation.",
+        "Search, popular, latest, details, and chapter metadata use AllAnime's native GraphQL API.",
+        "Chapter page images require the built-in Browser Verification rendered-page snapshot path, matching Keiyoushi's WebView capture strategy without executable source-pack code."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.mkissa",
+      "displayName": "MKissa",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.mkissa.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added as a curated GraphQL Source Definition using the same AllAnime API profile as AllManga.",
+        "Search, popular, latest, details, and chapter metadata use AllAnime's native GraphQL API.",
+        "Chapter page images require the built-in Browser Verification rendered-page snapshot path, matching Keiyoushi's WebView capture strategy without executable source-pack code."
       ]
     }
   ],

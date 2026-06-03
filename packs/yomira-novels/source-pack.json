@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.0",
   "packId": "yomira-novels",
-  "displayName": "Yomira Novels Source Pack",
-  "description": "Light novel and web novel source definitions for Yomira prose reading support.",
+  "displayName": "Yomira Novels",
+  "description": "Light novel and web novel Source Pack for prose reading in Yomira.",
   "packKind": "source_pack",
   "languageScope": [
     "en"
@@ -10,8 +10,369 @@
   "generatedFrom": [
     "tmp/source-pack-split/novels"
   ],
-  "sourceCount": 1,
+  "sourceCount": 3,
   "definitions": [
+    {
+      "adultContent": false,
+      "appStoreSafe": true,
+      "baseUrl": "https://novelarchive.cc",
+      "base_url": "https://novelarchive.cc",
+      "browserVerificationRequired": true,
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "contentKind": "light_novel",
+      "description": "English light novel and web novel source using NovelArchive's public JSON catalog endpoints.",
+      "displayName": "NovelArchive",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/api/novels/{id}"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/api/novels/{id}"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/api/novels/recently-updated?limit=24&page={page}"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{base}/api/novels/{id}/chapters/{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/api/novels/trending?limit=24&page={page}"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/api/novels?search={query}&limit=24&page={page}"
+        }
+      },
+      "filters": [
+        {
+          "filter_type": "select",
+          "name": "Status",
+          "options": [
+            {
+              "label": "Any",
+              "value": ""
+            },
+            {
+              "label": "Ongoing",
+              "value": "ongoing"
+            },
+            {
+              "label": "Completed",
+              "value": "completed"
+            }
+          ],
+          "param": "status"
+        },
+        {
+          "filter_type": "select",
+          "name": "Genre",
+          "options": [
+            {
+              "label": "Any",
+              "value": ""
+            },
+            {
+              "label": "Fantasy",
+              "value": "Fantasy"
+            },
+            {
+              "label": "Romance",
+              "value": "Romance"
+            },
+            {
+              "label": "Slice of Life",
+              "value": "Slice of Life"
+            },
+            {
+              "label": "Martial Arts",
+              "value": "Martial Arts"
+            },
+            {
+              "label": "Supernatural",
+              "value": "Supernatural"
+            }
+          ],
+          "param": "genre"
+        }
+      ],
+      "flags": {
+        "browserVerificationRequired": true,
+        "requires_js": false,
+        "uses_cloudflare": true
+      },
+      "id": "yomira.en.novelarchive",
+      "language": "en",
+      "name": "NovelArchive",
+      "nsfw": false,
+      "pagination": {
+        "param": "page",
+        "start": 1
+      },
+      "presentation": {
+        "listingIcons": {
+          "latest": "text.book.closed.fill",
+          "popular": "flame.fill"
+        },
+        "listingLabels": {
+          "latest": "Latest NovelArchive Updates",
+          "popular": "Trending NovelArchive Novels"
+        },
+        "listingStyles": {
+          "latest": "list",
+          "popular": "carousel"
+        },
+        "listingSubtitles": {
+          "latest": "Fresh prose chapters from NovelArchive",
+          "popular": "Popular web novels from NovelArchive"
+        },
+        "primaryListing": "latest",
+        "sections": [
+          "latest",
+          "popular"
+        ]
+      },
+      "provenance": {
+        "analyzerBucket": "curated_light_novel_source",
+        "ecosystem": "yomira",
+        "originalFamily": "Selector",
+        "originalLanguage": "en",
+        "originalSourceName": "NovelArchive"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 55
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": ".yomira-json-chapter-fallback",
+          "link": "a@href",
+          "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|([0-9]+(?:\\.[0-9]+)?)\\s*$",
+          "title": "a@text"
+        },
+        "manga_details": {
+          "authors": ".author@text",
+          "cover": "img@src",
+          "description": ".description@text",
+          "genres": ".genres@text",
+          "status": ".status@text",
+          "title": "h1@text"
+        },
+        "manga_list": {
+          "container": ".yomira-json-list-fallback",
+          "cover": "img@src",
+          "link": "a@href",
+          "title": "a@text"
+        },
+        "page_list": {
+          "container": ".yomira-json-page-fallback",
+          "html": ".chapter-content",
+          "text": "p@text",
+          "title": "h1@text"
+        }
+      },
+      "sessionScopeDomain": "novelarchive.cc",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "yomira.en.novelarchive",
+      "sourceType": "selector",
+      "tags": [
+        "Yomira",
+        "Selector",
+        "Light Novel",
+        "Novel",
+        "JSON"
+      ],
+      "verificationUrl": "https://novelarchive.cc",
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": false,
+      "appStoreSafe": true,
+      "baseUrl": "https://novelbuddy.com",
+      "base_url": "https://novelbuddy.com",
+      "browserVerificationRequired": true,
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "contentKind": "light_novel",
+      "description": "English web novel source using NovelBuddy's server-rendered catalog and reader pages.",
+      "displayName": "NovelBuddy",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/{id}"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/{id}"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/latest"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/popular"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/search?q={query}"
+        }
+      },
+      "filters": [
+        {
+          "filter_type": "select",
+          "name": "Status",
+          "options": [
+            {
+              "label": "Any",
+              "value": ""
+            },
+            {
+              "label": "Ongoing",
+              "value": "ongoing"
+            },
+            {
+              "label": "Completed",
+              "value": "completed"
+            }
+          ],
+          "param": "status"
+        },
+        {
+          "filter_type": "select",
+          "name": "Genre",
+          "options": [
+            {
+              "label": "Any",
+              "value": ""
+            },
+            {
+              "label": "Romance",
+              "value": "romance"
+            },
+            {
+              "label": "Fantasy",
+              "value": "fantasy"
+            },
+            {
+              "label": "Yaoi",
+              "value": "yaoi"
+            },
+            {
+              "label": "Adult",
+              "value": "adult"
+            }
+          ],
+          "param": "genre"
+        }
+      ],
+      "flags": {
+        "browserVerificationRequired": true,
+        "requires_js": false,
+        "uses_cloudflare": true
+      },
+      "id": "yomira.en.novelbuddy",
+      "language": "en",
+      "name": "NovelBuddy",
+      "nsfw": false,
+      "pagination": {
+        "param": "page",
+        "start": 1
+      },
+      "presentation": {
+        "listingIcons": {
+          "latest": "text.book.closed.fill",
+          "popular": "flame.fill"
+        },
+        "listingLabels": {
+          "latest": "Latest NovelBuddy Updates",
+          "popular": "Popular NovelBuddy Novels"
+        },
+        "listingStyles": {
+          "latest": "list",
+          "popular": "carousel"
+        },
+        "listingSubtitles": {
+          "latest": "Freshly updated prose chapters from NovelBuddy",
+          "popular": "Popular web novels from NovelBuddy"
+        },
+        "primaryListing": "latest",
+        "sections": [
+          "latest",
+          "popular"
+        ]
+      },
+      "provenance": {
+        "analyzerBucket": "curated_light_novel_source",
+        "ecosystem": "yomira",
+        "originalFamily": "Selector",
+        "originalLanguage": "en",
+        "originalSourceName": "NovelBuddy"
+      },
+      "rateLimit": {
+        "minDelayMs": 1200,
+        "requestsPerMinute": 50
+      },
+      "rate_limit_ms": 1200,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": "a[href*='/chapter-']",
+          "date": "time@datetime || time@text",
+          "link": "@href || a@href",
+          "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|([0-9]+(?:\\.[0-9]+)?)\\s*$",
+          "title": "@text || a@text"
+        },
+        "manga_details": {
+          "authors": "a[href*='/authors/']@text",
+          "cover": "img@src",
+          "description": "[class*='line-clamp']@text || .prose@text || .summary@text",
+          "genres": "a[href*='/genres/']@text || a[href*='/tags/']@text",
+          "status": "a[href*='/status/']@text || [class*='status']@text",
+          "title": "h1@text"
+        },
+        "manga_list": {
+          "container": ".group.flex.flex-col.h-full",
+          "cover": "img@src",
+          "link": "a[href]:not([href*='/chapter-'])@href",
+          "title": "a[href]:not([href*='/chapter-'])@title || a[href]:not([href*='/chapter-'])@text"
+        },
+        "page_list": {
+          "container": ".novel-reader-content || .novel-tts-content || article",
+          "html": ".novel-tts-content || .novel-reader-content || article",
+          "text": ".novel-tts-content p@text || .novel-reader-content p@text || article p@text || p@text",
+          "title": "h1@text || h2@text || title@text"
+        }
+      },
+      "sessionScopeDomain": "novelbuddy.com",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "yomira.en.novelbuddy",
+      "sourceType": "selector",
+      "tags": [
+        "Yomira",
+        "Selector",
+        "Light Novel",
+        "Novel",
+        "Next.js"
+      ],
+      "verificationUrl": "https://novelbuddy.com",
+      "version": "1.0.0"
+    },
     {
       "adultContent": false,
       "appStoreSafe": true,

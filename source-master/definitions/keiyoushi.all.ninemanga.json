@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.all.ninemanga",
+  "sourceId": "keiyoushi.all.ninemanga",
+  "name": "NineManga",
+  "displayName": "NineManga",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://www.ninemanga.com",
+  "baseUrl": "https://www.ninemanga.com",
+  "language": "all",
+  "region": "all",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "NineManga multi-language Source Definition normalized from local Keiyoushi selector hints. Browser Verification is required before browsing.",
+  "tags": ["Keiyoushi", "Selector", "Manga", "Multi-language", "NSFW"],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://www.ninemanga.com",
+  "sessionScopeDomain": "ninemanga.com",
+  "userAgentPolicy": "browser_session",
+  "flags": {
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true,
+    "uses_cloudflare": true
+  },
+  "rate_limit_ms": 1300,
+  "rateLimit": {
+    "minDelayMs": 1300,
+    "requestsPerMinute": 40
+  },
+  "endpoints": {
+    "search": { "url": "{base}/search/?wd={query}&page={page}", "method": "GET" },
+    "popular": { "url": "{base}/category/index_{page}.html", "method": "GET" },
+    "latest": { "url": "{base}/list/New-Update/{page}/", "method": "GET" },
+    "details": { "url": "{base}/{id}", "method": "GET" },
+    "chapters": { "url": "{base}/{id}", "method": "GET" },
+    "pages": { "url": "{chapter_url}", "method": "GET" }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".book_list li || .list_book li || .pic_box || a.bookname",
+      "title": "a.bookname@text || h3 a@text || img@alt || @title",
+      "cover": ".pic_box img.manga_pic@src || img[itemprop=image]@src || img@data-src || img@src",
+      "link": "a.bookname@href || h3 a@href || a@href || @href"
+    },
+    "manga_details": {
+      "title": "h1@text || dl.bookinfo h1@text || meta[property='og:title']@content",
+      "cover": "img[itemprop=image]@src || div.pic_box img.manga_pic@src || meta[property='og:image']@content",
+      "description": "p[itemprop=description]@text || div.bookintro@text || meta[name='description']@content",
+      "authors": "li a[itemprop=author]@text || a[href*='/author/']@text",
+      "genres": "li[itemprop=genre] a@text || a[href*='/category/']@text",
+      "status": ".bookinfo@text || dl.bookinfo@text"
+    },
+    "chapter_list": {
+      "container": "ul.sub_vol_ul > li || .chapter_list li || a.chapter_list_a",
+      "title": "a.chapter_list_a@text || a@text || @text",
+      "link": "a.chapter_list_a@href || a@href || @href",
+      "date": ".time@text || time@datetime",
+      "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": "body",
+      "image": "img@data-src || img@src",
+      "exclude": ["logo", "icon", "avatar"]
+    }
+  },
+  "pagination": { "param": "page", "start": 1 },
+  "presentation": {
+    "primaryListing": "latest",
+    "sections": ["latest", "popular"],
+    "listingLabels": {
+      "latest": "Latest NineManga Updates",
+      "popular": "NineManga Catalog"
+    },
+    "listingStyles": {
+      "latest": "list",
+      "popular": "grid"
+    }
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalFamily": "HttpSource",
+    "originalLanguage": "all",
+    "originalSourceName": "NineManga",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

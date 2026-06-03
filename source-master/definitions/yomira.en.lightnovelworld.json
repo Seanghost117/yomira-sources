@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.lightnovelworld",
+  "sourceId": "yomira.en.lightnovelworld",
+  "name": "LightNovelWorld",
+  "displayName": "LightNovelWorld",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "contentKind": "light_novel",
+  "base_url": "https://lightnovelworld.org",
+  "baseUrl": "https://lightnovelworld.org",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "English light novel and web novel source with ranking, update, and advanced-search catalog pages.",
+  "tags": ["Yomira", "Selector", "Light Novel", "Novel"],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "rate_limit_ms": 1100,
+  "rateLimit": {
+    "minDelayMs": 1100,
+    "requestsPerMinute": 50
+  },
+  "endpoints": {
+    "search": { "url": "{base}/search/?q={query}&page={page}", "method": "GET" },
+    "popular": { "url": "{base}/ranking/?page={page}", "method": "GET" },
+    "latest": { "url": "{base}/updates/?page={page}", "method": "GET" },
+    "advanced": { "url": "{base}/advanced-search/?page={page}", "method": "GET" },
+    "details": { "url": "{base}/novel/{id}/", "method": "GET" },
+    "chapters": { "url": "{base}/novel/{id}/chapters/", "method": "GET" },
+    "pages": { "url": "{chapter_url}", "method": "GET" }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".novel-item || .book-item || .card-container || a.card-cover-link",
+      "title": ".card-title@text || .novel-title@text || h3 a@text || img@alt || @title || @text",
+      "cover": "img@data-src || img@src",
+      "link": "a.card-cover-link@href || h3 a@href || a@href || @href"
+    },
+    "manga_details": {
+      "title": ".novel-title@text || h1@text || meta[property='og:title']@content",
+      "cover": ".novel-cover img@data-src || .novel-cover img@src || meta[property='og:image']@content",
+      "description": ".summary-content@text || .description-text@text || meta[name='description']@content",
+      "authors": ".novel-author a@text || a[href*='/author/']@text",
+      "genres": ".genre-tag@text || a[href*='/genre/']@text",
+      "status": ".status-badge@text || .novel-status@text"
+    },
+    "chapter_list": {
+      "container": ".chapter-list li || .chapter-item || a[href*='/chapter/']",
+      "title": "a@text || @text",
+      "link": "a@href || @href",
+      "date": "time@datetime || .chapter-update@text || .date@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".chapter-content || .reader-content || article",
+      "text": "p@text || div@text",
+      "html": ".chapter-content || .reader-content || article"
+    }
+  },
+  "pagination": { "param": "page", "start": 1 },
+  "filters": [
+    {
+      "name": "Status",
+      "param": "status",
+      "filter_type": "select",
+      "options": [
+        { "label": "Any", "value": "" },
+        { "label": "Ongoing", "value": "ongoing" },
+        { "label": "Completed", "value": "completed" }
+      ]
+    }
+  ],
+  "presentation": {
+    "primaryListing": "latest",
+    "sections": ["popular", "latest", "advanced"],
+    "listingLabels": {
+      "popular": "LightNovelWorld Rankings",
+      "latest": "Latest LightNovelWorld Updates",
+      "advanced": "Browse LightNovelWorld"
+    },
+    "listingStyles": {
+      "popular": "carousel",
+      "latest": "list",
+      "advanced": "grid"
+    }
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "Selector",
+    "originalLanguage": "en",
+    "originalSourceName": "LightNovelWorld",
+    "analyzerBucket": "curated_light_novel_source"
+  }
+}
