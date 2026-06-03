@@ -23,6 +23,18 @@ Curated Source Pack:
 https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-curated/source-pack.json
 ```
 
+NSFW Source Pack:
+
+```text
+https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-nsfw/source-pack.json
+```
+
+Novels Source Pack:
+
+```text
+https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-novels/source-pack.json
+```
+
 ## Structure
 
 ```
@@ -35,8 +47,10 @@ extensions/
 
 ## Current Packs
 
-- `keiyoushi-core-expanded`: 439 generated and curated Source Definitions from currently supported connector families
-- `yomira-curated`: 17 hand-curated Source Definitions used for focused source iteration
+- `keiyoushi-core-expanded`: 422 generated and curated Source Definitions from currently supported connector families
+- `yomira-curated`: 16 hand-curated Source Definitions used for focused source iteration
+- `yomira-nsfw`: 17 explicit adult Source Definitions split out from the main packs
+- `yomira-novels`: 1 light novel Source Definition for prose reader support
 
 ## Adding a Source
 

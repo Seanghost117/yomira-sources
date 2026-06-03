@@ -1,0 +1,1132 @@
+{
+  "schemaVersion": "1.0",
+  "packId": "yomira-nsfw",
+  "displayName": "Yomira NSFW Source Pack",
+  "description": "Explicit adult source definitions split out from the main Yomira source packs for clearer user control.",
+  "packKind": "source_pack",
+  "languageScope": [
+    "en",
+    "fr",
+    "id",
+    "vi"
+  ],
+  "generatedFrom": [
+    "tmp/source-pack-split/nsfw"
+  ],
+  "sourceCount": 17,
+  "definitions": [
+    {
+      "adultContent": true,
+      "baseUrl": "https://beehentai.com",
+      "base_url": "https://beehentai.com",
+      "connectorEngine": "madtheme",
+      "description": "Draft MadTheme source definition converted from Keiyoushi metadata. Review before use.",
+      "displayName": "BeeHentai",
+      "extends": "madtheme",
+      "flags": {
+        "isMadara": false
+      },
+      "id": "keiyoushi.en.beehentai",
+      "language": "en",
+      "name": "BeeHentai",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "direct_multisrc_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".BeeHentai",
+        "originalFamily": "MadTheme",
+        "originalLanguage": "en",
+        "originalSourceName": "beehentai",
+        "originalSourcePath": "src/en/beehentai",
+        "originalVersion": "0"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.en.beehentai",
+      "sourceType": "madtheme",
+      "tags": [
+        "Keiyoushi",
+        "MadTheme",
+        "Converted"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://hentai4free.net",
+      "base_url": "https://hentai4free.net",
+      "connectorEngine": "madara",
+      "connectorProfile": {
+        "connectorEngine": "madara",
+        "domains": {
+          "canonicalDomain": "hentai4free.net"
+        },
+        "profileVersion": "0.1",
+        "supportedFields": [
+          "domains"
+        ]
+      },
+      "description": "Draft Madara source definition with connector profile converted from Keiyoushi metadata. Review before use.",
+      "displayName": "Hentai4Free",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.en.hentai4free",
+      "language": "en",
+      "name": "Hentai4Free",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "profile_override_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".Hentai4Free",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "hentai4free",
+        "originalSourcePath": "src/en/hentai4free",
+        "originalVersion": "0",
+        "profileOverride": true
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi_profile",
+      "sourceId": "keiyoushi.en.hentai4free",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted",
+        "Connector Profile"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://dexhentai.com",
+      "base_url": "https://dexhentai.com",
+      "connectorEngine": "manga_themesia",
+      "connectorProfile": {
+        "attributes": {
+          "linkUrlAttr": "href"
+        },
+        "connectorEngine": "manga_themesia",
+        "dateFormats": {
+          "chapterDate": "MMMM d, yyyy"
+        },
+        "domains": {
+          "canonicalDomain": "dexhentai.com"
+        },
+        "filters": [
+          {
+            "id": "filter-chapterdate",
+            "kind": "select",
+            "label": ".chapterdate"
+          },
+          {
+            "id": "filter-chapternum",
+            "kind": "select",
+            "label": ".chapternum"
+          },
+          {
+            "id": "filter-hentaidex",
+            "kind": "select",
+            "label": "HentaiDex"
+          },
+          {
+            "id": "filter-mmmm-d-yyyy",
+            "kind": "select",
+            "label": "MMMM d, yyyy"
+          },
+          {
+            "id": "filter-text-search-ignores-filters",
+            "kind": "select",
+            "label": "Text search ignores filters"
+          },
+          {
+            "id": "filter-author",
+            "kind": "select",
+            "label": "author"
+          },
+          {
+            "id": "filter-author-filter-title",
+            "kind": "select",
+            "label": "author_filter_title"
+          },
+          {
+            "id": "filter-data-num",
+            "kind": "select",
+            "label": "data-num"
+          },
+          {
+            "id": "filter-en",
+            "kind": "select",
+            "label": "en"
+          },
+          {
+            "id": "filter-genre",
+            "kind": "select",
+            "label": "genre[]"
+          },
+          {
+            "id": "filter-genre-exclusion-warning",
+            "kind": "select",
+            "label": "genre_exclusion_warning"
+          },
+          {
+            "id": "filter-genre-filter-title",
+            "kind": "select",
+            "label": "genre_filter_title"
+          },
+          {
+            "id": "filter-genre-missing-warning",
+            "kind": "select",
+            "label": "genre_missing_warning"
+          },
+          {
+            "id": "filter-hasprojectpage",
+            "kind": "select",
+            "label": "hasProjectPage"
+          },
+          {
+            "id": "filter-order",
+            "kind": "select",
+            "label": "order"
+          },
+          {
+            "id": "filter-order-by-filter-title",
+            "kind": "select",
+            "label": "order_by_filter_title"
+          },
+          {
+            "id": "filter-page",
+            "kind": "select",
+            "label": "page"
+          },
+          {
+            "id": "filter-project-filter-on",
+            "kind": "select",
+            "label": "project-filter-on"
+          },
+          {
+            "id": "filter-project-filter-name",
+            "kind": "select",
+            "label": "project_filter_name"
+          },
+          {
+            "id": "filter-project-filter-title",
+            "kind": "select",
+            "label": "project_filter_title"
+          }
+        ],
+        "profileVersion": "0.1",
+        "query": {
+          "genreParam": "genre",
+          "pageParam": "page",
+          "searchParam": "s",
+          "sortParam": "order",
+          "statusParam": "status"
+        },
+        "selectors": {
+          "chapterDate": ".chapterdate",
+          "chapterList": ".chapterdate",
+          "chapterTitle": ".chapterdate",
+          "chapterUrl": ".chapterdate"
+        },
+        "supportedFields": [
+          "attributes",
+          "dateFormats",
+          "domains",
+          "filters",
+          "query",
+          "selectors"
+        ]
+      },
+      "description": "Draft MangaThemesia source definition with connector profile converted from Keiyoushi metadata. Review before use.",
+      "displayName": "HentaiDex",
+      "extends": "manga_themesia",
+      "flags": {
+        "isMadara": false
+      },
+      "id": "keiyoushi.en.hentaidex",
+      "language": "en",
+      "name": "HentaiDex",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "profile_override_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".HentaiDex",
+        "originalFamily": "MangaThemesia",
+        "originalLanguage": "en",
+        "originalSourceName": "hentaidex",
+        "originalSourcePath": "src/en/hentaidex",
+        "originalVersion": "2",
+        "profileOverride": true
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi_profile",
+      "sourceId": "keiyoushi.en.hentaidex",
+      "sourceType": "manga_themesia",
+      "tags": [
+        "Keiyoushi",
+        "MangaThemesia",
+        "Converted",
+        "Connector Profile"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://hentaisco.cc",
+      "base_url": "https://hentaisco.cc",
+      "connectorEngine": "madara",
+      "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "displayName": "HentaiSco",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.en.hentaisco",
+      "language": "en",
+      "name": "HentaiSco",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "direct_multisrc_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".HentaiSco",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "hentaisco",
+        "originalSourcePath": "src/en/hentaisco",
+        "originalVersion": "0"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.en.hentaisco",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://hentaixcomic.com",
+      "base_url": "https://hentaixcomic.com",
+      "connectorEngine": "madara",
+      "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "displayName": "HentaiXComic",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.en.hentaixcomic",
+      "language": "en",
+      "name": "HentaiXComic",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "direct_multisrc_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".HentaiXComic",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "hentaixcomic",
+        "originalSourcePath": "src/en/hentaixcomic",
+        "originalVersion": "0"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.en.hentaixcomic",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://hentaixdickgirl.com",
+      "base_url": "https://hentaixdickgirl.com",
+      "connectorEngine": "madara",
+      "connectorProfile": {
+        "connectorEngine": "madara",
+        "domains": {
+          "canonicalDomain": "hentaixdickgirl.com"
+        },
+        "profileVersion": "0.1",
+        "supportedFields": [
+          "domains"
+        ]
+      },
+      "description": "Draft Madara source definition with connector profile converted from Keiyoushi metadata. Review before use.",
+      "displayName": "HentaiXDickgirl",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.en.hentaixdickgirl",
+      "language": "en",
+      "name": "HentaiXDickgirl",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "profile_override_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".HentaiXDickgirl",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "hentaixdickgirl",
+        "originalSourcePath": "src/en/hentaixdickgirl",
+        "originalVersion": "0",
+        "profileOverride": true
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi_profile",
+      "sourceId": "keiyoushi.en.hentaixdickgirl",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted",
+        "Connector Profile"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://hentaixyuri.com",
+      "base_url": "https://hentaixyuri.com",
+      "connectorEngine": "madara",
+      "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "displayName": "HentaiXYuri",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.en.hentaixyuri",
+      "language": "en",
+      "name": "HentaiXYuri",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "direct_multisrc_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".HentaiXYuri",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "hentaixyuri",
+        "originalSourcePath": "src/en/hentaixyuri",
+        "originalVersion": "0"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.en.hentaixyuri",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://mahouirexnohentaikarte.com",
+      "base_url": "https://mahouirexnohentaikarte.com",
+      "connectorEngine": "madara",
+      "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "displayName": "Mahouirexnohentaikarte",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.en.mahouirexnohentaikarte",
+      "language": "en",
+      "name": "Mahouirexnohentaikarte",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "direct_multisrc_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".Mahouirexnohentaikarte",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "mahouirexnohentaikarte",
+        "originalSourcePath": "src/en/mahouirexnohentaikarte",
+        "originalVersion": "0"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.en.mahouirexnohentaikarte",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://mangahentai.me",
+      "base_url": "https://mangahentai.me",
+      "connectorEngine": "madara",
+      "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "displayName": "Manga Hentai",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.en.mangahentai",
+      "language": "en",
+      "name": "Manga Hentai",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "direct_multisrc_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".MangaHentai",
+        "originalFamily": "Madara",
+        "originalLanguage": "en",
+        "originalSourceName": "mangahentai",
+        "originalSourcePath": "src/en/mangahentai",
+        "originalVersion": "4"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.en.mangahentai",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://hentai-origines.fr",
+      "base_url": "https://hentai-origines.fr",
+      "connectorEngine": "madara",
+      "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "displayName": "Hentai Origines",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.fr.hentaiorigines",
+      "language": "fr",
+      "name": "Hentai Origines",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "direct_multisrc_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".HentaiOrigines",
+        "originalFamily": "Madara",
+        "originalLanguage": "fr",
+        "originalSourceName": "hentaiorigines",
+        "originalSourcePath": "src/fr/hentaiorigines",
+        "originalVersion": "0"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "fr",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.fr.hentaiorigines",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://hentai.scantrad-vf.cc",
+      "base_url": "https://hentai.scantrad-vf.cc",
+      "connectorEngine": "madara",
+      "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "displayName": "Hentai-Scantrad",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.fr.hentaiscantrad",
+      "language": "fr",
+      "name": "Hentai-Scantrad",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "direct_multisrc_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".HentaiScantrad",
+        "originalFamily": "Madara",
+        "originalLanguage": "fr",
+        "originalSourceName": "hentaiscantrad",
+        "originalSourcePath": "src/fr/hentaiscantrad",
+        "originalVersion": "1"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "fr",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.fr.hentaiscantrad",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://hentaizone.xyz",
+      "base_url": "https://hentaizone.xyz",
+      "connectorEngine": "madara",
+      "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "displayName": "HentaiZone",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.fr.hentaizone",
+      "language": "fr",
+      "name": "HentaiZone",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "direct_multisrc_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".HentaiZone",
+        "originalFamily": "Madara",
+        "originalLanguage": "fr",
+        "originalSourceName": "hentaizone",
+        "originalSourcePath": "src/fr/hentaizone",
+        "originalVersion": "1"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "fr",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.fr.hentaizone",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://hhentai.fr",
+      "base_url": "https://hhentai.fr",
+      "connectorEngine": "madara",
+      "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "displayName": "HistoireDHentai",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.fr.histoiredhentai",
+      "language": "fr",
+      "name": "HistoireDHentai",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "direct_multisrc_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".HistoireDHentai",
+        "originalFamily": "Madara",
+        "originalLanguage": "fr",
+        "originalSourceName": "histoiredhentai",
+        "originalSourcePath": "src/fr/histoiredhentai",
+        "originalVersion": "0"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "fr",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.fr.histoiredhentai",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://x-manga.org",
+      "base_url": "https://x-manga.org",
+      "connectorEngine": "madara",
+      "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "displayName": "X-Manga",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.fr.scanhentaimenu",
+      "language": "fr",
+      "name": "X-Manga",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "direct_multisrc_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".XManga",
+        "originalFamily": "Madara",
+        "originalLanguage": "fr",
+        "originalSourceName": "scanhentaimenu",
+        "originalSourcePath": "src/fr/scanhentaimenu",
+        "originalVersion": "4"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "fr",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceId": "keiyoushi.fr.scanhentaimenu",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://mihentai.net",
+      "base_url": "https://mihentai.net",
+      "connectorEngine": "manga_themesia",
+      "connectorProfile": {
+        "connectorEngine": "manga_themesia",
+        "domains": {
+          "canonicalDomain": "mihentai.net"
+        },
+        "filters": [
+          {
+            "id": "filter-all",
+            "kind": "select",
+            "label": "All"
+          },
+          {
+            "id": "filter-default",
+            "kind": "select",
+            "label": "Default"
+          },
+          {
+            "id": "filter-doujin",
+            "kind": "select",
+            "label": "Doujin"
+          },
+          {
+            "id": "filter-dropped",
+            "kind": "select",
+            "label": "Dropped"
+          },
+          {
+            "id": "filter-finished",
+            "kind": "select",
+            "label": "Finished"
+          },
+          {
+            "id": "filter-manga",
+            "kind": "select",
+            "label": "Manga"
+          },
+          {
+            "id": "filter-manhua",
+            "kind": "select",
+            "label": "Manhua"
+          },
+          {
+            "id": "filter-manhwa",
+            "kind": "select",
+            "label": "Manhwa"
+          },
+          {
+            "id": "filter-mihentai",
+            "kind": "select",
+            "label": "Mihentai"
+          },
+          {
+            "id": "filter-one-shot",
+            "kind": "select",
+            "label": "One-Shot"
+          },
+          {
+            "id": "filter-publishing",
+            "kind": "select",
+            "label": "Publishing"
+          },
+          {
+            "id": "filter-status",
+            "kind": "select",
+            "label": "Status"
+          },
+          {
+            "id": "filter-type",
+            "kind": "select",
+            "label": "Type"
+          },
+          {
+            "id": "filter-webtoon",
+            "kind": "select",
+            "label": "Webtoon"
+          },
+          {
+            "id": "filter-drop",
+            "kind": "select",
+            "label": "drop"
+          },
+          {
+            "id": "filter-genre-filter-title",
+            "kind": "select",
+            "label": "genre_filter_title"
+          },
+          {
+            "id": "filter-id",
+            "kind": "select",
+            "label": "id"
+          },
+          {
+            "id": "filter-order-by-filter-title",
+            "kind": "select",
+            "label": "order_by_filter_title"
+          }
+        ],
+        "profileVersion": "0.1",
+        "supportedFields": [
+          "domains",
+          "filters"
+        ]
+      },
+      "description": "Draft MangaThemesia source definition with connector profile converted from Keiyoushi metadata. Review before use.",
+      "displayName": "Mihentai",
+      "extends": "manga_themesia",
+      "flags": {
+        "isMadara": false
+      },
+      "id": "keiyoushi.id.mihentai",
+      "language": "id",
+      "name": "Mihentai",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "profile_override_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".Mihentai",
+        "originalFamily": "MangaThemesia",
+        "originalLanguage": "id",
+        "originalSourceName": "mihentai",
+        "originalSourcePath": "src/id/mihentai",
+        "originalVersion": "3",
+        "profileOverride": true
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "id",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi_profile",
+      "sourceId": "keiyoushi.id.mihentai",
+      "sourceType": "manga_themesia",
+      "tags": [
+        "Keiyoushi",
+        "MangaThemesia",
+        "Converted",
+        "Connector Profile"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "baseUrl": "https://hentaivn.show",
+      "base_url": "https://hentaivn.show",
+      "connectorEngine": "madara",
+      "connectorProfile": {
+        "connectorEngine": "madara",
+        "dateFormats": {
+          "chapterDate": "dd/MM/yyyy"
+        },
+        "domains": {
+          "canonicalDomain": "hentaivn.show"
+        },
+        "profileOptions": [
+          {
+            "affects": [
+              "domain",
+              "baseUrl"
+            ],
+            "allowedValues": [
+              "hentaivn.show"
+            ],
+            "defaultValue": "hentaivn.show",
+            "key": "source-domain",
+            "label": "Source Domain",
+            "type": "select"
+          }
+        ],
+        "profileVersion": "0.1",
+        "supportedFields": [
+          "dateFormats",
+          "domains",
+          "profileOptions"
+        ]
+      },
+      "description": "Draft Madara source definition with connector profile converted from Keiyoushi metadata. Review before use.",
+      "displayName": "HentaiVN.plus",
+      "extends": "madara",
+      "flags": {
+        "isMadara": true
+      },
+      "id": "keiyoushi.vi.hentaivnplus",
+      "language": "vi",
+      "name": "HentaiVN.plus",
+      "nsfw": true,
+      "provenance": {
+        "analyzerBucket": "profile_override_candidate",
+        "baseUrlSource": "build_gradle",
+        "ecosystem": "keiyoushi",
+        "originalExtClass": ".HentaiVNPlus",
+        "originalFamily": "Madara",
+        "originalLanguage": "vi",
+        "originalSourceName": "hentaivnplus",
+        "originalSourcePath": "src/vi/hentaivnplus",
+        "originalVersion": "18",
+        "profileOverride": true
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "vi",
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "converted_keiyoushi_profile",
+      "sourceId": "keiyoushi.vi.hentaivnplus",
+      "sourceType": "madara",
+      "tags": [
+        "Keiyoushi",
+        "Madara",
+        "Converted",
+        "Connector Profile"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://hentai20.io",
+      "base_url": "https://hentai20.io",
+      "browserVerificationRequired": true,
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "Adult manhwa, manga, and webtoon source normalized from the existing Hentai20 selector config.",
+      "displayName": "Hentai20",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/manga/{id}/"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/manga/{id}/"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/manga/?status=&type=&order=update"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/manga/?status=&type=&order=popular"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/?s={query}"
+        }
+      },
+      "flags": {
+        "browserVerificationRequired": true,
+        "is_madara": false,
+        "requires_js": false,
+        "uses_cloudflare": true
+      },
+      "id": "yomira.en.hentai20",
+      "language": "en",
+      "name": "Hentai20",
+      "nsfw": true,
+      "pagination": {
+        "param": "page",
+        "start": 1
+      },
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "yomira",
+        "originalFamily": "Selector",
+        "originalLanguage": "en",
+        "originalSourceName": "hentai20"
+      },
+      "rateLimit": {
+        "minDelayMs": 1000,
+        "requestsPerMinute": 60
+      },
+      "rate_limit_ms": 1000,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": "#chapterlist li",
+          "date": ".chapterdate@text",
+          "link": "a@href",
+          "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|([0-9]+(?:\\.[0-9]+)?)\\s*$",
+          "title": ".chapternum@text || a@text"
+        },
+        "manga_details": {
+          "authors": ".imptdt:contains('Author') i@text || .fmed i@text",
+          "cover": ".seriestucontent img@src || .seriestucontent img@data-src",
+          "description": ".entry-content p@text || .wd-full p@text",
+          "genres": ".mgen a@text",
+          "status": ".imptdt:contains('Status') i@text",
+          "title": "h1.entry-title@text || .seriestuhead h1@text"
+        },
+        "manga_list": {
+          "container": ".bsx",
+          "cover": "img@src || img@data-src",
+          "link": "a@href",
+          "title": "a@title || .tt@text"
+        },
+        "page_list": {
+          "container": "#readerarea",
+          "exclude": [
+            ".svg",
+            "logo",
+            "icon",
+            "avatar"
+          ],
+          "image": "img@src || img@data-src || img@data-lazy-src"
+        }
+      },
+      "sessionScopeDomain": "hentai20.io",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "yomira.en.hentai20",
+      "sourceType": "selector",
+      "tags": [
+        "Yomira",
+        "Selector",
+        "Curated",
+        "18+"
+      ],
+      "verificationUrl": "https://hentai20.io",
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "familiesIncluded": [
+      "MadTheme",
+      "Madara",
+      "MangaThemesia",
+      "Selector"
+    ],
+    "convertedDefinitionSets": [
+      "tmp/source-pack-split/nsfw"
+    ]
+  },
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false
+}

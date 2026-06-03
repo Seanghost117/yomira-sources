@@ -1,0 +1,84 @@
+{
+  "packId": "yomira-novels",
+  "state": "Valid",
+  "sourceCount": 1,
+  "installableCount": 1,
+  "blockedCount": 0,
+  "rejectedCount": 0,
+  "duplicateSourceIds": [],
+  "rejectedSources": [],
+  "warnings": [],
+  "errors": [],
+  "importPreview": {
+    "blocked_count": 0,
+    "connector_engine_counts": {
+      "selector": 1
+    },
+    "definitions": [
+      {
+        "app_store_safe": true,
+        "base_profile_id": null,
+        "base_url": "https://novelfire.net",
+        "conflict": null,
+        "connector_engine": "selector",
+        "contains_executable_code": false,
+        "display_name": "NovelFire",
+        "errors": [],
+        "installable": true,
+        "language": "en",
+        "nsfw": false,
+        "region": "en",
+        "requires_external_bridge": false,
+        "runtime_error_code": null,
+        "runtime_error_message": null,
+        "runtime_ready": true,
+        "schema_valid": true,
+        "source_definition_kind": "curated_source_config",
+        "source_id": "yomira.en.novelfire",
+        "state": "valid",
+        "version": "1.0.0",
+        "warnings": []
+      }
+    ],
+    "diagnostic_summary": {
+      "duplicate_source_count": 0,
+      "error_count": 0,
+      "first_issues": [],
+      "pack_id": "yomira-novels",
+      "rejected_source_count": 0,
+      "runtime_missing_count": 0,
+      "runtime_ready_count": 1,
+      "schema_valid_count": 1,
+      "source_count": 1,
+      "unsupported_connector_count": 0,
+      "unsupported_source_count": 0,
+      "valid_source_count": 1,
+      "warning_count": 0
+    },
+    "diagnostics": [],
+    "errors": [],
+    "import_trace_id": "spimp_20260603093932_1",
+    "installable_count": 1,
+    "language_counts": {
+      "en": 1
+    },
+    "nsfw_source_count": 0,
+    "rejected_count": 0,
+    "runtime_missing_count": 0,
+    "runtime_ready_count": 1,
+    "schema_valid_count": 1,
+    "source_count": 1,
+    "source_pack": {
+      "display_name": "Yomira Novels Source Pack",
+      "maintainer": null,
+      "pack_id": "yomira-novels",
+      "schema_version": "1.0",
+      "version": null
+    },
+    "state": "valid",
+    "unsupported_connector_count": 0,
+    "unsupported_count": 0,
+    "warnings": []
+  },
+  "importDryRun": true
+}

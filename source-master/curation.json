@@ -118,8 +118,21 @@
       "status": "ready_for_device_validation",
       "notes": [
         "Normalized from the existing Hentai20 selector config.",
+        "Routed through the Yomira NSFW Source Pack instead of the general curated pack.",
         "Marked 18+ and app-store-safe because it is declarative and contains no executable bridge code.",
         "Browser Verification is declared as a possible recovery path, but normal requests are attempted first."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.novelfire",
+      "displayName": "NovelFire",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.novelfire.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added as the first light novel Source Definition and routed exclusively through the Yomira Novels Source Pack.",
+        "Uses declarative list/detail/chapter selectors and text page extraction for prose chapters.",
+        "Browser Verification is declared because direct HTTP checks return a Cloudflare challenge."
       ]
     },
     {

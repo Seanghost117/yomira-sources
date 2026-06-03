@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "1.0",
+  "packId": "yomira-novels",
+  "displayName": "Yomira Novels Source Pack",
+  "description": "Light novel and web novel source definitions for Yomira prose reading support.",
+  "packKind": "source_pack",
+  "languageScope": [
+    "en"
+  ],
+  "generatedFrom": [
+    "tmp/source-pack-split/novels"
+  ],
+  "sourceCount": 1,
+  "definitions": [
+    {
+      "adultContent": false,
+      "appStoreSafe": true,
+      "baseUrl": "https://novelfire.net",
+      "base_url": "https://novelfire.net",
+      "browserVerificationRequired": true,
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "contentKind": "light_novel",
+      "description": "English light novel and web novel source powered by Yomira's built-in selector engine.",
+      "displayName": "NovelFire",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/book/{id}/chapters"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/book/{id}"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/latest-release-novels"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/genre-all/sort-popular/status-all/all-novel"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/search?keyword={query}"
+        }
+      },
+      "flags": {
+        "browserVerificationRequired": true,
+        "requires_js": false,
+        "uses_cloudflare": true
+      },
+      "id": "yomira.en.novelfire",
+      "language": "en",
+      "name": "NovelFire",
+      "nsfw": false,
+      "pagination": {
+        "param": "page",
+        "start": 1
+      },
+      "presentation": {
+        "listingIcons": {
+          "latest": "text.book.closed.fill",
+          "popular": "flame.fill"
+        },
+        "listingLabels": {
+          "latest": "Latest Novel Updates",
+          "popular": "Popular Novels"
+        },
+        "listingStyles": {
+          "latest": "list",
+          "popular": "carousel"
+        },
+        "listingSubtitles": {
+          "latest": "Freshly updated light novel chapters from NovelFire",
+          "popular": "Popular web novels from NovelFire"
+        },
+        "primaryListing": "latest",
+        "sections": [
+          "latest",
+          "popular"
+        ]
+      },
+      "provenance": {
+        "analyzerBucket": "curated_light_novel_source",
+        "ecosystem": "yomira",
+        "originalFamily": "Selector",
+        "originalLanguage": "en",
+        "originalSourceName": "NovelFire"
+      },
+      "rateLimit": {
+        "minDelayMs": 1200,
+        "requestsPerMinute": 50
+      },
+      "rate_limit_ms": 1200,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": "ul.chapter-list li || .chapter-list li || .list-chapter li",
+          "date": ".time@text || time@datetime || time@text",
+          "link": "a@href",
+          "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|([0-9]+(?:\\.[0-9]+)?)\\s*$",
+          "title": "a@title || a@text"
+        },
+        "manga_details": {
+          "authors": "span[itemprop='author']@text || .author a@text || a[href*='/author/']@text",
+          "cover": ".cover img@data-src || .cover img@src || img@data-src || img@src",
+          "description": ".description@text || .summary@text || .novel-detail .desc@text || [itemprop='description']@text",
+          "genres": "a[href*='/genre/']@text || .genres a@text || .categories a@text",
+          "status": ".status@text || span[itemprop='bookFormat']@text",
+          "title": "h1@text"
+        },
+        "manga_list": {
+          "container": ".novel-list .novel-item || .novel-item || .book-list .book-item || .row .novel-title || .list .item",
+          "cover": ".cover img@data-src || .cover img@src || img@data-src || img@src",
+          "link": ".novel-title a@href || a[title]@href || a[href*='/book/']@href",
+          "title": ".novel-title a@text || a[title]@title || a[href*='/book/']@title || a[href*='/book/']@text"
+        },
+        "page_list": {
+          "container": "div#content || #content || .chapter-content || .reading-content",
+          "html": "div#content || #content || .chapter-content || .reading-content",
+          "text": "div#content p@text || #content p@text || .chapter-content p@text || .reading-content p@text",
+          "title": "h1@text || h2@text || h3@text || h4@text"
+        }
+      },
+      "sessionScopeDomain": "novelfire.net",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "yomira.en.novelfire",
+      "sourceType": "selector",
+      "tags": [
+        "Yomira",
+        "Selector",
+        "Light Novel",
+        "Novel"
+      ],
+      "verificationUrl": "https://novelfire.net",
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "familiesIncluded": [
+      "Selector"
+    ],
+    "convertedDefinitionSets": [
+      "tmp/source-pack-split/novels"
+    ]
+  },
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false
+}

@@ -1,0 +1,23 @@
+{
+  "packId": "yomira-novels",
+  "displayName": "Yomira Novels Source Pack",
+  "sourceCount": 1,
+  "familyCounts": {
+    "Selector": 1
+  },
+  "languageCounts": {
+    "en": 1
+  },
+  "nsfwCount": 0,
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "sourcePackPath": "extensions/packs/yomira-novels/source-pack.json",
+  "validationState": "Valid",
+  "installableCount": 1,
+  "blockedCount": 0,
+  "rejectedCount": 0,
+  "warningCount": 0,
+  "errorCount": 0,
+  "importDryRun": true
+}

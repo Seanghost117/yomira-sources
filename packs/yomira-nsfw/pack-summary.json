@@ -1,0 +1,29 @@
+{
+  "packId": "yomira-nsfw",
+  "displayName": "Yomira NSFW Source Pack",
+  "sourceCount": 17,
+  "familyCounts": {
+    "MadTheme": 1,
+    "Madara": 13,
+    "MangaThemesia": 2,
+    "Selector": 1
+  },
+  "languageCounts": {
+    "en": 10,
+    "fr": 5,
+    "id": 1,
+    "vi": 1
+  },
+  "nsfwCount": 17,
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "sourcePackPath": "extensions/packs/yomira-nsfw/source-pack.json",
+  "validationState": "Valid",
+  "installableCount": 17,
+  "blockedCount": 0,
+  "rejectedCount": 0,
+  "warningCount": 0,
+  "errorCount": 0,
+  "importDryRun": true
+}

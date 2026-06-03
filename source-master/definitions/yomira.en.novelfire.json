@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.novelfire",
+  "sourceId": "yomira.en.novelfire",
+  "name": "NovelFire",
+  "displayName": "NovelFire",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "contentKind": "light_novel",
+  "base_url": "https://novelfire.net",
+  "baseUrl": "https://novelfire.net",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "English light novel and web novel source powered by Yomira's built-in selector engine.",
+  "tags": [
+    "Yomira",
+    "Selector",
+    "Light Novel",
+    "Novel"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://novelfire.net",
+  "sessionScopeDomain": "novelfire.net",
+  "flags": {
+    "requires_js": false,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  },
+  "rate_limit_ms": 1200,
+  "rateLimit": {
+    "minDelayMs": 1200,
+    "requestsPerMinute": 50
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search?keyword={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/genre-all/sort-popular/status-all/all-novel",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/latest-release-novels",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/book/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/book/{id}/chapters",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".novel-list .novel-item || .novel-item || .book-list .book-item || .row .novel-title || .list .item",
+      "title": ".novel-title a@text || a[title]@title || a[href*='/book/']@title || a[href*='/book/']@text",
+      "cover": ".cover img@data-src || .cover img@src || img@data-src || img@src",
+      "link": ".novel-title a@href || a[title]@href || a[href*='/book/']@href"
+    },
+    "manga_details": {
+      "title": "h1@text",
+      "cover": ".cover img@data-src || .cover img@src || img@data-src || img@src",
+      "description": ".description@text || .summary@text || .novel-detail .desc@text || [itemprop='description']@text",
+      "authors": "span[itemprop='author']@text || .author a@text || a[href*='/author/']@text",
+      "genres": "a[href*='/genre/']@text || .genres a@text || .categories a@text",
+      "status": ".status@text || span[itemprop='bookFormat']@text"
+    },
+    "chapter_list": {
+      "container": "ul.chapter-list li || .chapter-list li || .list-chapter li",
+      "title": "a@title || a@text",
+      "link": "a@href",
+      "date": ".time@text || time@datetime || time@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|([0-9]+(?:\\.[0-9]+)?)\\s*$"
+    },
+    "page_list": {
+      "container": "div#content || #content || .chapter-content || .reading-content",
+      "title": "h1@text || h2@text || h3@text || h4@text",
+      "text": "div#content p@text || #content p@text || .chapter-content p@text || .reading-content p@text",
+      "html": "div#content || #content || .chapter-content || .reading-content"
+    }
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "presentation": {
+    "primaryListing": "latest",
+    "sections": [
+      "latest",
+      "popular"
+    ],
+    "listingLabels": {
+      "latest": "Latest Novel Updates",
+      "popular": "Popular Novels"
+    },
+    "listingSubtitles": {
+      "latest": "Freshly updated light novel chapters from NovelFire",
+      "popular": "Popular web novels from NovelFire"
+    },
+    "listingIcons": {
+      "latest": "text.book.closed.fill",
+      "popular": "flame.fill"
+    },
+    "listingStyles": {
+      "latest": "list",
+      "popular": "carousel"
+    }
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "Selector",
+    "originalLanguage": "en",
+    "originalSourceName": "NovelFire",
+    "analyzerBucket": "curated_light_novel_source"
+  }
+}
