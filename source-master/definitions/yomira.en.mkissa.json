@@ -42,7 +42,7 @@
         "Origin": "https://mkissa.to",
         "Referer": "https://mkissa.to/"
       },
-      "body": "{\"variables\":{\"search\":{\"query\":{query_json},\"sortBy\":null,\"genres\":null,\"excludeGenres\":null,\"isManga\":true,\"allowAdult\":false,\"allowUnknown\":false},\"size\":24,\"page\":{page},\"translationType\":\"sub\",\"countryOrigin\":\"ALL\"},\"query\":\"query ($search: SearchInput, $size: Int, $page: Int, $translationType: VaildTranslationTypeMangaEnumType, $countryOrigin: VaildCountryOriginEnumType) { mangas(search: $search, limit: $size, page: $page, translationType: $translationType, countryOrigin: $countryOrigin) { edges { _id name thumbnail englishName nativeName status genres tags chapterCount availableChapters lastChapterInfo lastUpdateEnd } } }\"}"
+      "body": "{\"variables\":{\"search\":{\"query\":{query_json},\"sortBy\":null,\"genres\":null,\"excludeGenres\":null,\"isManga\":true,\"allowAdult\":false,\"allowUnknown\":false},\"size\":24,\"page\":{page},\"translationType\":\"sub\",\"countryOrigin\":\"ALL\"},\"query\":\"query ($search: SearchInput, $size: Int, $page: Int, $translationType: VaildTranslationTypeMangaEnumType, $countryOrigin: VaildCountryOriginEnumType) { mangas(search: $search, limit: $size, page: $page, translationType: $translationType, countryOrigin: $countryOrigin) { edges { _id name thumbnail englishName } } }\"}"
     },
     "popular": {
       "url": "https://api.allanime.day/api",
@@ -52,7 +52,7 @@
         "Origin": "https://mkissa.to",
         "Referer": "https://mkissa.to/"
       },
-      "body": "{\"variables\":{\"type\":\"manga\",\"size\":24,\"dateRange\":0,\"page\":{page},\"allowAdult\":false,\"allowUnknown\":false},\"query\":\"query ($type: VaildPopularTypeEnumType!, $size: Int!, $page: Int, $dateRange: Int, $allowAdult: Boolean, $allowUnknown: Boolean) { queryPopular(type: $type, size: $size, dateRange: $dateRange, page: $page, allowAdult: $allowAdult, allowUnknown: $allowUnknown) { recommendations { anyCard { _id name thumbnail englishName nativeName status genres tags chapterCount availableChapters lastChapterInfo lastUpdateEnd } } } }\"}"
+      "body": "{\"variables\":{\"type\":\"manga\",\"size\":24,\"dateRange\":0,\"page\":{page},\"allowAdult\":false,\"allowUnknown\":false},\"query\":\"query ($type: VaildPopularTypeEnumType!, $size: Int!, $page: Int, $dateRange: Int, $allowAdult: Boolean, $allowUnknown: Boolean) { queryPopular(type: $type, size: $size, dateRange: $dateRange, page: $page, allowAdult: $allowAdult, allowUnknown: $allowUnknown) { recommendations { anyCard { _id name thumbnail englishName } } } }\"}"
     },
     "latest": {
       "url": "https://api.allanime.day/api",
@@ -62,7 +62,7 @@
         "Origin": "https://mkissa.to",
         "Referer": "https://mkissa.to/"
       },
-      "body": "{\"variables\":{\"search\":{\"query\":null,\"sortBy\":null,\"genres\":null,\"excludeGenres\":null,\"isManga\":true,\"allowAdult\":false,\"allowUnknown\":false},\"size\":24,\"page\":{page},\"translationType\":\"sub\",\"countryOrigin\":\"ALL\"},\"query\":\"query ($search: SearchInput, $size: Int, $page: Int, $translationType: VaildTranslationTypeMangaEnumType, $countryOrigin: VaildCountryOriginEnumType) { mangas(search: $search, limit: $size, page: $page, translationType: $translationType, countryOrigin: $countryOrigin) { edges { _id name thumbnail englishName nativeName status genres tags chapterCount availableChapters lastChapterInfo lastUpdateEnd } } }\"}"
+      "body": "{\"variables\":{\"search\":{\"query\":null,\"sortBy\":null,\"genres\":null,\"excludeGenres\":null,\"isManga\":true,\"allowAdult\":false,\"allowUnknown\":false},\"size\":24,\"page\":{page},\"translationType\":\"sub\",\"countryOrigin\":\"ALL\"},\"query\":\"query ($search: SearchInput, $size: Int, $page: Int, $translationType: VaildTranslationTypeMangaEnumType, $countryOrigin: VaildCountryOriginEnumType) { mangas(search: $search, limit: $size, page: $page, translationType: $translationType, countryOrigin: $countryOrigin) { edges { _id name thumbnail englishName } } }\"}"
     },
     "details": {
       "url": "https://api.allanime.day/api",
@@ -85,7 +85,7 @@
       "body": "{\"variables\":{\"id\":\"{id}\",\"showId\":\"{show_id}\"},\"query\":\"query ($id: String!, $showId: String!) { manga(_id: $id) { _id name availableChaptersDetail } episodeInfos(showId: $showId, episodeNumStart: 0, episodeNumEnd: 9999) { episodeIdNum notes uploadDates } }\"}"
     },
     "pages": {
-      "url": "{base}/manga/{manga_id}/chapter-{chapter_string}-{translation_type}",
+      "url": "{base}/manga/{manga_id}/{manga_slug}/chapter-{chapter_string}-{translation_type}",
       "method": "GET"
     }
   },
