@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.0",
   "packId": "keiyoushi-core-expanded",
-  "displayName": "Keiyoushi Core Expanded",
-  "description": "Expanded Keiyoushi-derived source definitions normalized for Yomira built-in connector engines.",
+  "displayName": "Keiyoushi Expanded Core Source Pack",
+  "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
   "packKind": "source_pack",
   "languageScope": [
     "all",
@@ -25,7 +25,7 @@
   "generatedFrom": [
     "tmp/source-pack-split/expanded"
   ],
-  "sourceCount": 413,
+  "sourceCount": 418,
   "definitions": [
     {
       "adultContent": false,
@@ -638,6 +638,133 @@
         "Converted",
         "Connector Profile"
       ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://www.ninemanga.com",
+      "base_url": "https://www.ninemanga.com",
+      "browserVerificationRequired": true,
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "NineManga multi-language Source Definition normalized from local Keiyoushi selector hints. Browser Verification is required before browsing.",
+      "displayName": "NineManga",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/{id}"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/{id}"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/list/New-Update/{page}/"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/category/index_{page}.html"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/search/?wd={query}&page={page}"
+        }
+      },
+      "flags": {
+        "browserVerificationRequired": true,
+        "sourceSessionRequired": true,
+        "uses_cloudflare": true
+      },
+      "id": "keiyoushi.all.ninemanga",
+      "language": "all",
+      "name": "NineManga",
+      "nsfw": true,
+      "pagination": {
+        "param": "page",
+        "start": 1
+      },
+      "presentation": {
+        "listingLabels": {
+          "latest": "Latest NineManga Updates",
+          "popular": "NineManga Catalog"
+        },
+        "listingStyles": {
+          "latest": "list",
+          "popular": "grid"
+        },
+        "primaryListing": "latest",
+        "sections": [
+          "latest",
+          "popular"
+        ]
+      },
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "keiyoushi",
+        "originalFamily": "HttpSource",
+        "originalLanguage": "all",
+        "originalSourceName": "NineManga"
+      },
+      "rateLimit": {
+        "minDelayMs": 1300,
+        "requestsPerMinute": 40
+      },
+      "rate_limit_ms": 1300,
+      "region": "all",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": "ul.sub_vol_ul > li || .chapter_list li || a.chapter_list_a",
+          "date": ".time@text || time@datetime",
+          "link": "a.chapter_list_a@href || a@href || @href",
+          "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
+          "title": "a.chapter_list_a@text || a@text || @text"
+        },
+        "manga_details": {
+          "authors": "li a[itemprop=author]@text || a[href*='/author/']@text",
+          "cover": "img[itemprop=image]@src || div.pic_box img.manga_pic@src || meta[property='og:image']@content",
+          "description": "p[itemprop=description]@text || div.bookintro@text || meta[name='description']@content",
+          "genres": "li[itemprop=genre] a@text || a[href*='/category/']@text",
+          "status": ".bookinfo@text || dl.bookinfo@text",
+          "title": "h1@text || dl.bookinfo h1@text || meta[property='og:title']@content"
+        },
+        "manga_list": {
+          "container": ".book_list li || .list_book li || .pic_box || a.bookname",
+          "cover": ".pic_box img.manga_pic@src || img[itemprop=image]@src || img@data-src || img@src",
+          "link": "a.bookname@href || h3 a@href || a@href || @href",
+          "title": "a.bookname@text || h3 a@text || img@alt || @title"
+        },
+        "page_list": {
+          "container": "body",
+          "exclude": [
+            "logo",
+            "icon",
+            "avatar"
+          ],
+          "image": "img@data-src || img@src"
+        }
+      },
+      "sessionScopeDomain": "ninemanga.com",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "keiyoushi.all.ninemanga",
+      "sourceSessionRequired": true,
+      "sourceType": "selector",
+      "tags": [
+        "Keiyoushi",
+        "Selector",
+        "Manga",
+        "Multi-language",
+        "NSFW"
+      ],
+      "userAgentPolicy": "browser_session",
+      "verificationUrl": "https://www.ninemanga.com",
       "version": "1.0.0"
     },
     {
@@ -5011,6 +5138,156 @@
         "Madara",
         "Converted"
       ],
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://mangaball.net",
+      "base_url": "https://mangaball.net",
+      "browserVerificationRequired": true,
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "MangaBall catalog normalized from local Keiyoushi API hints. Browser Verification is required because direct HTTP currently returns a Cloudflare challenge.",
+      "displayName": "MangaBall",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/api/v1/chapter/chapter-listing-by-title-id/?title_id={id}"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/title-detail/{id}/"
+        },
+        "highlighted": {
+          "method": "GET",
+          "url": "{base}/"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/api/v1/title/search-advanced/?sort=latest&page={page}"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/api/v1/title/search-advanced/?sort=popular&page={page}"
+        },
+        "popular_this_season": {
+          "method": "GET",
+          "url": "{base}/"
+        },
+        "recommended": {
+          "method": "GET",
+          "url": "{base}/"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/api/v1/smart-search/search/?keyword={query}&page={page}"
+        },
+        "top_viewed": {
+          "method": "GET",
+          "url": "{base}/"
+        }
+      },
+      "flags": {
+        "browserVerificationRequired": true,
+        "sourceSessionRequired": true,
+        "uses_cloudflare": true
+      },
+      "id": "keiyoushi.en.mangaball",
+      "language": "en",
+      "name": "MangaBall",
+      "nsfw": true,
+      "presentation": {
+        "listingLabels": {
+          "highlighted": "MangaBall Highlights",
+          "latest": "Latest MangaBall Updates",
+          "popular": "Popular MangaBall Titles",
+          "popular_this_season": "Popular This Season",
+          "recommended": "Recommended MangaBall Titles",
+          "top_viewed": "Top Viewed MangaBall Titles"
+        },
+        "listingStyles": {
+          "highlighted": "featured",
+          "latest": "list",
+          "popular": "carousel",
+          "popular_this_season": "carousel",
+          "recommended": "carousel",
+          "top_viewed": "carousel"
+        },
+        "primaryListing": "highlighted",
+        "sections": [
+          "highlighted",
+          "latest",
+          "popular",
+          "recommended",
+          "popular_this_season",
+          "top_viewed"
+        ]
+      },
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "keiyoushi",
+        "originalFamily": "HttpSource",
+        "originalLanguage": "en",
+        "originalSourceName": "MangaBall"
+      },
+      "rateLimit": {
+        "minDelayMs": 1300,
+        "requestsPerMinute": 40
+      },
+      "rate_limit_ms": 1300,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": ".yomira-json-chapter-fallback || .chapter-list a || a[href*='/chapter-detail/']",
+          "link": "a@href || @href",
+          "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
+          "title": "a@text || @text"
+        },
+        "manga_details": {
+          "authors": "#comicDetail span[data-person-id]@text || a[href*='/author/']@text",
+          "cover": "img.featured-cover@src || meta[property='og:image']@content",
+          "description": "#descriptionContent p@text || meta[name='description']@content",
+          "genres": "#comicDetail span[data-tag-id]@text || a[href*='/tag/']@text",
+          "status": "span.badge-status@text || #comicDetail span.badge@text",
+          "title": "#comicDetail h6@text || h1@text || meta[property='og:title']@content"
+        },
+        "manga_list": {
+          "container": ".manga-card || .featured-item || .title-card || a[href*='/title-detail/']",
+          "cover": "img.featured-cover@src || img@data-src || img@src",
+          "link": "a@href || @href",
+          "title": "h3@text || h6@text || img@alt || @title"
+        },
+        "page_list": {
+          "container": "body",
+          "exclude": [
+            "logo",
+            "icon",
+            "avatar"
+          ],
+          "image": "img@data-src || img@src"
+        }
+      },
+      "sessionScopeDomain": "mangaball.net",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "keiyoushi.en.mangaball",
+      "sourceSessionRequired": true,
+      "sourceType": "selector",
+      "tags": [
+        "Keiyoushi",
+        "Selector",
+        "Manga",
+        "Manhwa",
+        "NSFW"
+      ],
+      "userAgentPolicy": "browser_session",
+      "verificationUrl": "https://mangaball.net",
       "version": "1.0.0"
     },
     {
@@ -21203,6 +21480,180 @@
       "version": "1.0.0"
     },
     {
+      "adultContent": true,
+      "appStoreSafe": true,
+      "baseUrl": "https://mangataro.org",
+      "base_url": "https://mangataro.org",
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "MangaTaro catalog with popular, latest, followed, high-score, and collection sections.",
+      "displayName": "MangaTaro",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/manga/{id}"
+        },
+        "collections": {
+          "method": "GET",
+          "url": "{base}/collections/"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/manga/{id}"
+        },
+        "high_score": {
+          "method": "GET",
+          "url": "{base}/home"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/home"
+        },
+        "most_followed_day": {
+          "method": "GET",
+          "url": "{base}/home"
+        },
+        "most_followed_month": {
+          "method": "GET",
+          "url": "{base}/home"
+        },
+        "most_followed_new_3_months": {
+          "method": "GET",
+          "url": "{base}/home"
+        },
+        "most_followed_new_month": {
+          "method": "GET",
+          "url": "{base}/home"
+        },
+        "most_followed_new_week": {
+          "method": "GET",
+          "url": "{base}/home"
+        },
+        "most_followed_week": {
+          "method": "GET",
+          "url": "{base}/home"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/home"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/search?q={query}"
+        }
+      },
+      "id": "yomira.en.mangataro",
+      "language": "en",
+      "name": "MangaTaro",
+      "nsfw": true,
+      "presentation": {
+        "listingLabels": {
+          "collections": "MangaTaro Collections",
+          "high_score": "High Score Manga",
+          "latest": "Latest MangaTaro Updates",
+          "most_followed_day": "Most Followed Today",
+          "most_followed_month": "Most Followed This Month",
+          "most_followed_new_3_months": "New Manga Followed In 3 Months",
+          "most_followed_new_month": "New Manga Followed This Month",
+          "most_followed_new_week": "New Manga Followed This Week",
+          "most_followed_week": "Most Followed This Week",
+          "popular": "Most Popular MangaTaro Titles"
+        },
+        "listingStyles": {
+          "collections": "collection_cards",
+          "high_score": "carousel",
+          "latest": "list",
+          "most_followed_day": "carousel",
+          "most_followed_month": "carousel",
+          "most_followed_new_3_months": "carousel",
+          "most_followed_new_month": "carousel",
+          "most_followed_new_week": "carousel",
+          "most_followed_week": "carousel",
+          "popular": "carousel"
+        },
+        "listingSubtitles": {
+          "collections": "Curated collection cards with title counts and short descriptions"
+        },
+        "primaryListing": "popular",
+        "sections": [
+          "popular",
+          "latest",
+          "most_followed_month",
+          "most_followed_week",
+          "most_followed_day",
+          "most_followed_new_week",
+          "most_followed_new_month",
+          "most_followed_new_3_months",
+          "high_score",
+          "collections"
+        ]
+      },
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "yomira",
+        "originalFamily": "Selector",
+        "originalLanguage": "en",
+        "originalSourceName": "MangaTaro"
+      },
+      "rateLimit": {
+        "minDelayMs": 1100,
+        "requestsPerMinute": 50
+      },
+      "rate_limit_ms": 1100,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": "a[href*='/read/'] || .chapter-list a",
+          "date": "time@datetime || .date@text",
+          "link": "@href || a@href",
+          "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
+          "title": "@text || a@text"
+        },
+        "manga_details": {
+          "artists": "a[href*='/artist/']@text",
+          "authors": "a[href*='/author/']@text",
+          "cover": "meta[property='og:image']@content || img[src*='/content/media/']@src",
+          "description": "meta[name='description']@content || .description@text || .summary@text",
+          "genres": "a[href*='/tag/']@text",
+          "status": "a[href*='/status/']@text || .status@text",
+          "title": "h1@text || meta[property='og:title']@content"
+        },
+        "manga_list": {
+          "container": "a[href*='/manga/'] || a[href*='/tag/']",
+          "cover": "img@data-src || img@src",
+          "link": "@href || a@href",
+          "title": "h3@text || img@alt || @title || @text"
+        },
+        "page_list": {
+          "container": "body",
+          "exclude": [
+            "logo",
+            "icon",
+            "avatar",
+            "favicon"
+          ],
+          "image": "img[data-src*='/content/media/']@data-src || img[src*='/content/media/']@src || img@data-src || img@src"
+        }
+      },
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "yomira.en.mangataro",
+      "sourceType": "selector",
+      "tags": [
+        "Yomira",
+        "Selector",
+        "Manga",
+        "Manhwa",
+        "Collections"
+      ],
+      "version": "1.0.0"
+    },
+    {
       "adultContent": false,
       "appStoreSafe": true,
       "baseUrl": "https://mkissa.to",
@@ -21347,6 +21798,357 @@
       "userAgentPolicy": "browser_session",
       "verificationUrl": "https://mkissa.to/manga",
       "version": "1.0.0"
+    },
+    {
+      "adultContent": false,
+      "appStoreSafe": true,
+      "baseUrl": "https://onisaga.com",
+      "base_url": "https://onisaga.com",
+      "browserVerificationRequired": true,
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "OniSaga manga/manhwa catalog with latest, popular, fan-favorite, and top-rated sections. Browser Verification is required before browsing.",
+      "displayName": "OniSaga",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/manga/{id}/"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/manga/{id}/"
+        },
+        "fan_favorites": {
+          "method": "GET",
+          "url": "{base}/manga/?m_orderby=alphabet&page={page}"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/manga/?m_orderby=latest&page={page}"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular_day": {
+          "method": "GET",
+          "url": "{base}/manga/?m_orderby=trending&trending=day&page={page}"
+        },
+        "popular_month": {
+          "method": "GET",
+          "url": "{base}/manga/?m_orderby=trending&trending=month&page={page}"
+        },
+        "popular_week": {
+          "method": "GET",
+          "url": "{base}/manga/?m_orderby=trending&trending=week&page={page}"
+        },
+        "popular_year": {
+          "method": "GET",
+          "url": "{base}/manga/?m_orderby=trending&trending=year&page={page}"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/?s={query}&post_type=wp-manga&page={page}"
+        },
+        "top_rated": {
+          "method": "GET",
+          "url": "{base}/manga/?m_orderby=rating&page={page}"
+        }
+      },
+      "filters": [
+        {
+          "filter_type": "select",
+          "name": "Type",
+          "options": [
+            {
+              "label": "Any",
+              "value": ""
+            },
+            {
+              "label": "Manga",
+              "value": "manga"
+            },
+            {
+              "label": "Manhwa",
+              "value": "manhwa"
+            },
+            {
+              "label": "Manhua",
+              "value": "manhua"
+            }
+          ],
+          "param": "type"
+        },
+        {
+          "filter_type": "select",
+          "name": "Status",
+          "options": [
+            {
+              "label": "Any",
+              "value": ""
+            },
+            {
+              "label": "Ongoing",
+              "value": "ongoing"
+            },
+            {
+              "label": "Completed",
+              "value": "completed"
+            }
+          ],
+          "param": "status"
+        },
+        {
+          "filter_type": "select",
+          "name": "Genre",
+          "options": [
+            {
+              "label": "Any",
+              "value": ""
+            },
+            {
+              "label": "Action",
+              "value": "action"
+            },
+            {
+              "label": "Romance",
+              "value": "romance"
+            },
+            {
+              "label": "Fantasy",
+              "value": "fantasy"
+            },
+            {
+              "label": "Drama",
+              "value": "drama"
+            }
+          ],
+          "param": "genre"
+        }
+      ],
+      "flags": {
+        "browserVerificationRequired": true,
+        "sourceSessionRequired": true,
+        "uses_cloudflare": true
+      },
+      "id": "yomira.en.onisaga",
+      "language": "en",
+      "name": "OniSaga",
+      "nsfw": false,
+      "presentation": {
+        "listingLabels": {
+          "fan_favorites": "Fan Favorites",
+          "latest": "Latest OniSaga Updates",
+          "popular_day": "Popular Today",
+          "popular_month": "Popular This Month",
+          "popular_week": "Popular This Week",
+          "popular_year": "Popular This Year",
+          "top_rated": "Top Rated"
+        },
+        "listingStyles": {
+          "fan_favorites": "carousel",
+          "latest": "list",
+          "popular_day": "carousel",
+          "popular_month": "carousel",
+          "popular_week": "carousel",
+          "popular_year": "carousel",
+          "top_rated": "carousel"
+        },
+        "primaryListing": "latest",
+        "sections": [
+          "latest",
+          "popular_day",
+          "popular_week",
+          "popular_month",
+          "popular_year",
+          "fan_favorites",
+          "top_rated"
+        ]
+      },
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "yomira",
+        "originalFamily": "Selector",
+        "originalLanguage": "en",
+        "originalSourceName": "OniSaga"
+      },
+      "rateLimit": {
+        "minDelayMs": 1300,
+        "requestsPerMinute": 40
+      },
+      "rate_limit_ms": 1300,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": "li.wp-manga-chapter || .chapter-list a || a[href*='/chapter-']",
+          "date": ".chapter-release-date@text || time@datetime",
+          "link": "a@href",
+          "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
+          "title": "a@text"
+        },
+        "manga_details": {
+          "artists": ".artist-content a@text || a[href*='/manga-artist/']@text",
+          "authors": ".author-content a@text || a[href*='/manga-author/']@text",
+          "cover": ".summary_image img@data-src || .summary_image img@src || meta[property='og:image']@content",
+          "description": ".description-summary@text || .summary__content@text || meta[name='description']@content",
+          "genres": ".genres-content a@text || a[href*='/manga-genre/']@text",
+          "status": ".post-status .summary-content@text || .summary-heading:contains('Status')@text",
+          "title": ".post-title h1@text || h1@text || meta[property='og:title']@content"
+        },
+        "manga_list": {
+          "container": ".page-item-detail || .c-tabs-item__content || .manga-card",
+          "cover": "img@data-src || img@src",
+          "link": ".post-title a@href || h3 a@href || a@href",
+          "title": ".post-title a@text || h3 a@text || img@alt"
+        },
+        "page_list": {
+          "container": ".reading-content || .chapter-content || body",
+          "exclude": [
+            "logo",
+            "icon",
+            "avatar"
+          ],
+          "image": "img.wp-manga-chapter-img@data-src || img.wp-manga-chapter-img@src || img@data-src || img@src"
+        }
+      },
+      "sessionScopeDomain": "onisaga.com",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "yomira.en.onisaga",
+      "sourceSessionRequired": true,
+      "sourceType": "selector",
+      "tags": [
+        "Yomira",
+        "Selector",
+        "Manga",
+        "Manhwa"
+      ],
+      "userAgentPolicy": "browser_session",
+      "verificationUrl": "https://onisaga.com",
+      "version": "1.0.0"
+    },
+    {
+      "adultContent": false,
+      "appStoreSafe": true,
+      "baseUrl": "https://scans.gg",
+      "base_url": "https://scans.gg",
+      "browserVerificationRequired": true,
+      "connectorEngine": "selector",
+      "containsExecutableCode": false,
+      "description": "Basic Scans.gg Source Definition. Browser Verification is required before browsing because direct HTTP currently returns a Cloudflare challenge.",
+      "displayName": "Scans.gg",
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/series/{id}/"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/series/{id}/"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/"
+        },
+        "pages": {
+          "method": "GET",
+          "url": "{chapter_url}"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/series/"
+        },
+        "search": {
+          "method": "GET",
+          "url": "{base}/?s={query}"
+        }
+      },
+      "flags": {
+        "browserVerificationRequired": true,
+        "sourceSessionRequired": true,
+        "uses_cloudflare": true
+      },
+      "id": "yomira.en.scansgg",
+      "language": "en",
+      "name": "ScansGG",
+      "nsfw": false,
+      "presentation": {
+        "listingLabels": {
+          "latest": "Latest Scans.gg Updates",
+          "popular": "Scans.gg Series"
+        },
+        "listingStyles": {
+          "latest": "list",
+          "popular": "grid"
+        },
+        "primaryListing": "latest",
+        "sections": [
+          "latest",
+          "popular"
+        ]
+      },
+      "provenance": {
+        "analyzerBucket": "curated_selector_profile",
+        "ecosystem": "yomira",
+        "originalFamily": "Selector",
+        "originalLanguage": "en",
+        "originalSourceName": "Scans.gg"
+      },
+      "rateLimit": {
+        "minDelayMs": 1300,
+        "requestsPerMinute": 40
+      },
+      "rate_limit_ms": 1300,
+      "region": "en",
+      "requiresExternalBridge": false,
+      "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": ".chapter-list a || .eplister li || a[href*='/chapter-']",
+          "date": ".date@text || time@datetime",
+          "link": "a@href || @href",
+          "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
+          "title": "a@text || @text"
+        },
+        "manga_details": {
+          "authors": "a[href*='/author/']@text",
+          "cover": "meta[property='og:image']@content || img@data-src || img@src",
+          "description": ".entry-content@text || .summary@text || meta[name='description']@content",
+          "genres": "a[href*='/genre/']@text || a[href*='/tag/']@text",
+          "status": ".status@text",
+          "title": "h1@text || meta[property='og:title']@content"
+        },
+        "manga_list": {
+          "container": ".series-list article || .bs || article || a[href*='/series/']",
+          "cover": "img@data-src || img@src",
+          "link": "a@href || @href",
+          "title": "h3@text || .tt@text || img@alt || @title"
+        },
+        "page_list": {
+          "container": ".reading-content || .chapter-content || body",
+          "exclude": [
+            "logo",
+            "icon",
+            "avatar"
+          ],
+          "image": "img@data-src || img@src"
+        }
+      },
+      "sessionScopeDomain": "scans.gg",
+      "sourceDefinitionKind": "curated_source_config",
+      "sourceId": "yomira.en.scansgg",
+      "sourceSessionRequired": true,
+      "sourceType": "selector",
+      "tags": [
+        "Yomira",
+        "Selector",
+        "Manga",
+        "Scans"
+      ],
+      "userAgentPolicy": "browser_session",
+      "verificationUrl": "https://scans.gg",
+      "version": "1.0.0"
     }
   ],
   "provenance": {
@@ -21364,7 +22166,8 @@
       "MangaDex",
       "MangaHub",
       "MangaThemesia",
-      "PizzaReader"
+      "PizzaReader",
+      "Selector"
     ],
     "convertedDefinitionSets": [
       "tmp/source-pack-split/expanded"
