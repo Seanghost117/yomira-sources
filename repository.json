@@ -7,15 +7,15 @@
   "maintainerUrl": "https://github.com/Seanghost117",
   "homepageUrl": "https://github.com/Seanghost117/yomira-sources",
   "termsUrl": "https://github.com/Seanghost117/yomira-sources",
-  "updatedAt": "2026-06-04T07:01:34Z",
+  "updatedAt": "2026-06-04T07:55:25Z",
   "sourcePacks": [
     {
       "packId": "keiyoushi-core-expanded",
       "displayName": "Keiyoushi Expanded Core Source Pack",
       "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
-      "version": "2026.06.04.2",
+      "version": "2026.06.04.3",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/keiyoushi-core-expanded/source-pack.json",
-      "checksum": "sha256:4b820c0e59fdd5fb605f7d676278a26b13241890b5dd6853930f8907e0336867",
+      "checksum": "sha256:a23e7d447b54e68494cad828ff09e16e7024a5dc52416b7a327d7d6d9f3440b4",
       "checksumAlgorithm": "sha256",
       "language": "multi",
       "region": "global",
@@ -28,15 +28,15 @@
       ],
       "sourceCount": 418,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-06-04T07:01:34Z"
+      "updatedAt": "2026-06-04T07:55:25Z"
     },
     {
       "packId": "yomira-curated",
       "displayName": "Yomira Curated Source Pack",
       "description": "Curated Yomira-compatible source definitions maintained separately from the app.",
-      "version": "2026.06.04.2",
+      "version": "2026.06.04.3",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-curated/source-pack.json",
-      "checksum": "sha256:335f40e9ac0ee86595e218374fbe538a6fa7977f08157a3f943abffe8746896e",
+      "checksum": "sha256:21c55df4196e19db3c81b232f61f4db558c66ebd9708179d839830a82447fb5b",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "en",
@@ -49,7 +49,7 @@
       ],
       "sourceCount": 23,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-06-04T07:01:34Z"
+      "updatedAt": "2026-06-04T07:55:25Z"
     },
     {
       "packId": "yomira-nsfw",

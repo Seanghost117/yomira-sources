@@ -14,7 +14,7 @@
   "region": "en",
   "nsfw": true,
   "adultContent": true,
-  "description": "MangaBall catalog normalized from local Keiyoushi API hints. Browser Verification is required because direct HTTP currently returns a Cloudflare challenge.",
+  "description": "MangaBall catalog normalized from local Keiyoushi API hints. Browser Verification is required because direct HTTP currently returns a Cloudflare challenge; listings use rendered session pages instead of stale unauthenticated API routes.",
   "tags": ["Keiyoushi", "Selector", "Manga", "Manhwa", "NSFW"],
   "appStoreSafe": true,
   "containsExecutableCode": false,
@@ -35,9 +35,9 @@
     "requestsPerMinute": 40
   },
   "endpoints": {
-    "search": { "url": "{base}/api/v1/smart-search/search/?keyword={query}&page={page}", "method": "GET" },
-    "popular": { "url": "{base}/api/v1/title/search-advanced/?sort=popular&page={page}", "method": "GET" },
-    "latest": { "url": "{base}/api/v1/title/search-advanced/?sort=latest&page={page}", "method": "GET" },
+    "search": { "url": "{base}/search-advanced?search_input={query}&page={page}", "method": "GET" },
+    "popular": { "url": "{base}/", "method": "GET" },
+    "latest": { "url": "{base}/recently-updated-chapter/?page={page}", "method": "GET" },
     "recommended": { "url": "{base}/", "method": "GET" },
     "popular_this_season": { "url": "{base}/", "method": "GET" },
     "top_viewed": { "url": "{base}/", "method": "GET" },
@@ -48,10 +48,10 @@
   },
   "selectors": {
     "manga_list": {
-      "container": ".manga-card || .featured-item || .title-card || a[href*='/title-detail/']",
-      "title": "h3@text || h6@text || img@alt || @title",
+      "container": ".slider-item || .grid-item-new-chapter || .table-item-new-chapter || .slider-items-table-item || .list-with-tags-item || a[href*='/title-detail/']:has(img)",
+      "title": ".slider-item-title@text || .chapter-title@text || h3@text || h6@text || img@alt || @title",
       "cover": "img.featured-cover@src || img@data-src || img@src",
-      "link": "a@href || @href"
+      "link": "@href || a@href || .chapter-title@href"
     },
     "manga_details": {
       "title": "#comicDetail h6@text || h1@text || meta[property='og:title']@content",

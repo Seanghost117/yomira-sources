@@ -14,7 +14,7 @@
   "region": "en",
   "nsfw": true,
   "adultContent": true,
-  "description": "MangaTaro catalog with popular, latest, followed, high-score, and collection sections.",
+  "description": "MangaTaro catalog using the site's public REST catalog endpoint for stable search, latest, popular, release, and alphabetical sections.",
   "tags": ["Yomira", "Selector", "Manga", "Manhwa", "Collections"],
   "appStoreSafe": true,
   "containsExecutableCode": false,
@@ -25,25 +25,44 @@
     "requestsPerMinute": 50
   },
   "endpoints": {
-    "search": { "url": "{base}/search?q={query}", "method": "GET" },
-    "popular": { "url": "{base}/home", "method": "GET" },
-    "latest": { "url": "{base}/home", "method": "GET" },
-    "most_followed_month": { "url": "{base}/home", "method": "GET" },
-    "most_followed_week": { "url": "{base}/home", "method": "GET" },
-    "most_followed_day": { "url": "{base}/home", "method": "GET" },
-    "most_followed_new_week": { "url": "{base}/home", "method": "GET" },
-    "most_followed_new_month": { "url": "{base}/home", "method": "GET" },
-    "most_followed_new_3_months": { "url": "{base}/home", "method": "GET" },
-    "high_score": { "url": "{base}/home", "method": "GET" },
-    "collections": { "url": "{base}/collections/", "method": "GET" },
+    "search": {
+      "url": "{base}/wp-json/manga/v1/load",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"page\":{page},\"search\":\"{query}\",\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"post_desc\",\"genreMatchMode\":\"any\"}"
+    },
+    "popular": {
+      "url": "{base}/wp-json/manga/v1/load",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"page\":{page},\"search\":\"\",\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"popular_desc\",\"genreMatchMode\":\"any\"}"
+    },
+    "latest": {
+      "url": "{base}/wp-json/manga/v1/load",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"page\":{page},\"search\":\"\",\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"post_desc\",\"genreMatchMode\":\"any\"}"
+    },
+    "recently_released": {
+      "url": "{base}/wp-json/manga/v1/load",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"page\":{page},\"search\":\"\",\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"release_desc\",\"genreMatchMode\":\"any\"}"
+    },
+    "title_az": {
+      "url": "{base}/wp-json/manga/v1/load",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"page\":{page},\"search\":\"\",\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"title_asc\",\"genreMatchMode\":\"any\"}"
+    },
     "details": { "url": "{base}/manga/{id}", "method": "GET" },
     "chapters": { "url": "{base}/manga/{id}", "method": "GET" },
     "pages": { "url": "{chapter_url}", "method": "GET" }
   },
   "selectors": {
     "manga_list": {
-      "container": "a[href*='/manga/'] || a[href*='/tag/']",
-      "title": "h3@text || img@alt || @title || @text",
+      "container": "a[href*='/manga/']:has(img) || .manga-card || .manga-item",
+      "title": "h3@text || .manga-title@text || img@alt || @title",
       "cover": "img@data-src || img@src",
       "link": "@href || a@href"
     },
@@ -74,41 +93,24 @@
     "sections": [
       "popular",
       "latest",
-      "most_followed_month",
-      "most_followed_week",
-      "most_followed_day",
-      "most_followed_new_week",
-      "most_followed_new_month",
-      "most_followed_new_3_months",
-      "high_score",
-      "collections"
+      "recently_released",
+      "title_az"
     ],
     "listingLabels": {
       "popular": "Most Popular MangaTaro Titles",
       "latest": "Latest MangaTaro Updates",
-      "most_followed_month": "Most Followed This Month",
-      "most_followed_week": "Most Followed This Week",
-      "most_followed_day": "Most Followed Today",
-      "most_followed_new_week": "New Manga Followed This Week",
-      "most_followed_new_month": "New Manga Followed This Month",
-      "most_followed_new_3_months": "New Manga Followed In 3 Months",
-      "high_score": "High Score Manga",
-      "collections": "MangaTaro Collections"
+      "recently_released": "Recently Released MangaTaro Titles",
+      "title_az": "MangaTaro A-Z"
     },
     "listingSubtitles": {
-      "collections": "Curated collection cards with title counts and short descriptions"
+      "recently_released": "Sorted by the release date exposed by MangaTaro",
+      "title_az": "Alphabetical catalog browsing"
     },
     "listingStyles": {
       "popular": "carousel",
       "latest": "list",
-      "most_followed_month": "carousel",
-      "most_followed_week": "carousel",
-      "most_followed_day": "carousel",
-      "most_followed_new_week": "carousel",
-      "most_followed_new_month": "carousel",
-      "most_followed_new_3_months": "carousel",
-      "high_score": "carousel",
-      "collections": "collection_cards"
+      "recently_released": "carousel",
+      "title_az": "grid"
     }
   },
   "provenance": {
