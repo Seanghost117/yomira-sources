@@ -5,7 +5,7 @@
   "sourceId": "yomira.en.mkissa",
   "name": "MKissa",
   "displayName": "MKissa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "connectorEngine": "selector",
   "sourceType": "allanime_graphql",
   "base_url": "https://mkissa.to",
@@ -14,7 +14,7 @@
   "region": "en",
   "nsfw": false,
   "adultContent": false,
-  "description": "MKissa manga/manhwa catalog using the AllAnime GraphQL API for browsing, details, and chapter metadata. Chapter pages use Browser Verification's short-lived rendered-page snapshot path when the site withholds page URLs from native HTTP.",
+  "description": "MKissa manga/manhwa catalog using the AllAnime GraphQL API for browsing, details, and chapter metadata. Cloudflare-protected chapter pages use Browser Verification's short-lived rendered-page snapshot path when the site withholds page URLs from native HTTP.",
   "tags": ["Yomira", "GraphQL", "Manga", "Manhwa", "Manhua"],
   "appStoreSafe": true,
   "containsExecutableCode": false,
@@ -25,7 +25,7 @@
   "userAgentPolicy": "browser_session",
   "flags": {
     "requires_js": true,
-    "uses_cloudflare": false,
+    "uses_cloudflare": true,
     "browserVerificationRequired": true
   },
   "rate_limit_ms": 1100,
