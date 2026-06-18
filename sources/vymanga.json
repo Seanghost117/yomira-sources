@@ -1,0 +1,81 @@
+{
+  "id": "vymanga",
+  "name": "VyManga",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://vymanga.net",
+  "language": "en",
+  "nsfw": true,
+  "description": "VyManga reader using declarative selectors with Browser Verification recovery metadata.",
+  "tags": ["Manga", "Manhwa", "Selector", "Browser Verification"],
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://vymanga.net",
+  "sessionScopeDomain": "vymanga.net",
+  "userAgentPolicy": "browser_session",
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search?q={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/search",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/search?sort=updated_at",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".comic-item",
+      "title": ".comic-title@text || img@alt || img@title",
+      "cover": ".comic-image img.image.lozad@data-src || .comic-image img.image.lozad@src || img@data-src || img@src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text || meta[property='og:title']@content",
+      "cover": ".img-manga img@data-src || .img-manga img@src || meta[property='og:image']@content",
+      "description": ".summary > .content@text || meta[name='description']@content || meta[property='og:description']@content",
+      "authors": ".pre-title:contains('Author') ~ a@text",
+      "artists": ".pre-title:contains('Artist') ~ a@text",
+      "genres": ".pre-title:contains('Genres') ~ a@text",
+      "status": ".pre-title:contains('Status') ~ span:not(.space)@text"
+    },
+    "chapter_list": {
+      "container": ".list-group > a",
+      "title": "span@text || @title",
+      "link": "@href || a@href",
+      "date": "p@text || time@datetime",
+      "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": "body",
+      "image": "img.d-block@data-src || img.d-block@src || img@data-src || img@src",
+      "exclude": ["logo", "icon", "avatar"]
+    }
+  },
+  "headers": {
+    "Referer": "https://vymanga.net/"
+  },
+  "rate_limit_ms": 1200
+}

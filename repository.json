@@ -7,15 +7,15 @@
   "maintainerUrl": "https://github.com/Seanghost117",
   "homepageUrl": "https://github.com/Seanghost117/yomira-sources",
   "termsUrl": "https://github.com/Seanghost117/yomira-sources",
-  "updatedAt": "2026-06-18T10:08:51Z",
+  "updatedAt": "2026-06-18T11:30:36Z",
   "sourcePacks": [
     {
       "packId": "keiyoushi-core-expanded",
       "displayName": "Keiyoushi Expanded Core Source Pack",
       "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
-      "version": "2026.06.18.1",
+      "version": "2026.06.18.2",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/keiyoushi-core-expanded/source-pack.json",
-      "checksum": "sha256:88f5475c4547a28ca40fce8b9c94d737bdbb06e7a58946d577b2262e7896a65a",
+      "checksum": "sha256:5d518ff0a543e106ff0707be648b127b6ae213c1f1b35dd38079f6d0f565d8b2",
       "checksumAlgorithm": "sha256",
       "language": "multi",
       "region": "global",
@@ -26,17 +26,17 @@
         "self_hosted",
         "internal"
       ],
-      "sourceCount": 418,
+      "sourceCount": 419,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-06-18T10:08:51Z"
+      "updatedAt": "2026-06-18T11:30:36Z"
     },
     {
       "packId": "yomira-curated",
       "displayName": "Yomira Curated Source Pack",
       "description": "Curated Yomira-compatible source definitions maintained separately from the app.",
-      "version": "2026.06.18.1",
+      "version": "2026.06.18.2",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-curated/source-pack.json",
-      "checksum": "sha256:c23dc0449df9024ae77c4adac24e033b7157746ad35abb83e3998aeabc7bca34",
+      "checksum": "sha256:81bbdfff0a3e443830aaa5b7f3fe6638c3afa502eb3ab0300e19791cb669c17f",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "en",
@@ -47,9 +47,9 @@
         "self_hosted",
         "internal"
       ],
-      "sourceCount": 23,
+      "sourceCount": 24,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-06-18T10:08:51Z"
+      "updatedAt": "2026-06-18T11:30:36Z"
     },
     {
       "packId": "yomira-nsfw",

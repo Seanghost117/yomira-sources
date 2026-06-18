@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.mangacloud",
+  "sourceId": "keiyoushi.en.mangacloud",
+  "name": "MangaCloud",
+  "displayName": "MangaCloud",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://api.mangacloud.org",
+  "baseUrl": "https://api.mangacloud.org",
+  "language": "en",
+  "region": "en",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "MangaCloud Source Definition using the site's catalog API. Browser Verification is required because direct API checks return Cloudflare challenge pages.",
+  "tags": [
+    "Keiyoushi",
+    "Selector",
+    "Curated",
+    "Browser Verification"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://api.mangacloud.org/",
+  "sessionScopeDomain": "api.mangacloud.org",
+  "userAgentPolicy": "browser_session",
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true,
+    "imageCdnDomains": [
+      "pika.mangacloud.org"
+    ]
+  },
+  "rate_limit_ms": 1200,
+  "rateLimit": {
+    "minDelayMs": 1200,
+    "requestsPerMinute": 45
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/comic/browse",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"title\":\"{query}\",\"page\":{page}}"
+    },
+    "popular": {
+      "url": "{base}/comic-popular-view/week",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/comic-updates",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"page\":{page}}"
+    },
+    "recent_updated": {
+      "url": "{base}/comic-updates",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"page\":{page}}"
+    },
+    "details": {
+      "url": "{base}/comic/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/comic/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{base}/chapter5/{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".__yomira-json-fallback",
+      "title": ".title@text",
+      "cover": "img@src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text",
+      "cover": "img@src",
+      "description": ".description@text",
+      "authors": ".author@text",
+      "genres": ".genre@text",
+      "status": ".status@text"
+    },
+    "chapter_list": {
+      "container": ".__yomira-json-fallback",
+      "title": "a@text",
+      "link": "a@href",
+      "date": "time@datetime",
+      "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".__yomira-json-fallback",
+      "image": "img@src",
+      "exclude": [
+        "logo",
+        "icon",
+        "avatar"
+      ]
+    }
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Origin": "https://mangacloud.org",
+    "Referer": "https://mangacloud.org/"
+  },
+  "presentation": {
+    "primaryListing": "popular",
+    "sections": [
+      "popular",
+      "latest",
+      "recent_updated"
+    ],
+    "listingLabels": {
+      "popular": "Most Viewed",
+      "latest": "Latest Updates",
+      "recent_updated": "Recent Updated"
+    },
+    "listingSubtitles": {
+      "popular": "Most viewed MangaCloud titles this week",
+      "latest": "Fresh chapter updates from MangaCloud",
+      "recent_updated": "Recently updated MangaCloud titles"
+    },
+    "listingIcons": {
+      "popular": "eye.fill",
+      "latest": "clock.fill",
+      "recent_updated": "arrow.triangle.2.circlepath"
+    },
+    "listingStyles": {
+      "popular": "featured",
+      "latest": "list",
+      "recent_updated": "carousel"
+    }
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/mangacloud",
+    "originalFamily": "CustomHttp",
+    "originalLanguage": "en",
+    "originalSourceName": "mangacloud",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

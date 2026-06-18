@@ -75,27 +75,38 @@
     },
     {
       "sourceId": "keiyoushi.en.mangabuddy",
-      "displayName": "MangaBuddy",
+      "displayName": "MangaK",
       "connectorEngine": "selector",
       "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangabuddy.json",
       "status": "ready_for_device_validation",
       "notes": [
-        "The previously generated profile treated MangaBuddy as a theme connector, but the live site search redirects into a MangaK/Next.js reader flow.",
+        "The previously generated profile treated MangaBuddy as a theme connector, but the live site now resolves as a MangaK/Next.js reader flow.",
         "Normalized as an inline selector Source Definition with static Next.js data fallback for chapter and page lists.",
         "No external bridge or executable runtime is required."
       ]
     },
     {
-      "sourceId": "keiyoushi.en.mangaclash",
-      "displayName": "MangaClash",
-      "connectorEngine": "madara",
-      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangaclash.json",
+      "sourceId": "keiyoushi.en.mangacloud",
+      "displayName": "MangaCloud",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangacloud.json",
       "status": "ready_for_device_validation",
       "notes": [
-        "Existing embedded config already covered MangaClash as a Madara source at https://mangaclash.com.",
-        "Keiyoushi metadata confirms MangaClash uses the Madara family with a MM/dd/yy chapter date format.",
-        "Live HTTP checks currently return a Cloudflare 403, so Browser Verification and Source Session Recovery are declared up front.",
-        "Promoted to the source repository as a declarative Source Definition so the iOS app can install it without an external bridge."
+        "Added as a Cloudflare-protected JSON API Source Definition at https://mangacloud.org.",
+        "Uses MangaCloud's catalog API for most viewed, latest updates, detail, chapter, and page image payloads.",
+        "Browser Verification and Source Session Recovery are declared because direct API checks return a Cloudflare challenge."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.vymanga",
+      "displayName": "VyManga",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.vymanga.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Added from the current https://vymanga.net HTML flow and Keiyoushi selector hints.",
+        "Normalized as an inline selector Source Definition with Cloudflare-aware recovery metadata.",
+        "No external bridge or executable runtime is required."
       ]
     },
     {

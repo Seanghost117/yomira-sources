@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.vymanga",
+  "sourceId": "keiyoushi.en.vymanga",
+  "name": "VyManga",
+  "displayName": "VyManga",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://vymanga.net",
+  "baseUrl": "https://vymanga.net",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "VyManga Source Definition using the current vymanga.net catalog and reader selectors. Browser Verification metadata is included for Cloudflare recovery when required.",
+  "tags": [
+    "Keiyoushi",
+    "Selector",
+    "Curated",
+    "Browser Verification"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "browserVerificationRequired": true,
+  "verificationUrl": "https://vymanga.net",
+  "sessionScopeDomain": "vymanga.net",
+  "userAgentPolicy": "browser_session",
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true
+  },
+  "rate_limit_ms": 1200,
+  "rateLimit": {
+    "minDelayMs": 1200,
+    "requestsPerMinute": 45
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/search?q={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/search",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/search?sort=updated_at",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".comic-item",
+      "title": ".comic-title@text || img@alt || img@title",
+      "cover": ".comic-image img.image.lozad@data-src || .comic-image img.image.lozad@src || img@data-src || img@src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text || meta[property='og:title']@content",
+      "cover": ".img-manga img@data-src || .img-manga img@src || meta[property='og:image']@content",
+      "description": ".summary > .content@text || meta[name='description']@content || meta[property='og:description']@content",
+      "authors": ".pre-title:contains('Author') ~ a@text",
+      "artists": ".pre-title:contains('Artist') ~ a@text",
+      "genres": ".pre-title:contains('Genres') ~ a@text",
+      "status": ".pre-title:contains('Status') ~ span:not(.space)@text"
+    },
+    "chapter_list": {
+      "container": ".list-group > a",
+      "title": "span@text || @title",
+      "link": "@href || a@href",
+      "date": "p@text || time@datetime",
+      "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
+      "reverse": false
+    },
+    "page_list": {
+      "container": "body",
+      "image": "img.d-block@data-src || img.d-block@src || img@data-src || img@src",
+      "exclude": [
+        "logo",
+        "icon",
+        "avatar"
+      ]
+    }
+  },
+  "headers": {
+    "Referer": "https://vymanga.net/"
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "presentation": {
+    "primaryListing": "latest",
+    "sections": [
+      "latest",
+      "popular"
+    ],
+    "listingLabels": {
+      "latest": "Latest Updates",
+      "popular": "Browse VyManga"
+    },
+    "listingSubtitles": {
+      "latest": "Recently updated VyManga titles",
+      "popular": "Browse VyManga's current catalog"
+    },
+    "listingIcons": {
+      "latest": "clock.fill",
+      "popular": "sparkles"
+    },
+    "listingStyles": {
+      "latest": "list",
+      "popular": "carousel"
+    }
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/vyvymanga",
+    "originalFamily": "CustomHttp",
+    "originalLanguage": "en",
+    "originalSourceName": "vymanga",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

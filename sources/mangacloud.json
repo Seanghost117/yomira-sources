@@ -1,0 +1,87 @@
+{
+  "id": "mangacloud",
+  "name": "MangaCloud",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://api.mangacloud.org",
+  "language": "en",
+  "nsfw": false,
+  "description": "MangaCloud API-backed source with Browser Verification recovery.",
+  "tags": ["Manga", "Manhwa", "Selector", "Browser Verification"],
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://api.mangacloud.org/",
+  "sessionScopeDomain": "api.mangacloud.org",
+  "userAgentPolicy": "browser_session",
+  "flags": {
+    "is_madara": false,
+    "requires_js": false,
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/comic/browse",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"title\":\"{query}\",\"page\":{page}}"
+    },
+    "popular": {
+      "url": "{base}/comic-popular-view/week",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/comic-updates",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"page\":{page}}"
+    },
+    "details": {
+      "url": "{base}/comic/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/comic/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{base}/chapter5/{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".__yomira-json-fallback",
+      "title": ".title@text",
+      "cover": "img@src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text",
+      "cover": "img@src",
+      "description": ".description@text",
+      "authors": ".author@text",
+      "genres": ".genre@text",
+      "status": ".status@text"
+    },
+    "chapter_list": {
+      "container": ".__yomira-json-fallback",
+      "title": "a@text",
+      "link": "a@href",
+      "date": "time@datetime"
+    },
+    "page_list": {
+      "container": ".__yomira-json-fallback",
+      "image": "img@src",
+      "exclude": ["logo", "icon", "avatar"]
+    }
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Origin": "https://mangacloud.org",
+    "Referer": "https://mangacloud.org/"
+  },
+  "rate_limit_ms": 1200
+}
