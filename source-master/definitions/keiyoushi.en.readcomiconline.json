@@ -5,7 +5,7 @@
   "sourceId": "keiyoushi.en.readcomiconline",
   "name": "ReadComicOnline",
   "displayName": "ReadComicOnline",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "base_url": "https://readcomiconline.li",

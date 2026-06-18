@@ -5,7 +5,7 @@
   "sourceId": "keiyoushi.en.mangakakalot",
   "name": "Mangakakalot",
   "displayName": "Mangakakalot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "base_url": "https://www.mangakakalot.gg",
@@ -25,12 +25,15 @@
   "containsExecutableCode": false,
   "requiresExternalBridge": false,
   "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
   "verificationUrl": "https://www.mangakakalot.gg",
   "sessionScopeDomain": "www.mangakakalot.gg",
+  "userAgentPolicy": "browser_session",
   "flags": {
     "is_madara": false,
     "uses_cloudflare": true,
-    "browserVerificationRequired": true
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true
   },
   "rate_limit_ms": 1000,
   "rateLimit": {

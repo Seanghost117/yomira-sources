@@ -2,7 +2,7 @@
   "extends": "madara",
   "id": "mangagg",
   "name": "MangaGG",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "base_url": "https://mangagg.com",
   "language": "en",
   "nsfw": true,
@@ -12,6 +12,7 @@
   "sourceSessionRequired": true,
   "verificationUrl": "https://mangagg.com",
   "sessionScopeDomain": "mangagg.com",
+  "userAgentPolicy": "browser_session",
   "flags": {
     "is_madara": true,
     "uses_cloudflare": true,

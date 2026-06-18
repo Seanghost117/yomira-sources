@@ -23,7 +23,7 @@
     "vi"
   ],
   "generatedFrom": [
-    "tmp/source-pack-split/expanded"
+    "tmp/source-pack-split/expanded/definitions"
   ],
   "sourceCount": 418,
   "definitions": [
@@ -5923,7 +5923,7 @@
       ],
       "userAgentPolicy": "browser_session",
       "verificationUrl": "https://mangagg.com",
-      "version": "1.1.0"
+      "version": "1.1.1"
     },
     {
       "adultContent": false,
@@ -6191,6 +6191,7 @@
       "flags": {
         "browserVerificationRequired": true,
         "is_madara": false,
+        "sourceSessionRequired": true,
         "uses_cloudflare": true
       },
       "headers": {
@@ -6258,6 +6259,7 @@
       "sessionScopeDomain": "www.mangakakalot.gg",
       "sourceDefinitionKind": "curated_source_config",
       "sourceId": "keiyoushi.en.mangakakalot",
+      "sourceSessionRequired": true,
       "sourceType": "selector",
       "tags": [
         "Keiyoushi",
@@ -6265,8 +6267,9 @@
         "Selector",
         "Curated"
       ],
+      "userAgentPolicy": "browser_session",
       "verificationUrl": "https://www.mangakakalot.gg",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "adultContent": true,
@@ -10490,7 +10493,7 @@
       ],
       "userAgentPolicy": "browser_session",
       "verificationUrl": "https://readcomiconline.li",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "adultContent": false,
@@ -21477,7 +21480,7 @@
         "API",
         "Curated"
       ],
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "adultContent": true,
@@ -21486,7 +21489,7 @@
       "base_url": "https://mangataro.org",
       "connectorEngine": "selector",
       "containsExecutableCode": false,
-      "description": "MangaTaro catalog using the site's public REST catalog endpoint for stable search, latest, popular, release, and alphabetical sections.",
+      "description": "MangaTaro catalog using the site's current public REST catalog endpoint for stable search, latest, popular, release, and alphabetical sections.",
       "displayName": "MangaTaro",
       "endpoints": {
         "chapters": {
@@ -21594,10 +21597,10 @@
           "title": "h1@text || meta[property='og:title']@content"
         },
         "manga_list": {
-          "container": "a[href*='/manga/']:has(img) || .manga-card || .manga-item",
-          "cover": "img@data-src || img@src",
-          "link": "@href || a@href",
-          "title": "h3@text || .manga-title@text || img@alt || @title"
+          "container": "#manga-grid > .group || #manga-list > div.flex || .manga-card || .manga-item",
+          "cover": "img.manga-cover@data-src || img.manga-cover@src || img@data-src || img@src",
+          "link": "a.manga-link@href || a[href*='/manga/']@href",
+          "title": ".manga-title@text || h3@text || img@alt || a@title"
         },
         "page_list": {
           "container": "body",
@@ -21620,7 +21623,7 @@
         "Manhwa",
         "Collections"
       ],
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "adultContent": false,
@@ -21995,7 +21998,7 @@
       ],
       "userAgentPolicy": "browser_session",
       "verificationUrl": "https://onisaga.com/manga/",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "adultContent": false,

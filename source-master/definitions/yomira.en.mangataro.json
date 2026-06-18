@@ -5,7 +5,7 @@
   "sourceId": "yomira.en.mangataro",
   "name": "MangaTaro",
   "displayName": "MangaTaro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "base_url": "https://mangataro.org",
@@ -14,7 +14,7 @@
   "region": "en",
   "nsfw": true,
   "adultContent": true,
-  "description": "MangaTaro catalog using the site's public REST catalog endpoint for stable search, latest, popular, release, and alphabetical sections.",
+  "description": "MangaTaro catalog using the site's current public REST catalog endpoint for stable search, latest, popular, release, and alphabetical sections.",
   "tags": ["Yomira", "Selector", "Manga", "Manhwa", "Collections"],
   "appStoreSafe": true,
   "containsExecutableCode": false,
@@ -61,10 +61,10 @@
   },
   "selectors": {
     "manga_list": {
-      "container": "a[href*='/manga/']:has(img) || .manga-card || .manga-item",
-      "title": "h3@text || .manga-title@text || img@alt || @title",
-      "cover": "img@data-src || img@src",
-      "link": "@href || a@href"
+      "container": "#manga-grid > .group || #manga-list > div.flex || .manga-card || .manga-item",
+      "title": ".manga-title@text || h3@text || img@alt || a@title",
+      "cover": "img.manga-cover@data-src || img.manga-cover@src || img@data-src || img@src",
+      "link": "a.manga-link@href || a[href*='/manga/']@href"
     },
     "manga_details": {
       "title": "h1@text || meta[property='og:title']@content",

@@ -1,12 +1,17 @@
 {
   "id": "readallcomics",
   "name": "ReadAllComics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "base_url": "https://readallcomics.com",
   "language": "en",
   "nsfw": false,
   "description": "English comics archive with simple catalog, detail, chapter, and direct image selectors.",
   "tags": ["Comics", "Keiyoushi", "Browser Verification"],
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://readallcomics.com",
+  "sessionScopeDomain": "readallcomics.com",
+  "userAgentPolicy": "browser_session",
   "flags": {
     "browserVerificationRequired": true,
     "sourceSessionRequired": true,

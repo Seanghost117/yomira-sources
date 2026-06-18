@@ -1,15 +1,22 @@
 {
   "id": "mangakakalot",
   "name": "Mangakakalot",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "base_url": "https://www.mangakakalot.gg",
   "language": "en",
   "nsfw": false,
   "description": "Popular free manga aggregator with English translations",
   "tags": ["Manga", "Manhwa", "Manhua", "Free", "Aggregator"],
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://www.mangakakalot.gg",
+  "sessionScopeDomain": "www.mangakakalot.gg",
+  "userAgentPolicy": "browser_session",
   "flags": {
     "is_madara": false,
-    "uses_cloudflare": true
+    "uses_cloudflare": true,
+    "browserVerificationRequired": true,
+    "sourceSessionRequired": true
   },
   "endpoints": {
     "search": {

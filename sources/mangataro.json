@@ -1,29 +1,41 @@
 {
   "id": "mangataro",
   "name": "MangaTaro",
-  "version": "1.0.0",
-  "base_url": "https://mangataro.com",
+  "version": "1.1.0",
+  "base_url": "https://mangataro.org",
   "language": "en",
-  "nsfw": false,
-  "description": "Manga reader (formerly MangaPeak) with clean UI and reading history",
-  "tags": ["Manga", "Manhwa", "Aggregator", "Free"],
+  "nsfw": true,
+  "description": "MangaTaro catalog using the site's current public REST catalog endpoint for stable search, latest, popular, release, and alphabetical sections.",
+  "tags": ["Manga", "Manhwa", "Manhua", "Aggregator", "REST"],
   "flags": {
     "is_madara": false,
     "requires_js": false,
-    "uses_cloudflare": true
+    "uses_cloudflare": false
   },
   "endpoints": {
     "search": {
-      "url": "{base}/search?q={query}",
-      "method": "GET"
+      "url": "{base}/wp-json/manga/v1/load",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"page\":{page},\"search\":\"{query}\",\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"post_desc\",\"genreMatchMode\":\"any\"}"
     },
     "popular": {
-      "url": "{base}/manga?order=popular",
-      "method": "GET"
+      "url": "{base}/wp-json/manga/v1/load",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"page\":{page},\"search\":\"\",\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"popular_desc\",\"genreMatchMode\":\"any\"}"
     },
     "latest": {
-      "url": "{base}/manga?order=latest",
-      "method": "GET"
+      "url": "{base}/wp-json/manga/v1/load",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"page\":{page},\"search\":\"\",\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"post_desc\",\"genreMatchMode\":\"any\"}"
+    },
+    "recently_released": {
+      "url": "{base}/wp-json/manga/v1/load",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"page\":{page},\"search\":\"\",\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"release_desc\",\"genreMatchMode\":\"any\"}"
     },
     "details": {
       "url": "{base}/manga/{id}",
@@ -40,38 +52,38 @@
   },
   "selectors": {
     "manga_list": {
-      "container": ".manga-item, .item, .card",
-      "title": "a@title || .title@text || h3 a@text",
-      "cover": "img@src || img@data-src || img@data-lazy-src",
-      "link": "a@href"
+      "container": "#manga-grid > .group || #manga-list > div.flex || .manga-card || .manga-item",
+      "title": ".manga-title@text || h3@text || img@alt || a@title",
+      "cover": "img.manga-cover@data-src || img.manga-cover@src || img@data-src || img@src",
+      "link": "a.manga-link@href || a[href*='/manga/']@href"
     },
     "manga_details": {
-      "title": "h1@text || .manga-title@text",
-      "cover": ".manga-cover img@src || .poster img@src || .cover img@src",
-      "description": ".description@text || .synopsis p@text || .summary@text",
-      "authors": ".info:contains('Author') a@text || .author@text",
-      "genres": ".genre a@text || .tags a@text || .info:contains('Genre') a@text",
-      "status": ".info:contains('Status') span@text || .status@text"
+      "title": "h1@text || meta[property='og:title']@content",
+      "cover": "meta[property='og:image']@content || img[src*='/content/media/']@src",
+      "description": "meta[name='description']@content || .description@text || .summary@text",
+      "authors": "a[href*='/author/']@text",
+      "artists": "a[href*='/artist/']@text",
+      "genres": "a[href*='/tag/']@text",
+      "status": "a[href*='/status/']@text || .status@text"
     },
     "chapter_list": {
-      "container": ".chapter-list li, .chapters li, .chapter-item",
-      "title": "a@text || span.chapter-title@text",
-      "link": "a@href",
-      "date": ".date@text || time@datetime || .chapter-date@text",
-      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|ch\\.?\\s*([0-9]+(?:\\.[0-9]+)?)"
+      "container": "a[href*='/read/'] || .chapter-list a",
+      "title": "@text || a@text",
+      "link": "@href || a@href",
+      "date": "time@datetime || .date@text",
+      "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
     },
     "page_list": {
-      "container": ".reader-area, .chapter-reader, .reading-content",
-      "image": "img@src || img@data-src || img@data-lazy-src",
-      "exclude": [".svg", "data:", "logo", "icon", "avatar", "blank"]
+      "container": "body",
+      "image": "img[data-src*='/content/media/']@data-src || img[src*='/content/media/']@src || img@data-src || img@src",
+      "exclude": ["logo", "icon", "avatar", "favicon"]
     }
   },
   "headers": {
-    "Referer": "https://mangataro.com/"
+    "Referer": "https://mangataro.org/manga/"
   },
   "pagination": {
     "param": "page",
     "start": 1
-  },
-  "_note": "Formerly known as MangaPeak. TLS issues may occur — CF protected."
+  }
 }

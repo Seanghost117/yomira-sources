@@ -1,12 +1,17 @@
 {
   "id": "readcomiconline",
   "name": "ReadComicOnline",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "base_url": "https://readcomiconline.li",
   "language": "en",
   "nsfw": false,
   "description": "English comics catalog with advanced genre, status, and year filters.",
   "tags": ["Comics", "Manga", "Keiyoushi", "Browser Verification"],
+  "browserVerificationRequired": true,
+  "sourceSessionRequired": true,
+  "verificationUrl": "https://readcomiconline.li",
+  "sessionScopeDomain": "readcomiconline.li",
+  "userAgentPolicy": "browser_session",
   "flags": {
     "browserVerificationRequired": true,
     "sourceSessionRequired": true,

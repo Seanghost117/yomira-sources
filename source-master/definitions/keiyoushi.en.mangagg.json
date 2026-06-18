@@ -5,7 +5,7 @@
   "sourceId": "keiyoushi.en.mangagg",
   "name": "MangaGG",
   "displayName": "MangaGG",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "extends": "madara",
   "connectorEngine": "madara",
   "sourceType": "madara",
