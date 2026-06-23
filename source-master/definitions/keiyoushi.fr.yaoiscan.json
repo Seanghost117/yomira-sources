@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "converted_keiyoushi",
+  "id": "keiyoushi.fr.yaoiscan",
+  "sourceId": "keiyoushi.fr.yaoiscan",
+  "name": "YaoiScan",
+  "displayName": "YaoiScan",
+  "version": "1.1.0",
+  "extends": "manga_themesia",
+  "connectorEngine": "manga_themesia",
+  "sourceType": "manga_themesia",
+  "base_url": "https://yaoiscan.fr",
+  "baseUrl": "https://yaoiscan.fr",
+  "language": "fr",
+  "region": "fr",
+  "nsfw": true,
+  "adultContent": true,
+  "description": "YaoiScan French Source Definition normalized from Keiyoushi MangaThemesia metadata.",
+  "tags": [
+    "Keiyoushi",
+    "MangaThemesia",
+    "Yaoi",
+    "BL",
+    "NSFW",
+    "Curated"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "flags": {
+    "isMadara": false,
+    "uses_cloudflare": false
+  },
+  "endpoints": {
+    "details": {
+      "url": "{base}/{id}/",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}/",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "chapter_list": {
+      "container": "#chapterlist li || #chapterlist .chbox || .eplister li",
+      "title": ".chapternum@text || .eph-num a@text || a@text",
+      "link": ".eph-num a@href || a@href",
+      "date": ".chapterdate@text",
+      "number_regex": "(?i)(?:chapitre|chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    }
+  },
+  "rate_limit_ms": 1000,
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/fr/yaoiscan",
+    "originalFamily": "MangaThemesia",
+    "originalLanguage": "fr",
+    "originalSourceName": "yaoiscan",
+    "originalVersion": "1",
+    "originalExtClass": ".YaoiScan",
+    "analyzerBucket": "curated_source_master_overlay",
+    "baseUrlSource": "build_gradle"
+  }
+}

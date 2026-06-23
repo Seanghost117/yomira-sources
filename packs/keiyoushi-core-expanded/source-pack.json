@@ -13145,14 +13145,19 @@
     },
     {
       "adultContent": true,
+      "appStoreSafe": true,
       "baseUrl": "https://yaoiscan.com",
       "base_url": "https://yaoiscan.com",
+      "browserVerificationRequired": true,
       "connectorEngine": "madara",
-      "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "containsExecutableCode": false,
+      "description": "YaoiScan English Source Definition normalized from Keiyoushi Madara metadata. The site is Cloudflare-protected, so Browser Verification is required before browsing.",
       "displayName": "YaoiScan",
       "extends": "madara",
       "flags": {
-        "isMadara": true
+        "browserVerificationRequired": true,
+        "isMadara": true,
+        "uses_cloudflare": true
       },
       "id": "keiyoushi.en.yaoiscan",
       "language": "en",
@@ -13170,11 +13175,12 @@
         "originalVersion": "0"
       },
       "rateLimit": {
-        "minDelayMs": 1000,
-        "requestsPerMinute": 60
+        "minDelayMs": 1200,
+        "requestsPerMinute": 45
       },
-      "rate_limit_ms": 1000,
+      "rate_limit_ms": 1200,
       "region": "en",
+      "requiresExternalBridge": false,
       "schemaVersion": "1.0",
       "sourceDefinitionKind": "converted_keiyoushi",
       "sourceId": "keiyoushi.en.yaoiscan",
@@ -13182,9 +13188,15 @@
       "tags": [
         "Keiyoushi",
         "Madara",
-        "Converted"
+        "Yaoi",
+        "BL",
+        "NSFW",
+        "Curated"
       ],
-      "version": "1.0.0"
+      "sessionScopeDomain": "yaoiscan.com",
+      "userAgentPolicy": "browser_session",
+      "verificationUrl": "https://yaoiscan.com",
+      "version": "1.1.0"
     },
     {
       "adultContent": true,
@@ -16063,14 +16075,27 @@
     },
     {
       "adultContent": true,
+      "appStoreSafe": true,
       "baseUrl": "https://yaoiscan.fr",
       "base_url": "https://yaoiscan.fr",
       "connectorEngine": "manga_themesia",
-      "description": "Draft MangaThemesia source definition converted from Keiyoushi metadata. Review before use.",
+      "containsExecutableCode": false,
+      "description": "YaoiScan French Source Definition normalized from Keiyoushi MangaThemesia metadata.",
       "displayName": "YaoiScan",
       "extends": "manga_themesia",
       "flags": {
-        "isMadara": false
+        "isMadara": false,
+        "uses_cloudflare": false
+      },
+      "endpoints": {
+        "chapters": {
+          "method": "GET",
+          "url": "{base}/{id}/"
+        },
+        "details": {
+          "method": "GET",
+          "url": "{base}/{id}/"
+        }
       },
       "id": "keiyoushi.fr.yaoiscan",
       "language": "fr",
@@ -16093,16 +16118,29 @@
       },
       "rate_limit_ms": 1000,
       "region": "fr",
+      "requiresExternalBridge": false,
       "schemaVersion": "1.0",
+      "selectors": {
+        "chapter_list": {
+          "container": "#chapterlist li || #chapterlist .chbox || .eplister li",
+          "date": ".chapterdate@text",
+          "link": ".eph-num a@href || a@href",
+          "number_regex": "(?i)(?:chapitre|chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)",
+          "title": ".chapternum@text || .eph-num a@text || a@text"
+        }
+      },
       "sourceDefinitionKind": "converted_keiyoushi",
       "sourceId": "keiyoushi.fr.yaoiscan",
       "sourceType": "manga_themesia",
       "tags": [
         "Keiyoushi",
         "MangaThemesia",
-        "Converted"
+        "Yaoi",
+        "BL",
+        "NSFW",
+        "Curated"
       ],
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     {
       "adultContent": true,

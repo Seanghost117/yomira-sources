@@ -7,15 +7,15 @@
   "maintainerUrl": "https://github.com/Seanghost117",
   "homepageUrl": "https://github.com/Seanghost117/yomira-sources",
   "termsUrl": "https://github.com/Seanghost117/yomira-sources",
-  "updatedAt": "2026-06-18T11:30:36Z",
+  "updatedAt": "2026-06-23T13:10:10Z",
   "sourcePacks": [
     {
       "packId": "keiyoushi-core-expanded",
       "displayName": "Keiyoushi Expanded Core Source Pack",
       "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
-      "version": "2026.06.18.2",
+      "version": "2026.06.23.1",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/keiyoushi-core-expanded/source-pack.json",
-      "checksum": "sha256:5d518ff0a543e106ff0707be648b127b6ae213c1f1b35dd38079f6d0f565d8b2",
+      "checksum": "sha256:b224319d5862ebbd0929592858d9025c7b89fc0aaa57ee99e5dc87228a6462e2",
       "checksumAlgorithm": "sha256",
       "language": "multi",
       "region": "global",
@@ -28,7 +28,7 @@
       ],
       "sourceCount": 419,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-06-18T11:30:36Z"
+      "updatedAt": "2026-06-23T13:10:10Z"
     },
     {
       "packId": "yomira-curated",

@@ -110,6 +110,30 @@
       ]
     },
     {
+      "sourceId": "keiyoushi.en.yaoiscan",
+      "displayName": "YaoiScan",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.yaoiscan.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted from the expanded Keiyoushi pack so the source is visible to source health checks and curated rebuilds.",
+        "The live https://yaoiscan.com endpoint returns Cloudflare 403 to native HTTP, so Browser Verification is required before browsing.",
+        "No external bridge or executable runtime is required."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.fr.yaoiscan",
+      "displayName": "YaoiScan",
+      "connectorEngine": "manga_themesia",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.fr.yaoiscan.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted from the expanded Keiyoushi pack so the French YaoiScan variant is visible to source health checks and curated rebuilds.",
+        "The live https://yaoiscan.fr endpoint currently responds to native HTTP and follows MangaThemesia markup.",
+        "No external bridge or executable runtime is required."
+      ]
+    },
+    {
       "sourceId": "yomira.en.mangadex",
       "displayName": "MangaDex",
       "connectorEngine": "mangadex",
