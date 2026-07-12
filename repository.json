@@ -76,9 +76,9 @@
       "packId": "yomira-novels",
       "displayName": "Yomira Novels Source Pack",
       "description": "Light novel and web novel source definitions for Yomira prose reading support.",
-      "version": "2026.07.12.2",
+      "version": "2026.07.12.3",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-novels/source-pack.json",
-      "checksum": "sha256:252c31e2c5edb474e9259ed595ceda222220850ca0b0a11e33825a44083f927f",
+      "checksum": "sha256:1393758ff240640f6f3b01b0ca685ac839277672c8bd2747461115f293e913c0",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "en",
@@ -91,7 +91,7 @@
       ],
       "sourceCount": 9,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-07-12T19:32:02Z"
+      "updatedAt": "2026-07-12T23:16:13Z"
     }
   ]
 }

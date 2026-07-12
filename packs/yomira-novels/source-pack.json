@@ -49,7 +49,7 @@
         },
         "search": {
           "method": "GET",
-          "url": "{base}/search/?q={query}&page={page}"
+          "url": "{base}/api/search/?q={query}&search_type=title"
         }
       },
       "filters": [
@@ -131,10 +131,10 @@
           "title": ".novel-title@text || h1@text || meta[property='og:title']@content"
         },
         "manga_list": {
-          "container": ".novel-item || .book-item || .card-container || a.card-cover-link",
+          "container": "a.ranking-item.chapter-item || .novel-item || .book-item || .card-container || a.card-cover-link",
           "cover": "img@data-src || img@src",
-          "link": "a.card-cover-link@href || h3 a@href || a@href || @href",
-          "title": ".card-title@text || .novel-title@text || h3 a@text || img@alt || @title || @text"
+          "link": "@href || a.card-cover-link@href || h3 a@href || a@href",
+          "title": "img@alt || .card-title@text || .novel-title@text || h3 a@text || @title || @text"
         },
         "page_list": {
           "container": ".chapter-content || .reader-content || article",
@@ -151,7 +151,7 @@
         "Light Novel",
         "Novel"
       ],
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "adultContent": true,
@@ -1166,6 +1166,7 @@
       "appStoreSafe": true,
       "baseUrl": "https://novelsonline.org",
       "base_url": "https://novelsonline.org",
+      "browserVerificationRequired": true,
       "connectorEngine": "selector",
       "containsExecutableCode": false,
       "contentKind": "light_novel",
@@ -1200,6 +1201,11 @@
           "method": "GET",
           "url": "{base}/search?keyword={query}"
         }
+      },
+      "flags": {
+        "browserVerificationRequired": true,
+        "sourceSessionRequired": true,
+        "uses_cloudflare": true
       },
       "id": "yomira.en.novelsonline",
       "language": "en",
@@ -1271,6 +1277,7 @@
       },
       "sourceDefinitionKind": "curated_source_config",
       "sourceId": "yomira.en.novelsonline",
+      "sourceSessionRequired": true,
       "sourceType": "selector",
       "tags": [
         "Yomira",
@@ -1278,7 +1285,9 @@
         "Light Novel",
         "Novel"
       ],
-      "version": "1.0.0"
+      "userAgentPolicy": "browser_session",
+      "verificationUrl": "https://novelsonline.org",
+      "version": "1.0.1"
     }
   ],
   "provenance": {

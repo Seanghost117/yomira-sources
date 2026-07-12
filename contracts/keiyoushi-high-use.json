@@ -3,17 +3,21 @@
   "contracts": [
     {
       "sourceId": "keiyoushi.en.s2manga",
-      "searchQuery": "one piece",
+      "searchQuery": "imprisoned one million years",
+      "expectedTitleContains": "imprisoned one million years",
       "fixtureRemoteId": "imprisoned-one-million-years-my-disciples-are-all-over-the-world",
       "paginationQuery": "the",
-      "browseListings": ["latest", "popular"],
-      "minimumResults": 10,
-      "minimumPaginationResults": 10,
+      "browseListings": [
+        "latest",
+        "popular"
+      ],
+      "minimumResults": 1,
       "minimumChapters": 350,
+      "minimumPages": 1,
+      "minimumPaginationResults": 10,
+      "minimumCoverCoveragePercent": 90,
       "minimumLatestChapterNumber": 390,
       "minimumNumberedChapterCoveragePercent": 95,
-      "minimumPages": 1,
-      "minimumCoverCoveragePercent": 90,
       "requireCover": true,
       "verifyPagination": true,
       "requireExplicitCapabilities": true,
@@ -25,21 +29,26 @@
         "pages",
         "pagination",
         "imagePages"
-      ]
+      ],
+      "allowBrowserVerification": false
     },
     {
       "sourceId": "keiyoushi.en.manhwatop",
       "searchQuery": "one piece",
+      "expectedTitleContains": "piece maker of flame",
       "fixtureRemoteId": "piece-maker-of-flame",
       "paginationQuery": "the",
-      "browseListings": ["latest", "popular"],
+      "browseListings": [
+        "latest",
+        "popular"
+      ],
       "minimumResults": 10,
-      "minimumPaginationResults": 10,
       "minimumChapters": 40,
+      "minimumPages": 1,
+      "minimumPaginationResults": 10,
+      "minimumCoverCoveragePercent": 90,
       "minimumLatestChapterNumber": 40,
       "minimumNumberedChapterCoveragePercent": 95,
-      "minimumPages": 1,
-      "minimumCoverCoveragePercent": 90,
       "requireCover": true,
       "verifyPagination": true,
       "requireExplicitCapabilities": true,
@@ -51,7 +60,187 @@
         "pages",
         "pagination",
         "imagePages"
-      ]
+      ],
+      "allowBrowserVerification": false
+    },
+    {
+      "sourceId": "keiyoushi.en.mangakatana",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "one piece",
+      "fixtureRemoteId": "one-piece.49",
+      "paginationQuery": "the",
+      "browseListings": [
+        "latest"
+      ],
+      "minimumResults": 2,
+      "minimumChapters": 1000,
+      "minimumPages": 1,
+      "minimumPaginationResults": 3,
+      "minimumCoverCoveragePercent": 80,
+      "minimumLatestChapterNumber": null,
+      "minimumNumberedChapterCoveragePercent": 0,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ],
+      "allowBrowserVerification": false
+    },
+    {
+      "sourceId": "keiyoushi.en.mangakakalot",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "one piece",
+      "fixtureRemoteId": null,
+      "paginationQuery": null,
+      "browseListings": [
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 1,
+      "minimumPaginationResults": 1,
+      "minimumCoverCoveragePercent": 50,
+      "minimumLatestChapterNumber": null,
+      "minimumNumberedChapterCoveragePercent": 0,
+      "requireCover": true,
+      "verifyPagination": false,
+      "requireExplicitCapabilities": false,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "imagePages",
+        "browserVerification"
+      ],
+      "allowBrowserVerification": true
+    },
+    {
+      "sourceId": "keiyoushi.en.mangagg",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "one piece",
+      "fixtureRemoteId": null,
+      "paginationQuery": null,
+      "browseListings": [
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 1,
+      "minimumPaginationResults": 1,
+      "minimumCoverCoveragePercent": 50,
+      "minimumLatestChapterNumber": null,
+      "minimumNumberedChapterCoveragePercent": 0,
+      "requireCover": true,
+      "verifyPagination": false,
+      "requireExplicitCapabilities": false,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "imagePages",
+        "browserVerification"
+      ],
+      "allowBrowserVerification": true
+    },
+    {
+      "sourceId": "keiyoushi.en.vymanga",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "one piece",
+      "fixtureRemoteId": "one-piece-lqj66v1",
+      "paginationQuery": null,
+      "browseListings": [
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 1,
+      "minimumPaginationResults": 1,
+      "minimumCoverCoveragePercent": 50,
+      "minimumLatestChapterNumber": null,
+      "minimumNumberedChapterCoveragePercent": 0,
+      "requireCover": true,
+      "verifyPagination": false,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "imagePages",
+        "browserVerification"
+      ],
+      "allowBrowserVerification": true
+    },
+    {
+      "sourceId": "keiyoushi.en.readcomiconline",
+      "searchQuery": "batman",
+      "expectedTitleContains": "batman",
+      "fixtureRemoteId": null,
+      "paginationQuery": null,
+      "browseListings": [
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 1,
+      "minimumPaginationResults": 1,
+      "minimumCoverCoveragePercent": 50,
+      "minimumLatestChapterNumber": null,
+      "minimumNumberedChapterCoveragePercent": 0,
+      "requireCover": true,
+      "verifyPagination": false,
+      "requireExplicitCapabilities": false,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "imagePages",
+        "browserVerification"
+      ],
+      "allowBrowserVerification": true
+    },
+    {
+      "sourceId": "keiyoushi.en.mangabuddy",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "one piece",
+      "fixtureRemoteId": "one-piece",
+      "paginationQuery": null,
+      "browseListings": [
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 1,
+      "minimumPaginationResults": 1,
+      "minimumCoverCoveragePercent": 50,
+      "minimumLatestChapterNumber": null,
+      "minimumNumberedChapterCoveragePercent": 0,
+      "requireCover": true,
+      "verifyPagination": false,
+      "requireExplicitCapabilities": false,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "imagePages"
+      ],
+      "allowBrowserVerification": false
     }
   ]
 }
