@@ -66,10 +66,12 @@ search, browse listings, detail, chapter, page, filter, pagination, content
 output, and Browser Verification support. Existing definitions without this
 object continue to use runtime inference.
 
-Pull requests run repository structure, checksum, App Store lane, version-bump,
-app-import, and static capability checks. Bounded live contracts run on a
-schedule or by manual workflow dispatch. Browser Verification is reported as a
-separate expected recovery state rather than selector failure.
+Source Repository pull requests run structure, checksum, App Store lane, and
+version-bump checks without private-repository access. The Yomira monorepo runs
+app-import and static capability checks against pinned source/tool revisions.
+Bounded live contracts run there on a schedule or by manual workflow dispatch.
+Browser Verification is reported as a separate expected recovery state rather
+than selector failure.
 
 ## Schema Fields
 
