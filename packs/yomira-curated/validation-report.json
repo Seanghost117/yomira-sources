@@ -254,7 +254,7 @@
         "source_definition_kind": "converted_keiyoushi",
         "source_id": "keiyoushi.en.mangagg",
         "state": "valid",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "warnings": []
       },
       {
@@ -518,7 +518,7 @@
         "source_definition_kind": "curated_source_config",
         "source_id": "yomira.en.mangataro",
         "state": "valid",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "warnings": []
       },
       {
@@ -566,7 +566,7 @@
         "source_definition_kind": "curated_source_config",
         "source_id": "yomira.en.onisaga",
         "state": "valid",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "warnings": []
       },
       {
@@ -611,7 +611,7 @@
     },
     "diagnostics": [],
     "errors": [],
-    "import_trace_id": "spimp_20260712145335_1",
+    "import_trace_id": "spimp_20260712193526_1",
     "installable_count": 24,
     "language_counts": {
       "all": 1,

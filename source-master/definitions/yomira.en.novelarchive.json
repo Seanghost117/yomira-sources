@@ -5,7 +5,7 @@
   "sourceId": "yomira.en.novelarchive",
   "name": "NovelArchive",
   "displayName": "NovelArchive",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "contentKind": "light_novel",
@@ -178,5 +178,21 @@
     "originalLanguage": "en",
     "originalSourceName": "NovelArchive",
     "analyzerBucket": "curated_light_novel_source"
+  },
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": true,
+    "pagination": true,
+    "imagePages": false,
+    "textPages": true,
+    "browserVerification": true,
+    "listings": [
+      "latest",
+      "popular"
+    ]
   }
 }

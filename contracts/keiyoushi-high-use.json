@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "contracts": [
+    {
+      "sourceId": "keiyoushi.en.s2manga",
+      "searchQuery": "one piece",
+      "fixtureRemoteId": "imprisoned-one-million-years-my-disciples-are-all-over-the-world",
+      "paginationQuery": "the",
+      "browseListings": ["latest", "popular"],
+      "minimumResults": 10,
+      "minimumPaginationResults": 10,
+      "minimumChapters": 350,
+      "minimumLatestChapterNumber": 390,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 1,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwatop",
+      "searchQuery": "one piece",
+      "fixtureRemoteId": "piece-maker-of-flame",
+      "paginationQuery": "the",
+      "browseListings": ["latest", "popular"],
+      "minimumResults": 10,
+      "minimumPaginationResults": 10,
+      "minimumChapters": 40,
+      "minimumLatestChapterNumber": 40,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 1,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    }
+  ]
+}

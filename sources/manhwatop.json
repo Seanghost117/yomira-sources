@@ -2,14 +2,50 @@
   "extends": "madara",
   "id": "manhwatop",
   "name": "ManhwaTop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "base_url": "https://manhwatop.com",
   "language": "en",
   "nsfw": true,
   "description": "Adult manhwa & webtoons with extensive genre library",
-  "tags": ["Manhwa", "Madara", "Webtoon", "NSFW", "Adult"],
+  "tags": [
+    "Manhwa",
+    "Madara",
+    "Webtoon",
+    "NSFW",
+    "Adult"
+  ],
   "flags": {
     "is_madara": true,
     "uses_cloudflare": false
+  },
+  "endpoints": {
+    "search": {
+      "method": "GET",
+      "url": "{base}/page/{page}/?s={query}&post_type=wp-manga"
+    },
+    "popular": {
+      "method": "GET",
+      "url": "{base}/manga/page/{page}/?m_orderby=views"
+    },
+    "latest": {
+      "method": "GET",
+      "url": "{base}/manga/page/{page}/?m_orderby=latest"
+    }
+  },
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": false,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "latest",
+      "popular"
+    ]
   }
 }

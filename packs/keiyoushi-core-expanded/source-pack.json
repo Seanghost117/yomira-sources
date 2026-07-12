@@ -6060,7 +6060,23 @@
       ],
       "userAgentPolicy": "browser_session",
       "verificationUrl": "https://mangagg.com",
-      "version": "1.1.1"
+      "version": "1.1.2",
+      "capabilities": {
+        "search": true,
+        "browse": true,
+        "details": true,
+        "chapters": true,
+        "pages": true,
+        "filters": false,
+        "pagination": true,
+        "imagePages": true,
+        "textPages": false,
+        "browserVerification": true,
+        "listings": [
+          "latest",
+          "popular"
+        ]
+      }
     },
     {
       "adultContent": false,
@@ -8442,7 +8458,37 @@
         "Madara",
         "Converted"
       ],
-      "version": "1.0.0"
+      "version": "1.0.1",
+      "capabilities": {
+        "search": true,
+        "browse": true,
+        "details": true,
+        "chapters": true,
+        "pages": true,
+        "filters": false,
+        "pagination": true,
+        "imagePages": true,
+        "textPages": false,
+        "browserVerification": false,
+        "listings": [
+          "latest",
+          "popular"
+        ]
+      },
+      "endpoints": {
+        "search": {
+          "method": "GET",
+          "url": "{base}/page/{page}/?s={query}&post_type=wp-manga"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/manga/page/{page}/?m_orderby=views"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/manga/page/{page}/?m_orderby=latest"
+        }
+      }
     },
     {
       "adultContent": true,
@@ -11535,7 +11581,37 @@
         "Madara",
         "Converted"
       ],
-      "version": "1.0.1"
+      "version": "1.0.2",
+      "capabilities": {
+        "search": true,
+        "browse": true,
+        "details": true,
+        "chapters": true,
+        "pages": true,
+        "filters": false,
+        "pagination": true,
+        "imagePages": true,
+        "textPages": false,
+        "browserVerification": false,
+        "listings": [
+          "latest",
+          "popular"
+        ]
+      },
+      "endpoints": {
+        "search": {
+          "method": "GET",
+          "url": "{base}/page/{page}/?s={query}&post_type=wp-manga"
+        },
+        "popular": {
+          "method": "GET",
+          "url": "{base}/manga/page/{page}/?m_orderby=views"
+        },
+        "latest": {
+          "method": "GET",
+          "url": "{base}/manga/page/{page}/?m_orderby=latest"
+        }
+      }
     },
     {
       "adultContent": true,
@@ -21889,7 +21965,7 @@
           "url": "{base}/wp-json/manga/v1/load"
         },
         "search": {
-          "body": "{\"page\":{page},\"search\":\"{query}\",\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"post_desc\",\"genreMatchMode\":\"any\"}",
+          "body": "{\"page\":{page},\"search\":{query_json},\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"post_desc\",\"genreMatchMode\":\"any\"}",
           "content_type": "application/json",
           "method": "POST",
           "url": "{base}/wp-json/manga/v1/load"
@@ -21989,7 +22065,25 @@
         "Manhwa",
         "Collections"
       ],
-      "version": "1.0.1"
+      "version": "1.0.2",
+      "capabilities": {
+        "search": true,
+        "browse": true,
+        "details": true,
+        "chapters": true,
+        "pages": true,
+        "filters": false,
+        "pagination": true,
+        "imagePages": true,
+        "textPages": false,
+        "browserVerification": false,
+        "listings": [
+          "popular",
+          "latest",
+          "recently_released",
+          "title_az"
+        ]
+      }
     },
     {
       "adultContent": false,
@@ -22364,7 +22458,28 @@
       ],
       "userAgentPolicy": "browser_session",
       "verificationUrl": "https://onisaga.com/manga/",
-      "version": "1.0.1"
+      "version": "1.0.2",
+      "capabilities": {
+        "search": true,
+        "browse": true,
+        "details": true,
+        "chapters": true,
+        "pages": true,
+        "filters": true,
+        "pagination": true,
+        "imagePages": true,
+        "textPages": false,
+        "browserVerification": true,
+        "listings": [
+          "latest",
+          "popular_day",
+          "popular_week",
+          "popular_month",
+          "popular_year",
+          "fan_favorites",
+          "top_rated"
+        ]
+      }
     },
     {
       "adultContent": false,

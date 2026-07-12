@@ -1,0 +1,73 @@
+{
+  "adultContent": true,
+  "baseUrl": "https://manhwatop.com",
+  "base_url": "https://manhwatop.com",
+  "connectorEngine": "madara",
+  "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+  "displayName": "Manhwatop",
+  "extends": "madara",
+  "flags": {
+    "isMadara": true
+  },
+  "id": "keiyoushi.en.manhwatop",
+  "language": "en",
+  "name": "Manhwatop",
+  "nsfw": true,
+  "provenance": {
+    "analyzerBucket": "direct_multisrc_candidate",
+    "baseUrlSource": "build_gradle",
+    "ecosystem": "keiyoushi",
+    "originalExtClass": ".Manhwatop",
+    "originalFamily": "Madara",
+    "originalLanguage": "en",
+    "originalSourceName": "manhwatop",
+    "originalSourcePath": "src/en/manhwatop",
+    "originalVersion": "2"
+  },
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "rate_limit_ms": 1000,
+  "region": "en",
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "converted_keiyoushi",
+  "sourceId": "keiyoushi.en.manhwatop",
+  "sourceType": "madara",
+  "tags": [
+    "Keiyoushi",
+    "Madara",
+    "Converted"
+  ],
+  "version": "1.0.1",
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": false,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "latest",
+      "popular"
+    ]
+  },
+  "endpoints": {
+    "search": {
+      "method": "GET",
+      "url": "{base}/page/{page}/?s={query}&post_type=wp-manga"
+    },
+    "popular": {
+      "method": "GET",
+      "url": "{base}/manga/page/{page}/?m_orderby=views"
+    },
+    "latest": {
+      "method": "GET",
+      "url": "{base}/manga/page/{page}/?m_orderby=latest"
+    }
+  }
+}

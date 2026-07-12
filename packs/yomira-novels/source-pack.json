@@ -453,7 +453,23 @@
         "JSON"
       ],
       "verificationUrl": "https://novelarchive.cc",
-      "version": "1.0.0"
+      "version": "1.0.1",
+      "capabilities": {
+        "search": true,
+        "browse": true,
+        "details": true,
+        "chapters": true,
+        "pages": true,
+        "filters": true,
+        "pagination": true,
+        "imagePages": false,
+        "textPages": true,
+        "browserVerification": true,
+        "listings": [
+          "latest",
+          "popular"
+        ]
+      }
     },
     {
       "adultContent": false,

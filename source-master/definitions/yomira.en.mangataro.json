@@ -5,7 +5,7 @@
   "sourceId": "yomira.en.mangataro",
   "name": "MangaTaro",
   "displayName": "MangaTaro",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "base_url": "https://mangataro.org",
@@ -15,7 +15,13 @@
   "nsfw": true,
   "adultContent": true,
   "description": "MangaTaro catalog using the site's current public REST catalog endpoint for stable search, latest, popular, release, and alphabetical sections.",
-  "tags": ["Yomira", "Selector", "Manga", "Manhwa", "Collections"],
+  "tags": [
+    "Yomira",
+    "Selector",
+    "Manga",
+    "Manhwa",
+    "Collections"
+  ],
   "appStoreSafe": true,
   "containsExecutableCode": false,
   "requiresExternalBridge": false,
@@ -29,7 +35,7 @@
       "url": "{base}/wp-json/manga/v1/load",
       "method": "POST",
       "content_type": "application/json",
-      "body": "{\"page\":{page},\"search\":\"{query}\",\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"post_desc\",\"genreMatchMode\":\"any\"}"
+      "body": "{\"page\":{page},\"search\":{query_json},\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"post_desc\",\"genreMatchMode\":\"any\"}"
     },
     "popular": {
       "url": "{base}/wp-json/manga/v1/load",
@@ -55,9 +61,18 @@
       "content_type": "application/json",
       "body": "{\"page\":{page},\"search\":\"\",\"years\":\"[]\",\"genres\":\"[]\",\"types\":\"[]\",\"statuses\":\"[]\",\"sort\":\"title_asc\",\"genreMatchMode\":\"any\"}"
     },
-    "details": { "url": "{base}/manga/{id}", "method": "GET" },
-    "chapters": { "url": "{base}/manga/{id}", "method": "GET" },
-    "pages": { "url": "{chapter_url}", "method": "GET" }
+    "details": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
   },
   "selectors": {
     "manga_list": {
@@ -85,7 +100,12 @@
     "page_list": {
       "container": ".comic-image-container || #reader-content || .reader-content",
       "image": "img.comic-image@data-src || img.comic-image@src || .comic-image-container img@data-src || .comic-image-container img@src",
-      "exclude": ["logo", "icon", "avatar", "favicon"]
+      "exclude": [
+        "logo",
+        "icon",
+        "avatar",
+        "favicon"
+      ]
     }
   },
   "presentation": {
@@ -119,5 +139,23 @@
     "originalLanguage": "en",
     "originalSourceName": "MangaTaro",
     "analyzerBucket": "curated_selector_profile"
+  },
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": false,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "popular",
+      "latest",
+      "recently_released",
+      "title_az"
+    ]
   }
 }

@@ -1,0 +1,73 @@
+{
+  "adultContent": true,
+  "baseUrl": "https://s2read.com",
+  "base_url": "https://s2read.com",
+  "connectorEngine": "madara",
+  "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+  "displayName": "S2Read",
+  "extends": "madara",
+  "flags": {
+    "isMadara": true
+  },
+  "id": "keiyoushi.en.s2manga",
+  "language": "en",
+  "name": "S2Read",
+  "nsfw": true,
+  "provenance": {
+    "analyzerBucket": "direct_multisrc_candidate",
+    "baseUrlSource": "build_gradle",
+    "ecosystem": "keiyoushi",
+    "originalExtClass": ".S2Manga",
+    "originalFamily": "Madara",
+    "originalLanguage": "en",
+    "originalSourceName": "s2manga",
+    "originalSourcePath": "src/en/s2manga",
+    "originalVersion": "3"
+  },
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "rate_limit_ms": 1000,
+  "region": "en",
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "converted_keiyoushi",
+  "sourceId": "keiyoushi.en.s2manga",
+  "sourceType": "madara",
+  "tags": [
+    "Keiyoushi",
+    "Madara",
+    "Converted"
+  ],
+  "version": "1.0.2",
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": false,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "latest",
+      "popular"
+    ]
+  },
+  "endpoints": {
+    "search": {
+      "method": "GET",
+      "url": "{base}/page/{page}/?s={query}&post_type=wp-manga"
+    },
+    "popular": {
+      "method": "GET",
+      "url": "{base}/manga/page/{page}/?m_orderby=views"
+    },
+    "latest": {
+      "method": "GET",
+      "url": "{base}/manga/page/{page}/?m_orderby=latest"
+    }
+  }
+}

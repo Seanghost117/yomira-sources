@@ -5,7 +5,7 @@
   "sourceId": "yomira.en.onisaga",
   "name": "OniSaga",
   "displayName": "OniSaga",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "base_url": "https://onisaga.com",
@@ -15,7 +15,12 @@
   "nsfw": false,
   "adultContent": false,
   "description": "OniSaga manga/manhwa catalog with latest, popular, fan-favorite, and top-rated sections. Browser Verification is required on the catalog page before browsing.",
-  "tags": ["Yomira", "Selector", "Manga", "Manhwa"],
+  "tags": [
+    "Yomira",
+    "Selector",
+    "Manga",
+    "Manhwa"
+  ],
   "appStoreSafe": true,
   "containsExecutableCode": false,
   "requiresExternalBridge": false,
@@ -35,17 +40,50 @@
     "requestsPerMinute": 40
   },
   "endpoints": {
-    "search": { "url": "{base}/?s={query}&post_type=wp-manga&page={page}", "method": "GET" },
-    "latest": { "url": "{base}/manga/?m_orderby=latest&page={page}", "method": "GET" },
-    "popular_day": { "url": "{base}/manga/?m_orderby=trending&trending=day&page={page}", "method": "GET" },
-    "popular_week": { "url": "{base}/manga/?m_orderby=trending&trending=week&page={page}", "method": "GET" },
-    "popular_month": { "url": "{base}/manga/?m_orderby=trending&trending=month&page={page}", "method": "GET" },
-    "popular_year": { "url": "{base}/manga/?m_orderby=trending&trending=year&page={page}", "method": "GET" },
-    "fan_favorites": { "url": "{base}/manga/?m_orderby=alphabet&page={page}", "method": "GET" },
-    "top_rated": { "url": "{base}/manga/?m_orderby=rating&page={page}", "method": "GET" },
-    "details": { "url": "{base}/manga/{id}/", "method": "GET" },
-    "chapters": { "url": "{base}/manga/{id}/", "method": "GET" },
-    "pages": { "url": "{chapter_url}", "method": "GET" }
+    "search": {
+      "url": "{base}/?s={query}&post_type=wp-manga&page={page}",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/manga/?m_orderby=latest&page={page}",
+      "method": "GET"
+    },
+    "popular_day": {
+      "url": "{base}/manga/?m_orderby=trending&trending=day&page={page}",
+      "method": "GET"
+    },
+    "popular_week": {
+      "url": "{base}/manga/?m_orderby=trending&trending=week&page={page}",
+      "method": "GET"
+    },
+    "popular_month": {
+      "url": "{base}/manga/?m_orderby=trending&trending=month&page={page}",
+      "method": "GET"
+    },
+    "popular_year": {
+      "url": "{base}/manga/?m_orderby=trending&trending=year&page={page}",
+      "method": "GET"
+    },
+    "fan_favorites": {
+      "url": "{base}/manga/?m_orderby=alphabet&page={page}",
+      "method": "GET"
+    },
+    "top_rated": {
+      "url": "{base}/manga/?m_orderby=rating&page={page}",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manga/{id}/",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manga/{id}/",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
   },
   "selectors": {
     "manga_list": {
@@ -73,7 +111,11 @@
     "page_list": {
       "container": ".reading-content || .chapter-content || body",
       "image": "img.wp-manga-chapter-img@data-src || img.wp-manga-chapter-img@src || img@data-src || img@src",
-      "exclude": ["logo", "icon", "avatar"]
+      "exclude": [
+        "logo",
+        "icon",
+        "avatar"
+      ]
     }
   },
   "filters": [
@@ -82,10 +124,22 @@
       "param": "type",
       "filter_type": "select",
       "options": [
-        { "label": "Any", "value": "" },
-        { "label": "Manga", "value": "manga" },
-        { "label": "Manhwa", "value": "manhwa" },
-        { "label": "Manhua", "value": "manhua" }
+        {
+          "label": "Any",
+          "value": ""
+        },
+        {
+          "label": "Manga",
+          "value": "manga"
+        },
+        {
+          "label": "Manhwa",
+          "value": "manhwa"
+        },
+        {
+          "label": "Manhua",
+          "value": "manhua"
+        }
       ]
     },
     {
@@ -93,9 +147,18 @@
       "param": "status",
       "filter_type": "select",
       "options": [
-        { "label": "Any", "value": "" },
-        { "label": "Ongoing", "value": "ongoing" },
-        { "label": "Completed", "value": "completed" }
+        {
+          "label": "Any",
+          "value": ""
+        },
+        {
+          "label": "Ongoing",
+          "value": "ongoing"
+        },
+        {
+          "label": "Completed",
+          "value": "completed"
+        }
       ]
     },
     {
@@ -103,17 +166,40 @@
       "param": "genre",
       "filter_type": "select",
       "options": [
-        { "label": "Any", "value": "" },
-        { "label": "Action", "value": "action" },
-        { "label": "Romance", "value": "romance" },
-        { "label": "Fantasy", "value": "fantasy" },
-        { "label": "Drama", "value": "drama" }
+        {
+          "label": "Any",
+          "value": ""
+        },
+        {
+          "label": "Action",
+          "value": "action"
+        },
+        {
+          "label": "Romance",
+          "value": "romance"
+        },
+        {
+          "label": "Fantasy",
+          "value": "fantasy"
+        },
+        {
+          "label": "Drama",
+          "value": "drama"
+        }
       ]
     }
   ],
   "presentation": {
     "primaryListing": "latest",
-    "sections": ["latest", "popular_day", "popular_week", "popular_month", "popular_year", "fan_favorites", "top_rated"],
+    "sections": [
+      "latest",
+      "popular_day",
+      "popular_week",
+      "popular_month",
+      "popular_year",
+      "fan_favorites",
+      "top_rated"
+    ],
     "listingLabels": {
       "latest": "Latest OniSaga Updates",
       "popular_day": "Popular Today",
@@ -139,5 +225,26 @@
     "originalLanguage": "en",
     "originalSourceName": "OniSaga",
     "analyzerBucket": "curated_selector_profile"
+  },
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": true,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": true,
+    "listings": [
+      "latest",
+      "popular_day",
+      "popular_week",
+      "popular_month",
+      "popular_year",
+      "fan_favorites",
+      "top_rated"
+    ]
   }
 }

@@ -7,15 +7,15 @@
   "maintainerUrl": "https://github.com/Seanghost117",
   "homepageUrl": "https://github.com/Seanghost117/yomira-sources",
   "termsUrl": "https://github.com/Seanghost117/yomira-sources",
-  "updatedAt": "2026-07-12T14:50:23Z",
+  "updatedAt": "2026-07-12T19:32:02Z",
   "sourcePacks": [
     {
       "packId": "keiyoushi-core-expanded",
       "displayName": "Keiyoushi Expanded Core Source Pack",
       "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
-      "version": "2026.07.12.1",
+      "version": "2026.07.12.2",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/keiyoushi-core-expanded/source-pack.json",
-      "checksum": "sha256:ab684242a1f085ab782b69a0a1fd9422b0ccbd7bf272c003c7d86d840052cb23",
+      "checksum": "sha256:3ce567fa205f8e5ef172fd5ea168e01d2b5eefc82fe889dab7b2844960f7986d",
       "checksumAlgorithm": "sha256",
       "language": "multi",
       "region": "global",
@@ -28,15 +28,15 @@
       ],
       "sourceCount": 419,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-07-12T14:50:23Z"
+      "updatedAt": "2026-07-12T19:32:02Z"
     },
     {
       "packId": "yomira-curated",
       "displayName": "Yomira Curated Source Pack",
       "description": "Curated Yomira-compatible source definitions maintained separately from the app.",
-      "version": "2026.07.12.1",
+      "version": "2026.07.12.2",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-curated/source-pack.json",
-      "checksum": "sha256:a600c3afa1171dd5f7690b1e35bcf1f75d6e737bae4bd0a80e58aed1cd39dbd7",
+      "checksum": "sha256:3a21c04be5e412f463fe306600e349af437866f6d68e3486d271e95dff62b71d",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "en",
@@ -49,7 +49,7 @@
       ],
       "sourceCount": 24,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-07-12T14:50:23Z"
+      "updatedAt": "2026-07-12T19:32:02Z"
     },
     {
       "packId": "yomira-nsfw",
@@ -76,9 +76,9 @@
       "packId": "yomira-novels",
       "displayName": "Yomira Novels Source Pack",
       "description": "Light novel and web novel source definitions for Yomira prose reading support.",
-      "version": "2026.07.12.1",
+      "version": "2026.07.12.2",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-novels/source-pack.json",
-      "checksum": "sha256:886887ef742e35aed9e072946c5deda57f4429afc261a32d587aaec431d19d43",
+      "checksum": "sha256:252c31e2c5edb474e9259ed595ceda222220850ca0b0a11e33825a44083f927f",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "en",
@@ -91,7 +91,7 @@
       ],
       "sourceCount": 9,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-07-12T14:50:23Z"
+      "updatedAt": "2026-07-12T19:32:02Z"
     }
   ]
 }
