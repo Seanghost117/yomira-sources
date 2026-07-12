@@ -180,7 +180,7 @@
         "source_definition_kind": "curated_source_config",
         "source_id": "yomira.en.novelfire",
         "state": "valid",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "warnings": []
       },
       {
@@ -249,7 +249,7 @@
     },
     "diagnostics": [],
     "errors": [],
-    "import_trace_id": "spimp_20260604070027_1",
+    "import_trace_id": "spimp_20260712145340_1",
     "installable_count": 9,
     "language_counts": {
       "en": 9

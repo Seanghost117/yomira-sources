@@ -5,7 +5,7 @@
   "sourceId": "yomira.en.mangadex",
   "name": "MangaDex",
   "displayName": "MangaDex",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "extends": "mangadex",
   "connectorEngine": "mangadex",
   "sourceType": "mangadex",
@@ -26,6 +26,25 @@
   "containsExecutableCode": false,
   "requiresExternalBridge": false,
   "rate_limit_ms": 1000,
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": true,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "popular_new",
+      "latest",
+      "recent",
+      "seasonal",
+      "popular"
+    ]
+  },
   "presentation": {
     "primaryListing": "popular_new",
     "sections": [

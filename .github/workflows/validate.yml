@@ -5,45 +5,118 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "23 9 * * 2,5"
+  workflow_dispatch:
+    inputs:
+      run_live_contracts:
+        description: Run bounded live Source Definition contracts
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
 
 jobs:
-  validate:
+  repository:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate repository index and source packs
+        with:
+          fetch-depth: 0
+      - name: Validate repository structure
+        run: python3 scripts/validate_repository.py
+      - name: Enforce Source Definition and Source Pack version bumps
+        if: github.event_name == 'pull_request'
+        run: python3 scripts/validate_repository.py --base-ref "origin/${{ github.base_ref }}"
+
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Source Repository
+        uses: actions/checkout@v4
+        with:
+          path: sources
+      - name: Check out Yomira core
+        uses: actions/checkout@v4
+        with:
+          repository: Seanghost117/ula-manga
+          path: yomira
+          submodules: false
+      - name: Check out Source Definition tools
+        uses: actions/checkout@v4
+        with:
+          repository: Seanghost117/yomira-source-tools
+          path: yomira/tools/source-converter
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: yomira
+      - name: Validate all Source Packs with the app import contract
+        working-directory: yomira
         run: |
-          python3 - <<'PY'
-          import hashlib
-          import json
-          from pathlib import Path
+          for pack in ../sources/packs/*/source-pack.json; do
+            cargo run -p yomira-source-converter -- validate-source-pack --pack "$pack"
+          done
+      - name: Validate curated Source Definition contracts
+        working-directory: yomira
+        run: >-
+          cargo run -p yomira-source-converter -- contract-test
+          --pack ../sources/packs/yomira-curated/source-pack.json
+          --contracts ../sources/contracts/yomira-curated.json
+      - name: Validate novel Source Definition contracts
+        working-directory: yomira
+        run: >-
+          cargo run -p yomira-source-converter -- contract-test
+          --pack ../sources/packs/yomira-novels/source-pack.json
+          --contracts ../sources/contracts/yomira-novels.json
 
-          root = Path(".")
-          repo = json.loads((root / "repository.json").read_text())
-          assert repo["schemaVersion"] == "1.0"
-          assert repo["repositoryId"] == "yomira.sources"
-          packs = repo.get("sourcePacks") or []
-          assert packs, "repository.json must list at least one source pack"
-
-          for entry in packs:
-              pack_id = entry["packId"]
-              pack_path = root / "packs" / pack_id / "source-pack.json"
-              assert pack_path.exists(), f"missing {pack_path}"
-              raw = pack_path.read_bytes()
-              digest = hashlib.sha256(raw).hexdigest()
-              assert digest == entry.get("checksum"), f"checksum mismatch for {pack_id}"
-              pack = json.loads(raw)
-              assert pack["schemaVersion"] == "1.0"
-              assert pack["packId"] == pack_id
-              definitions = pack.get("definitions") or []
-              assert definitions, f"{pack_id} has no definitions"
-              assert pack.get("sourceCount") == len(definitions)
-              for idx, definition in enumerate(definitions):
-                  assert definition.get("sourceId") or definition.get("id"), f"{pack_id}[{idx}] missing source id"
-                  assert definition.get("displayName") or definition.get("name"), f"{pack_id}[{idx}] missing display name"
-                  assert definition.get("baseUrl") or definition.get("base_url"), f"{pack_id}[{idx}] missing base URL"
-                  assert definition.get("connectorEngine"), f"{pack_id}[{idx}] missing connector engine"
-                  assert definition.get("appStoreSafe") is True, f"{pack_id}[{idx}] must be App Store safe"
-                  assert definition.get("containsExecutableCode") is False, f"{pack_id}[{idx}] must not contain executable code"
-                  assert definition.get("requiresExternalBridge") is False, f"{pack_id}[{idx}] must not require an external bridge"
-          PY
+  live-contracts:
+    if: >-
+      github.event_name == 'schedule' ||
+      (github.event_name == 'workflow_dispatch' && inputs.run_live_contracts)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Source Repository
+        uses: actions/checkout@v4
+        with:
+          path: sources
+      - name: Check out Yomira core
+        uses: actions/checkout@v4
+        with:
+          repository: Seanghost117/ula-manga
+          path: yomira
+          submodules: false
+      - name: Check out Source Definition tools
+        uses: actions/checkout@v4
+        with:
+          repository: Seanghost117/yomira-source-tools
+          path: yomira/tools/source-converter
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: yomira
+      - name: Run bounded curated live contracts
+        working-directory: yomira
+        run: >-
+          cargo run -p yomira-source-converter -- contract-test
+          --pack ../sources/packs/yomira-curated/source-pack.json
+          --contracts ../sources/contracts/yomira-curated.json
+          --live --max-sources 12 --pretty
+          --out ../sources/contract-report-curated.json
+      - name: Run bounded novel live contracts
+        working-directory: yomira
+        run: >-
+          cargo run -p yomira-source-converter -- contract-test
+          --pack ../sources/packs/yomira-novels/source-pack.json
+          --contracts ../sources/contracts/yomira-novels.json
+          --live --max-sources 12 --pretty
+          --out ../sources/contract-report-novels.json
+      - name: Upload live contract reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-contract-reports
+          path: sources/contract-report-*.json
+          if-no-files-found: warn

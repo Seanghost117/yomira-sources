@@ -5,7 +5,7 @@
   "sourceId": "keiyoushi.en.vymanga",
   "name": "VyManga",
   "displayName": "VyManga",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "base_url": "https://vymanga.net",
@@ -35,6 +35,22 @@
     "browserVerificationRequired": true
   },
   "rate_limit_ms": 1200,
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": false,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": true,
+    "listings": [
+      "latest",
+      "popular"
+    ]
+  },
   "rateLimit": {
     "minDelayMs": 1200,
     "requestsPerMinute": 45

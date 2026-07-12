@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "contracts": [
+    {
+      "sourceId": "yomira.en.novelfire",
+      "searchQuery": "reborn",
+      "browseListings": [
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 1,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "textPages",
+        "browserVerification"
+      ],
+      "allowBrowserVerification": true
+    }
+  ]
+}

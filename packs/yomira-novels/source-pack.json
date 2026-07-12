@@ -885,6 +885,22 @@
       "baseUrl": "https://novelfire.net",
       "base_url": "https://novelfire.net",
       "browserVerificationRequired": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": true,
+        "chapters": true,
+        "details": true,
+        "filters": false,
+        "imagePages": false,
+        "listings": [
+          "latest",
+          "popular"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": true
+      },
       "connectorEngine": "selector",
       "containsExecutableCode": false,
       "contentKind": "light_novel",
@@ -1007,7 +1023,7 @@
         "Novel"
       ],
       "verificationUrl": "https://novelfire.net",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "adultContent": false,

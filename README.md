@@ -59,6 +59,18 @@ extensions/
 3. If the site uses the Madara WordPress theme, use `"extends": "madara"` — you only need to provide `id`, `name`, `base_url`, and any overrides
 4. Open a PR with your new file
 
+## Source Definition Contracts
+
+Curated sources can declare a backward-compatible `capabilities` object for
+search, browse listings, detail, chapter, page, filter, pagination, content
+output, and Browser Verification support. Existing definitions without this
+object continue to use runtime inference.
+
+Pull requests run repository structure, checksum, App Store lane, version-bump,
+app-import, and static capability checks. Bounded live contracts run on a
+schedule or by manual workflow dispatch. Browser Verification is reported as a
+separate expected recovery state rather than selector failure.
+
 ## Schema Fields
 
 | Field | Required | Description |

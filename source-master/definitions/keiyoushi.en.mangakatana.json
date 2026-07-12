@@ -5,7 +5,7 @@
   "sourceId": "keiyoushi.en.mangakatana",
   "name": "MangaKatana",
   "displayName": "MangaKatana",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "base_url": "https://mangakatana.com",
@@ -29,6 +29,22 @@
     "uses_cloudflare": false
   },
   "rate_limit_ms": 1000,
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": false,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "popular",
+      "latest"
+    ]
+  },
   "rateLimit": {
     "minDelayMs": 1000,
     "requestsPerMinute": 60

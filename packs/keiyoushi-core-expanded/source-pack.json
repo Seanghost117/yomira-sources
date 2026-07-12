@@ -6456,6 +6456,22 @@
       "appStoreSafe": true,
       "baseUrl": "https://mangakatana.com",
       "base_url": "https://mangakatana.com",
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
       "connectorEngine": "selector",
       "containsExecutableCode": false,
       "description": "Selector source definition normalized from the existing MangaKatana config and current Keiyoushi metadata.",
@@ -6561,7 +6577,7 @@
         "Selector",
         "Curated"
       ],
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "adultContent": false,
@@ -12434,6 +12450,22 @@
       "baseUrl": "https://vymanga.net",
       "base_url": "https://vymanga.net",
       "browserVerificationRequired": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": true,
+        "chapters": true,
+        "details": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "latest",
+          "popular"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
       "connectorEngine": "selector",
       "containsExecutableCode": false,
       "description": "VyManga Source Definition using the current vymanga.net catalog and reader selectors. Browser Verification metadata is included for Cloudflare recovery when required.",
@@ -12566,7 +12598,7 @@
       ],
       "userAgentPolicy": "browser_session",
       "verificationUrl": "https://vymanga.net",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     {
       "adultContent": true,
@@ -21726,6 +21758,25 @@
       "appStoreSafe": true,
       "baseUrl": "https://api.mangadex.org",
       "base_url": "https://api.mangadex.org",
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "filters": true,
+        "imagePages": true,
+        "listings": [
+          "popular_new",
+          "latest",
+          "recent",
+          "seasonal",
+          "popular"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
       "connectorEngine": "mangadex",
       "containsExecutableCode": false,
       "description": "MangaDex Source Definition powered by Yomira's built-in MangaDex connector engine.",
@@ -21795,7 +21846,7 @@
         "API",
         "Curated"
       ],
-      "version": "1.0.1"
+      "version": "1.0.2"
     },
     {
       "adultContent": true,

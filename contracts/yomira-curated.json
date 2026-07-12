@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0",
+  "contracts": [
+    {
+      "sourceId": "yomira.en.mangadex",
+      "searchQuery": "Kaii-san and I",
+      "expectedTitleContains": "Kaii-san and I",
+      "fixtureRemoteId": "c53caf9a-95b6-4400-b41b-d1b09167ef7a",
+      "paginationQuery": "the",
+      "browseListings": [
+        "latest",
+        "recent"
+      ],
+      "minimumResults": 3,
+      "minimumChapters": 1,
+      "minimumPages": 1,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "filters",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.mangakatana",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "one piece",
+      "paginationQuery": "the",
+      "browseListings": [
+        "latest"
+      ],
+      "minimumResults": 2,
+      "minimumChapters": 1,
+      "minimumPages": 1,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.vymanga",
+      "searchQuery": "one piece",
+      "browseListings": [
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 1,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages",
+        "browserVerification"
+      ],
+      "allowBrowserVerification": true
+    }
+  ]
+}

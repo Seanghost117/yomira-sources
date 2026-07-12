@@ -2687,7 +2687,7 @@
         "source_definition_kind": "curated_source_config",
         "source_id": "keiyoushi.en.mangakatana",
         "state": "valid",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "warnings": []
       },
       {
@@ -5375,7 +5375,7 @@
         "source_definition_kind": "curated_source_config",
         "source_id": "keiyoushi.en.vymanga",
         "state": "valid",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "warnings": []
       },
       {
@@ -5663,7 +5663,7 @@
         "source_definition_kind": "converted_keiyoushi",
         "source_id": "keiyoushi.en.yaoiscan",
         "state": "valid",
-        "version": "1.0.0",
+        "version": "1.1.0",
         "warnings": []
       },
       {
@@ -7175,7 +7175,7 @@
         "source_definition_kind": "converted_keiyoushi",
         "source_id": "keiyoushi.fr.yaoiscan",
         "state": "valid",
-        "version": "1.0.0",
+        "version": "1.1.0",
         "warnings": []
       },
       {
@@ -9983,7 +9983,7 @@
         "source_definition_kind": "curated_source_config",
         "source_id": "yomira.en.mangadex",
         "state": "valid",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "warnings": []
       },
       {
@@ -10031,7 +10031,7 @@
         "source_definition_kind": "curated_source_config",
         "source_id": "yomira.en.mkissa",
         "state": "valid",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "warnings": []
       },
       {
@@ -10100,7 +10100,7 @@
     },
     "diagnostics": [],
     "errors": [],
-    "import_trace_id": "spimp_20260618113010_1",
+    "import_trace_id": "spimp_20260712145330_1",
     "installable_count": 419,
     "language_counts": {
       "all": 14,

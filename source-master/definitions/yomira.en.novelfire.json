@@ -5,7 +5,7 @@
   "sourceId": "yomira.en.novelfire",
   "name": "NovelFire",
   "displayName": "NovelFire",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "contentKind": "light_novel",
@@ -34,6 +34,22 @@
     "browserVerificationRequired": true
   },
   "rate_limit_ms": 1200,
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": false,
+    "pagination": true,
+    "imagePages": false,
+    "textPages": true,
+    "browserVerification": true,
+    "listings": [
+      "latest",
+      "popular"
+    ]
+  },
   "rateLimit": {
     "minDelayMs": 1200,
     "requestsPerMinute": 50
