@@ -7,15 +7,26 @@
   "maintainerUrl": "https://github.com/Seanghost117",
   "homepageUrl": "https://github.com/Seanghost117/yomira-sources",
   "termsUrl": "https://github.com/Seanghost117/yomira-sources",
-  "updatedAt": "2026-07-12T19:32:02Z",
+  "updatedAt": "2026-07-13T12:00:00Z",
+  "releasePolicy": {
+    "channels": [
+      "canary",
+      "stable"
+    ],
+    "defaultChannel": "stable",
+    "stableRequiresContractStatus": "passed",
+    "stableRequiresChecksum": true,
+    "stableRequiresReleaseNotes": true,
+    "retainedRollbackVersions": 1
+  },
   "sourcePacks": [
     {
       "packId": "keiyoushi-core-expanded",
       "displayName": "Keiyoushi Expanded Core Source Pack",
       "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
-      "version": "2026.07.12.2",
+      "version": "2026.07.13.1",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/keiyoushi-core-expanded/source-pack.json",
-      "checksum": "sha256:3ce567fa205f8e5ef172fd5ea168e01d2b5eefc82fe889dab7b2844960f7986d",
+      "checksum": "sha256:71ab007f0a1f7dc48f3974eb9fc3b3b0fb5a22a52441ad646e7c847c0022b127",
       "checksumAlgorithm": "sha256",
       "language": "multi",
       "region": "global",
@@ -28,15 +39,23 @@
       ],
       "sourceCount": 419,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-07-12T19:32:02Z"
+      "releaseChannel": "stable",
+      "contractTier": "live",
+      "contractStatus": "passed",
+      "publishedAt": "2026-07-13T12:00:00Z",
+      "releaseNotes": [
+        "Added explicit release identity and safe rollback metadata.",
+        "Validated expanded Source Definition and pagination contracts."
+      ],
+      "updatedAt": "2026-07-13T12:00:00Z"
     },
     {
       "packId": "yomira-curated",
       "displayName": "Yomira Curated Source Pack",
       "description": "Curated Yomira-compatible source definitions maintained separately from the app.",
-      "version": "2026.07.12.2",
+      "version": "2026.07.13.1",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-curated/source-pack.json",
-      "checksum": "sha256:3a21c04be5e412f463fe306600e349af437866f6d68e3486d271e95dff62b71d",
+      "checksum": "sha256:833e1a35f83c014160acc586761a02d8f2ce6d4e21c33564ff30b7f5656e5d4b",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "en",
@@ -49,15 +68,23 @@
       ],
       "sourceCount": 24,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-07-12T19:32:02Z"
+      "releaseChannel": "stable",
+      "contractTier": "live",
+      "contractStatus": "passed",
+      "publishedAt": "2026-07-13T12:00:00Z",
+      "releaseNotes": [
+        "Added explicit release identity and safe rollback metadata.",
+        "Validated curated search, details, chapter, page, and image contracts."
+      ],
+      "updatedAt": "2026-07-13T12:00:00Z"
     },
     {
       "packId": "yomira-nsfw",
       "displayName": "Yomira NSFW Source Pack",
       "description": "Explicit adult source definitions split out from the main Yomira source packs for clearer user control.",
-      "version": "2026.06.03.2",
+      "version": "2026.07.13.1",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-nsfw/source-pack.json",
-      "checksum": "sha256:1020c65b82adbcfac90ab61dc7b7c0f79bfc8bffe5e321092c5c0ed0eddc9f33",
+      "checksum": "sha256:12c9176b3fcf2957e4395dfcba7c57e138cce84cc631153e3afb442887777b68",
       "checksumAlgorithm": "sha256",
       "language": "multi",
       "region": "global",
@@ -70,15 +97,23 @@
       ],
       "sourceCount": 28,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-06-03T12:35:00Z"
+      "releaseChannel": "stable",
+      "contractTier": "repository_only",
+      "contractStatus": "passed",
+      "publishedAt": "2026-07-13T12:00:00Z",
+      "releaseNotes": [
+        "Added explicit release identity and safe rollback metadata.",
+        "Kept explicit-content definitions isolated in the separately controlled pack."
+      ],
+      "updatedAt": "2026-07-13T12:00:00Z"
     },
     {
       "packId": "yomira-novels",
       "displayName": "Yomira Novels Source Pack",
       "description": "Light novel and web novel source definitions for Yomira prose reading support.",
-      "version": "2026.07.12.3",
+      "version": "2026.07.13.1",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-novels/source-pack.json",
-      "checksum": "sha256:1393758ff240640f6f3b01b0ca685ac839277672c8bd2747461115f293e913c0",
+      "checksum": "sha256:02bb3f2d5e36bb0b0f03509917d95ffe33daa65b7284a40d3e795bbc3ca14084",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "en",
@@ -91,7 +126,15 @@
       ],
       "sourceCount": 9,
       "artifactKind": "source_pack",
-      "updatedAt": "2026-07-12T23:16:13Z"
+      "releaseChannel": "stable",
+      "contractTier": "live",
+      "contractStatus": "passed",
+      "publishedAt": "2026-07-13T12:00:00Z",
+      "releaseNotes": [
+        "Added explicit release identity and safe rollback metadata.",
+        "Validated novel search, chapter, and text-page contracts."
+      ],
+      "updatedAt": "2026-07-13T12:00:00Z"
     }
   ]
 }

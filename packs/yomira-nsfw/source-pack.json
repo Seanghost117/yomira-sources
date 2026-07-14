@@ -4,6 +4,14 @@
   "displayName": "Yomira NSFW",
   "description": "Adult-content Source Pack for explicit and 18+ declarative sources. Hidden from the general source lane unless users opt in.",
   "packKind": "source_pack",
+  "version": "2026.07.13.1",
+  "releaseChannel": "stable",
+  "contractStatus": "passed",
+  "publishedAt": "2026-07-13T12:00:00Z",
+  "releaseNotes": [
+    "Added explicit release identity and safe rollback metadata.",
+    "Kept explicit-content definitions isolated in the separately controlled pack."
+  ],
   "languageScope": [
     "all",
     "en",

@@ -4,6 +4,14 @@
   "displayName": "Yomira Novels Source Pack",
   "description": "Light novel and web novel source definitions for Yomira prose reading support.",
   "packKind": "source_pack",
+  "version": "2026.07.13.1",
+  "releaseChannel": "stable",
+  "contractStatus": "passed",
+  "publishedAt": "2026-07-13T12:00:00Z",
+  "releaseNotes": [
+    "Added explicit release identity and safe rollback metadata.",
+    "Validated novel search, chapter, and text-page contracts."
+  ],
   "languageScope": [
     "en"
   ],

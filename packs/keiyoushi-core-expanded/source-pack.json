@@ -4,6 +4,14 @@
   "displayName": "Keiyoushi Expanded Core Source Pack",
   "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
   "packKind": "source_pack",
+  "version": "2026.07.13.1",
+  "releaseChannel": "stable",
+  "contractStatus": "passed",
+  "publishedAt": "2026-07-13T12:00:00Z",
+  "releaseNotes": [
+    "Added explicit release identity and safe rollback metadata.",
+    "Validated expanded Source Definition and pagination contracts."
+  ],
   "languageScope": [
     "all",
     "ar",
