@@ -7,7 +7,7 @@
   "maintainerUrl": "https://github.com/Seanghost117",
   "homepageUrl": "https://github.com/Seanghost117/yomira-sources",
   "termsUrl": "https://github.com/Seanghost117/yomira-sources",
-  "updatedAt": "2026-08-18T05:40:00Z",
+  "updatedAt": "2026-08-18T06:30:00Z",
   "releasePolicy": {
     "channels": [
       "canary",
@@ -24,9 +24,9 @@
       "packId": "keiyoushi-core-expanded",
       "displayName": "Keiyoushi Expanded Core Source Pack",
       "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
-      "version": "2026.08.18.1",
+      "version": "2026.08.18.2",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/keiyoushi-core-expanded/source-pack.json",
-      "checksum": "sha256:c615a9fbf7a68e591ecde24bb8fee95ee69f18c503f7bd2145c4bf7d81439fc1",
+      "checksum": "sha256:05a4f356a772edfe849dd55ded842568d4e4b2265b4afc30f2c375ddcce51bea",
       "checksumAlgorithm": "sha256",
       "language": "multi",
       "region": "global",
@@ -42,20 +42,20 @@
       "releaseChannel": "canary",
       "contractTier": "live",
       "contractStatus": "pending",
-      "publishedAt": "2026-08-18T05:40:00Z",
+      "publishedAt": "2026-08-18T06:30:00Z",
       "releaseNotes": [
         "Added Atsumaru and MangaPill and promoted the curated Manhua Plus definition.",
         "Publication remains gated pending the full live contract scope."
       ],
-      "updatedAt": "2026-08-18T05:40:00Z"
+      "updatedAt": "2026-08-18T06:30:00Z"
     },
     {
       "packId": "yomira-curated",
       "displayName": "Yomira Curated Source Pack",
       "description": "Curated Yomira-compatible source definitions maintained separately from the app.",
-      "version": "2026.08.18.1",
+      "version": "2026.08.18.2",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-curated/source-pack.json",
-      "checksum": "sha256:bb3fd607391c5b30b435b7e85f53e9dd3779b2eb1d316e44db22dcc708e52172",
+      "checksum": "sha256:44ef50db4f1b055cf58f81fdb7a24480ebffbc071683960cf2ba2c510d8f1992",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "en",
@@ -71,12 +71,12 @@
       "releaseChannel": "canary",
       "contractTier": "live",
       "contractStatus": "pending",
-      "publishedAt": "2026-08-18T05:40:00Z",
+      "publishedAt": "2026-08-18T06:30:00Z",
       "releaseNotes": [
         "Added Atsumaru, MangaPill, and curated Manhua Plus coverage.",
         "Publication remains gated pending the full live contract scope."
       ],
-      "updatedAt": "2026-08-18T05:40:00Z"
+      "updatedAt": "2026-08-18T06:30:00Z"
     },
     {
       "packId": "yomira-nsfw",

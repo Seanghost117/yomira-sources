@@ -416,7 +416,7 @@
       "connectorEngine": "selector",
       "definitionPath": "extensions/source-master/definitions/keiyoushi.en.atsumaru.json",
       "status": "ready",
-      "notes": ["Public safe Typesense search and JSON catalog/detail/chapter/page responses were verified on 2026-08-18.", "The Source Definition is declarative and consumed only by the Built-in Connector Engine."]
+      "notes": ["Public safe Typesense search, two-page Typesense pagination, and JSON catalog/detail/chapter/page responses were verified on 2026-08-18 with the Built-in Connector Engine contract tool.", "The Source Definition is declarative and consumed only by the Built-in Connector Engine."]
     },
     {
       "sourceId": "keiyoushi.en.mangapill",
@@ -424,7 +424,7 @@
       "connectorEngine": "selector",
       "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangapill.json",
       "status": "ready",
-      "notes": ["Corrected stale popular and latest routes after a public health check."]
+      "notes": ["Corrected stale popular/latest routes and /chapters listing selectors; the public Built-in Connector Engine contract passed on 2026-08-18.", "Listing pagination is not declared because the public search/listing flow did not provide a verified second page."]
     },
     {
       "sourceId": "keiyoushi.en.manhuaplus",
@@ -432,7 +432,7 @@
       "connectorEngine": "madara",
       "definitionPath": "extensions/source-master/definitions/keiyoushi.en.manhuaplus.json",
       "status": "ready",
-      "notes": ["Promoted from generated-only input to a curated overlay with explicit capabilities."]
+      "notes": ["Promoted from generated-only input to a curated overlay with explicit capabilities and a passing public Built-in Connector Engine contract on 2026-08-18.", "Listing pagination is not declared because the public Madara page-two form could not be verified without Browser Verification."]
     }
   ],
   "alreadyCoveredByGeneratedPack": [

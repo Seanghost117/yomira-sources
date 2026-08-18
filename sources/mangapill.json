@@ -1,7 +1,7 @@
 {
   "id": "mangapill",
   "name": "MangaPill",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "base_url": "https://mangapill.com",
   "language": "en",
   "nsfw": false,
@@ -40,10 +40,10 @@
   },
   "selectors": {
     "manga_list": {
-      "container": ".container .grid > div, .my-3.grid > div, .grid.gap-3 > div",
-      "title": "a div@text || a@text || a img@alt",
-      "cover": "a figure img@data-src || a img@data-src || img@src",
-      "link": "a@href"
+      "container": ".my-3.grid.justify-end > div, .grid.justify-end > div, .grid.grid-cols-2 > div",
+      "title": "a[href^='/manga/'] div@text || a[href^='/manga/'] img@alt || a[href^='/manga/']@text",
+      "cover": "a[href^='/manga/'] figure img@data-src || a[href^='/manga/'] img@data-src || a[href^='/manga/'] img@src || img@data-src || img@src",
+      "link": "a[href^='/manga/']@href"
     },
     "manga_details": {
       "title": "h1@text",
@@ -64,9 +64,5 @@
       "image": "img@src || img@data-src",
       "exclude": [".svg", "data:", "logo", "icon"]
     }
-  },
-  "pagination": {
-    "param": "page",
-    "start": 1
   }
 }

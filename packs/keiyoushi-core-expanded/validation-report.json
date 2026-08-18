@@ -119,7 +119,7 @@
         "source_definition_kind": "curated_source_config",
         "source_id": "keiyoushi.en.atsumaru",
         "state": "valid",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "warnings": []
       },
       {
@@ -191,7 +191,7 @@
         "source_definition_kind": "curated_source_config",
         "source_id": "keiyoushi.en.mangapill",
         "state": "valid",
-        "version": "1.2.0",
+        "version": "1.2.1",
         "warnings": []
       },
       {
@@ -3287,7 +3287,7 @@
         "source_definition_kind": "curated_source_config",
         "source_id": "keiyoushi.en.manhuaplus",
         "state": "valid",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "warnings": []
       },
       {
@@ -10148,7 +10148,7 @@
     },
     "diagnostics": [],
     "errors": [],
-    "import_trace_id": "spimp_20260818094309_1",
+    "import_trace_id": "spimp_20260818100441_1",
     "installable_count": 421,
     "language_counts": {
       "all": 14,
