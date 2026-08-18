@@ -474,7 +474,7 @@
       "displayName": "MangaFire",
       "currentHandConfig": "extensions/sources/mangafire.json",
       "status": "blocked",
-      "reason": "Custom HTTP/API behavior is outside the current converted connector set. Needs native profile work instead of a blind selector import."
+      "reason": "The maintained Keiyoushi implementation is broken after MangaFire's redesign; re-investigate the current upstream reader protocol before adding a declarative Source Definition."
     },
     {
       "sourceKey": "mangadotnet",
@@ -493,6 +493,6 @@
   ],
   "recommendedNextIteration": [
     "Device-validate Mangakakalot, Manganato, MangaKatana, Hiperdex, Hentai20, and Weeb Central search/detail/chapter/page routes after importing the curated source-master preview pack.",
-    "Review MangaFire separately because its Keiyoushi implementation is more custom than a direct declarative source profile."
+    "Review MangaFire separately because its maintained Keiyoushi implementation is broken after the site redesign and needs current upstream reader-protocol investigation."
   ]
 }

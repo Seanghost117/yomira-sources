@@ -19,7 +19,8 @@
     "coverageStateCounts": {
       "connector_work": 3,
       "supported": 14,
-      "licensed_or_raw": 31,
+      "upstream_broken": 1,
+      "licensed_or_raw": 30,
       "candidate": 42
     }
   },
@@ -119,9 +120,9 @@
       ],
       "normalizedHost": "mangafire.to",
       "sourceDefinitionId": null,
-      "coverageState": "licensed_or_raw",
+      "coverageState": "upstream_broken",
       "verificationState": "not_verified",
-      "reason": "Outside the curated installable coverage lane."
+      "reason": "Maintained Keiyoushi implementation is broken after MangaFire's redesign; re-investigate the current upstream reader protocol."
     },
     {
       "externalRank": 7,

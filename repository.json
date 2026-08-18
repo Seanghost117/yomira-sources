@@ -7,7 +7,7 @@
   "maintainerUrl": "https://github.com/Seanghost117",
   "homepageUrl": "https://github.com/Seanghost117/yomira-sources",
   "termsUrl": "https://github.com/Seanghost117/yomira-sources",
-  "updatedAt": "2026-08-18T06:30:00Z",
+  "updatedAt": "2026-08-18T07:15:00Z",
   "releasePolicy": {
     "channels": [
       "canary",
@@ -24,9 +24,9 @@
       "packId": "keiyoushi-core-expanded",
       "displayName": "Keiyoushi Expanded Core Source Pack",
       "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
-      "version": "2026.08.18.2",
+      "version": "2026.08.18.3",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/keiyoushi-core-expanded/source-pack.json",
-      "checksum": "sha256:05a4f356a772edfe849dd55ded842568d4e4b2265b4afc30f2c375ddcce51bea",
+      "checksum": "sha256:25905b0851a949425532ececc1076c0ce0013dc40659bcf6924e9044f89ef990",
       "checksumAlgorithm": "sha256",
       "language": "multi",
       "region": "global",
@@ -42,20 +42,20 @@
       "releaseChannel": "canary",
       "contractTier": "live",
       "contractStatus": "pending",
-      "publishedAt": "2026-08-18T06:30:00Z",
+      "publishedAt": "2026-08-18T07:15:00Z",
       "releaseNotes": [
         "Added Atsumaru and MangaPill and promoted the curated Manhua Plus definition.",
-        "Publication remains gated pending the full live contract scope."
+        "Publication remains gated: VyManga's pre-existing live contract returns HTTP 522."
       ],
-      "updatedAt": "2026-08-18T06:30:00Z"
+      "updatedAt": "2026-08-18T07:15:00Z"
     },
     {
       "packId": "yomira-curated",
       "displayName": "Yomira Curated Source Pack",
       "description": "Curated Yomira-compatible source definitions maintained separately from the app.",
-      "version": "2026.08.18.2",
+      "version": "2026.08.18.3",
       "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-curated/source-pack.json",
-      "checksum": "sha256:44ef50db4f1b055cf58f81fdb7a24480ebffbc071683960cf2ba2c510d8f1992",
+      "checksum": "sha256:14be4b5460a9643a8bcb80f3aadbf584d5264e33b7896162ac9aaa0ae0bde52d",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "en",
@@ -71,12 +71,12 @@
       "releaseChannel": "canary",
       "contractTier": "live",
       "contractStatus": "pending",
-      "publishedAt": "2026-08-18T06:30:00Z",
+      "publishedAt": "2026-08-18T07:15:00Z",
       "releaseNotes": [
         "Added Atsumaru, MangaPill, and curated Manhua Plus coverage.",
-        "Publication remains gated pending the full live contract scope."
+        "Publication remains gated: VyManga's pre-existing live contract returns HTTP 522."
       ],
-      "updatedAt": "2026-08-18T06:30:00Z"
+      "updatedAt": "2026-08-18T07:15:00Z"
     },
     {
       "packId": "yomira-nsfw",
