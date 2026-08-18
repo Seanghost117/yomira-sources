@@ -53,16 +53,16 @@
       "status": "label.text-secondary@text || .badge@text"
     },
     "chapter_list": {
-      "container": "#chapters div, div[id*='chapter'] div",
-      "title": "a@text",
+      "container": "#chapters a[href*='/chapters/']",
+      "title": "a@title || a@text",
       "link": "a@href",
-      "date": "span@text",
+      "date": "",
       "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|/chapter[s]?/([0-9]+(?:\\.[0-9]+)?)"
     },
     "page_list": {
-      "container": "chapter-page, .container picture, .container img[chapter-page]",
-      "image": "img@src || img@data-src",
-      "exclude": [".svg", "data:", "logo", "icon"]
+      "container": "main",
+      "image": "img.js-page@data-src || img.js-page@src || chapter-page img@data-src || chapter-page img@src",
+      "exclude": [".svg", "logo", "icon"]
     }
   }
 }

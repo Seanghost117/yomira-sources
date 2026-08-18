@@ -4,13 +4,14 @@
   "displayName": "Keiyoushi Expanded Core Source Pack",
   "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
   "packKind": "source_pack",
-  "version": "2026.08.18.3",
+  "version": "2026.08.18.4",
   "releaseChannel": "canary",
   "contractStatus": "pending",
-  "publishedAt": "2026-08-18T07:15:00Z",
+  "publishedAt": "2026-08-18T08:00:00Z",
   "releaseNotes": [
     "Added Atsumaru and MangaPill and promoted the curated Manhua Plus definition.",
-    "Publication remains gated: VyManga's pre-existing live contract returns HTTP 522."
+    "Publication remains gated: VyManga's pre-existing live contract returns HTTP 522.",
+    "Recorded dated EverythingMoe host-mapping provenance; unverified cross-host mappings remain candidates."
   ],
   "languageScope": [
     "all",

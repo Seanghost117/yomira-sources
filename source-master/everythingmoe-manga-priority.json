@@ -1,7 +1,8 @@
 {
   "schemaVersion": "1.0",
   "snapshotDate": "2026-08-18",
-  "apiUrl": "https://everythingmoe.com/; https://everythingmoe.com/data/lowsec/manga.json",
+  "sourcePageUrl": "https://everythingmoe.com/",
+  "apiDataUrl": "https://everythingmoe.com/data/lowsec/manga.json",
   "evidenceSource": "EverythingMoe active manga section, including its public lower-ranked manga feed. Ranks are dated snapshot data, not permanent truth.",
   "planningOnly": true,
   "doesNotAutoImportSources": true,
@@ -14,14 +15,19 @@
     "licensed_or_raw",
     "out_of_scope"
   ],
+  "mappingKinds": [
+    "canonical_host",
+    "official_api_subdomain",
+    "unverified_cross_host"
+  ],
   "summary": {
     "entryCount": 90,
     "coverageStateCounts": {
       "connector_work": 3,
-      "supported": 14,
+      "supported": 12,
       "upstream_broken": 1,
       "licensed_or_raw": 30,
-      "candidate": 42
+      "candidate": 44
     }
   },
   "entries": [
@@ -224,9 +230,14 @@
       ],
       "normalizedHost": "mangacloud.org",
       "sourceDefinitionId": "keiyoushi.en.mangacloud",
+      "mappingKind": "official_api_subdomain",
+      "matchedHost": "api.mangacloud.org",
+      "alias": "mangacloud.org -> api.mangacloud.org",
+      "aliasVerificationDate": "2026-08-18",
+      "aliasVerificationBasis": "Configured public API subdomain is the declarative Source Definition endpoint; the API-host relationship is retained as auditable source metadata.",
       "coverageState": "supported",
       "verificationState": "not_verified",
-      "reason": "Exact canonical-host or manually reviewed alias mapping."
+      "reason": "Official API-subdomain Source Definition mapping with recorded endpoint provenance."
     },
     {
       "externalRank": 14,
@@ -295,10 +306,15 @@
         "Official Rips"
       ],
       "normalizedHost": "mangavyvy.com",
-      "sourceDefinitionId": "keiyoushi.en.vymanga",
-      "coverageState": "supported",
+      "sourceDefinitionId": null,
+      "mappingKind": "unverified_cross_host",
+      "matchedHost": null,
+      "alias": "mangavyvy.com -> vymanga.net",
+      "aliasVerificationDate": "2026-08-18",
+      "aliasVerificationBasis": "Live public checks have not yielded a redirect or same-service assertion: mangavyvy.com previously returned HTTP 200 and later timed out, while vymanga.net returned HTTP 522.",
+      "coverageState": "candidate",
       "verificationState": "not_verified",
-      "reason": "Exact canonical-host or manually reviewed alias mapping."
+      "reason": "Cross-host relationship to vymanga.net is unverified; no Source Definition mapping is approved."
     },
     {
       "externalRank": 19,
@@ -564,10 +580,15 @@
         "manhua"
       ],
       "normalizedHost": "manhuaplus.top",
-      "sourceDefinitionId": "keiyoushi.en.manhuaplus",
-      "coverageState": "supported",
-      "verificationState": "validated",
-      "reason": "Exact canonical-host or manually reviewed alias mapping."
+      "sourceDefinitionId": null,
+      "mappingKind": "unverified_cross_host",
+      "matchedHost": null,
+      "alias": "manhuaplus.top -> manhuaplus.com",
+      "aliasVerificationDate": "2026-08-18",
+      "aliasVerificationBasis": "Live public checks have not yielded a redirect or same-service assertion: manhuaplus.top returned HTTP 200 (an earlier /404 redirect was observed), while manhuaplus.com returned Cloudflare HTTP 403.",
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "Cross-host relationship to manhuaplus.com is unverified; no Source Definition mapping is approved."
     },
     {
       "externalRank": 38,
@@ -789,9 +810,14 @@
       ],
       "normalizedHost": "mangadex.org",
       "sourceDefinitionId": "yomira.en.mangadex",
+      "mappingKind": "official_api_subdomain",
+      "matchedHost": "api.mangadex.org",
+      "alias": "mangadex.org -> api.mangadex.org",
+      "aliasVerificationDate": "2026-08-18",
+      "aliasVerificationBasis": "Official MangaDex API subdomain is the declarative Source Definition endpoint.",
       "coverageState": "supported",
       "verificationState": "not_verified",
-      "reason": "Exact canonical-host or manually reviewed alias mapping."
+      "reason": "Official API-subdomain Source Definition mapping with recorded endpoint provenance."
     },
     {
       "externalRank": 53,
