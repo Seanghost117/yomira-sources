@@ -4,13 +4,13 @@
   "displayName": "Keiyoushi Expanded Core Source Pack",
   "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
   "packKind": "source_pack",
-  "version": "2026.07.13.1",
-  "releaseChannel": "stable",
-  "contractStatus": "passed",
-  "publishedAt": "2026-07-13T12:00:00Z",
+  "version": "2026.08.18.1",
+  "releaseChannel": "canary",
+  "contractStatus": "pending",
+  "publishedAt": "2026-08-18T05:40:00Z",
   "releaseNotes": [
-    "Added explicit release identity and safe rollback metadata.",
-    "Validated expanded Source Definition and pagination contracts."
+    "Added Atsumaru and MangaPill and promoted the curated Manhua Plus definition.",
+    "Publication remains gated pending the full live contract scope."
   ],
   "languageScope": [
     "all",
@@ -33,7 +33,7 @@
   "generatedFrom": [
     "tmp/source-pack-split/expanded/definitions"
   ],
-  "sourceCount": 419,
+  "sourceCount": 421,
   "definitions": [
     {
       "adultContent": false,
@@ -186,6 +186,57 @@
       "version": "1.0.0"
     },
     {
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "curated_source_config",
+      "id": "keiyoushi.en.atsumaru",
+      "sourceId": "keiyoushi.en.atsumaru",
+      "name": "Atsumaru",
+      "displayName": "Atsumaru",
+      "version": "1.0.0",
+      "connectorEngine": "selector",
+      "sourceType": "selector",
+      "base_url": "https://atsu.moe",
+      "baseUrl": "https://atsu.moe",
+      "language": "en",
+      "region": "global",
+      "nsfw": false,
+      "adultContent": false,
+      "description": "Atsumaru's public safe-content manga, manhwa, manhua, and OEL catalog using its documented JSON responses.",
+      "tags": ["Keiyoushi", "Selector", "Manga", "Manhwa", "Manhua", "Curated"],
+      "appStoreSafe": true,
+      "containsExecutableCode": false,
+      "requiresExternalBridge": false,
+      "rate_limit_ms": 500,
+      "rateLimit": {"minDelayMs": 500, "requestsPerMinute": 120},
+      "endpoints": {
+        "search": {
+          "url": "{base}/collections/manga/documents/search?q={query}&query_by=title,englishTitle,otherNames,authors,acronyms&query_by_weights=4,3,2,1,1&num_typos=4,3,2,1,0&prefix=true,true,true,true,false&include_fields=id,title,englishTitle,poster,posterSmall,posterMedium,type,medium,isAdult,status,year,mbRating,popularity,dateAdded&filter_by=isAdult%3A%3Dfalse%20%26%26%20hidden%3A%21%3Dtrue&page={page}&per_page=40",
+          "method": "GET"
+        },
+        "popular": {"url": "{base}/api/home2/popular?offset={page}&limit=40&adult=0", "method": "GET"},
+        "latest": {"url": "{base}/api/home2/recently-added?offset={page}&limit=40&adult=0", "method": "GET"},
+        "details": {"url": "{base}/api/manga/page?id={id}", "method": "GET"},
+        "chapters": {"url": "{base}/api/manga/allChapters?mangaId={id}", "method": "GET"},
+        "pages": {"url": "{base}/api/read/chapter?mangaId={id}&chapterId={chapter_url}", "method": "GET"}
+      },
+      "selectors": {
+        "manga_list": {"container": ".__yomira-json-fallback", "title": ".title@text", "cover": "img@src", "link": "a@href"},
+        "manga_details": {"title": "h1@text", "cover": "img@src", "description": ".description@text", "authors": ".author@text", "genres": ".genre@text", "status": ".status@text"},
+        "chapter_list": {"container": ".__yomira-json-fallback", "title": "a@text", "link": "a@href", "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"},
+        "page_list": {"container": ".__yomira-json-fallback", "image": "img@src", "exclude": ["logo", "icon", "avatar"]}
+      },
+      "pagination": {"param": "page", "start": 1},
+      "capabilities": {
+        "search": true, "browse": true, "details": true, "chapters": true, "pages": true,
+        "filters": true, "pagination": true, "imagePages": true, "textPages": false,
+        "browserVerification": false, "listings": ["popular", "latest"]
+      },
+      "provenance": {
+        "ecosystem": "keiyoushi", "originalSourcePath": "src/en/atsumaru", "originalFamily": "CustomHttp",
+        "originalLanguage": "en", "originalSourceName": "Atsumaru", "analyzerBucket": "curated_selector_profile"
+      }
+    },
+    {
       "adultContent": false,
       "baseUrl": "https://hni-scantrad.net",
       "base_url": "https://hni-scantrad.net",
@@ -288,6 +339,47 @@
         "Converted"
       ],
       "version": "1.0.0"
+    },
+    {
+      "schemaVersion": "1.0",
+      "sourceDefinitionKind": "curated_source_config",
+      "id": "keiyoushi.en.mangapill",
+      "sourceId": "keiyoushi.en.mangapill",
+      "name": "MangaPill",
+      "displayName": "MangaPill",
+      "version": "1.2.0",
+      "connectorEngine": "selector",
+      "sourceType": "selector",
+      "base_url": "https://mangapill.com",
+      "baseUrl": "https://mangapill.com",
+      "language": "en",
+      "region": "global",
+      "nsfw": false,
+      "adultContent": false,
+      "description": "MangaPill's English manga catalog with current popular and latest listing routes.",
+      "tags": ["Keiyoushi", "Selector", "Manga", "Curated"],
+      "appStoreSafe": true,
+      "containsExecutableCode": false,
+      "requiresExternalBridge": false,
+      "rate_limit_ms": 800,
+      "rateLimit": {"minDelayMs": 800, "requestsPerMinute": 75},
+      "endpoints": {
+        "search": {"url": "{base}/search?q={query}", "method": "GET"},
+        "popular": {"url": "{base}/", "method": "GET"},
+        "latest": {"url": "{base}/chapters", "method": "GET"},
+        "details": {"url": "{base}/manga/{id}", "method": "GET"},
+        "chapters": {"url": "{base}/manga/{id}", "method": "GET"},
+        "pages": {"url": "{chapter_url}", "method": "GET"}
+      },
+      "selectors": {
+        "manga_list": {"container": ".my-3.grid.justify-end > div, .grid.justify-end > div", "title": "a[href^='/manga/'] div@text || a[href^='/manga/'] img@alt || a[href^='/manga/']@text", "cover": "a[href^='/manga/'] figure img@data-src || a[href^='/manga/'] img@data-src || a[href^='/manga/'] img@src", "link": "a[href^='/manga/']@href"},
+        "manga_details": {"title": "h1@text", "cover": "img[alt]@data-src || img[alt]@src || figure img@data-src || figure img@src", "description": "p.text--secondary@text || .text-sm.text--secondary@text || div.limit-html p@text", "genres": "a[href*='/genre/']@text || a[href*='/type/']@text", "status": "label.text-secondary@text || .badge@text"},
+        "chapter_list": {"container": "#chapters a[href*='/chapters/']", "title": "a@title || a@text", "link": "a@href", "date": "", "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)|/chapter[s]?/([0-9]+(?:\\.[0-9]+)?)"},
+        "page_list": {"container": "main", "image": "img.js-page@data-src || img.js-page@src || chapter-page img@data-src || chapter-page img@src", "exclude": [".svg", "logo", "icon"]}
+      },
+      "pagination": {"param": "page", "start": 1},
+      "capabilities": {"search": true, "browse": true, "details": true, "chapters": true, "pages": true, "filters": false, "pagination": true, "imagePages": true, "textPages": false, "browserVerification": false, "listings": ["popular", "latest"]},
+      "provenance": {"ecosystem": "keiyoushi", "originalSourcePath": "src/en/mangapill", "originalFamily": "HttpSource", "originalLanguage": "en", "originalSourceName": "MangaPill", "analyzerBucket": "curated_selector_profile"}
     },
     {
       "adultContent": true,
@@ -7623,47 +7715,33 @@
       "version": "1.0.0"
     },
     {
-      "adultContent": false,
-      "baseUrl": "https://manhuaplus.com",
-      "base_url": "https://manhuaplus.com",
-      "connectorEngine": "madara",
-      "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
-      "displayName": "Manhua Plus",
-      "extends": "madara",
-      "flags": {
-        "isMadara": true
-      },
-      "id": "keiyoushi.en.manhuaplus",
-      "language": "en",
-      "name": "Manhua Plus",
-      "nsfw": false,
-      "provenance": {
-        "analyzerBucket": "direct_multisrc_candidate",
-        "baseUrlSource": "build_gradle",
-        "ecosystem": "keiyoushi",
-        "originalExtClass": ".ManhuaPlus",
-        "originalFamily": "Madara",
-        "originalLanguage": "en",
-        "originalSourceName": "manhuaplus",
-        "originalSourcePath": "src/en/manhuaplus",
-        "originalVersion": "7"
-      },
-      "rateLimit": {
-        "minDelayMs": 1000,
-        "requestsPerMinute": 60
-      },
-      "rate_limit_ms": 1000,
-      "region": "en",
       "schemaVersion": "1.0",
-      "sourceDefinitionKind": "converted_keiyoushi",
+      "sourceDefinitionKind": "curated_source_config",
+      "id": "keiyoushi.en.manhuaplus",
       "sourceId": "keiyoushi.en.manhuaplus",
+      "name": "Manhua Plus",
+      "displayName": "Manhua Plus",
+      "version": "1.0.1",
+      "extends": "madara",
+      "connectorEngine": "madara",
       "sourceType": "madara",
-      "tags": [
-        "Keiyoushi",
-        "Madara",
-        "Converted"
-      ],
-      "version": "1.0.0"
+      "base_url": "https://manhuaplus.com",
+      "baseUrl": "https://manhuaplus.com",
+      "language": "en",
+      "region": "global",
+      "nsfw": false,
+      "adultContent": false,
+      "description": "Curated Manhua Plus Madara Source Definition with explicit browse and reading capabilities.",
+      "tags": ["Keiyoushi", "Madara", "Manhua", "Curated"],
+      "appStoreSafe": true,
+      "containsExecutableCode": false,
+      "requiresExternalBridge": false,
+      "rate_limit_ms": 1000,
+      "rateLimit": {"minDelayMs": 1000, "requestsPerMinute": 60},
+      "endpoints": {"popular": {"url": "{base}/manga/?m_orderby=views&page={page}", "method": "GET"}, "latest": {"url": "{base}/manga/?m_orderby=latest&page={page}", "method": "GET"}},
+      "pagination": {"param": "page", "start": 1},
+      "capabilities": {"search": true, "browse": true, "details": true, "chapters": true, "pages": true, "filters": true, "pagination": true, "imagePages": true, "textPages": false, "browserVerification": false, "listings": ["popular", "latest"]},
+      "provenance": {"ecosystem": "keiyoushi", "originalSourcePath": "src/en/manhuaplus", "originalFamily": "Madara", "originalLanguage": "en", "originalSourceName": "manhuaplus", "originalVersion": "7", "originalExtClass": ".ManhuaPlus", "analyzerBucket": "curated_source_master_overlay"}
     },
     {
       "adultContent": true,

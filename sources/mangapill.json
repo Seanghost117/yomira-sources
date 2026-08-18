@@ -1,7 +1,7 @@
 {
   "id": "mangapill",
   "name": "MangaPill",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "base_url": "https://mangapill.com",
   "language": "en",
   "nsfw": false,
@@ -18,11 +18,11 @@
       "method": "GET"
     },
     "popular": {
-      "url": "{base}/titles?type=manga&status=",
+      "url": "{base}/",
       "method": "GET"
     },
     "latest": {
-      "url": "{base}/",
+      "url": "{base}/chapters",
       "method": "GET"
     },
     "details": {

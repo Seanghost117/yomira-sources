@@ -409,6 +409,30 @@
         "Search, popular, latest, details, and chapter metadata use AllAnime's native GraphQL API.",
         "Chapter page images require the built-in Browser Verification rendered-page snapshot path, matching Keiyoushi's WebView capture strategy without executable source-pack code."
       ]
+    },
+    {
+      "sourceId": "keiyoushi.en.atsumaru",
+      "displayName": "Atsumaru",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.atsumaru.json",
+      "status": "ready",
+      "notes": ["Public safe Typesense search and JSON catalog/detail/chapter/page responses were verified on 2026-08-18.", "The Source Definition is declarative and consumed only by the Built-in Connector Engine."]
+    },
+    {
+      "sourceId": "keiyoushi.en.mangapill",
+      "displayName": "MangaPill",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangapill.json",
+      "status": "ready",
+      "notes": ["Corrected stale popular and latest routes after a public health check."]
+    },
+    {
+      "sourceId": "keiyoushi.en.manhuaplus",
+      "displayName": "Manhua Plus",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.manhuaplus.json",
+      "status": "ready",
+      "notes": ["Promoted from generated-only input to a curated overlay with explicit capabilities."]
     }
   ],
   "alreadyCoveredByGeneratedPack": [
@@ -421,11 +445,6 @@
       "sourceId": "keiyoushi.en.mangakakalotfun",
       "displayName": "Mangakakalot.fun",
       "connectorEngine": "mangahub"
-    },
-    {
-      "sourceId": "keiyoushi.en.manhuaplus",
-      "displayName": "Manhua Plus",
-      "connectorEngine": "madara"
     },
     {
       "sourceId": "keiyoushi.en.manhwaclan",
@@ -456,6 +475,20 @@
       "currentHandConfig": "extensions/sources/mangafire.json",
       "status": "blocked",
       "reason": "Custom HTTP/API behavior is outside the current converted connector set. Needs native profile work instead of a blind selector import."
+    },
+    {
+      "sourceKey": "mangadotnet",
+      "recommendedSourceId": "keiyoushi.en.mangadotnet",
+      "displayName": "Mangadotnet",
+      "status": "blocked",
+      "reason": "Higher-ranked EverythingMoe candidate requires React Server Component decoding in a compiled connector."
+    },
+    {
+      "sourceKey": "comix",
+      "recommendedSourceId": "keiyoushi.en.comix",
+      "displayName": "Comix",
+      "status": "blocked",
+      "reason": "Higher-ranked EverythingMoe candidate requires image descrambling in a compiled connector."
     }
   ],
   "recommendedNextIteration": [

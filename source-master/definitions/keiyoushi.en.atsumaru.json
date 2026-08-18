@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.atsumaru",
+  "sourceId": "keiyoushi.en.atsumaru",
+  "name": "Atsumaru",
+  "displayName": "Atsumaru",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://atsu.moe",
+  "baseUrl": "https://atsu.moe",
+  "language": "en",
+  "region": "global",
+  "nsfw": false,
+  "adultContent": false,
+  "description": "Atsumaru's public safe-content manga, manhwa, manhua, and OEL catalog using its documented JSON responses.",
+  "tags": ["Keiyoushi", "Selector", "Manga", "Manhwa", "Manhua", "Curated"],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "rate_limit_ms": 500,
+  "rateLimit": {"minDelayMs": 500, "requestsPerMinute": 120},
+  "endpoints": {
+    "search": {
+      "url": "{base}/collections/manga/documents/search?q={query}&query_by=title,englishTitle,otherNames,authors,acronyms&query_by_weights=4,3,2,1,1&num_typos=4,3,2,1,0&prefix=true,true,true,true,false&include_fields=id,title,englishTitle,poster,posterSmall,posterMedium,type,medium,isAdult,status,year,mbRating,popularity,dateAdded&filter_by=isAdult%3A%3Dfalse%20%26%26%20hidden%3A%21%3Dtrue&page={page}&per_page=40",
+      "method": "GET"
+    },
+    "popular": {"url": "{base}/api/home2/popular?offset={page}&limit=40&adult=0", "method": "GET"},
+    "latest": {"url": "{base}/api/home2/recently-added?offset={page}&limit=40&adult=0", "method": "GET"},
+    "details": {"url": "{base}/api/manga/page?id={id}", "method": "GET"},
+    "chapters": {"url": "{base}/api/manga/allChapters?mangaId={id}", "method": "GET"},
+    "pages": {"url": "{base}/api/read/chapter?mangaId={id}&chapterId={chapter_url}", "method": "GET"}
+  },
+  "selectors": {
+    "manga_list": {"container": ".__yomira-json-fallback", "title": ".title@text", "cover": "img@src", "link": "a@href"},
+    "manga_details": {"title": "h1@text", "cover": "img@src", "description": ".description@text", "authors": ".author@text", "genres": ".genre@text", "status": ".status@text"},
+    "chapter_list": {"container": ".__yomira-json-fallback", "title": "a@text", "link": "a@href", "number_regex": "(?i)(?:chapter|ch\\.?)[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"},
+    "page_list": {"container": ".__yomira-json-fallback", "image": "img@src", "exclude": ["logo", "icon", "avatar"]}
+  },
+  "pagination": {"param": "page", "start": 1},
+  "capabilities": {
+    "search": true, "browse": true, "details": true, "chapters": true, "pages": true,
+    "filters": true, "pagination": true, "imagePages": true, "textPages": false,
+    "browserVerification": false, "listings": ["popular", "latest"]
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi", "originalSourcePath": "src/en/atsumaru", "originalFamily": "CustomHttp",
+    "originalLanguage": "en", "originalSourceName": "Atsumaru", "analyzerBucket": "curated_selector_profile"
+  }
+}

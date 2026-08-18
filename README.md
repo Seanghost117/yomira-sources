@@ -47,8 +47,8 @@ extensions/
 
 ## Current Packs
 
-- `keiyoushi-core-expanded`: 422 generated and curated Source Definitions from currently supported connector families
-- `yomira-curated`: 16 hand-curated Source Definitions used for focused source iteration
+- `keiyoushi-core-expanded`: 421 generated and curated Source Definitions from currently supported connector families
+- `yomira-curated`: 27 hand-curated Source Definitions used for focused source iteration
 - `yomira-nsfw`: 17 explicit adult Source Definitions split out from the main packs
 - `yomira-novels`: 1 light novel Source Definition for prose reader support
 
