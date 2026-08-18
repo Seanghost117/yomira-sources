@@ -1,0 +1,1354 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotDate": "2026-08-18",
+  "apiUrl": "https://everythingmoe.com/; https://everythingmoe.com/data/lowsec/manga.json",
+  "evidenceSource": "EverythingMoe active manga section, including its public lower-ranked manga feed. Ranks are dated snapshot data, not permanent truth.",
+  "planningOnly": true,
+  "doesNotAutoImportSources": true,
+  "coverageStates": [
+    "supported",
+    "candidate",
+    "browser_verification",
+    "connector_work",
+    "upstream_broken",
+    "licensed_or_raw",
+    "out_of_scope"
+  ],
+  "summary": {
+    "entryCount": 90,
+    "coverageStateCounts": {
+      "connector_work": 3,
+      "supported": 14,
+      "licensed_or_raw": 31,
+      "candidate": 42
+    }
+  },
+  "entries": [
+    {
+      "externalRank": 1,
+      "name": "Comix",
+      "canonicalUrl": "https://comix.to/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips",
+        "Mostly Scans",
+        "Modern interface",
+        "Scanlator Hub"
+      ],
+      "normalizedHost": "comix.to",
+      "sourceDefinitionId": null,
+      "coverageState": "connector_work",
+      "verificationState": "not_verified",
+      "reason": "Requires compiled Built-in Connector Engine work."
+    },
+    {
+      "externalRank": 2,
+      "name": "Mangadotnet",
+      "canonicalUrl": "https://mangadot.net/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips",
+        "Modern interface",
+        "Scanlator Hub"
+      ],
+      "normalizedHost": "mangadot.net",
+      "sourceDefinitionId": null,
+      "coverageState": "connector_work",
+      "verificationState": "not_verified",
+      "reason": "Requires compiled Built-in Connector Engine work."
+    },
+    {
+      "externalRank": 3,
+      "name": "Atsumaru",
+      "canonicalUrl": "https://atsu.moe/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips",
+        "Modern interface"
+      ],
+      "normalizedHost": "atsu.moe",
+      "sourceDefinitionId": "keiyoushi.en.atsumaru",
+      "coverageState": "supported",
+      "verificationState": "validated",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 4,
+      "name": "Mangaball",
+      "canonicalUrl": "https://mangaball.net/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips",
+        "Mostly Scans",
+        "Multi Language",
+        "Scanlator Hub"
+      ],
+      "normalizedHost": "mangaball.net",
+      "sourceDefinitionId": "keiyoushi.en.mangaball",
+      "coverageState": "supported",
+      "verificationState": "not_verified",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 5,
+      "name": "OniSaga",
+      "canonicalUrl": "https://onisaga.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips",
+        "Modern interface",
+        "Multi Language",
+        "Scanlator Hub"
+      ],
+      "normalizedHost": "onisaga.com",
+      "sourceDefinitionId": "yomira.en.onisaga",
+      "coverageState": "supported",
+      "verificationState": "not_verified",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 6,
+      "name": "MangaFire",
+      "canonicalUrl": "https://mangafire.to/home",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips",
+        "Multi Language",
+        "Modern interface",
+        "Raws"
+      ],
+      "normalizedHost": "mangafire.to",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 7,
+      "name": "Weeb Central",
+      "canonicalUrl": "https://weebcentral.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "weebcentral.com",
+      "sourceDefinitionId": "keiyoushi.en.weebcentral",
+      "coverageState": "supported",
+      "verificationState": "not_verified",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 8,
+      "name": "Mangago",
+      "canonicalUrl": "https://www.mangago.me/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips",
+        "Scanlator Hub"
+      ],
+      "normalizedHost": "mangago.me",
+      "sourceDefinitionId": null,
+      "coverageState": "connector_work",
+      "verificationState": "not_verified",
+      "reason": "Requires compiled Built-in Connector Engine work."
+    },
+    {
+      "externalRank": 9,
+      "name": "MKissa Manga",
+      "canonicalUrl": "https://mkissa.to/manga",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mkissa.to",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 10,
+      "name": "Bookwalker",
+      "canonicalUrl": "https://bookwalker.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Licensed"
+      ],
+      "normalizedHost": "bookwalker.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 11,
+      "name": "Rakuten Kobo",
+      "canonicalUrl": "https://www.kobo.com/en/ebooks/manga",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Licensed"
+      ],
+      "normalizedHost": "kobo.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 12,
+      "name": "MangaTaro",
+      "canonicalUrl": "https://mangataro.org/home",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips",
+        "Modern interface",
+        "Scanlator Hub",
+        "Multi Language"
+      ],
+      "normalizedHost": "mangataro.org",
+      "sourceDefinitionId": "yomira.en.mangataro",
+      "coverageState": "supported",
+      "verificationState": "not_verified",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 13,
+      "name": "MangaCloud",
+      "canonicalUrl": "https://mangacloud.org/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips",
+        "Mostly Scans",
+        "Modern interface"
+      ],
+      "normalizedHost": "mangacloud.org",
+      "sourceDefinitionId": "keiyoushi.en.mangacloud",
+      "coverageState": "supported",
+      "verificationState": "not_verified",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 14,
+      "name": "MangaKatana",
+      "canonicalUrl": "https://mangakatana.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mangakatana.com",
+      "sourceDefinitionId": "keiyoushi.en.mangakatana",
+      "coverageState": "supported",
+      "verificationState": "not_verified",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 15,
+      "name": "MangaK",
+      "canonicalUrl": "https://mangak.io/home",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mangak.io",
+      "sourceDefinitionId": "keiyoushi.en.mangabuddy",
+      "coverageState": "supported",
+      "verificationState": "not_verified",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 16,
+      "name": "Cubari Proxy",
+      "canonicalUrl": "https://proxy.cubari.moe/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips",
+        "Modern interface",
+        "Multi Language"
+      ],
+      "normalizedHost": "proxy.cubari.moe",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 17,
+      "name": "KaliScan",
+      "canonicalUrl": "https://kaliscan.io/home",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "kaliscan.io",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 18,
+      "name": "VyManga",
+      "canonicalUrl": "https://mangavyvy.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mangavyvy.com",
+      "sourceDefinitionId": "keiyoushi.en.vymanga",
+      "coverageState": "supported",
+      "verificationState": "not_verified",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 19,
+      "name": "LikeManga",
+      "canonicalUrl": "https://likemanga.ink/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "likemanga.ink",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 20,
+      "name": "MANGA Plus",
+      "canonicalUrl": "https://mangaplus.shueisha.co.jp",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Licensed"
+      ],
+      "normalizedHost": "mangaplus.shueisha.co.jp",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 21,
+      "name": "chikari.moe",
+      "canonicalUrl": "https://chikari.moe/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "chikari.moe",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 22,
+      "name": "MangaHub",
+      "canonicalUrl": "https://mangahub.io/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mangahub.io",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 23,
+      "name": "Scans.gg",
+      "canonicalUrl": "https://scans.gg/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Mostly Scans",
+        "Modern interface",
+        "Scanlator Hub"
+      ],
+      "normalizedHost": "scans.gg",
+      "sourceDefinitionId": "yomira.en.scansgg",
+      "coverageState": "supported",
+      "verificationState": "not_verified",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 24,
+      "name": "Dynasty Reader",
+      "canonicalUrl": "https://dynasty-scans.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Mostly Scans",
+        "Scanlator Hub"
+      ],
+      "normalizedHost": "dynasty-scans.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 25,
+      "name": "Coolmic",
+      "canonicalUrl": "https://coolmic.me/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "licensed",
+        "Licensed"
+      ],
+      "normalizedHost": "coolmic.me",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 26,
+      "name": "Omoi",
+      "canonicalUrl": "https://www.omoi.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "licensed",
+        "Licensed"
+      ],
+      "normalizedHost": "omoi.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 27,
+      "name": "Manganato.gg",
+      "canonicalUrl": "https://www.manganato.gg/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "manganato.gg",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 28,
+      "name": "Zinmanga",
+      "canonicalUrl": "https://www.zinmanga.net/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "zinmanga.net",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 29,
+      "name": "Mangafox",
+      "canonicalUrl": "https://fanfox.net",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "fanfox.net",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 30,
+      "name": "MangaFreak",
+      "canonicalUrl": "https://mangafreak.me",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mangafreak.me",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 31,
+      "name": "MangaDE",
+      "canonicalUrl": "https://mangade.io/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Mostly Scans"
+      ],
+      "normalizedHost": "mangade.io",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 32,
+      "name": "MangaTown",
+      "canonicalUrl": "https://mangatown.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mangatown.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 33,
+      "name": "MangaHome",
+      "canonicalUrl": "https://www.mangahome.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mangahome.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 34,
+      "name": "Mangalink",
+      "canonicalUrl": "https://linkmanga.com/",
+      "languageOrRegion": null,
+      "contentTags": [],
+      "normalizedHost": "linkmanga.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 35,
+      "name": "ReiManga",
+      "canonicalUrl": "https://reimanga.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Mostly Scans"
+      ],
+      "normalizedHost": "reimanga.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 36,
+      "name": "Ninekon",
+      "canonicalUrl": "https://app.ninekon.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "app.ninekon.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 37,
+      "name": "ManhuaPlus",
+      "canonicalUrl": "https://manhuaplus.top/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "manhua"
+      ],
+      "normalizedHost": "manhuaplus.top",
+      "sourceDefinitionId": "keiyoushi.en.manhuaplus",
+      "coverageState": "supported",
+      "verificationState": "validated",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 38,
+      "name": "Mangapill",
+      "canonicalUrl": "https://mangapill.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mangapill.com",
+      "sourceDefinitionId": "keiyoushi.en.mangapill",
+      "coverageState": "supported",
+      "verificationState": "validated",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 39,
+      "name": "Mangakawaii",
+      "canonicalUrl": "https://www.mangakawaii.io/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "hub",
+        "Mostly Scans",
+        "Scanlator Hub"
+      ],
+      "normalizedHost": "mangakawaii.io",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 40,
+      "name": "mangageko",
+      "canonicalUrl": "https://www.mgeko.cc/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mgeko.cc",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 41,
+      "name": "oManga",
+      "canonicalUrl": "https://omanga.to/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "omanga.to",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 42,
+      "name": "GodaComic",
+      "canonicalUrl": "https://manhuascans.org/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "manhuascans.org",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 43,
+      "name": "JP Book Store",
+      "canonicalUrl": "https://jpbookstore.com/collections/light-novel",
+      "languageOrRegion": null,
+      "contentTags": [
+        "licensed",
+        "physical",
+        "Licensed"
+      ],
+      "normalizedHost": "jpbookstore.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 44,
+      "name": "K MANGA",
+      "canonicalUrl": "https://kmanga.kodansha.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "licensed"
+      ],
+      "normalizedHost": "kmanga.kodansha.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 45,
+      "name": "Pixiv Comics",
+      "canonicalUrl": "https://comic.pixiv.net/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "licensed",
+        "Raws",
+        "Licensed"
+      ],
+      "normalizedHost": "comic.pixiv.net",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 46,
+      "name": "INKR",
+      "canonicalUrl": "https://comics.inkr.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "licensed",
+        "Licensed"
+      ],
+      "normalizedHost": "comics.inkr.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 47,
+      "name": "yaoi.fun",
+      "canonicalUrl": "https://yaoi.fun/",
+      "languageOrRegion": null,
+      "contentTags": [],
+      "normalizedHost": "yaoi.fun",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 48,
+      "name": "Lunar Animes - Manga",
+      "canonicalUrl": "https://lunarx.to/manga",
+      "languageOrRegion": null,
+      "contentTags": [
+        "mult",
+        "Official Rips",
+        "Multi Language",
+        "Modern interface",
+        "Scanlator Hub"
+      ],
+      "normalizedHost": "lunarx.to",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 49,
+      "name": "Yaoiscan",
+      "canonicalUrl": "https://yaoiscan.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Mostly Scans"
+      ],
+      "normalizedHost": "yaoiscan.com",
+      "sourceDefinitionId": "keiyoushi.en.yaoiscan",
+      "coverageState": "supported",
+      "verificationState": "not_verified",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 50,
+      "name": "YomiManga",
+      "canonicalUrl": "https://yomimanga.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Mostly Scans"
+      ],
+      "normalizedHost": "yomimanga.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 51,
+      "name": "MangaBay",
+      "canonicalUrl": "https://manga-bay.org/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "login",
+        "Official Rips"
+      ],
+      "normalizedHost": "manga-bay.org",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 52,
+      "name": "MangaDex",
+      "canonicalUrl": "https://mangadex.org/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Multi Language",
+        "Mostly Scans",
+        "Modern interface",
+        "Scanlator Hub"
+      ],
+      "normalizedHost": "mangadex.org",
+      "sourceDefinitionId": "yomira.en.mangadex",
+      "coverageState": "supported",
+      "verificationState": "not_verified",
+      "reason": "Exact canonical-host or manually reviewed alias mapping."
+    },
+    {
+      "externalRank": 53,
+      "name": "RawOtaku",
+      "canonicalUrl": "https://rawotaku.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "rawotaku.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 54,
+      "name": "KT9",
+      "canonicalUrl": "https://klto9.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "klto9.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 55,
+      "name": "Hachiraw",
+      "canonicalUrl": "https://hachiraw.win/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "hachiraw.win",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 56,
+      "name": "MangaRaw4u",
+      "canonicalUrl": "https://mangaraw4u.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Official Rips",
+        "Raws"
+      ],
+      "normalizedHost": "mangaraw4u.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 57,
+      "name": "Nicomanga",
+      "canonicalUrl": "https://nicomanga.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "nicomanga.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 58,
+      "name": "Rawdevart",
+      "canonicalUrl": "https://rawdevart.art/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "rawdevart.art",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 59,
+      "name": "RawSakura",
+      "canonicalUrl": "https://rawsakura.org/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "rawsakura.org",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 60,
+      "name": "NihonKuni",
+      "canonicalUrl": "https://nihonkuni.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "nihonkuni.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 61,
+      "name": "Raw Manga",
+      "canonicalUrl": "https://mangaraw.org/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "mangaraw.org",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 62,
+      "name": "Rawkuma",
+      "canonicalUrl": "https://rawkuma.net/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "rawkuma.net",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 63,
+      "name": "漫画 raw",
+      "canonicalUrl": "https://mangaraw.best/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "mangaraw.best",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 64,
+      "name": "WeLoMa",
+      "canonicalUrl": "https://weloma.art/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "weloma.art",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 65,
+      "name": "Spoilerplus",
+      "canonicalUrl": "https://spoilerplus.tv/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "spoilerplus.tv",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 66,
+      "name": "RawLazy",
+      "canonicalUrl": "https://rawlazy.io/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "rawlazy.io",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 67,
+      "name": "raw1001",
+      "canonicalUrl": "https://raw1001.net/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "raw1001.net",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 68,
+      "name": "Baozi Manhua",
+      "canonicalUrl": "https://baozimh.org/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "manhua",
+        "Raws"
+      ],
+      "normalizedHost": "baozimh.org",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 69,
+      "name": "Twmanga",
+      "canonicalUrl": "https://www.twbzmg.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "manhua",
+        "Raws"
+      ],
+      "normalizedHost": "twbzmg.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 70,
+      "name": "SenManga",
+      "canonicalUrl": "https://raw.senmanga.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "raw.senmanga.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 71,
+      "name": "RawFree",
+      "canonicalUrl": "https://rawfree.me/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "raw",
+        "Raws"
+      ],
+      "normalizedHost": "rawfree.me",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 72,
+      "name": "MangaPlaza",
+      "canonicalUrl": "https://mangaplaza.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "licensed",
+        "Licensed"
+      ],
+      "normalizedHost": "mangaplaza.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 73,
+      "name": "Manga Mirai",
+      "canonicalUrl": "https://mangamirai.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "licensed",
+        "Licensed"
+      ],
+      "normalizedHost": "mangamirai.com",
+      "sourceDefinitionId": null,
+      "coverageState": "licensed_or_raw",
+      "verificationState": "not_verified",
+      "reason": "Outside the curated installable coverage lane."
+    },
+    {
+      "externalRank": 74,
+      "name": "MangaMikan",
+      "canonicalUrl": "https://mangamikan.com/",
+      "languageOrRegion": null,
+      "contentTags": [],
+      "normalizedHost": "mangamikan.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 75,
+      "name": "MangaBerri",
+      "canonicalUrl": "https://mangaberri.com/home.php",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mangaberri.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 76,
+      "name": "MangaCherri",
+      "canonicalUrl": "https://mangacherri.com/home.php",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mangacherri.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 77,
+      "name": "Danke fürs Lesen",
+      "canonicalUrl": "https://danke.moe/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "scan",
+        "Mostly Scans"
+      ],
+      "normalizedHost": "danke.moe",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 78,
+      "name": "Hachirumi",
+      "canonicalUrl": "https://hachirumi.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "scan",
+        "Mostly Scans"
+      ],
+      "normalizedHost": "hachirumi.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 79,
+      "name": "KDT Scans",
+      "canonicalUrl": "https://silentquill.net/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "scan",
+        "Mostly Scans"
+      ],
+      "normalizedHost": "silentquill.net",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 80,
+      "name": "ManhuaBuddy",
+      "canonicalUrl": "https://manhuabuddy.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "manhuabuddy.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 81,
+      "name": "ReadManga",
+      "canonicalUrl": "https://readmanga.cc/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "readmanga.cc",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 82,
+      "name": "Lilymanga",
+      "canonicalUrl": "https://lilymanga.net/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "lilymanga.net",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 83,
+      "name": "Comicless",
+      "canonicalUrl": "https://comicless.com/library/?cid=3",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Mostly Scans"
+      ],
+      "normalizedHost": "comicless.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 84,
+      "name": "MangaDoom",
+      "canonicalUrl": "https://manga-doom.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "manga-doom.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 85,
+      "name": "MangaRead",
+      "canonicalUrl": "https://mangaread.org/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mangaread.org",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 86,
+      "name": "Aqua manga",
+      "canonicalUrl": "https://aquareader.org/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "aquareader.org",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 87,
+      "name": "Todaymanga",
+      "canonicalUrl": "https://todaymanga.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "todaymanga.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 88,
+      "name": "MangaPanda",
+      "canonicalUrl": "https://www.mangapanda.in/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "mangapanda.in",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 89,
+      "name": "Manhua Hot",
+      "canonicalUrl": "https://manhuahot.com/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Official Rips"
+      ],
+      "normalizedHost": "manhuahot.com",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    },
+    {
+      "externalRank": 90,
+      "name": "Mangasushi",
+      "canonicalUrl": "https://mangasushi.org/",
+      "languageOrRegion": null,
+      "contentTags": [
+        "Mostly Scans"
+      ],
+      "normalizedHost": "mangasushi.org",
+      "sourceDefinitionId": null,
+      "coverageState": "candidate",
+      "verificationState": "not_verified",
+      "reason": "No exact Source Definition mapping is approved."
+    }
+  ]
+}
+
