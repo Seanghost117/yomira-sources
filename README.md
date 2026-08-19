@@ -11,6 +11,16 @@ Repository index:
 https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/repository.json
 ```
 
+Canary repository index for the EverythingMoe priority refresh:
+
+```text
+https://raw.githubusercontent.com/Seanghost117/yomira-sources/codex/everythingmoe-source-refresh/repository-canary.json
+```
+
+The canary index has a separate repository identity and publishes only the
+expanded and curated preview Source Packs. It can be trusted alongside the
+stable repository without changing the stable repository URL.
+
 Expanded Source Pack:
 
 ```text
@@ -49,8 +59,8 @@ extensions/
 
 - `keiyoushi-core-expanded`: 421 generated and curated Source Definitions from currently supported connector families
 - `yomira-curated`: 27 hand-curated Source Definitions used for focused source iteration
-- `yomira-nsfw`: 17 explicit adult Source Definitions split out from the main packs
-- `yomira-novels`: 1 light novel Source Definition for prose reader support
+- `yomira-nsfw`: 28 explicit adult Source Definitions split out from the main packs
+- `yomira-novels`: 9 light novel Source Definitions for prose reader support
 
 ## Adding a Source
 
