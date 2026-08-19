@@ -14,7 +14,7 @@ https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/repository.js
 Canary repository index for the EverythingMoe priority refresh:
 
 ```text
-https://raw.githubusercontent.com/Seanghost117/yomira-sources/codex/everythingmoe-source-refresh/repository-canary.json
+https://raw.githubusercontent.com/Seanghost117/yomira-sources/everythingmoe-source-refresh/repository-canary.json
 ```
 
 The canary index has a separate repository identity and publishes only the
