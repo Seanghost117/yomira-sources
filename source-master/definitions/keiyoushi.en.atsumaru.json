@@ -5,7 +5,7 @@
   "sourceId": "keiyoushi.en.atsumaru",
   "name": "Atsumaru",
   "displayName": "Atsumaru",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "base_url": "https://atsu.moe",
@@ -21,6 +21,11 @@
   "requiresExternalBridge": false,
   "rate_limit_ms": 500,
   "rateLimit": {"minDelayMs": 500, "requestsPerMinute": 120},
+  "downloadPolicy": {
+    "transport": "automatic",
+    "maximumConcurrentPages": 1,
+    "maximumAttempts": 4
+  },
   "endpoints": {
     "search": {
       "url": "{base}/collections/manga/documents/search?q={query}&query_by=title,englishTitle,otherNames,authors,acronyms&query_by_weights=4,3,2,1,1&num_typos=4,3,2,1,0&prefix=true,true,true,true,false&include_fields=id,title,englishTitle,poster,posterSmall,posterMedium,type,medium,isAdult,status,year,mbRating,popularity,dateAdded&filter_by=isAdult%3A%3Dfalse%20%26%26%20hidden%3A%21%3Dtrue&page={page}&per_page=40",

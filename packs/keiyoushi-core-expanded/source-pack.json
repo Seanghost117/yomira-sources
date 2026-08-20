@@ -4,11 +4,12 @@
   "displayName": "Keiyoushi Expanded Core Source Pack",
   "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
   "packKind": "source_pack",
-  "version": "2026.08.18.4",
+  "version": "2026.08.20.1",
   "releaseChannel": "canary",
   "contractStatus": "pending",
-  "publishedAt": "2026-08-18T08:00:00Z",
+  "publishedAt": "2026-08-20T06:00:00Z",
   "releaseNotes": [
+    "Added safe per-Source download policy metadata for priority aggregators.",
     "Added Atsumaru and MangaPill and promoted the curated Manhua Plus definition.",
     "Publication remains gated: VyManga's pre-existing live contract returns HTTP 522.",
     "Recorded dated EverythingMoe host-mapping provenance; unverified cross-host mappings remain candidates."
@@ -2378,7 +2379,7 @@
       "sourceId": "keiyoushi.en.atsumaru",
       "name": "Atsumaru",
       "displayName": "Atsumaru",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "connectorEngine": "selector",
       "sourceType": "selector",
       "base_url": "https://atsu.moe",
@@ -2394,6 +2395,11 @@
       "requiresExternalBridge": false,
       "rate_limit_ms": 500,
       "rateLimit": {"minDelayMs": 500, "requestsPerMinute": 120},
+      "downloadPolicy": {
+        "transport": "automatic",
+        "maximumConcurrentPages": 1,
+        "maximumAttempts": 4
+      },
       "endpoints": {
         "search": {
           "url": "{base}/collections/manga/documents/search?q={query}&query_by=title,englishTitle,otherNames,authors,acronyms&query_by_weights=4,3,2,1,1&num_typos=4,3,2,1,0&prefix=true,true,true,true,false&include_fields=id,title,englishTitle,poster,posterSmall,posterMedium,type,medium,isAdult,status,year,mbRating,popularity,dateAdded&filter_by=isAdult%3A%3Dfalse%20%26%26%20hidden%3A%21%3Dtrue&page={page}&per_page=40",
@@ -5420,6 +5426,11 @@
       "connectorEngine": "selector",
       "containsExecutableCode": false,
       "description": "MangaK source definition normalized to its current Next.js reader flow while preserving the legacy MangaBuddy source identity.",
+      "downloadPolicy": {
+        "transport": "automatic",
+        "maximumConcurrentPages": 1,
+        "maximumAttempts": 4
+      },
       "displayName": "MangaK",
       "endpoints": {
         "chapters": {
@@ -5566,7 +5577,7 @@
         "Selector",
         "Curated"
       ],
-      "version": "1.3.0"
+      "version": "1.3.1"
     },
     {
       "adultContent": true,
@@ -7079,7 +7090,7 @@
       "sourceId": "keiyoushi.en.mangapill",
       "name": "MangaPill",
       "displayName": "MangaPill",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "connectorEngine": "selector",
       "sourceType": "selector",
       "base_url": "https://mangapill.com",
@@ -7095,6 +7106,11 @@
       "requiresExternalBridge": false,
       "rate_limit_ms": 800,
       "rateLimit": {"minDelayMs": 800, "requestsPerMinute": 75},
+      "downloadPolicy": {
+        "transport": "automatic",
+        "maximumConcurrentPages": 1,
+        "maximumAttempts": 4
+      },
       "endpoints": {
         "search": {"url": "{base}/search?q={query}", "method": "GET"},
         "popular": {"url": "{base}/", "method": "GET"},
@@ -7721,7 +7737,7 @@
       "sourceId": "keiyoushi.en.manhuaplus",
       "name": "Manhua Plus",
       "displayName": "Manhua Plus",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "extends": "madara",
       "connectorEngine": "madara",
       "sourceType": "madara",
@@ -7738,6 +7754,11 @@
       "requiresExternalBridge": false,
       "rate_limit_ms": 1000,
       "rateLimit": {"minDelayMs": 1000, "requestsPerMinute": 60},
+      "downloadPolicy": {
+        "transport": "automatic",
+        "maximumConcurrentPages": 1,
+        "maximumAttempts": 4
+      },
       "endpoints": {"popular": {"url": "{base}/manga/?m_orderby=views", "method": "GET"}, "latest": {"url": "{base}/manga/?m_orderby=latest", "method": "GET"}},
       "capabilities": {"search": true, "browse": true, "details": true, "chapters": true, "pages": true, "filters": true, "pagination": false, "imagePages": true, "textPages": false, "browserVerification": false, "listings": ["popular", "latest"]},
       "provenance": {"ecosystem": "keiyoushi", "originalSourcePath": "src/en/manhuaplus", "originalFamily": "Madara", "originalLanguage": "en", "originalSourceName": "manhuaplus", "originalVersion": "7", "originalExtClass": ".ManhuaPlus", "analyzerBucket": "curated_source_master_overlay"}
@@ -8508,6 +8529,11 @@
       "base_url": "https://manhwatop.com",
       "connectorEngine": "madara",
       "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "downloadPolicy": {
+        "transport": "automatic",
+        "maximumConcurrentPages": 1,
+        "maximumAttempts": 4
+      },
       "displayName": "Manhwatop",
       "extends": "madara",
       "flags": {
@@ -8543,7 +8569,7 @@
         "Madara",
         "Converted"
       ],
-      "version": "1.0.1",
+      "version": "1.0.2",
       "capabilities": {
         "search": true,
         "browse": true,
@@ -11631,6 +11657,11 @@
       "base_url": "https://s2read.com",
       "connectorEngine": "madara",
       "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+      "downloadPolicy": {
+        "transport": "automatic",
+        "maximumConcurrentPages": 1,
+        "maximumAttempts": 4
+      },
       "displayName": "S2Read",
       "extends": "madara",
       "flags": {
@@ -11666,7 +11697,7 @@
         "Madara",
         "Converted"
       ],
-      "version": "1.0.2",
+      "version": "1.0.3",
       "capabilities": {
         "search": true,
         "browse": true,

@@ -31,6 +31,11 @@ CAPABILITY_KEYS = {
     "browserVerification",
     "listings",
 }
+SUPPORTED_DOWNLOAD_TRANSPORTS = {"automatic", "foregroundCore"}
+DOWNLOAD_POLICY_BOUNDS = {
+    "maximumConcurrentPages": (1, 3),
+    "maximumAttempts": (1, 4),
+}
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -74,6 +79,28 @@ def validate_capabilities(definition: dict[str, Any], label: str, errors: list[s
         or capabilities.get("textPages") is True
     ):
         errors.append(f"{label}: pages capability requires imagePages or textPages")
+
+
+def validate_download_policy(
+    definition: dict[str, Any], label: str, errors: list[str]
+) -> None:
+    if "downloadPolicy" not in definition:
+        return
+    policy = definition["downloadPolicy"]
+    if not isinstance(policy, dict):
+        errors.append(f"{label}: downloadPolicy must be an object")
+        return
+    transport = policy.get("transport")
+    if transport not in SUPPORTED_DOWNLOAD_TRANSPORTS:
+        errors.append(f"{label}: downloadPolicy.transport is unsupported")
+    for field, (minimum, maximum) in DOWNLOAD_POLICY_BOUNDS.items():
+        value = policy.get(field)
+        if type(value) is not int:
+            errors.append(f"{label}: downloadPolicy.{field} must be an integer")
+        elif not minimum <= value <= maximum:
+            errors.append(
+                f"{label}: downloadPolicy.{field} must be between {minimum} and {maximum}"
+            )
 
 
 def definition_without_version(definition: dict[str, Any]) -> dict[str, Any]:
@@ -121,6 +148,15 @@ def validate(root: Path, base_ref: str | None) -> list[str]:
     entries = repository.get("sourcePacks")
     if not isinstance(entries, list) or not entries:
         return errors + ["repository.json: sourcePacks must not be empty"]
+
+    definitions_root = root / "source-master" / "definitions"
+    for definition_path in sorted(definitions_root.glob("*.json")):
+        definition = load_json(definition_path)
+        validate_download_policy(
+            definition,
+            definition_path.relative_to(root).as_posix(),
+            errors,
+        )
 
     old_repository = (
         git_json(base_ref, Path("repository.json"), root) if base_ref else None
@@ -222,6 +258,7 @@ def validate(root: Path, base_ref: str | None) -> list[str]:
             if value.get("requiresExternalBridge", False) is not False:
                 errors.append(f"{label}: requiresExternalBridge must be false")
             validate_capabilities(value, label, errors)
+            validate_download_policy(value, label, errors)
 
         if not base_ref:
             continue

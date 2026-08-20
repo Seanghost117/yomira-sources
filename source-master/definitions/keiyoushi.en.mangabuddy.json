@@ -5,7 +5,7 @@
   "sourceId": "keiyoushi.en.mangabuddy",
   "name": "MangaK",
   "displayName": "MangaK",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "base_url": "https://mangak.io",
@@ -32,6 +32,11 @@
   "rateLimit": {
     "minDelayMs": 1000,
     "requestsPerMinute": 60
+  },
+  "downloadPolicy": {
+    "transport": "automatic",
+    "maximumConcurrentPages": 1,
+    "maximumAttempts": 4
   },
   "endpoints": {
     "search": {

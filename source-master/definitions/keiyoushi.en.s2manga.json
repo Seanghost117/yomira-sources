@@ -4,6 +4,11 @@
   "base_url": "https://s2read.com",
   "connectorEngine": "madara",
   "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+  "downloadPolicy": {
+    "transport": "automatic",
+    "maximumConcurrentPages": 1,
+    "maximumAttempts": 4
+  },
   "displayName": "S2Read",
   "extends": "madara",
   "flags": {
@@ -39,7 +44,7 @@
     "Madara",
     "Converted"
   ],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "capabilities": {
     "search": true,
     "browse": true,

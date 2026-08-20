@@ -4,6 +4,11 @@
   "base_url": "https://manhwatop.com",
   "connectorEngine": "madara",
   "description": "Draft Madara source definition converted from Keiyoushi metadata. Review before use.",
+  "downloadPolicy": {
+    "transport": "automatic",
+    "maximumConcurrentPages": 1,
+    "maximumAttempts": 4
+  },
   "displayName": "Manhwatop",
   "extends": "madara",
   "flags": {
@@ -39,7 +44,7 @@
     "Madara",
     "Converted"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "capabilities": {
     "search": true,
     "browse": true,

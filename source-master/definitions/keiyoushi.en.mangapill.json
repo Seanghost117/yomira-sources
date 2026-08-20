@@ -5,7 +5,7 @@
   "sourceId": "keiyoushi.en.mangapill",
   "name": "MangaPill",
   "displayName": "MangaPill",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "connectorEngine": "selector",
   "sourceType": "selector",
   "base_url": "https://mangapill.com",
@@ -21,6 +21,11 @@
   "requiresExternalBridge": false,
   "rate_limit_ms": 800,
   "rateLimit": {"minDelayMs": 800, "requestsPerMinute": 75},
+  "downloadPolicy": {
+    "transport": "automatic",
+    "maximumConcurrentPages": 1,
+    "maximumAttempts": 4
+  },
   "endpoints": {
     "search": {"url": "{base}/search?q={query}", "method": "GET"},
     "popular": {"url": "{base}/", "method": "GET"},
