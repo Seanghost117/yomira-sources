@@ -33,8 +33,8 @@ CAPABILITY_KEYS = {
 }
 SUPPORTED_DOWNLOAD_TRANSPORTS = {"automatic", "foregroundCore"}
 DOWNLOAD_POLICY_BOUNDS = {
-    "maximumConcurrentPages": (1, 3),
-    "maximumAttempts": (1, 4),
+    "maximumConcurrentPages": ("maximum_concurrent_pages", 1, 3),
+    "maximumAttempts": ("maximum_attempts", 1, 4),
 }
 
 
@@ -84,17 +84,41 @@ def validate_capabilities(definition: dict[str, Any], label: str, errors: list[s
 def validate_download_policy(
     definition: dict[str, Any], label: str, errors: list[str]
 ) -> None:
-    if "downloadPolicy" not in definition:
+    camel_policy_present = "downloadPolicy" in definition
+    snake_policy_present = "download_policy" in definition
+    if not camel_policy_present and not snake_policy_present:
         return
-    policy = definition["downloadPolicy"]
+    if camel_policy_present and snake_policy_present:
+        errors.append(
+            f"{label}: downloadPolicy must not define both downloadPolicy and download_policy"
+        )
+        return
+    policy = definition[
+        "downloadPolicy" if camel_policy_present else "download_policy"
+    ]
     if not isinstance(policy, dict):
         errors.append(f"{label}: downloadPolicy must be an object")
         return
-    transport = policy.get("transport")
-    if not isinstance(transport, str) or transport not in SUPPORTED_DOWNLOAD_TRANSPORTS:
-        errors.append(f"{label}: downloadPolicy.transport is unsupported")
-    for field, (minimum, maximum) in DOWNLOAD_POLICY_BOUNDS.items():
-        value = policy.get(field)
+
+    if "transport" in policy:
+        transport = policy["transport"]
+        if (
+            not isinstance(transport, str)
+            or transport not in SUPPORTED_DOWNLOAD_TRANSPORTS
+        ):
+            errors.append(f"{label}: downloadPolicy.transport is unsupported")
+
+    for field, (alias, minimum, maximum) in DOWNLOAD_POLICY_BOUNDS.items():
+        field_present = field in policy
+        alias_present = alias in policy
+        if field_present and alias_present:
+            errors.append(
+                f"{label}: downloadPolicy.{field} must not define both {field} and {alias}"
+            )
+            continue
+        if not field_present and not alias_present:
+            continue
+        value = policy[field if field_present else alias]
         if type(value) is not int:
             errors.append(f"{label}: downloadPolicy.{field} must be an integer")
         elif not minimum <= value <= maximum:
