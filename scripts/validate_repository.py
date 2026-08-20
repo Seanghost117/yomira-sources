@@ -91,7 +91,7 @@ def validate_download_policy(
         errors.append(f"{label}: downloadPolicy must be an object")
         return
     transport = policy.get("transport")
-    if transport not in SUPPORTED_DOWNLOAD_TRANSPORTS:
+    if not isinstance(transport, str) or transport not in SUPPORTED_DOWNLOAD_TRANSPORTS:
         errors.append(f"{label}: downloadPolicy.transport is unsupported")
     for field, (minimum, maximum) in DOWNLOAD_POLICY_BOUNDS.items():
         value = policy.get(field)

@@ -35,6 +35,26 @@ class DownloadPolicyValidationTests(unittest.TestCase):
         self.assertEqual(len(errors), 3)
         self.assertTrue(all("definition.json" in error for error in errors))
 
+    def test_rejects_non_string_transport_values(self):
+        for transport in ([], {}):
+            with self.subTest(transport=transport):
+                errors = []
+                validate_download_policy(
+                    {
+                        "downloadPolicy": {
+                            "transport": transport,
+                            "maximumConcurrentPages": 1,
+                            "maximumAttempts": 4,
+                        }
+                    },
+                    "definition.json",
+                    errors,
+                )
+                self.assertEqual(
+                    errors,
+                    ["definition.json: downloadPolicy.transport is unsupported"],
+                )
+
 
 if __name__ == "__main__":
     unittest.main()
