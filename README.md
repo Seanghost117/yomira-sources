@@ -21,6 +21,12 @@ The canary index has a separate repository identity and publishes only the
 expanded and curated preview Source Packs. It can be trusted alongside the
 stable repository without changing the stable repository URL.
 
+Internal reader beta candidate: see [release notes and acceptance status](releases/2026.09.07.1/README.md).
+`repository-beta.json` uses a separate repository identity and versioned pack
+paths. It delivers only the six-source `yomira-reader-beta` pack in the canary channel.
+The dedicated pack has passing bounded live evidence; the larger pending packs
+are excluded. Device acceptance remains separate.
+
 Expanded Source Pack:
 
 ```text

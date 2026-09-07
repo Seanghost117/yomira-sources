@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAtUnix": 1788801458,
+  "repositoryId": "yomira.sources.internal-beta",
+  "repositoryUpdatedAt": "2026-09-07T17:20:00Z",
+  "channel": "canary",
+  "canPublish": true,
+  "packVersions": {
+    "yomira-reader-beta": "2026.09.07.1"
+  },
+  "packs": [
+    {
+      "packId": "yomira-reader-beta",
+      "version": "2026.09.07.1",
+      "canPublish": true,
+      "testedSourceCount": 6,
+      "blockingReasons": []
+    }
+  ],
+  "blockingReasons": []
+}

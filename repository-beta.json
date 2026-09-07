@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0",
+  "repositoryId": "yomira.sources.internal-beta",
+  "displayName": "Yomira Sources Internal Beta",
+  "description": "Six verified priority Source Definitions for the internal reader beta; broad pending packs are excluded.",
+  "maintainerName": "Yomira",
+  "maintainerUrl": "https://github.com/Seanghost117",
+  "homepageUrl": "https://github.com/Seanghost117/yomira-sources/tree/release/internal-reader-beta",
+  "termsUrl": "https://github.com/Seanghost117/yomira-sources",
+  "updatedAt": "2026-09-07T17:20:00Z",
+  "releasePolicy": {
+    "channels": [
+      "canary"
+    ],
+    "defaultChannel": "canary",
+    "stableRequiresContractStatus": "passed",
+    "stableRequiresChecksum": true,
+    "stableRequiresReleaseNotes": true,
+    "retainedRollbackVersions": 1
+  },
+  "sourcePacks": [
+    {
+      "packId": "yomira-reader-beta",
+      "displayName": "Yomira Reader Beta Source Pack",
+      "description": "Six verified priority sources for the internal reader beta.",
+      "version": "2026.09.07.1",
+      "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/release/internal-reader-beta/releases/2026.09.07.1/yomira-reader-beta/source-pack.json",
+      "checksum": "sha256:7dc0eb45125199bb6720f1bd4cdc218d6f14e2941f8cc10c29ed17281a6451d5",
+      "checksumAlgorithm": "sha256",
+      "language": "en",
+      "region": "global",
+      "nsfw": true,
+      "supportedPlatforms": [
+        "ios_app_store",
+        "desktop",
+        "self_hosted",
+        "internal"
+      ],
+      "sourceCount": 6,
+      "artifactKind": "source_pack",
+      "releaseChannel": "canary",
+      "contractTier": "live",
+      "contractStatus": "passed",
+      "publishedAt": "2026-09-07T17:20:00Z",
+      "releaseNotes": [
+        "Internal reader beta Source Pack containing only the six priority Source Definitions with complete bounded live contracts.",
+        "Preserves existing Atsumaru, MangaPill, ManhuaPlus, S2Read, MangaK and ManhwaTop Source Definition identities, configurations and download policies.",
+        "Canary release for internal beta acceptance; the 421-definition expanded and 27-definition curated packs remain pending and are not delivered by this feed.",
+        "Actual first-image bytes are checked; authorized iOS device and daily-use acceptance remain separate."
+      ],
+      "updatedAt": "2026-09-07T17:20:00Z"
+    }
+  ]
+}

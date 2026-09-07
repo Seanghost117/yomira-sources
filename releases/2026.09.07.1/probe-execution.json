@@ -1,0 +1,42 @@
+{
+  "maximumConcurrentSources": 2,
+  "perSourceTimeoutSeconds": 180,
+  "sources": [
+    {
+      "sourceId": "keiyoushi.en.atsumaru",
+      "exitCode": 0,
+      "durationSeconds": 6.39,
+      "reportWritten": true
+    },
+    {
+      "sourceId": "keiyoushi.en.mangapill",
+      "exitCode": 0,
+      "durationSeconds": 4.51,
+      "reportWritten": true
+    },
+    {
+      "sourceId": "keiyoushi.en.manhuaplus",
+      "exitCode": 0,
+      "durationSeconds": 20.18,
+      "reportWritten": true
+    },
+    {
+      "sourceId": "keiyoushi.en.s2manga",
+      "exitCode": 0,
+      "durationSeconds": 9.95,
+      "reportWritten": true
+    },
+    {
+      "sourceId": "keiyoushi.en.mangabuddy",
+      "exitCode": 0,
+      "durationSeconds": 4.62,
+      "reportWritten": true
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwatop",
+      "exitCode": 0,
+      "durationSeconds": 9.63,
+      "reportWritten": true
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0",
+  "candidateVersion": "2026.09.07.1",
+  "status": "verified_canary_candidate_not_yet_published",
+  "sourceBaselineRevision": "b4ec392f28f03d88a67f8fb2f8f35504354e9102",
+  "sourceToolsRevision": "d855e6d9cb44ae578b1a39c42b74bb0d37923933",
+  "coreTree": "0a20c32f1ed476e788aac50a23e4d5dc3334b75c",
+  "rootCargoLockSha256": "c0567540c329d061f0e8136e984b8513ee7488dd47299985d514f520f3bb5cb7",
+  "checkerCargoLockSha256": "816bada2aad8669ce6005d3632e76154e7c30d164d55c52e1a71e685fbbf8865",
+  "toolchain": {
+    "rustc": "rustc 1.93.0 (254b59607 2026-01-19)",
+    "cargo": "cargo 1.93.0 (083ac5135 2025-12-15)"
+  },
+  "dependencyResolution": "Temporary checker Cargo.lock seeded from root Cargo.lock; every external checker package/version is present in root lock. Only the local yomira-source-converter package was added.",
+  "candidateFeed": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/release/internal-reader-beta/repository-beta.json",
+  "repositoryId": "yomira.sources.internal-beta",
+  "releaseChannel": "canary",
+  "contractStatus": "passed",
+  "checks": {
+    "repositoryValidation": "passed",
+    "betaIntegrityValidation": "passed",
+    "pythonUnitTests": {
+      "passed": 17,
+      "failed": 0
+    },
+    "definitionIdentityAndPolicyPreservation": "All six priority definition objects unchanged against the pinned expanded baseline; existing broad packs unchanged and excluded from the feed.",
+    "checkerBuild": {
+      "result": "passed",
+      "durationSeconds": 318,
+      "maximumJobs": 2,
+      "temporaryTargetDiskUsage": "2.2 GiB",
+      "command": "cargo build --manifest-path tools/source-converter/Cargo.toml --target-dir /tmp/yomira-beta-source-target -j 2",
+      "lockHandling": "Seeded temporary tool lock from root Cargo.lock before build; copied to temporary evidence and removed from Source Tools checkout after build."
+    },
+    "appCoreImportValidation": {
+      "keiyoushi-core-expanded": {
+        "state": "Valid",
+        "sourceCount": 421,
+        "installableCount": 421,
+        "blockedCount": 0,
+        "rejectedCount": 0,
+        "duplicateSourceIds": [],
+        "warnings": [],
+        "errors": []
+      },
+      "yomira-curated": {
+        "state": "Valid",
+        "sourceCount": 27,
+        "installableCount": 27,
+        "blockedCount": 0,
+        "rejectedCount": 0,
+        "duplicateSourceIds": [],
+        "warnings": [],
+        "errors": []
+      }
+    },
+    "priorityStaticContracts": {
+      "tested": 6,
+      "passed": 6,
+      "failed": 0,
+      "warnings": 0
+    },
+    "betaAppCoreImportValidation": {
+      "state": "Valid",
+      "sourceCount": 6,
+      "installableCount": 6,
+      "blockedCount": 0,
+      "rejectedCount": 0,
+      "duplicateSourceIds": [],
+      "warnings": [],
+      "errors": []
+    },
+    "priorityLiveContracts": {
+      "tested": 6,
+      "passed": 6,
+      "failed": 0,
+      "warnings": 0,
+      "skipped": 0,
+      "report": "live-contracts.json",
+      "reportSha256": "1b3fc2ba349f092efa5f5888f791e8c9fee5e069876615cbf929539f6680c5d7",
+      "maximumConcurrentSources": 2,
+      "perSourceTimeoutSeconds": 180,
+      "browserVerificationRequired": false,
+      "fixtureRepairs": 0
+    },
+    "canaryReleaseGate": {
+      "result": "passed",
+      "canPublish": true,
+      "blockingReasons": [],
+      "report": "canary-release-gate.json"
+    }
+  },
+  "artifacts": [
+    {
+      "packId": "yomira-reader-beta",
+      "version": "2026.09.07.1",
+      "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/release/internal-reader-beta/releases/2026.09.07.1/yomira-reader-beta/source-pack.json",
+      "checksum": "sha256:7dc0eb45125199bb6720f1bd4cdc218d6f14e2941f8cc10c29ed17281a6451d5",
+      "sourceCount": 6
+    }
+  ],
+  "checkerBinarySha256": "7a2d241223d3675e1e4f8aa6400dd599e958510bea9e8241fecf6fbaa2d65dbb",
+  "liveInputPackChecksum": "sha256:7dc0eb45125199bb6720f1bd4cdc218d6f14e2941f8cc10c29ed17281a6451d5",
+  "publication": {
+    "evidencePhase": "before_publication",
+    "remoteArtifactAcceptance": "Recorded separately after publication; this evidence does not assert remote delivery or device acceptance."
+  }
+}

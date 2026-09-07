@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - release/internal-reader-beta
   workflow_dispatch:
 
 permissions:
@@ -19,6 +20,11 @@ jobs:
           fetch-depth: 0
       - name: Validate repository structure
         run: python3 scripts/validate_repository.py
+      - name: Validate internal beta feed integrity
+        if: hashFiles('repository-beta.json') != ''
+        run: python3 scripts/validate_beta_repository.py
+      - name: Test repository validation rules
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
       - name: Enforce Source Definition and Source Pack version bumps
         if: github.event_name == 'pull_request'
         run: python3 scripts/validate_repository.py --base-ref "origin/${{ github.base_ref }}"
