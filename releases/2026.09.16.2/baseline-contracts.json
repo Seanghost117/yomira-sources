@@ -1,0 +1,2181 @@
+{
+  "schemaVersion": "1.0",
+  "packId": "yomira-reader-followup",
+  "reports": [
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581832,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.harimanga",
+          "displayName": "HariManga",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_INVALID_PAYLOAD"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_INVALID_PAYLOAD"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE",
+                "SOURCE_MEDIA_UNAVAILABLE"
+              ]
+            }
+          },
+          "searchResultCount": 0,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {
+            "search": 0
+          },
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.harimanga",
+              "stage": "browse:popular",
+              "code": "SOURCE_INVALID_PAYLOAD",
+              "message": "The source returned a payload the built-in connector could not use.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.harimanga",
+              "stage": "browse:latest",
+              "code": "SOURCE_INVALID_PAYLOAD",
+              "message": "The source returned a payload the built-in connector could not use.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.harimanga",
+              "stage": "search",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "Expected at least 1 item(s), received 0.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.harimanga",
+              "stage": "search",
+              "code": "SOURCE_MEDIA_UNAVAILABLE",
+              "message": "Search results did not include a usable cover URL.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.harimanga",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581832,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.kunmanga",
+          "displayName": "Kun Manga",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": true,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {},
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.kunmanga",
+              "stage": "browse:popular",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.kunmanga",
+              "stage": "browse:latest",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.kunmanga",
+              "stage": "search",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.kunmanga",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581837,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 1,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 0,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.kuramanga",
+          "displayName": "KuraManga",
+          "status": "passed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search",
+            "details",
+            "chapters",
+            "pages",
+            "image"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "browse:popular": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "chapters": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "details": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "image": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "pages": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "search": {
+              "status": "passed",
+              "issueCodes": []
+            }
+          },
+          "searchResultCount": 18,
+          "browseResultCounts": {
+            "latest": 25,
+            "popular": 25
+          },
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {
+            "browse:latest": 100,
+            "browse:popular": 100,
+            "search": 100
+          },
+          "chapterCount": 30,
+          "latestChapterNumber": 30.0,
+          "numberedChapterCoveragePercent": 100,
+          "pageCount": 10,
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581834,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.madaradex",
+          "displayName": "MadaraDex",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": true,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {},
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.madaradex",
+              "stage": "browse:popular",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.madaradex",
+              "stage": "browse:latest",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.madaradex",
+              "stage": "search",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.madaradex",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581837,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.mangaball",
+          "displayName": "MangaBall",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": true,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "highlighted",
+              "latest",
+              "popular",
+              "popular_this_season",
+              "recommended",
+              "top_viewed"
+            ],
+            "pages": true,
+            "pagination": false,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {},
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.mangaball",
+              "stage": "browse:popular",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.mangaball",
+              "stage": "browse:latest",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.mangaball",
+              "stage": "search",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.mangaball",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581839,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.mangacloud",
+          "displayName": "MangaCloud",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": true,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular",
+              "recent_updated"
+            ],
+            "pages": true,
+            "pagination": false,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {},
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.mangacloud",
+              "stage": "browse:popular",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.mangacloud",
+              "stage": "browse:latest",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.mangacloud",
+              "stage": "search",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.mangacloud",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581838,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.mangagg",
+          "displayName": "MangaGG",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": true,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": true,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": true,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {},
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.mangagg",
+              "stage": "browse:latest",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.mangagg",
+              "stage": "search",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.mangagg",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581839,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.mangakakalot",
+          "displayName": "Mangakakalot",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": true,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {},
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.mangakakalot",
+              "stage": "browse:latest",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.mangakakalot",
+              "stage": "search",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.mangakakalot",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581841,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.manganelo",
+          "displayName": "Manganato",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": true,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_INVALID_PAYLOAD"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_INVALID_PAYLOAD"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {},
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.manganelo",
+              "stage": "browse:popular",
+              "code": "SOURCE_INVALID_PAYLOAD",
+              "message": "The source returned a payload the built-in connector could not use.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.manganelo",
+              "stage": "browse:latest",
+              "code": "SOURCE_INVALID_PAYLOAD",
+              "message": "The source returned a payload the built-in connector could not use.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.manganelo",
+              "stage": "search",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.manganelo",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581849,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 1,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 0,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.manhwaden",
+          "displayName": "ManhwaDen",
+          "status": "passed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": true,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search",
+            "details",
+            "chapters",
+            "pages",
+            "image"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "browse:popular": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "chapters": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "details": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "image": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "pages": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "search": {
+              "status": "passed",
+              "issueCodes": []
+            }
+          },
+          "searchResultCount": 10,
+          "browseResultCounts": {
+            "latest": 10,
+            "popular": 10
+          },
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {
+            "browse:latest": 100,
+            "browse:popular": 100,
+            "search": 100
+          },
+          "chapterCount": 10,
+          "latestChapterNumber": 10.0,
+          "numberedChapterCoveragePercent": 100,
+          "pageCount": 12,
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581848,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 1,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 0,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.mangareadorg",
+          "displayName": "MangaRead.org",
+          "status": "passed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search",
+            "details",
+            "chapters",
+            "pages",
+            "image"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "browse:popular": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "chapters": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "details": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "image": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "pages": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "search": {
+              "status": "passed",
+              "issueCodes": []
+            }
+          },
+          "searchResultCount": 12,
+          "browseResultCounts": {
+            "latest": 12,
+            "popular": 12
+          },
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {
+            "browse:latest": 100,
+            "browse:popular": 100,
+            "search": 100
+          },
+          "chapterCount": 20,
+          "latestChapterNumber": 20.0,
+          "numberedChapterCoveragePercent": 100,
+          "pageCount": 4,
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581851,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.manhuaus",
+          "displayName": "ManhuaUS",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {},
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.manhuaus",
+              "stage": "browse:popular",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.manhuaus",
+              "stage": "browse:latest",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.manhuaus",
+              "stage": "search",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.manhuaus",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581857,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.manhuatop",
+          "displayName": "ManhuaTop",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search",
+            "details",
+            "chapters"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "browse:popular": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "chapters": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "details": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "search": {
+              "status": "passed",
+              "issueCodes": []
+            }
+          },
+          "searchResultCount": 12,
+          "browseResultCounts": {
+            "latest": 18,
+            "popular": 18
+          },
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {
+            "browse:latest": 100,
+            "browse:popular": 100,
+            "search": 100
+          },
+          "chapterCount": 0,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": 0,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.manhuatop",
+              "stage": "chapters",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "Expected at least 1 item(s), received 0.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581853,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.manhwaclan",
+          "displayName": "ManhwaClan",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {},
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.manhwaclan",
+              "stage": "browse:popular",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.manhwaclan",
+              "stage": "browse:latest",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.manhwaclan",
+              "stage": "search",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.manhwaclan",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581859,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.kingofshojo",
+          "displayName": "King of Shojo",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search",
+            "details",
+            "chapters"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "browse:popular": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "chapters": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "details": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "search": {
+              "status": "passed",
+              "issueCodes": []
+            }
+          },
+          "searchResultCount": 40,
+          "browseResultCounts": {
+            "latest": 40,
+            "popular": 40
+          },
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {
+            "browse:latest": 100,
+            "browse:popular": 100,
+            "search": 100
+          },
+          "chapterCount": 0,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": 0,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.kingofshojo",
+              "stage": "chapters",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "Expected at least 1 item(s), received 0.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581916,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.coffeemanga",
+          "displayName": "Coffee Manga",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_INVALID_PAYLOAD"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_INVALID_PAYLOAD"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_INVALID_PAYLOAD"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {},
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.coffeemanga",
+              "stage": "browse:popular",
+              "code": "SOURCE_INVALID_PAYLOAD",
+              "message": "The source returned a payload the built-in connector could not use.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.coffeemanga",
+              "stage": "browse:latest",
+              "code": "SOURCE_INVALID_PAYLOAD",
+              "message": "The source returned a payload the built-in connector could not use.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.coffeemanga",
+              "stage": "search",
+              "code": "SOURCE_INVALID_PAYLOAD",
+              "message": "The source returned a payload the built-in connector could not use.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.coffeemanga",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581867,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 1,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 0,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.lhtranslation",
+          "displayName": "LHTranslation",
+          "status": "passed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search",
+            "details",
+            "chapters",
+            "pages",
+            "image"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "browse:popular": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "chapters": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "details": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "image": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "pages": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "search": {
+              "status": "passed",
+              "issueCodes": []
+            }
+          },
+          "searchResultCount": 12,
+          "browseResultCounts": {
+            "latest": 12,
+            "popular": 12
+          },
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {
+            "browse:latest": 100,
+            "browse:popular": 100,
+            "search": 100
+          },
+          "chapterCount": 28,
+          "latestChapterNumber": 20.0,
+          "numberedChapterCoveragePercent": 100,
+          "pageCount": 27,
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581875,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 1,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 0,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.mangasushi",
+          "displayName": "Mangasushi",
+          "status": "passed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search",
+            "details",
+            "chapters",
+            "pages",
+            "image"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "browse:popular": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "chapters": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "details": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "image": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "pages": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "search": {
+              "status": "passed",
+              "issueCodes": []
+            }
+          },
+          "searchResultCount": 12,
+          "browseResultCounts": {
+            "latest": 12,
+            "popular": 12
+          },
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {
+            "browse:latest": 100,
+            "browse:popular": 100,
+            "search": 100
+          },
+          "chapterCount": 76,
+          "latestChapterNumber": 55.0,
+          "numberedChapterCoveragePercent": 100,
+          "pageCount": 31,
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581883,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 1,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 0,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.galaxydegenscans",
+          "displayName": "GalaxyDegenScans",
+          "status": "passed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search",
+            "details",
+            "chapters",
+            "pages",
+            "image"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "browse:popular": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "chapters": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "details": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "image": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "pages": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "search": {
+              "status": "passed",
+              "issueCodes": []
+            }
+          },
+          "searchResultCount": 10,
+          "browseResultCounts": {
+            "latest": 10,
+            "popular": 10
+          },
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {
+            "browse:latest": 100,
+            "browse:popular": 100,
+            "search": 100
+          },
+          "chapterCount": 2,
+          "latestChapterNumber": 2.0,
+          "numberedChapterCoveragePercent": 100,
+          "pageCount": 23,
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789581885,
+      "packId": "yomira-reader-followup",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.resetscans",
+          "displayName": "Reset Scans",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_NETWORK_UNAVAILABLE"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_NETWORK_UNAVAILABLE"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_NETWORK_UNAVAILABLE"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {},
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.resetscans",
+              "stage": "browse:popular",
+              "code": "SOURCE_NETWORK_UNAVAILABLE",
+              "message": "The source could not be reached during this contract stage.",
+              "retryable": true
+            },
+            {
+              "sourceId": "keiyoushi.en.resetscans",
+              "stage": "browse:latest",
+              "code": "SOURCE_NETWORK_UNAVAILABLE",
+              "message": "The source could not be reached during this contract stage.",
+              "retryable": true
+            },
+            {
+              "sourceId": "keiyoushi.en.resetscans",
+              "stage": "search",
+              "code": "SOURCE_NETWORK_UNAVAILABLE",
+              "message": "The source could not be reached during this contract stage.",
+              "retryable": true
+            },
+            {
+              "sourceId": "keiyoushi.en.resetscans",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

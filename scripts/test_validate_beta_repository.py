@@ -19,6 +19,7 @@ class BetaFeedTests(unittest.TestCase):
         source = Path(__file__).resolve().parents[1]
         shutil.copytree(source / "releases", self.root / "releases")
         shutil.copy(source / "repository-beta.json", self.root / "repository-beta.json")
+        shutil.copytree(source / "source-master/definitions", self.root / "source-master/definitions")
         for relative in ("source-master/definitions/asurascans.json", "sources/asurascans.json"):
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -44,6 +45,28 @@ class BetaFeedTests(unittest.TestCase):
 
     def test_valid_feed(self):
         self.assertEqual(beta.validate_beta(self.root), [])
+
+    def test_followup_batch_cannot_claim_curated_sources_as_new(self):
+        path = self.release / "followup-batch.json"
+        batch = json.loads(path.read_text())
+        for entry in batch["entries"]:
+            entry["outsideCurated"] = False
+        path.write_text(json.dumps(batch))
+        self.assertTrue(any("outside curated" in error for error in beta.validate_beta(self.root)))
+
+    def test_followup_batch_rejects_duplicate_source_slots(self):
+        path = self.release / "followup-batch.json"
+        batch = json.loads(path.read_text())
+        batch["entries"][-1] = batch["entries"][0]
+        path.write_text(json.dumps(batch))
+        self.assertTrue(any("twenty distinct" in error for error in beta.validate_beta(self.root)))
+
+    def test_held_followup_cannot_be_marked_published(self):
+        path = self.release / "followup-batch.json"
+        batch = json.loads(path.read_text())
+        next(entry for entry in batch["entries"] if entry["status"] == "held")["status"] = "verified"
+        path.write_text(json.dumps(batch))
+        self.assertTrue(any("verified follow-up identities" in error for error in beta.validate_beta(self.root)))
 
     def test_stale_manifest_url_is_rejected(self):
         self.edit_index(lambda index: index["sourcePacks"][0].update(manifestUrl="https://example.com/stale"))

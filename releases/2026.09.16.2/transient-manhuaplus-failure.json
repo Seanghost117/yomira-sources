@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAtUnix": 1789582542,
+  "packId": "yomira-reader-beta",
+  "live": true,
+  "testedCount": 1,
+  "passedCount": 0,
+  "warningCount": 0,
+  "skippedCount": 0,
+  "failedCount": 1,
+  "regressionCount": 0,
+  "regressions": [],
+  "repairedFixtureIds": {},
+  "results": [
+    {
+      "sourceId": "keiyoushi.en.manhuaplus",
+      "displayName": "Manhua Plus",
+      "status": "failed",
+      "live": true,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": true,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": false,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities",
+        "browse:popular",
+        "browse:latest",
+        "search",
+        "details",
+        "chapters",
+        "pages",
+        "image"
+      ],
+      "sectionHealth": {
+        "browse:latest": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "browse:popular": {
+          "status": "failed",
+          "issueCodes": [
+            "SOURCE_INVALID_PAYLOAD"
+          ]
+        },
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "chapters": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "details": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "image": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pages": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "search": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": 3,
+      "browseResultCounts": {
+        "latest": 12
+      },
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {
+        "browse:latest": 100,
+        "search": 100
+      },
+      "chapterCount": 3364,
+      "latestChapterNumber": 3862.0,
+      "numberedChapterCoveragePercent": 100,
+      "pageCount": 12,
+      "warnings": [],
+      "errors": [
+        {
+          "sourceId": "keiyoushi.en.manhuaplus",
+          "stage": "browse:popular",
+          "code": "SOURCE_INVALID_PAYLOAD",
+          "message": "The source returned a payload the built-in connector could not use.",
+          "retryable": false
+        }
+      ]
+    }
+  ]
+}

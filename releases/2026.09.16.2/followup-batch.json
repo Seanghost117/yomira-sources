@@ -1,0 +1,275 @@
+{
+  "schemaVersion": "1.0",
+  "curatedBaselineRevision": "04aafaf",
+  "curatedBaselinePack": "packs/yomira-curated/source-pack.json",
+  "selectedCount": 20,
+  "outsideCuratedCount": 10,
+  "verifiedAdditionsCount": 7,
+  "verifiedOutsideCuratedCount": 5,
+  "entries": [
+    {
+      "sourceId": "keiyoushi.en.harimanga",
+      "name": "HariManga",
+      "url": "https://harimanga.me",
+      "outsideCurated": false,
+      "status": "held",
+      "note": "Origin displays Account Suspended.",
+      "baselineIssueCodes": [
+        "SOURCE_EMPTY_RESPONSE",
+        "SOURCE_INVALID_PAYLOAD",
+        "SOURCE_MEDIA_UNAVAILABLE"
+      ],
+      "trafficEvidence": {
+        "month": "2026-05",
+        "estimatedMonthlyVisits": 45150000,
+        "url": "https://www.semrush.com/website/s2manga.com/competitors/"
+      }
+    },
+    {
+      "sourceId": "keiyoushi.en.kunmanga",
+      "name": "Kun Manga",
+      "url": "https://kunmanga.com",
+      "outsideCurated": false,
+      "status": "held",
+      "note": "Browser Verification required; not included in verified delivery.",
+      "baselineIssueCodes": [
+        "BROWSER_VERIFICATION_REQUIRED",
+        "SOURCE_EMPTY_RESPONSE"
+      ],
+      "trafficEvidence": {
+        "month": "2026-06",
+        "estimatedMonthlyVisits": 21470000,
+        "url": "https://www.semrush.com/website/kingofshojo.com/competitors/"
+      }
+    },
+    {
+      "sourceId": "keiyoushi.en.kuramanga",
+      "name": "KuraManga",
+      "url": "https://kuramanga.com",
+      "outsideCurated": false,
+      "status": "verified",
+      "note": "Passed browse/search, details, chapters and actual image bytes. Search pagination verified except KuraManga, which explicitly supports the first batch only.",
+      "baselineIssueCodes": [],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.madaradex",
+      "name": "MadaraDex",
+      "url": "https://madaradex.org",
+      "outsideCurated": false,
+      "status": "held",
+      "note": "Browser Verification required; not included in verified delivery.",
+      "baselineIssueCodes": [
+        "BROWSER_VERIFICATION_REQUIRED",
+        "SOURCE_EMPTY_RESPONSE"
+      ],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.mangaball",
+      "name": "MangaBall",
+      "url": "https://mangaball.net",
+      "outsideCurated": false,
+      "status": "held",
+      "note": "Browser Verification required; not included in verified delivery.",
+      "baselineIssueCodes": [
+        "BROWSER_VERIFICATION_REQUIRED",
+        "SOURCE_EMPTY_RESPONSE"
+      ],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.mangacloud",
+      "name": "MangaCloud",
+      "url": "https://api.mangacloud.org",
+      "outsideCurated": false,
+      "status": "held",
+      "note": "Browser Verification required; not included in verified delivery.",
+      "baselineIssueCodes": [
+        "BROWSER_VERIFICATION_REQUIRED",
+        "SOURCE_EMPTY_RESPONSE"
+      ],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.mangagg",
+      "name": "MangaGG",
+      "url": "https://mangagg.com",
+      "outsideCurated": false,
+      "status": "held",
+      "note": "Browser Verification required; not included in verified delivery.",
+      "baselineIssueCodes": [
+        "BROWSER_VERIFICATION_REQUIRED",
+        "SOURCE_EMPTY_RESPONSE"
+      ],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.mangakakalot",
+      "name": "Mangakakalot",
+      "url": "https://www.mangakakalot.gg",
+      "outsideCurated": false,
+      "status": "held",
+      "note": "Browser Verification required; not included in verified delivery.",
+      "baselineIssueCodes": [
+        "BROWSER_VERIFICATION_REQUIRED",
+        "SOURCE_EMPTY_RESPONSE"
+      ],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.manganelo",
+      "name": "Manganato",
+      "url": "https://www.natomanga.com",
+      "outsideCurated": false,
+      "status": "held",
+      "note": "Obsolete browse routes and Browser Verification on search; no complete acceptance.",
+      "baselineIssueCodes": [
+        "BROWSER_VERIFICATION_REQUIRED",
+        "SOURCE_EMPTY_RESPONSE",
+        "SOURCE_INVALID_PAYLOAD"
+      ],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwaden",
+      "name": "ManhwaDen",
+      "url": "https://www.manhwaden.com",
+      "outsideCurated": false,
+      "status": "verified",
+      "note": "Passed browse/search, details, chapters and actual image bytes. Search pagination verified except KuraManga, which explicitly supports the first batch only.",
+      "baselineIssueCodes": [],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.mangareadorg",
+      "name": "MangaRead.org",
+      "url": "https://www.mangaread.org",
+      "outsideCurated": true,
+      "status": "verified",
+      "note": "Passed browse/search, details, chapters and actual image bytes. Search pagination verified except KuraManga, which explicitly supports the first batch only.",
+      "baselineIssueCodes": [],
+      "trafficEvidence": {
+        "month": "2026-07",
+        "estimatedMonthlyVisits": 83540000,
+        "url": "https://www.semrush.com/website/mangaread.org/overview/"
+      }
+    },
+    {
+      "sourceId": "keiyoushi.en.manhuaus",
+      "name": "ManhuaUS",
+      "url": "https://manhuaus.com",
+      "outsideCurated": true,
+      "status": "held",
+      "note": "Browser Verification required; not included in verified delivery.",
+      "baselineIssueCodes": [
+        "BROWSER_VERIFICATION_REQUIRED",
+        "SOURCE_EMPTY_RESPONSE"
+      ],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.manhuatop",
+      "name": "ManhuaTop",
+      "url": "https://manhuatop.org",
+      "outsideCurated": true,
+      "status": "held",
+      "note": "Discovery succeeds but chapter extraction is empty; diagnostic origin requests require Browser Verification.",
+      "baselineIssueCodes": [
+        "SOURCE_EMPTY_RESPONSE"
+      ],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwaclan",
+      "name": "ManhwaClan",
+      "url": "https://manhwaclan.com",
+      "outsideCurated": true,
+      "status": "held",
+      "note": "Browser Verification required; not included in verified delivery.",
+      "baselineIssueCodes": [
+        "BROWSER_VERIFICATION_REQUIRED",
+        "SOURCE_EMPTY_RESPONSE"
+      ],
+      "trafficEvidence": {
+        "month": "2026-06",
+        "estimatedMonthlyVisits": 19850000,
+        "url": "https://www.semrush.com/website/kingofshojo.com/competitors/"
+      }
+    },
+    {
+      "sourceId": "keiyoushi.en.kingofshojo",
+      "name": "King of Shojo",
+      "url": "https://kingofshojo.com",
+      "outsideCurated": true,
+      "status": "verified",
+      "note": "Passed browse/search, details, chapters and actual image bytes. Search pagination verified except KuraManga, which explicitly supports the first batch only.",
+      "baselineIssueCodes": [
+        "SOURCE_EMPTY_RESPONSE"
+      ],
+      "trafficEvidence": {
+        "month": "2026-07",
+        "estimatedMonthlyVisits": 134250000,
+        "url": "https://www.semrush.com/website/kingofshojo.com/overview/"
+      }
+    },
+    {
+      "sourceId": "keiyoushi.en.coffeemanga",
+      "name": "Coffee Manga",
+      "url": "https://coffeemanga.ink",
+      "outsideCurated": true,
+      "status": "held",
+      "note": "Configured host returns HTTP 404; no replacement host established.",
+      "baselineIssueCodes": [
+        "SOURCE_EMPTY_RESPONSE",
+        "SOURCE_INVALID_PAYLOAD"
+      ],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.lhtranslation",
+      "name": "LHTranslation",
+      "url": "https://lhtranslation.net",
+      "outsideCurated": true,
+      "status": "verified",
+      "note": "Passed browse/search, details, chapters and actual image bytes. Search pagination verified except KuraManga, which explicitly supports the first batch only.",
+      "baselineIssueCodes": [],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.mangasushi",
+      "name": "Mangasushi",
+      "url": "https://mangasushi.org",
+      "outsideCurated": true,
+      "status": "verified",
+      "note": "Passed browse/search, details, chapters and actual image bytes. Search pagination verified except KuraManga, which explicitly supports the first batch only.",
+      "baselineIssueCodes": [],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.galaxydegenscans",
+      "name": "GalaxyDegenScans",
+      "url": "https://gdscans.com",
+      "outsideCurated": true,
+      "status": "verified",
+      "note": "Passed browse/search, details, chapters and actual image bytes. Search pagination verified except KuraManga, which explicitly supports the first batch only.",
+      "baselineIssueCodes": [],
+      "trafficEvidence": null
+    },
+    {
+      "sourceId": "keiyoushi.en.resetscans",
+      "name": "Reset Scans",
+      "url": "https://reset-scans.org",
+      "outsideCurated": true,
+      "status": "held",
+      "note": "Configured host fails DNS resolution.",
+      "baselineIssueCodes": [
+        "SOURCE_EMPTY_RESPONSE",
+        "SOURCE_NETWORK_UNAVAILABLE"
+      ],
+      "trafficEvidence": null
+    }
+  ],
+  "selectionMethod": "Twenty distinct English manga/manhwa follow-up candidates, prioritizing available popularity evidence and established source families. This is not a measured global top-twenty ranking. Existing adult-content flags are preserved; dedicated pornographic services are excluded.",
+  "checkedAt": "2026-09-16"
+}

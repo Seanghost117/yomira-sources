@@ -21,6 +21,39 @@ PRIORITY_SOURCE_IDS = {
     "keiyoushi.en.s2manga", "keiyoushi.en.mangabuddy", "keiyoushi.en.manhwatop",
     "yomira.en.mangadex", "keiyoushi.en.mangakatana", "asurascans",
 }
+FOLLOWUP_SOURCE_IDS = {
+    "keiyoushi.en.kuramanga", "keiyoushi.en.manhwaden", "keiyoushi.en.mangareadorg",
+    "keiyoushi.en.kingofshojo", "keiyoushi.en.lhtranslation", "keiyoushi.en.mangasushi",
+    "keiyoushi.en.galaxydegenscans",
+}
+PRIORITY_SOURCE_IDS |= FOLLOWUP_SOURCE_IDS
+
+
+def validate_followup_scope(root: Path, release: Path, errors: list[str]) -> None:
+    try:
+        batch = json.loads((release / "followup-batch.json").read_text())
+        curated = git_json("04aafaf", Path("packs") / CURATED_PACK_ID / "source-pack.json", root)
+        if not curated:
+            raise ValueError("missing pinned curated baseline")
+        curated_ids = {item.get("sourceId", item.get("id")) for item in curated["definitions"]}
+        entries = batch["entries"]
+        ids = {entry["sourceId"] for entry in entries}
+        if len(entries) != 20 or len(ids) != 20 or batch.get("selectedCount") != 20:
+            errors.append("follow-up batch must contain twenty distinct source identities")
+        if ids & (PRIORITY_SOURCE_IDS - FOLLOWUP_SOURCE_IDS):
+            errors.append("follow-up batch must not recount previously delivered sources")
+        if batch.get("curatedBaselineRevision") != "04aafaf" or batch.get("curatedBaselinePack") != "packs/yomira-curated/source-pack.json":
+            errors.append("follow-up batch must use the pinned curated baseline")
+        outside = ids - curated_ids
+        if len(outside) < 5 or batch.get("outsideCuratedCount") != len(outside) or any(entry.get("outsideCurated") != (entry["sourceId"] in outside) for entry in entries):
+            errors.append("follow-up batch outside curated accounting is invalid")
+        verified = {entry["sourceId"] for entry in entries if entry.get("status") == "verified"}
+        if verified != FOLLOWUP_SOURCE_IDS or batch.get("verifiedAdditionsCount") != len(verified) or any(entry.get("status") not in {"verified", "held"} for entry in entries):
+            errors.append("verified follow-up identities must match the delivered additions")
+        if len(verified - curated_ids) < 5 or batch.get("verifiedOutsideCuratedCount") != len(verified - curated_ids):
+            errors.append("verified follow-up additions must include at least five outside curated")
+    except (OSError, ValueError, KeyError, TypeError):
+        errors.append("follow-up batch evidence is missing or invalid")
 
 
 def validate_beta(root: Path) -> list[str]:
@@ -87,6 +120,14 @@ def validate_beta(root: Path) -> list[str]:
             expected_definitions["asurascans"] = asura
         except (OSError, ValueError):
             errors.append(f"{pack_id}: missing or invalid Asura source definition")
+        for source_id in FOLLOWUP_SOURCE_IDS:
+            try:
+                definition = json.loads((root / "source-master/definitions" / f"{source_id}.json").read_text())
+                if definition.get("id") != source_id or definition.get("sourceId") != source_id:
+                    errors.append(f"{pack_id}: preserve follow-up source identity: {source_id}")
+                expected_definitions[source_id] = definition
+            except (OSError, ValueError):
+                errors.append(f"{pack_id}: missing follow-up definition: {source_id}")
         if current_definitions != expected_definitions or len(pack.get("definitions", [])) != len(PRIORITY_SOURCE_IDS):
             errors.append(f"{pack_id}: candidate must preserve the baseline definitions, identities and policies")
         try:
@@ -103,6 +144,7 @@ def validate_beta(root: Path) -> list[str]:
             validate_capabilities(definition, label, errors)
             validate_download_policy(definition, label, errors)
         release_root = root / "releases" / version
+        validate_followup_scope(root, release_root, errors)
         try:
             report_raw = (release_root / "live-contracts.json").read_bytes()
             report = json.loads(report_raw)

@@ -1,0 +1,98 @@
+[
+  {
+    "sourceId": "yomira.en.mangadex",
+    "exitCode": 0,
+    "elapsedSeconds": 5,
+    "report": "yomira.en.mangadex-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.mangakatana",
+    "exitCode": 0,
+    "elapsedSeconds": 14,
+    "report": "keiyoushi.en.mangakatana-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.atsumaru",
+    "exitCode": 0,
+    "elapsedSeconds": 6,
+    "report": "keiyoushi.en.atsumaru-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.mangapill",
+    "exitCode": 0,
+    "elapsedSeconds": 7,
+    "report": "keiyoushi.en.mangapill-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.mangabuddy",
+    "exitCode": 0,
+    "elapsedSeconds": 5,
+    "report": "keiyoushi.en.mangabuddy-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.manhuaplus",
+    "exitCode": 1,
+    "elapsedSeconds": 20,
+    "report": "keiyoushi.en.manhuaplus-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.manhwatop",
+    "exitCode": 0,
+    "elapsedSeconds": 11,
+    "report": "keiyoushi.en.manhwatop-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.s2manga",
+    "exitCode": 0,
+    "elapsedSeconds": 11,
+    "report": "keiyoushi.en.s2manga-final.json"
+  },
+  {
+    "sourceId": "asurascans",
+    "exitCode": 0,
+    "elapsedSeconds": 9,
+    "report": "asurascans-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.kuramanga",
+    "exitCode": 0,
+    "elapsedSeconds": 6,
+    "report": "keiyoushi.en.kuramanga-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.manhwaden",
+    "exitCode": 0,
+    "elapsedSeconds": 9,
+    "report": "keiyoushi.en.manhwaden-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.mangareadorg",
+    "exitCode": 0,
+    "elapsedSeconds": 8,
+    "report": "keiyoushi.en.mangareadorg-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.kingofshojo",
+    "exitCode": 0,
+    "elapsedSeconds": 11,
+    "report": "keiyoushi.en.kingofshojo-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.lhtranslation",
+    "exitCode": 0,
+    "elapsedSeconds": 9,
+    "report": "keiyoushi.en.lhtranslation-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.mangasushi",
+    "exitCode": 0,
+    "elapsedSeconds": 9,
+    "report": "keiyoushi.en.mangasushi-final.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.galaxydegenscans",
+    "exitCode": 0,
+    "elapsedSeconds": 9,
+    "report": "keiyoushi.en.galaxydegenscans-final.json"
+  }
+]

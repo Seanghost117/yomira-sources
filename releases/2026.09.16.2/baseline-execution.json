@@ -1,0 +1,122 @@
+[
+  {
+    "sourceId": "keiyoushi.en.harimanga",
+    "exitCode": 1,
+    "elapsedSeconds": 2,
+    "report": "keiyoushi.en.harimanga-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.kunmanga",
+    "exitCode": 1,
+    "elapsedSeconds": 2,
+    "report": "keiyoushi.en.kunmanga-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.kuramanga",
+    "exitCode": 0,
+    "elapsedSeconds": 6,
+    "report": "keiyoushi.en.kuramanga-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.madaradex",
+    "exitCode": 1,
+    "elapsedSeconds": 2,
+    "report": "keiyoushi.en.madaradex-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.mangaball",
+    "exitCode": 1,
+    "elapsedSeconds": 3,
+    "report": "keiyoushi.en.mangaball-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.mangacloud",
+    "exitCode": 1,
+    "elapsedSeconds": 2,
+    "report": "keiyoushi.en.mangacloud-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.mangagg",
+    "exitCode": 1,
+    "elapsedSeconds": 1,
+    "report": "keiyoushi.en.mangagg-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.mangakakalot",
+    "exitCode": 1,
+    "elapsedSeconds": 1,
+    "report": "keiyoushi.en.mangakakalot-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.manganelo",
+    "exitCode": 1,
+    "elapsedSeconds": 2,
+    "report": "keiyoushi.en.manganelo-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.manhwaden",
+    "exitCode": 0,
+    "elapsedSeconds": 9,
+    "report": "keiyoushi.en.manhwaden-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.mangareadorg",
+    "exitCode": 0,
+    "elapsedSeconds": 7,
+    "report": "keiyoushi.en.mangareadorg-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.manhuaus",
+    "exitCode": 1,
+    "elapsedSeconds": 2,
+    "report": "keiyoushi.en.manhuaus-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.manhuatop",
+    "exitCode": 1,
+    "elapsedSeconds": 8,
+    "report": "keiyoushi.en.manhuatop-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.manhwaclan",
+    "exitCode": 1,
+    "elapsedSeconds": 2,
+    "report": "keiyoushi.en.manhwaclan-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.kingofshojo",
+    "exitCode": 1,
+    "elapsedSeconds": 6,
+    "report": "keiyoushi.en.kingofshojo-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.coffeemanga",
+    "exitCode": 1,
+    "elapsedSeconds": 59,
+    "report": "keiyoushi.en.coffeemanga-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.lhtranslation",
+    "exitCode": 0,
+    "elapsedSeconds": 8,
+    "report": "keiyoushi.en.lhtranslation-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.mangasushi",
+    "exitCode": 0,
+    "elapsedSeconds": 8,
+    "report": "keiyoushi.en.mangasushi-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.galaxydegenscans",
+    "exitCode": 0,
+    "elapsedSeconds": 8,
+    "report": "keiyoushi.en.galaxydegenscans-baseline.json"
+  },
+  {
+    "sourceId": "keiyoushi.en.resetscans",
+    "exitCode": 1,
+    "elapsedSeconds": 2,
+    "report": "keiyoushi.en.resetscans-baseline.json"
+  }
+]

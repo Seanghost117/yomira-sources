@@ -1,0 +1,82 @@
+{
+  "adultContent": true,
+  "baseUrl": "https://kingofshojo.com",
+  "base_url": "https://kingofshojo.com",
+  "connectorEngine": "manga_themesia",
+  "description": "King of Shojo public catalog with current search and chapter-list selectors.",
+  "displayName": "King of Shojo",
+  "extends": "manga_themesia",
+  "flags": {
+    "isMadara": false
+  },
+  "id": "keiyoushi.en.kingofshojo",
+  "language": "en",
+  "name": "King of Shojo",
+  "nsfw": true,
+  "provenance": {
+    "analyzerBucket": "direct_multisrc_candidate",
+    "baseUrlSource": "build_gradle",
+    "ecosystem": "keiyoushi",
+    "originalExtClass": ".KingofShojo",
+    "originalFamily": "MangaThemesia",
+    "originalLanguage": "en",
+    "originalSourceName": "kingofshojo",
+    "originalSourcePath": "src/en/kingofshojo",
+    "originalVersion": "0"
+  },
+  "rateLimit": {
+    "minDelayMs": 1000,
+    "requestsPerMinute": 60
+  },
+  "rate_limit_ms": 1000,
+  "region": "en",
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "sourceId": "keiyoushi.en.kingofshojo",
+  "sourceType": "manga_themesia",
+  "tags": [
+    "Keiyoushi",
+    "MangaThemesia",
+    "Converted"
+  ],
+  "version": "1.0.1",
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "downloadPolicy": {
+    "transport": "automatic",
+    "maximumConcurrentPages": 1,
+    "maximumAttempts": 4
+  },
+  "selectors": {
+    "chapter_list": {
+      "container": "#chapterlist li",
+      "title": ".chapternum@text",
+      "link": ".eph-num a@href",
+      "date": ".chapterdate@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    }
+  },
+  "endpoints": {
+    "search": {
+      "url": "{base}/?s={query}&paged={page}",
+      "method": "GET"
+    }
+  },
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "pagination": true,
+    "filters": false,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "popular",
+      "latest"
+    ]
+  }
+}

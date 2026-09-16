@@ -1,0 +1,710 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAtUnix": 1789582574,
+  "packId": "yomira-reader-beta",
+  "live": false,
+  "testedCount": 16,
+  "passedCount": 16,
+  "warningCount": 0,
+  "skippedCount": 0,
+  "failedCount": 0,
+  "regressionCount": 0,
+  "regressions": [],
+  "repairedFixtureIds": {},
+  "results": [
+    {
+      "sourceId": "yomira.en.mangadex",
+      "displayName": "MangaDex",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": true,
+        "imagePages": true,
+        "listings": [
+          "popular_new",
+          "latest",
+          "recent",
+          "seasonal",
+          "popular"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.mangakatana",
+      "displayName": "MangaKatana",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.atsumaru",
+      "displayName": "Atsumaru",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": true,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.mangapill",
+      "displayName": "MangaPill",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": false,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.mangabuddy",
+      "displayName": "MangaK",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": false,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": false,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "hot_week",
+          "latest",
+          "popular",
+          "ranking",
+          "trending"
+        ],
+        "pages": true,
+        "pagination": false,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.manhuaplus",
+      "displayName": "Manhua Plus",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": true,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": false,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwatop",
+      "displayName": "Manhwatop",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "latest",
+          "popular"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.s2manga",
+      "displayName": "S2Read",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "latest",
+          "popular"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "asurascans",
+      "displayName": "Asura Scans",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": true,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.kuramanga",
+      "displayName": "KuraManga",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": false,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwaden",
+      "displayName": "ManhwaDen",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": true,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.mangareadorg",
+      "displayName": "MangaRead.org",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.kingofshojo",
+      "displayName": "King of Shojo",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.lhtranslation",
+      "displayName": "LHTranslation",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.mangasushi",
+      "displayName": "Mangasushi",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.galaxydegenscans",
+      "displayName": "GalaxyDegenScans",
+      "status": "passed",
+      "live": false,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities"
+      ],
+      "sectionHealth": {
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": null,
+      "browseResultCounts": {},
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {},
+      "chapterCount": null,
+      "latestChapterNumber": null,
+      "numberedChapterCoveragePercent": null,
+      "pageCount": null,
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}

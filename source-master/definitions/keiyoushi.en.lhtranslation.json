@@ -1,33 +1,28 @@
 {
-  "adultContent": true,
-  "appStoreSafe": true,
-  "baseUrl": "https://www.manhwaden.com",
-  "base_url": "https://www.manhwaden.com",
-  "browserVerificationRequired": true,
+  "adultContent": false,
+  "baseUrl": "https://lhtranslation.net",
+  "base_url": "https://lhtranslation.net",
   "connectorEngine": "madara",
-  "containsExecutableCode": false,
-  "description": "ManhwaDen public catalog with WordPress search pagination and verified chapter/image delivery.",
-  "displayName": "ManhwaDen",
+  "description": "LHTranslation public catalog with WordPress search pagination and verified chapter/image delivery.",
+  "displayName": "LHTranslation",
   "extends": "madara",
   "flags": {
-    "browserVerificationRequired": true,
-    "isMadara": true,
-    "uses_cloudflare": true
+    "isMadara": true
   },
-  "id": "keiyoushi.en.manhwaden",
+  "id": "keiyoushi.en.lhtranslation",
   "language": "en",
-  "name": "ManhwaDen",
-  "nsfw": true,
+  "name": "LHTranslation",
+  "nsfw": false,
   "provenance": {
-    "analyzerBucket": "curated_source_master_overlay",
+    "analyzerBucket": "direct_multisrc_candidate",
     "baseUrlSource": "build_gradle",
     "ecosystem": "keiyoushi",
-    "originalExtClass": ".ManhwaDen",
+    "originalExtClass": ".LHTranslation",
     "originalFamily": "Madara",
     "originalLanguage": "en",
-    "originalSourceName": "manhwaden",
-    "originalSourcePath": "src/en/manhwaden",
-    "originalVersion": "0"
+    "originalSourceName": "lhtranslation",
+    "originalSourcePath": "src/en/lhtranslation",
+    "originalVersion": "2"
   },
   "rateLimit": {
     "minDelayMs": 1000,
@@ -35,19 +30,19 @@
   },
   "rate_limit_ms": 1000,
   "region": "en",
-  "requiresExternalBridge": false,
   "schemaVersion": "1.0",
-  "sessionScopeDomain": "www.manhwaden.com",
   "sourceDefinitionKind": "curated_source_config",
-  "sourceId": "keiyoushi.en.manhwaden",
+  "sourceId": "keiyoushi.en.lhtranslation",
   "sourceType": "madara",
   "tags": [
     "Keiyoushi",
     "Madara",
-    "Curated"
+    "Converted"
   ],
-  "verificationUrl": "https://www.manhwaden.com",
-  "version": "1.1.1",
+  "version": "1.0.1",
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
   "downloadPolicy": {
     "transport": "automatic",
     "maximumConcurrentPages": 1,
@@ -63,7 +58,7 @@
     "filters": false,
     "imagePages": true,
     "textPages": false,
-    "browserVerification": true,
+    "browserVerification": false,
     "listings": [
       "popular",
       "latest"

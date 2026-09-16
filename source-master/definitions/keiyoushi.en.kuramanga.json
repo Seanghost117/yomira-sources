@@ -1,117 +1,134 @@
 {
-  "schemaVersion": "1.0",
-  "sourceDefinitionKind": "curated_source_config",
-  "id": "keiyoushi.en.kuramanga",
-  "sourceId": "keiyoushi.en.kuramanga",
-  "name": "KuraManga",
-  "displayName": "KuraManga",
-  "version": "1.0.0",
-  "connectorEngine": "selector",
-  "sourceType": "selector",
-  "base_url": "https://kuramanga.com",
-  "baseUrl": "https://kuramanga.com",
-  "language": "en",
-  "region": "en",
-  "nsfw": true,
   "adultContent": true,
-  "description": "Selector source definition normalized from the current Keiyoushi KuraManga HttpSource metadata.",
-  "tags": [
-    "Keiyoushi",
-    "Selector",
-    "Curated"
-  ],
   "appStoreSafe": true,
+  "baseUrl": "https://kuramanga.com",
+  "base_url": "https://kuramanga.com",
+  "connectorEngine": "selector",
   "containsExecutableCode": false,
-  "requiresExternalBridge": false,
+  "description": "KuraManga public reader. Search returns the first result batch; offset pagination is not supported by this connector profile.",
+  "displayName": "KuraManga",
+  "endpoints": {
+    "chapters": {
+      "method": "GET",
+      "url": "{base}/{id}"
+    },
+    "details": {
+      "method": "GET",
+      "url": "{base}/{id}"
+    },
+    "latest": {
+      "method": "GET",
+      "url": "{base}/"
+    },
+    "pages": {
+      "method": "GET",
+      "url": "{chapter_url}"
+    },
+    "popular": {
+      "method": "GET",
+      "url": "{base}/"
+    },
+    "search": {
+      "method": "GET",
+      "url": "{base}/search?name={query}&offset=0&ajax=1"
+    }
+  },
   "flags": {
     "is_madara": false,
     "requires_js": false,
     "uses_cloudflare": false
   },
-  "rate_limit_ms": 1000,
+  "id": "keiyoushi.en.kuramanga",
+  "language": "en",
+  "name": "KuraManga",
+  "nsfw": true,
+  "presentation": {
+    "latestLabel": "Latest Updates",
+    "latestStyle": "sliding_list",
+    "popularLabel": "Popular",
+    "popularStyle": "carousel",
+    "primaryListing": "latest"
+  },
+  "provenance": {
+    "analyzerBucket": "curated_selector_profile",
+    "ecosystem": "keiyoushi",
+    "originalExtClass": ".KuraManga",
+    "originalFamily": "HttpSource",
+    "originalLanguage": "en",
+    "originalSourceName": "kuramanga",
+    "originalSourcePath": "src/en/kuramanga"
+  },
   "rateLimit": {
     "minDelayMs": 1000,
     "requestsPerMinute": 60
   },
-  "endpoints": {
-    "search": {
-      "url": "{base}/search?name={query}&offset=0&ajax=1",
-      "method": "GET"
-    },
-    "popular": {
-      "url": "{base}/",
-      "method": "GET"
-    },
-    "latest": {
-      "url": "{base}/",
-      "method": "GET"
-    },
-    "details": {
-      "url": "{base}/{id}",
-      "method": "GET"
-    },
-    "chapters": {
-      "url": "{base}/{id}",
-      "method": "GET"
-    },
-    "pages": {
-      "url": "{chapter_url}",
-      "method": "GET"
-    }
-  },
+  "rate_limit_ms": 1000,
+  "region": "en",
+  "requiresExternalBridge": false,
+  "schemaVersion": "1.0",
   "selectors": {
-    "manga_list": {
-      "container": ".update-list .update-row, .popular-glide .manga-card",
-      "title": "a.update-series-link@text || .manga-title@text || a@title || a@text",
-      "cover": ".update-thumb img@src || img.manga-thumb@src || img@src",
-      "link": "a.update-series-link@href || .update-thumb@href || a@href"
-    },
-    "manga_details": {
-      "title": "h1.manga-title@text || meta[property='og:title']@content",
-      "cover": "img.manga-thumb@src || meta[property='og:image']@content",
-      "description": ".summary-inner@text || meta[name='description']@content",
-      "authors": ".meta-grid div:contains('Author:') a@text || .meta-grid div:contains('Author:')@text",
-      "artists": ".meta-grid div:contains('Artist:') a@text || .meta-grid div:contains('Artist:')@text",
-      "genres": ".genre-list a.genre-chip@text",
-      "status": ".meta-grid div:contains('Status:')@text"
-    },
     "chapter_list": {
       "container": ".chapter-list .chapter-item",
-      "title": "a@text",
-      "link": "a@href",
       "date": "time@datetime || time@text",
-      "number_regex": "(?i)(?:chapter[\\s/\\-_]*|/chapter-)([0-9]+(?:\\.[0-9]+)?)"
+      "link": "a@href",
+      "number_regex": "(?i)(?:chapter[\\s/\\-_]*|/chapter-)([0-9]+(?:\\.[0-9]+)?)",
+      "title": "a@text"
+    },
+    "manga_details": {
+      "artists": ".meta-grid div:contains('Artist:') a@text || .meta-grid div:contains('Artist:')@text",
+      "authors": ".meta-grid div:contains('Author:') a@text || .meta-grid div:contains('Author:')@text",
+      "cover": "img.manga-thumb@src || meta[property='og:image']@content",
+      "description": ".summary-inner@text || meta[name='description']@content",
+      "genres": ".genre-list a.genre-chip@text",
+      "status": ".meta-grid div:contains('Status:')@text",
+      "title": "h1.manga-title@text || meta[property='og:title']@content"
+    },
+    "manga_list": {
+      "container": ".update-list .update-row, .popular-glide .manga-card",
+      "cover": ".update-thumb img@src || img.manga-thumb@src || img@src",
+      "link": "a.update-series-link@href || .update-thumb@href || a@href",
+      "title": "a.update-series-link@text || .manga-title@text || a@title || a@text"
     },
     "page_list": {
       "container": ".chapter-images, #chapterImages",
-      "image": "img@data-src || img@src",
       "exclude": [
         ".svg",
         "logo",
         "icon",
         "avatar",
         "blank"
-      ]
+      ],
+      "image": "img@data-src || img@src"
     }
   },
-  "pagination": {
-    "param": "offset",
-    "start": 0
+  "sourceDefinitionKind": "curated_source_config",
+  "sourceId": "keiyoushi.en.kuramanga",
+  "sourceType": "selector",
+  "tags": [
+    "Keiyoushi",
+    "Selector",
+    "Curated"
+  ],
+  "version": "1.0.1",
+  "downloadPolicy": {
+    "transport": "automatic",
+    "maximumConcurrentPages": 1,
+    "maximumAttempts": 4
   },
-  "presentation": {
-    "primaryListing": "latest",
-    "latestLabel": "Latest Updates",
-    "latestStyle": "sliding_list",
-    "popularLabel": "Popular",
-    "popularStyle": "carousel"
-  },
-  "provenance": {
-    "ecosystem": "keiyoushi",
-    "originalSourcePath": "src/en/kuramanga",
-    "originalFamily": "HttpSource",
-    "originalLanguage": "en",
-    "originalSourceName": "kuramanga",
-    "originalExtClass": ".KuraManga",
-    "analyzerBucket": "curated_selector_profile"
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "pagination": false,
+    "filters": false,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "popular",
+      "latest"
+    ]
   }
 }
