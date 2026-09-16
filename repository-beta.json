@@ -2,12 +2,12 @@
   "schemaVersion": "1.0",
   "repositoryId": "yomira.sources.internal-beta",
   "displayName": "Yomira Sources Internal Beta",
-  "description": "Six verified priority Source Definitions for the internal reader beta; broad pending packs are excluded.",
+  "description": "Nine verified priority manga/manhwa sources for the internal reader beta.",
   "maintainerName": "Yomira",
   "maintainerUrl": "https://github.com/Seanghost117",
   "homepageUrl": "https://github.com/Seanghost117/yomira-sources/tree/release/internal-reader-beta",
   "termsUrl": "https://github.com/Seanghost117/yomira-sources",
-  "updatedAt": "2026-09-07T17:20:00Z",
+  "updatedAt": "2026-09-16T17:50:28Z",
   "releasePolicy": {
     "channels": [
       "canary"
@@ -22,10 +22,10 @@
     {
       "packId": "yomira-reader-beta",
       "displayName": "Yomira Reader Beta Source Pack",
-      "description": "Six verified priority sources for the internal reader beta.",
-      "version": "2026.09.07.1",
-      "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/release/internal-reader-beta/releases/2026.09.07.1/yomira-reader-beta/source-pack.json",
-      "checksum": "sha256:7dc0eb45125199bb6720f1bd4cdc218d6f14e2941f8cc10c29ed17281a6451d5",
+      "description": "Nine verified priority manga/manhwa sources for the internal reader beta.",
+      "version": "2026.09.16.1",
+      "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/release/internal-reader-beta/releases/2026.09.16.1/yomira-reader-beta/source-pack.json",
+      "checksum": "sha256:42fbd2de2dcb7dd1e737643c929e3fb43ed67a3eac8772014b8b403c24036cb5",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "global",
@@ -36,19 +36,19 @@
         "self_hosted",
         "internal"
       ],
-      "sourceCount": 6,
+      "sourceCount": 9,
       "artifactKind": "source_pack",
       "releaseChannel": "canary",
       "contractTier": "live",
       "contractStatus": "passed",
-      "publishedAt": "2026-09-07T17:20:00Z",
+      "publishedAt": "2026-09-16T17:50:28Z",
       "releaseNotes": [
-        "Internal reader beta Source Pack containing only the six priority Source Definitions with complete bounded live contracts.",
-        "Preserves existing Atsumaru, MangaPill, ManhuaPlus, S2Read, MangaK and ManhwaTop Source Definition identities, configurations and download policies.",
-        "Canary release for internal beta acceptance; the 421-definition expanded and 27-definition curated packs remain pending and are not delivered by this feed.",
-        "Actual first-image bytes are checked; authorized iOS device and daily-use acceptance remain separate."
+        "Expanded verified reader beta from six to nine sources: adds MangaDex, MangaKatana and repaired Asura Scans.",
+        "Asura uses current browse/comics routes, deduplicated responsive listings and the full chapter image list. Legacy source IDs and existing download policies are preserved.",
+        "Comix, MangaFire and WeebCentral remain tracked candidates, excluded from verified delivery because live acceptance failed.",
+        "Canary only. Bounded live checks include search pagination where supported, details, chapters, multiple Asura pages and actual first-image bytes. Physical-device acceptance is separate."
       ],
-      "updatedAt": "2026-09-07T17:20:00Z"
+      "updatedAt": "2026-09-16T17:50:28Z"
     }
   ]
 }

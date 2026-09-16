@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAtUnix": 1789580928,
+  "packId": "yomira-priority",
+  "live": true,
+  "testedCount": 1,
+  "passedCount": 0,
+  "warningCount": 0,
+  "skippedCount": 0,
+  "failedCount": 1,
+  "regressionCount": 0,
+  "regressions": [],
+  "repairedFixtureIds": {},
+  "results": [
+    {
+      "sourceId": "asurascans",
+      "displayName": "Asura Scans",
+      "status": "failed",
+      "live": true,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": true,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities",
+        "browse:popular",
+        "browse:latest",
+        "search",
+        "pagination",
+        "details",
+        "chapters",
+        "pages",
+        "image"
+      ],
+      "sectionHealth": {
+        "browse:latest": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "browse:popular": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "chapters": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "details": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "image": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pages": {
+          "status": "failed",
+          "issueCodes": [
+            "SOURCE_EMPTY_RESPONSE"
+          ]
+        },
+        "pagination": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "search": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": 2,
+      "browseResultCounts": {
+        "latest": 20,
+        "popular": 20
+      },
+      "paginationResultCounts": {
+        "page1": 20,
+        "page2": 20
+      },
+      "coverCoveragePercent": {
+        "browse:latest": 100,
+        "browse:popular": 100,
+        "search": 100
+      },
+      "chapterCount": 201,
+      "latestChapterNumber": 201.0,
+      "numberedChapterCoveragePercent": 100,
+      "pageCount": 1,
+      "warnings": [],
+      "errors": [
+        {
+          "sourceId": "asurascans",
+          "stage": "pages",
+          "code": "SOURCE_EMPTY_RESPONSE",
+          "message": "Expected at least 5 item(s), received 1.",
+          "retryable": false
+        }
+      ]
+    }
+  ]
+}

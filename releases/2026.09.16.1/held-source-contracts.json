@@ -1,0 +1,405 @@
+{
+  "schemaVersion": "1.0",
+  "status": "failed_not_in_verified_feed",
+  "inputPackChecksum": "sha256:9fdb97da8275b31996f7078c06dd829e2a1b5da39a8ba7e26368e4cbd92f37ee",
+  "reports": [
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789580347,
+      "packId": "yomira-priority",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "comix",
+          "displayName": "Comix",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": false,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE",
+                "SOURCE_MEDIA_UNAVAILABLE"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE",
+                "SOURCE_MEDIA_UNAVAILABLE"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_INVALID_PAYLOAD"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {
+            "latest": 0,
+            "popular": 0
+          },
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {
+            "browse:latest": 0,
+            "browse:popular": 0
+          },
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "comix",
+              "stage": "browse:popular",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "Expected at least 1 item(s), received 0.",
+              "retryable": false
+            },
+            {
+              "sourceId": "comix",
+              "stage": "browse:popular",
+              "code": "SOURCE_MEDIA_UNAVAILABLE",
+              "message": "Browse results did not include a usable cover URL.",
+              "retryable": false
+            },
+            {
+              "sourceId": "comix",
+              "stage": "browse:latest",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "Expected at least 1 item(s), received 0.",
+              "retryable": false
+            },
+            {
+              "sourceId": "comix",
+              "stage": "browse:latest",
+              "code": "SOURCE_MEDIA_UNAVAILABLE",
+              "message": "Browse results did not include a usable cover URL.",
+              "retryable": false
+            },
+            {
+              "sourceId": "comix",
+              "stage": "search",
+              "code": "SOURCE_INVALID_PAYLOAD",
+              "message": "The source returned a payload the built-in connector could not use.",
+              "retryable": false
+            },
+            {
+              "sourceId": "comix",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789580346,
+      "packId": "yomira-priority",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "mangafire",
+          "displayName": "MangaFire",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": true,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE",
+                "SOURCE_MEDIA_UNAVAILABLE"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE",
+                "SOURCE_MEDIA_UNAVAILABLE"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE",
+                "SOURCE_MEDIA_UNAVAILABLE"
+              ]
+            }
+          },
+          "searchResultCount": 0,
+          "browseResultCounts": {
+            "latest": 0,
+            "popular": 0
+          },
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {
+            "browse:latest": 0,
+            "browse:popular": 0,
+            "search": 0
+          },
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "mangafire",
+              "stage": "browse:popular",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "Expected at least 1 item(s), received 0.",
+              "retryable": false
+            },
+            {
+              "sourceId": "mangafire",
+              "stage": "browse:popular",
+              "code": "SOURCE_MEDIA_UNAVAILABLE",
+              "message": "Browse results did not include a usable cover URL.",
+              "retryable": false
+            },
+            {
+              "sourceId": "mangafire",
+              "stage": "browse:latest",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "Expected at least 1 item(s), received 0.",
+              "retryable": false
+            },
+            {
+              "sourceId": "mangafire",
+              "stage": "browse:latest",
+              "code": "SOURCE_MEDIA_UNAVAILABLE",
+              "message": "Browse results did not include a usable cover URL.",
+              "retryable": false
+            },
+            {
+              "sourceId": "mangafire",
+              "stage": "search",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "Expected at least 1 item(s), received 0.",
+              "retryable": false
+            },
+            {
+              "sourceId": "mangafire",
+              "stage": "search",
+              "code": "SOURCE_MEDIA_UNAVAILABLE",
+              "message": "Search results did not include a usable cover URL.",
+              "retryable": false
+            },
+            {
+              "sourceId": "mangafire",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schemaVersion": "1.0",
+      "generatedAtUnix": 1789580310,
+      "packId": "yomira-priority",
+      "live": true,
+      "testedCount": 1,
+      "passedCount": 0,
+      "warningCount": 0,
+      "skippedCount": 0,
+      "failedCount": 1,
+      "regressionCount": 0,
+      "regressions": [],
+      "repairedFixtureIds": {},
+      "results": [
+        {
+          "sourceId": "keiyoushi.en.weebcentral",
+          "displayName": "Weeb Central",
+          "status": "failed",
+          "live": true,
+          "explicitlyDeclaredCapabilities": false,
+          "capabilities": {
+            "browse": true,
+            "browserVerification": true,
+            "chapters": true,
+            "details": true,
+            "explicitlyDeclared": false,
+            "filters": false,
+            "imagePages": true,
+            "listings": [
+              "latest",
+              "popular"
+            ],
+            "pages": true,
+            "pagination": true,
+            "search": true,
+            "textPages": false
+          },
+          "checkedStages": [
+            "capabilities",
+            "browse:popular",
+            "browse:latest",
+            "search"
+          ],
+          "sectionHealth": {
+            "browse:latest": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "browse:popular": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            },
+            "capabilities": {
+              "status": "passed",
+              "issueCodes": []
+            },
+            "discovery": {
+              "status": "failed",
+              "issueCodes": [
+                "SOURCE_EMPTY_RESPONSE"
+              ]
+            },
+            "search": {
+              "status": "failed",
+              "issueCodes": [
+                "BROWSER_VERIFICATION_REQUIRED"
+              ]
+            }
+          },
+          "searchResultCount": null,
+          "browseResultCounts": {},
+          "paginationResultCounts": {},
+          "coverCoveragePercent": {},
+          "chapterCount": null,
+          "latestChapterNumber": null,
+          "numberedChapterCoveragePercent": null,
+          "pageCount": null,
+          "warnings": [],
+          "errors": [
+            {
+              "sourceId": "keiyoushi.en.weebcentral",
+              "stage": "browse:popular",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.weebcentral",
+              "stage": "browse:latest",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.weebcentral",
+              "stage": "search",
+              "code": "BROWSER_VERIFICATION_REQUIRED",
+              "message": "Browser Verification is required before this live contract can continue.",
+              "retryable": false
+            },
+            {
+              "sourceId": "keiyoushi.en.weebcentral",
+              "stage": "discovery",
+              "code": "SOURCE_EMPTY_RESPONSE",
+              "message": "No browse or search result was available for dependent contract stages.",
+              "retryable": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

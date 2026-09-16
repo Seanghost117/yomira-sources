@@ -15,9 +15,11 @@ BASE_REVISION = "b4ec392f28f03d88a67f8fb2f8f35504354e9102"
 RAW_PREFIX = "https://raw.githubusercontent.com/Seanghost117/yomira-sources/release/internal-reader-beta/"
 PACK_IDS = {"yomira-reader-beta"}
 BASE_PACK_ID = "keiyoushi-core-expanded"
+CURATED_PACK_ID = "yomira-curated"
 PRIORITY_SOURCE_IDS = {
     "keiyoushi.en.atsumaru", "keiyoushi.en.mangapill", "keiyoushi.en.manhuaplus",
     "keiyoushi.en.s2manga", "keiyoushi.en.mangabuddy", "keiyoushi.en.manhwatop",
+    "yomira.en.mangadex", "keiyoushi.en.mangakatana", "asurascans",
 }
 
 
@@ -41,7 +43,7 @@ def validate_beta(root: Path) -> list[str]:
             errors.append(f"beta: release policy changed: {key}")
     entries = repository.get("sourcePacks", [])
     if {entry.get("packId") for entry in entries} != PACK_IDS or len(entries) != 1:
-        errors.append("beta: expected only the six-source reader beta pack")
+        errors.append("beta: expected only the verified reader beta pack")
     for entry in entries:
         pack_id = entry.get("packId")
         if pack_id not in PACK_IDS:
@@ -72,7 +74,20 @@ def validate_beta(root: Path) -> list[str]:
             errors.append(f"{pack_id}: priority beta must remain canary/passed")
         current_definitions = {value.get("sourceId", value.get("id")): value for value in pack.get("definitions", [])}
         expected_definitions = {value.get("sourceId", value.get("id")): value for value in baseline.get("definitions", []) if value.get("sourceId", value.get("id")) in PRIORITY_SOURCE_IDS}
-        if current_definitions != expected_definitions or len(pack.get("definitions", [])) != 6:
+        curated = git_json(BASE_REVISION, Path("packs") / CURATED_PACK_ID / "source-pack.json", root)
+        for value in (curated or {}).get("definitions", []):
+            identity = value.get("sourceId", value.get("id"))
+            if identity in {"yomira.en.mangadex", "keiyoushi.en.mangakatana"}:
+                expected_definitions[identity] = value
+        try:
+            asura = json.loads((root / "source-master/definitions/asurascans.json").read_text())
+            legacy_asura = json.loads((root / "sources/asurascans.json").read_text())
+            if asura != legacy_asura or asura.get("id") != "asurascans" or asura.get("sourceId") != "asurascans":
+                errors.append(f"{pack_id}: preserve Asura standalone and curated identity/configuration")
+            expected_definitions["asurascans"] = asura
+        except (OSError, ValueError):
+            errors.append(f"{pack_id}: missing or invalid Asura source definition")
+        if current_definitions != expected_definitions or len(pack.get("definitions", [])) != len(PRIORITY_SOURCE_IDS):
             errors.append(f"{pack_id}: candidate must preserve the baseline definitions, identities and policies")
         try:
             if tuple(map(int, version.split("."))) <= tuple(map(int, baseline["version"].split("."))):
@@ -100,15 +115,20 @@ def validate_beta(root: Path) -> list[str]:
             errors.append(f"{pack_id}: live evidence input checksum mismatch")
         if proof.get("checks", {}).get("priorityLiveContracts", {}).get("reportSha256") != hashlib.sha256(report_raw).hexdigest():
             errors.append(f"{pack_id}: live evidence report checksum mismatch")
-        if report.get("packId") != pack_id or report.get("live") is not True or report.get("testedCount") != 6 or report.get("passedCount") != 6:
+        if report.get("packId") != pack_id or report.get("live") is not True or report.get("testedCount") != len(PRIORITY_SOURCE_IDS) or report.get("passedCount") != len(PRIORITY_SOURCE_IDS) or any(report.get(field) != 0 for field in ("failedCount", "warningCount", "skippedCount")):
             errors.append(f"{pack_id}: complete live acceptance required")
         results = report.get("results", [])
-        if len(results) != 6 or {result.get("sourceId") for result in results} != PRIORITY_SOURCE_IDS:
-            errors.append(f"{pack_id}: live result identities must match the six priority sources")
+        if len(results) != len(PRIORITY_SOURCE_IDS) or {result.get("sourceId") for result in results} != PRIORITY_SOURCE_IDS:
+            errors.append(f"{pack_id}: live result identities must match the priority sources")
         for result in results:
-            required = ("capabilities", "search", "details", "chapters", "pages", "image")
+            required = ["capabilities", "search", "details", "chapters", "pages", "image"]
+            if result.get("capabilities", {}).get("pagination"):
+                required.append("pagination")
+            required.extend(stage for stage in result.get("checkedStages", []) if stage.startswith("browse:"))
             if result.get("status") != "passed" or result.get("live") is not True or any(result.get("sectionHealth", {}).get(stage, {}).get("status") != "passed" for stage in required):
                 errors.append(f"{pack_id}: incomplete live flow: {result.get('sourceId')}")
+            if result.get("sourceId") == "asurascans" and (result.get("pageCount") or 0) < 5:
+                errors.append(f"{pack_id}: Asura must return multiple chapter pages")
         if gate.get("canPublish") is not True or gate.get("channel") != "canary" or gate.get("repositoryId") != repository.get("repositoryId") or gate.get("repositoryUpdatedAt") != repository.get("updatedAt") or gate.get("packVersions") != {pack_id: version}:
             errors.append(f"{pack_id}: matching publishable canary gate required")
     return errors

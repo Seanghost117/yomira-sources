@@ -1,0 +1,821 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAtUnix": 1789581171,
+  "packId": "yomira-reader-beta",
+  "live": true,
+  "testedCount": 9,
+  "passedCount": 9,
+  "warningCount": 0,
+  "skippedCount": 0,
+  "failedCount": 0,
+  "regressionCount": 0,
+  "regressions": [],
+  "repairedFixtureIds": {},
+  "results": [
+    {
+      "sourceId": "yomira.en.mangadex",
+      "displayName": "MangaDex",
+      "status": "passed",
+      "live": true,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": true,
+        "imagePages": true,
+        "listings": [
+          "popular_new",
+          "latest",
+          "recent",
+          "seasonal",
+          "popular"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities",
+        "browse:latest",
+        "browse:recent",
+        "search",
+        "pagination",
+        "details",
+        "chapters",
+        "pages",
+        "image"
+      ],
+      "sectionHealth": {
+        "browse:latest": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "browse:recent": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "chapters": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "details": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "image": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pages": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pagination": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "search": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": 20,
+      "browseResultCounts": {
+        "latest": 20,
+        "recent": 20
+      },
+      "paginationResultCounts": {
+        "page1": 20,
+        "page2": 20
+      },
+      "coverCoveragePercent": {
+        "browse:latest": 100,
+        "browse:recent": 100,
+        "search": 100
+      },
+      "chapterCount": 159,
+      "latestChapterNumber": 154.0,
+      "numberedChapterCoveragePercent": 100,
+      "pageCount": 2,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.mangakatana",
+      "displayName": "MangaKatana",
+      "status": "passed",
+      "live": true,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities",
+        "browse:latest",
+        "search",
+        "pagination",
+        "details",
+        "chapters",
+        "pages",
+        "image"
+      ],
+      "sectionHealth": {
+        "browse:latest": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "chapters": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "details": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "image": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pages": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pagination": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "search": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": 5,
+      "browseResultCounts": {
+        "latest": 20
+      },
+      "paginationResultCounts": {
+        "page1": 20,
+        "page2": 19
+      },
+      "coverCoveragePercent": {
+        "browse:latest": 100,
+        "search": 100
+      },
+      "chapterCount": 1199,
+      "latestChapterNumber": 1199.0,
+      "numberedChapterCoveragePercent": 100,
+      "pageCount": 17,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.atsumaru",
+      "displayName": "Atsumaru",
+      "status": "passed",
+      "live": true,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": true,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities",
+        "browse:popular",
+        "browse:latest",
+        "search",
+        "pagination",
+        "details",
+        "chapters",
+        "pages",
+        "image"
+      ],
+      "sectionHealth": {
+        "browse:latest": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "browse:popular": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "chapters": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "details": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "image": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pages": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pagination": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "search": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": 7,
+      "browseResultCounts": {
+        "latest": 40,
+        "popular": 40
+      },
+      "paginationResultCounts": {
+        "page1": 40,
+        "page2": 40
+      },
+      "coverCoveragePercent": {
+        "browse:latest": 100,
+        "browse:popular": 100,
+        "search": 100
+      },
+      "chapterCount": 802,
+      "latestChapterNumber": 200.0,
+      "numberedChapterCoveragePercent": 99,
+      "pageCount": 49,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.mangapill",
+      "displayName": "MangaPill",
+      "status": "passed",
+      "live": true,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": false,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities",
+        "browse:popular",
+        "browse:latest",
+        "search",
+        "details",
+        "chapters",
+        "pages",
+        "image"
+      ],
+      "sectionHealth": {
+        "browse:latest": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "browse:popular": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "chapters": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "details": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "image": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pages": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "search": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": 6,
+      "browseResultCounts": {
+        "latest": 120,
+        "popular": 40
+      },
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {
+        "browse:latest": 100,
+        "browse:popular": 100,
+        "search": 100
+      },
+      "chapterCount": 281,
+      "latestChapterNumber": 281.0,
+      "numberedChapterCoveragePercent": 100,
+      "pageCount": 16,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.mangabuddy",
+      "displayName": "MangaK",
+      "status": "passed",
+      "live": true,
+      "explicitlyDeclaredCapabilities": false,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": false,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "hot_week",
+          "latest",
+          "popular",
+          "ranking",
+          "trending"
+        ],
+        "pages": true,
+        "pagination": false,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities",
+        "browse:latest",
+        "search",
+        "details",
+        "chapters",
+        "pages",
+        "image"
+      ],
+      "sectionHealth": {
+        "browse:latest": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "chapters": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "details": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "image": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pages": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "search": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": 24,
+      "browseResultCounts": {
+        "latest": 24
+      },
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {
+        "browse:latest": 100,
+        "search": 100
+      },
+      "chapterCount": 50,
+      "latestChapterNumber": 1193.0,
+      "numberedChapterCoveragePercent": 100,
+      "pageCount": 17,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.manhuaplus",
+      "displayName": "Manhua Plus",
+      "status": "passed",
+      "live": true,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": true,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": false,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities",
+        "browse:popular",
+        "browse:latest",
+        "search",
+        "details",
+        "chapters",
+        "pages",
+        "image"
+      ],
+      "sectionHealth": {
+        "browse:latest": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "browse:popular": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "chapters": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "details": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "image": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pages": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "search": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": 3,
+      "browseResultCounts": {
+        "latest": 12,
+        "popular": 12
+      },
+      "paginationResultCounts": {},
+      "coverCoveragePercent": {
+        "browse:latest": 100,
+        "browse:popular": 100,
+        "search": 100
+      },
+      "chapterCount": 3364,
+      "latestChapterNumber": 3862.0,
+      "numberedChapterCoveragePercent": 100,
+      "pageCount": 12,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwatop",
+      "displayName": "Manhwatop",
+      "status": "passed",
+      "live": true,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "latest",
+          "popular"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities",
+        "browse:latest",
+        "browse:popular",
+        "search",
+        "pagination",
+        "details",
+        "chapters",
+        "pages",
+        "image"
+      ],
+      "sectionHealth": {
+        "browse:latest": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "browse:popular": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "chapters": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "details": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "image": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pages": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pagination": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "search": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": 12,
+      "browseResultCounts": {
+        "latest": 12,
+        "popular": 12
+      },
+      "paginationResultCounts": {
+        "page1": 12,
+        "page2": 12
+      },
+      "coverCoveragePercent": {
+        "browse:latest": 100,
+        "browse:popular": 100,
+        "search": 100
+      },
+      "chapterCount": 47,
+      "latestChapterNumber": 47.0,
+      "numberedChapterCoveragePercent": 100,
+      "pageCount": 83,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "keiyoushi.en.s2manga",
+      "displayName": "S2Read",
+      "status": "passed",
+      "live": true,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": false,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "latest",
+          "popular"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities",
+        "browse:latest",
+        "browse:popular",
+        "search",
+        "pagination",
+        "details",
+        "chapters",
+        "pages",
+        "image"
+      ],
+      "sectionHealth": {
+        "browse:latest": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "browse:popular": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "chapters": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "details": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "image": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pages": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pagination": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "search": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": 1,
+      "browseResultCounts": {
+        "latest": 12,
+        "popular": 12
+      },
+      "paginationResultCounts": {
+        "page1": 12,
+        "page2": 12
+      },
+      "coverCoveragePercent": {
+        "browse:latest": 100,
+        "browse:popular": 100,
+        "search": 100
+      },
+      "chapterCount": 385,
+      "latestChapterNumber": 401.0,
+      "numberedChapterCoveragePercent": 100,
+      "pageCount": 8,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "sourceId": "asurascans",
+      "displayName": "Asura Scans",
+      "status": "passed",
+      "live": true,
+      "explicitlyDeclaredCapabilities": true,
+      "capabilities": {
+        "browse": true,
+        "browserVerification": true,
+        "chapters": true,
+        "details": true,
+        "explicitlyDeclared": true,
+        "filters": false,
+        "imagePages": true,
+        "listings": [
+          "popular",
+          "latest"
+        ],
+        "pages": true,
+        "pagination": true,
+        "search": true,
+        "textPages": false
+      },
+      "checkedStages": [
+        "capabilities",
+        "browse:popular",
+        "browse:latest",
+        "search",
+        "pagination",
+        "details",
+        "chapters",
+        "pages",
+        "image"
+      ],
+      "sectionHealth": {
+        "browse:latest": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "browse:popular": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "capabilities": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "chapters": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "details": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "image": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pages": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "pagination": {
+          "status": "passed",
+          "issueCodes": []
+        },
+        "search": {
+          "status": "passed",
+          "issueCodes": []
+        }
+      },
+      "searchResultCount": 2,
+      "browseResultCounts": {
+        "latest": 20,
+        "popular": 20
+      },
+      "paginationResultCounts": {
+        "page1": 20,
+        "page2": 20
+      },
+      "coverCoveragePercent": {
+        "browse:latest": 100,
+        "browse:popular": 100,
+        "search": 100
+      },
+      "chapterCount": 201,
+      "latestChapterNumber": 201.0,
+      "numberedChapterCoveragePercent": 100,
+      "pageCount": 15,
+      "warnings": [],
+      "errors": []
+    }
+  ]
+}

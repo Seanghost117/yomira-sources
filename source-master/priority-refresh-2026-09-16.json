@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "1.0",
+  "checkedAt": "2026-09-16",
+  "scope": "Twelve prioritized English manga/manhwa/manhua candidates; not a definitive global top-12 ranking.",
+  "selectionMethod": "Prioritize available traffic evidence and recent category rankings, then continuity with the six verified beta sources. Different months and domains are not treated as directly comparable. Missing estimates remain null.",
+  "sourceCount": 12,
+  "verifiedCount": 9,
+  "entries": [
+    {
+      "sourceId": "comix",
+      "name": "Comix",
+      "url": "https://comix.to",
+      "definition": "sources/comix.json",
+      "status": "held_from_verified_feed",
+      "estimatedMonthlyVisits": null,
+      "trafficMonth": null,
+      "trafficEvidenceUrl": "https://www.similarweb.com/top-websites/arts-and-entertainment/animation-and-comics/",
+      "selectionNotes": "August 2026 animation/comics category #2; category includes non-manga sites.",
+      "baselineIssueCodes": [
+        "SOURCE_EMPTY_RESPONSE",
+        "SOURCE_INVALID_PAYLOAD",
+        "SOURCE_MEDIA_UNAVAILABLE"
+      ],
+      "blocker": "Public origin challenge observed; installed selector also returned empty/invalid discovery. Needs supported connector work and complete live acceptance; a session alone is not proven sufficient."
+    },
+    {
+      "sourceId": "asurascans",
+      "name": "Asura Scans",
+      "url": "https://asurascans.com",
+      "definition": "sources/asurascans.json",
+      "status": "verified_canary",
+      "estimatedMonthlyVisits": null,
+      "trafficMonth": null,
+      "trafficEvidenceUrl": "https://www.similarweb.com/top-websites/arts-and-entertainment/animation-and-comics/",
+      "selectionNotes": "August 2026 animation/comics category #3; canonical current domain confirmed directly.",
+      "baselineIssueCodes": [
+        "SOURCE_EMPTY_RESPONSE",
+        "SOURCE_INVALID_PAYLOAD",
+        "SOURCE_MEDIA_UNAVAILABLE"
+      ],
+      "blocker": null
+    },
+    {
+      "sourceId": "yomira.en.mangadex",
+      "name": "MangaDex",
+      "url": "https://mangadex.org",
+      "definition": "source-master/definitions/yomira.en.mangadex.json",
+      "status": "verified_canary",
+      "estimatedMonthlyVisits": 272260000,
+      "trafficMonth": "2026-07",
+      "trafficEvidenceUrl": "https://www.semrush.com/website/mangadex.org/overview/",
+      "selectionNotes": "Monthly visits estimate.",
+      "baselineIssueCodes": [],
+      "blocker": null
+    },
+    {
+      "sourceId": "mangafire",
+      "name": "MangaFire",
+      "url": "https://mangafire.to",
+      "definition": "sources/mangafire.json",
+      "status": "held_from_verified_feed",
+      "estimatedMonthlyVisits": 199810000,
+      "trafficMonth": "2026-07",
+      "trafficEvidenceUrl": "https://pt.semrush.com/website/mangafire.to/overview/",
+      "selectionNotes": "Monthly visits estimate.",
+      "baselineIssueCodes": [
+        "SOURCE_EMPTY_RESPONSE",
+        "SOURCE_MEDIA_UNAVAILABLE"
+      ],
+      "blocker": "Public origin challenge observed; installed selector also returned empty/invalid discovery. Needs supported connector work and complete live acceptance; a session alone is not proven sufficient."
+    },
+    {
+      "sourceId": "keiyoushi.en.weebcentral",
+      "name": "WeebCentral",
+      "url": "https://weebcentral.com",
+      "definition": "source-master/definitions/keiyoushi.en.weebcentral.json",
+      "status": "held_from_verified_feed",
+      "estimatedMonthlyVisits": 95720000,
+      "trafficMonth": "2026-07",
+      "trafficEvidenceUrl": "https://www.semrush.com/website/weebcentral.com/overview/",
+      "selectionNotes": "Monthly visits estimate.",
+      "baselineIssueCodes": [
+        "BROWSER_VERIFICATION_REQUIRED",
+        "SOURCE_EMPTY_RESPONSE"
+      ],
+      "blocker": "Browser Verification required; must be retested with an authorized source session."
+    },
+    {
+      "sourceId": "keiyoushi.en.mangakatana",
+      "name": "MangaKatana",
+      "url": "https://mangakatana.com",
+      "definition": "source-master/definitions/keiyoushi.en.mangakatana.json",
+      "status": "verified_canary",
+      "estimatedMonthlyVisits": 60930000,
+      "trafficMonth": "2026-06",
+      "trafficEvidenceUrl": "https://www.semrush.com/website/mangakatana.com/overview/",
+      "selectionNotes": "Historical June figure visible; not represented as August traffic.",
+      "baselineIssueCodes": [],
+      "blocker": null
+    },
+    {
+      "sourceId": "keiyoushi.en.atsumaru",
+      "name": "Atsumaru",
+      "url": "https://atsu.moe",
+      "definition": "source-master/definitions/keiyoushi.en.atsumaru.json",
+      "status": "verified_canary",
+      "estimatedMonthlyVisits": 22620000,
+      "trafficMonth": "2026-07",
+      "trafficEvidenceUrl": "https://www.semrush.com/website/atsu.moe/overview/",
+      "selectionNotes": "Monthly visits estimate.",
+      "baselineIssueCodes": [],
+      "blocker": null
+    },
+    {
+      "sourceId": "keiyoushi.en.mangapill",
+      "name": "MangaPill",
+      "url": "https://mangapill.com",
+      "definition": "source-master/definitions/keiyoushi.en.mangapill.json",
+      "status": "verified_canary",
+      "estimatedMonthlyVisits": 18550000,
+      "trafficMonth": "2026-06",
+      "trafficEvidenceUrl": "https://www.semrush.com/website/mangapill.com/overview/",
+      "selectionNotes": "June figure; current July value unavailable.",
+      "baselineIssueCodes": [],
+      "blocker": null
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwatop",
+      "name": "ManhwaTop",
+      "url": "https://manhwatop.com",
+      "definition": "source-master/definitions/keiyoushi.en.manhwatop.json",
+      "status": "verified_canary",
+      "estimatedMonthlyVisits": 18700000,
+      "trafficMonth": "2026-06",
+      "trafficEvidenceUrl": "https://www.semrush.com/website/manhwatop.com/competitors/",
+      "selectionNotes": "Monthly visits estimate.",
+      "baselineIssueCodes": [],
+      "blocker": null
+    },
+    {
+      "sourceId": "keiyoushi.en.manhuaplus",
+      "name": "ManhuaPlus",
+      "url": "https://manhuaplus.com",
+      "definition": "source-master/definitions/keiyoushi.en.manhuaplus.json",
+      "status": "verified_canary",
+      "estimatedMonthlyVisits": 10930000,
+      "trafficMonth": "2026-05",
+      "trafficEvidenceUrl": "https://www.semrush.com/website/manhuaplus.com/competitors/",
+      "selectionNotes": "Older May estimate; retained for established manhua coverage.",
+      "baselineIssueCodes": [],
+      "blocker": null
+    },
+    {
+      "sourceId": "keiyoushi.en.mangabuddy",
+      "name": "MangaK",
+      "url": "https://mangak.io",
+      "definition": "source-master/definitions/keiyoushi.en.mangabuddy.json",
+      "status": "verified_canary",
+      "estimatedMonthlyVisits": null,
+      "trafficMonth": null,
+      "trafficEvidenceUrl": null,
+      "selectionNotes": "Retained existing verified source and identity. No comparable current-domain traffic estimate verified; old MangaBuddy traffic is not assigned to this host.",
+      "baselineIssueCodes": [],
+      "blocker": null
+    },
+    {
+      "sourceId": "keiyoushi.en.s2manga",
+      "name": "S2Read",
+      "url": "https://s2read.com",
+      "definition": "source-master/definitions/keiyoushi.en.s2manga.json",
+      "status": "verified_canary",
+      "estimatedMonthlyVisits": null,
+      "trafficMonth": null,
+      "trafficEvidenceUrl": null,
+      "selectionNotes": "Retained existing verified source and identity. Current-domain traffic estimate unavailable.",
+      "baselineIssueCodes": [],
+      "blocker": null
+    }
+  ],
+  "genreCoverage": {
+    "scope": "Non-explicit GL/BL only; specialist preference awaiting user clarification. These are candidate providers, not a measured top-two ranking.",
+    "yuri": [
+      {
+        "name": "MangaDex",
+        "sourceId": "yomira.en.mangadex",
+        "status": "included_in_verified_feed",
+        "filter": "Girls\u2019 Love",
+        "tagId": "a3c67850-4684-404e-9b7f-c69850ee5da6",
+        "evidence": "https://api.mangadex.org/manga/tag"
+      },
+      {
+        "name": "Dynasty Reader",
+        "status": "requires_builtin_reader_support",
+        "evidence": "https://dynasty-scans.com/series/yuru_yuri",
+        "blocker": "Public reader uses a root-level pages JSON array unsupported by the installed core. Safe search can exclude NSFW tag 5179; source classification and complete reader acceptance still required."
+      }
+    ],
+    "boysLove": [
+      {
+        "name": "MangaDex",
+        "sourceId": "yomira.en.mangadex",
+        "status": "included_in_verified_feed",
+        "filter": "Boys\u2019 Love",
+        "tagId": "5920b825-4181-4a17-beeb-9918b0ff7a30",
+        "evidence": "https://api.mangadex.org/manga/tag"
+      },
+      {
+        "name": "WEBTOON",
+        "status": "requires_builtin_chapter_pagination",
+        "evidence": "https://www.webtoons.com/en/canvas/heartstopper/list?title_no=329660",
+        "blocker": "Public episode list is paginated; a first-page-only selector would hide older episodes. No access to paid or gated episodes is implemented."
+      }
+    ]
+  }
+}

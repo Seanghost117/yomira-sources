@@ -19,9 +19,15 @@ class BetaFeedTests(unittest.TestCase):
         source = Path(__file__).resolve().parents[1]
         shutil.copytree(source / "releases", self.root / "releases")
         shutil.copy(source / "repository-beta.json", self.root / "repository-beta.json")
+        for relative in ("source-master/definitions/asurascans.json", "sources/asurascans.json"):
+            target = self.root / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy(source / relative, target)
+        index = json.loads((self.root / "repository-beta.json").read_text())
+        self.release = self.root / "releases" / index["sourcePacks"][0]["version"]
         self.baselines = {
             pack_id: beta.git_json(beta.BASE_REVISION, Path("packs") / pack_id / "source-pack.json", source)
-            for pack_id in [beta.BASE_PACK_ID]
+            for pack_id in [beta.BASE_PACK_ID, beta.CURATED_PACK_ID]
         }
         for patcher in (
             patch.object(beta, "validate", return_value=[]),
@@ -66,20 +72,39 @@ class BetaFeedTests(unittest.TestCase):
         self.assertTrue(any("maximumAttempts" in error for error in errors))
 
     def test_missing_image_acceptance_is_rejected_with_valid_report_checksum(self):
-        release = self.root / "releases" / "2026.09.07.1"
+        self.edit_report(lambda report: report["results"][0]["sectionHealth"].pop("image"))
+        self.assertTrue(any("incomplete live flow" in error for error in beta.validate_beta(self.root)))
+
+    def test_asura_first_image_only_is_rejected(self):
+        self.edit_report(lambda report: next(item for item in report["results"] if item["sourceId"] == "asurascans").update(pageCount=1))
+        self.assertTrue(any("multiple chapter pages" in error for error in beta.validate_beta(self.root)))
+
+    def test_new_asura_definition_drift_is_rejected(self):
+        self.edit_pack(lambda pack: next(item for item in pack["definitions"] if item["id"] == "asurascans")["selectors"]["page_list"].update(container="div[data-page]"))
+        self.assertTrue(any("preserve" in error for error in beta.validate_beta(self.root)))
+
+    def test_duplicate_result_cannot_replace_missing_source(self):
+        self.edit_report(lambda report: report["results"].__setitem__(-1, report["results"][0]))
+        self.assertTrue(any("identities" in error for error in beta.validate_beta(self.root)))
+
+    def test_missing_pagination_acceptance_is_rejected(self):
+        self.edit_report(lambda report: next(item for item in report["results"] if item["sourceId"] == "asurascans")["sectionHealth"].pop("pagination"))
+        self.assertTrue(any("incomplete live flow" in error for error in beta.validate_beta(self.root)))
+
+    def edit_report(self, change):
+        release = self.release
         report_path = release / "live-contracts.json"
         report = json.loads(report_path.read_text())
-        report["results"][0]["sectionHealth"].pop("image")
+        change(report)
         raw = json.dumps(report).encode()
         report_path.write_bytes(raw)
         proof_path = release / "verification.json"
         proof = json.loads(proof_path.read_text())
         proof["checks"]["priorityLiveContracts"]["reportSha256"] = hashlib.sha256(raw).hexdigest()
         proof_path.write_text(json.dumps(proof))
-        self.assertTrue(any("incomplete live flow" in error for error in beta.validate_beta(self.root)))
 
     def test_unpublishable_gate_is_rejected(self):
-        path = self.root / "releases" / "2026.09.07.1" / "canary-release-gate.json"
+        path = self.release / "canary-release-gate.json"
         gate = json.loads(path.read_text())
         gate["canPublish"] = False
         path.write_text(json.dumps(gate))
