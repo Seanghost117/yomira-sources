@@ -14,6 +14,15 @@ from validate_repository import git_json, validate, validate_capabilities, valid
 BASE_REVISION = "b4ec392f28f03d88a67f8fb2f8f35504354e9102"
 RAW_PREFIX = "https://raw.githubusercontent.com/Seanghost117/yomira-sources/release/internal-reader-beta/"
 PACK_IDS = {"yomira-reader-beta"}
+FOLLOWUP_REVISION = "e0bff570eacea58768c48f7ddecba756a68e06b7"
+LEGACY_VERSION = "2026.09.16.2"
+CANDIDATE_VERSION = "2026.10.15.1"
+CANDIDATE_DEFINITIONS_REVISION = "2873f4ee62f6408b6c7f3bc4899ceda405b95937"
+REQUESTED_SOURCE_IDS = {
+    "kagane", "keiyoushi.en.likemangain", "keiyoushi.en.manhwatoon",
+    "keiyoushi.en.xcomic", "yomira.en.chikari", "yomira.en.swarm",
+    "yomira.en.toonverse",
+}
 BASE_PACK_ID = "keiyoushi-core-expanded"
 CURATED_PACK_ID = "yomira-curated"
 PRIORITY_SOURCE_IDS = {
@@ -85,6 +94,10 @@ def validate_beta(root: Path) -> list[str]:
         if not version or any(part in version for part in ("/", "\\", "..")):
             errors.append(f"{pack_id}: invalid beta version")
             continue
+        expanded = version == CANDIDATE_VERSION
+        if version not in {LEGACY_VERSION, CANDIDATE_VERSION}:
+            errors.append(f"{pack_id}: unsupported beta release version")
+        expected_ids = PRIORITY_SOURCE_IDS | REQUESTED_SOURCE_IDS if expanded else PRIORITY_SOURCE_IDS
         relative = f"releases/{version}/{pack_id}/source-pack.json"
         if entry.get("manifestUrl") != RAW_PREFIX + relative:
             errors.append(f"{pack_id}: beta manifest URL must identify its versioned artifact")
@@ -113,8 +126,10 @@ def validate_beta(root: Path) -> list[str]:
             if identity in {"yomira.en.mangadex", "keiyoushi.en.mangakatana"}:
                 expected_definitions[identity] = value
         try:
-            asura = json.loads((root / "source-master/definitions/asurascans.json").read_text())
-            legacy_asura = json.loads((root / "sources/asurascans.json").read_text())
+            asura = git_json(FOLLOWUP_REVISION, Path("source-master/definitions/asurascans.json"), root)
+            legacy_asura = git_json(FOLLOWUP_REVISION, Path("sources/asurascans.json"), root)
+            if asura is None or legacy_asura is None:
+                raise ValueError("missing pinned Asura definition")
             if asura != legacy_asura or asura.get("id") != "asurascans" or asura.get("sourceId") != "asurascans":
                 errors.append(f"{pack_id}: preserve Asura standalone and curated identity/configuration")
             expected_definitions["asurascans"] = asura
@@ -122,13 +137,28 @@ def validate_beta(root: Path) -> list[str]:
             errors.append(f"{pack_id}: missing or invalid Asura source definition")
         for source_id in FOLLOWUP_SOURCE_IDS:
             try:
-                definition = json.loads((root / "source-master/definitions" / f"{source_id}.json").read_text())
+                # Published releases are immutable; newer master definitions
+                # must not silently change the historical acceptance baseline.
+                definition = git_json(FOLLOWUP_REVISION,
+                                      Path("source-master/definitions") / f"{source_id}.json", root)
+                if definition is None:
+                    raise ValueError("missing pinned follow-up definition")
                 if definition.get("id") != source_id or definition.get("sourceId") != source_id:
                     errors.append(f"{pack_id}: preserve follow-up source identity: {source_id}")
                 expected_definitions[source_id] = definition
             except (OSError, ValueError):
                 errors.append(f"{pack_id}: missing follow-up definition: {source_id}")
-        if current_definitions != expected_definitions or len(pack.get("definitions", [])) != len(PRIORITY_SOURCE_IDS):
+        if expanded:
+            for source_id in REQUESTED_SOURCE_IDS | {"keiyoushi.en.kuramanga"}:
+                definition = git_json(CANDIDATE_DEFINITIONS_REVISION,
+                                      Path("source-master/definitions") / f"{source_id}.json", root)
+                if definition is None:
+                    errors.append(f"{pack_id}: missing pinned requested definition: {source_id}")
+                else:
+                    if definition.get("id") != source_id or definition.get("sourceId") != source_id:
+                        errors.append(f"{pack_id}: preserve requested source identity: {source_id}")
+                    expected_definitions[source_id] = definition
+        if current_definitions != expected_definitions or len(pack.get("definitions", [])) != len(expected_ids):
             errors.append(f"{pack_id}: candidate must preserve the baseline definitions, identities and policies")
         try:
             if tuple(map(int, version.split("."))) <= tuple(map(int, baseline["version"].split("."))):
@@ -144,7 +174,8 @@ def validate_beta(root: Path) -> list[str]:
             validate_capabilities(definition, label, errors)
             validate_download_policy(definition, label, errors)
         release_root = root / "releases" / version
-        validate_followup_scope(root, release_root, errors)
+        # The earlier audit belongs to its immutable historical release.
+        validate_followup_scope(root, root / "releases" / LEGACY_VERSION if expanded else release_root, errors)
         try:
             report_raw = (release_root / "live-contracts.json").read_bytes()
             report = json.loads(report_raw)
@@ -157,22 +188,51 @@ def validate_beta(root: Path) -> list[str]:
             errors.append(f"{pack_id}: live evidence input checksum mismatch")
         if proof.get("checks", {}).get("priorityLiveContracts", {}).get("reportSha256") != hashlib.sha256(report_raw).hexdigest():
             errors.append(f"{pack_id}: live evidence report checksum mismatch")
-        if report.get("packId") != pack_id or report.get("live") is not True or report.get("testedCount") != len(PRIORITY_SOURCE_IDS) or report.get("passedCount") != len(PRIORITY_SOURCE_IDS) or any(report.get(field) != 0 for field in ("failedCount", "warningCount", "skippedCount")):
+        if expanded:
+            live_proof = proof.get("checks", {}).get("priorityLiveContracts", {})
+            if proof.get("sourceDefinitionsRevision") != CANDIDATE_DEFINITIONS_REVISION:
+                errors.append(f"{pack_id}: requested definitions must use the pinned source revision")
+            if (live_proof.get("maximumConcurrentSources") != 2
+                    or live_proof.get("perSourceTimeoutSeconds") != 300):
+                errors.append(f"{pack_id}: bounded live verification requires two sources and a 300-second timeout")
+            if any(live_proof.get(field) != expected for field, expected in {
+                "tested": len(expected_ids), "passed": len(expected_ids),
+                "failed": 0, "warnings": 0, "skipped": 0,
+            }.items()):
+                errors.append(f"{pack_id}: verification summary must match complete live acceptance")
+        if report.get("packId") != pack_id or report.get("live") is not True or report.get("testedCount") != len(expected_ids) or report.get("passedCount") != len(expected_ids) or any(report.get(field) != 0 for field in ("failedCount", "warningCount", "skippedCount")):
             errors.append(f"{pack_id}: complete live acceptance required")
         results = report.get("results", [])
-        if len(results) != len(PRIORITY_SOURCE_IDS) or {result.get("sourceId") for result in results} != PRIORITY_SOURCE_IDS:
+        if len(results) != len(expected_ids) or {result.get("sourceId") for result in results} != expected_ids:
             errors.append(f"{pack_id}: live result identities must match the priority sources")
         for result in results:
             required = ["capabilities", "search", "details", "chapters", "pages", "image"]
-            if result.get("capabilities", {}).get("pagination"):
+            capabilities = (expected_definitions.get(result.get("sourceId"), {}).get("capabilities", {})
+                            if expanded else result.get("capabilities", {}))
+            if capabilities.get("pagination"):
                 required.append("pagination")
             required.extend(stage for stage in result.get("checkedStages", []) if stage.startswith("browse:"))
+            if expanded:
+                if capabilities.get("browse") and not any(stage.startswith("browse:") for stage in required):
+                    errors.append(f"{pack_id}: browse acceptance required: {result.get('sourceId')}")
+                if any(stage not in result.get("checkedStages", []) for stage in required):
+                    errors.append(f"{pack_id}: checked stages must include the complete live flow: {result.get('sourceId')}")
             if result.get("status") != "passed" or result.get("live") is not True or any(result.get("sectionHealth", {}).get(stage, {}).get("status") != "passed" for stage in required):
                 errors.append(f"{pack_id}: incomplete live flow: {result.get('sourceId')}")
             if result.get("sourceId") == "asurascans" and (result.get("pageCount") or 0) < 5:
                 errors.append(f"{pack_id}: Asura must return multiple chapter pages")
+            if expanded and (result.get("pageCount") or 0) < 2:
+                errors.append(f"{pack_id}: every source must return multiple chapter pages: {result.get('sourceId')}")
         if gate.get("canPublish") is not True or gate.get("channel") != "canary" or gate.get("repositoryId") != repository.get("repositoryId") or gate.get("repositoryUpdatedAt") != repository.get("updatedAt") or gate.get("packVersions") != {pack_id: version}:
             errors.append(f"{pack_id}: matching publishable canary gate required")
+        if expanded:
+            gates = gate.get("packs", [])
+            if (len(gates) != 1 or gates[0].get("packId") != pack_id
+                    or gates[0].get("version") != version
+                    or gates[0].get("testedSourceCount") != len(expected_ids)
+                    or gates[0].get("canPublish") is not True
+                    or gates[0].get("blockingReasons") != [] or gate.get("blockingReasons") != []):
+                errors.append(f"{pack_id}: complete twenty-three-source canary gate required")
     return errors
 
 

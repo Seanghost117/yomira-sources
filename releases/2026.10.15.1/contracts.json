@@ -1,0 +1,604 @@
+{
+  "schemaVersion": "1.0",
+  "contracts": [
+    {
+      "sourceId": "yomira.en.mangadex",
+      "searchQuery": "Kaii-san and I",
+      "expectedTitleContains": "Kaii-san and I",
+      "fixtureRemoteId": "c53caf9a-95b6-4400-b41b-d1b09167ef7a",
+      "paginationQuery": "the",
+      "browseListings": [
+        "latest",
+        "recent"
+      ],
+      "minimumResults": 3,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 1,
+      "minimumPages": 1,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "filters",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.mangakatana",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "one piece",
+      "fixtureRemoteId": "one-piece.49",
+      "paginationQuery": "the",
+      "browseListings": [
+        "latest"
+      ],
+      "minimumResults": 2,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 1100,
+      "minimumLatestChapterNumber": 1100,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 1,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.atsumaru",
+      "searchQuery": "solo leveling",
+      "expectedTitleContains": "solo leveling",
+      "fixtureRemoteId": "oZOG5",
+      "paginationQuery": "a",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 1,
+      "minimumChapters": 200,
+      "minimumLatestChapterNumber": 200,
+      "minimumPages": 1,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "filters",
+        "pagination",
+        "imagePages"
+      ],
+      "allowBrowserVerification": false
+    },
+    {
+      "sourceId": "keiyoushi.en.mangapill",
+      "searchQuery": "solo leveling",
+      "expectedTitleContains": "solo leveling",
+      "fixtureRemoteId": "8136/solo-leveling-novel",
+      "paginationQuery": null,
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 0,
+      "minimumChapters": 1,
+      "minimumPages": 1,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": false,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "imagePages"
+      ],
+      "allowBrowserVerification": false
+    },
+    {
+      "sourceId": "keiyoushi.en.mangabuddy",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "one piece",
+      "fixtureRemoteId": "one-piece",
+      "paginationQuery": null,
+      "browseListings": [
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 1,
+      "minimumPaginationResults": 1,
+      "minimumCoverCoveragePercent": 50,
+      "minimumLatestChapterNumber": null,
+      "minimumNumberedChapterCoveragePercent": 0,
+      "requireCover": true,
+      "verifyPagination": false,
+      "requireExplicitCapabilities": false,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "imagePages"
+      ],
+      "allowBrowserVerification": false
+    },
+    {
+      "sourceId": "keiyoushi.en.manhuaplus",
+      "searchQuery": "martial peak",
+      "expectedTitleContains": "martial peak",
+      "fixtureRemoteId": "martial-peak",
+      "paginationQuery": null,
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 0,
+      "minimumChapters": 3000,
+      "minimumPages": 1,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": false,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "filters",
+        "imagePages"
+      ],
+      "allowBrowserVerification": false
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwatop",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "piece maker of flame",
+      "fixtureRemoteId": "piece-maker-of-flame",
+      "paginationQuery": "the",
+      "browseListings": [
+        "latest",
+        "popular"
+      ],
+      "minimumResults": 10,
+      "minimumChapters": 40,
+      "minimumPages": 1,
+      "minimumPaginationResults": 10,
+      "minimumCoverCoveragePercent": 90,
+      "minimumLatestChapterNumber": 40,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ],
+      "allowBrowserVerification": false
+    },
+    {
+      "sourceId": "keiyoushi.en.s2manga",
+      "searchQuery": "imprisoned one million years",
+      "expectedTitleContains": "imprisoned one million years",
+      "fixtureRemoteId": "imprisoned-one-million-years-my-disciples-are-all-over-the-world",
+      "paginationQuery": "the",
+      "browseListings": [
+        "latest",
+        "popular"
+      ],
+      "minimumResults": 1,
+      "minimumChapters": 350,
+      "minimumPages": 1,
+      "minimumPaginationResults": 10,
+      "minimumCoverCoveragePercent": 90,
+      "minimumLatestChapterNumber": 390,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ],
+      "allowBrowserVerification": false
+    },
+    {
+      "sourceId": "asurascans",
+      "searchQuery": "solo leveling",
+      "minimumResults": 1,
+      "minimumChapters": 190,
+      "minimumPages": 5,
+      "requireCover": true,
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "expectedTitleContains": "solo leveling",
+      "fixtureRemoteId": "solo-leveling-6f7fe6eb",
+      "minimumLatestChapterNumber": 200,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumCoverCoveragePercent": 90,
+      "verifyPagination": true,
+      "paginationQuery": "a",
+      "minimumPaginationResults": 10,
+      "requireExplicitCapabilities": true,
+      "allowBrowserVerification": false,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.kuramanga",
+      "searchQuery": "the",
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 2,
+      "requireCover": true,
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "allowBrowserVerification": false,
+      "verifyPagination": true,
+      "paginationQuery": "the",
+      "minimumPaginationResults": 3,
+      "requireExplicitCapabilities": true
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwaden",
+      "searchQuery": "the",
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 2,
+      "requireCover": true,
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "allowBrowserVerification": false,
+      "verifyPagination": true,
+      "paginationQuery": "the",
+      "minimumPaginationResults": 1,
+      "requireExplicitCapabilities": true
+    },
+    {
+      "sourceId": "keiyoushi.en.mangareadorg",
+      "searchQuery": "the",
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 2,
+      "requireCover": true,
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "allowBrowserVerification": false,
+      "verifyPagination": true,
+      "paginationQuery": "the",
+      "minimumPaginationResults": 1,
+      "requireExplicitCapabilities": true
+    },
+    {
+      "sourceId": "keiyoushi.en.kingofshojo",
+      "searchQuery": "kill the villainess",
+      "minimumResults": 1,
+      "minimumChapters": 100,
+      "minimumPages": 5,
+      "requireCover": true,
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "allowBrowserVerification": false,
+      "expectedTitleContains": "kill the villainess",
+      "fixtureRemoteId": "kill-the-villainess",
+      "verifyPagination": true,
+      "paginationQuery": "the",
+      "minimumPaginationResults": 1,
+      "requireExplicitCapabilities": true
+    },
+    {
+      "sourceId": "keiyoushi.en.lhtranslation",
+      "searchQuery": "the",
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 2,
+      "requireCover": true,
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "allowBrowserVerification": false,
+      "verifyPagination": true,
+      "paginationQuery": "the",
+      "minimumPaginationResults": 1,
+      "requireExplicitCapabilities": true
+    },
+    {
+      "sourceId": "keiyoushi.en.mangasushi",
+      "searchQuery": "the",
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 2,
+      "requireCover": true,
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "allowBrowserVerification": false,
+      "verifyPagination": true,
+      "paginationQuery": "the",
+      "minimumPaginationResults": 1,
+      "requireExplicitCapabilities": true
+    },
+    {
+      "sourceId": "keiyoushi.en.galaxydegenscans",
+      "searchQuery": "the",
+      "minimumResults": 1,
+      "minimumChapters": 1,
+      "minimumPages": 2,
+      "requireCover": true,
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "allowBrowserVerification": false,
+      "verifyPagination": true,
+      "paginationQuery": "the",
+      "minimumPaginationResults": 1,
+      "requireExplicitCapabilities": true
+    },
+    {
+      "sourceId": "keiyoushi.en.likemangain",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "One Piece",
+      "fixtureRemoteId": "one-piece-7701",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 1100,
+      "minimumLatestChapterNumber": 1190,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwatoon",
+      "searchQuery": "overgeared",
+      "expectedTitleContains": "Overgeared",
+      "fixtureRemoteId": "overgeared",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 300,
+      "minimumLatestChapterNumber": 340,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "yomira.en.chikari",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "ONE PIECE",
+      "fixtureRemoteId": "one-piece",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 1100,
+      "minimumLatestChapterNumber": 1190,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "yomira.en.toonverse",
+      "searchQuery": "necromancer",
+      "expectedTitleContains": "Necromancer, the Ultimate Scourge",
+      "fixtureRemoteId": "necromancer-the-ultimate-scourge",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 315,
+      "minimumLatestChapterNumber": 314,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.xcomic",
+      "searchQuery": "world trigger",
+      "expectedTitleContains": "World Trigger",
+      "fixtureRemoteId": "5grzp",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 250,
+      "minimumLatestChapterNumber": 248,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "yomira.en.swarm",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "One Piece",
+      "fixtureRemoteId": "86435",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 1100,
+      "minimumLatestChapterNumber": 1190,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "kagane",
+      "searchQuery": "One Piece Omake",
+      "expectedTitleContains": "One Piece Omake",
+      "fixtureRemoteId": "019f016a-962a-7286-8f3f-864d5cefdbae",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 14,
+      "minimumLatestChapterNumber": 1,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    }
+  ]
+}
