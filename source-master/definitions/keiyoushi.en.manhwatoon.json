@@ -115,7 +115,7 @@
       "image": "img@data-src || img@data-lazy-src || img@data-cfsrc || img@data-original || img@src",
       "exclude": [
         ".svg",
-        "data:",
+        "data",
         "logo",
         "icon",
         "avatar",
