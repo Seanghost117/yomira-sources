@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "1.0",
+  "contracts": [
+    {
+      "sourceId": "keiyoushi.en.likemangain",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "One Piece",
+      "fixtureRemoteId": "one-piece-7701",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 1100,
+      "minimumLatestChapterNumber": 1190,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwatoon",
+      "searchQuery": "overgeared",
+      "expectedTitleContains": "Overgeared",
+      "fixtureRemoteId": "overgeared",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 300,
+      "minimumLatestChapterNumber": 340,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "yomira.en.chikari",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "ONE PIECE",
+      "fixtureRemoteId": "one-piece",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 1100,
+      "minimumLatestChapterNumber": 1190,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "yomira.en.toonverse",
+      "searchQuery": "necromancer",
+      "expectedTitleContains": "Necromancer, the Ultimate Scourge",
+      "fixtureRemoteId": "necromancer-the-ultimate-scourge",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 315,
+      "minimumLatestChapterNumber": 314,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.xcomic",
+      "searchQuery": "world trigger",
+      "expectedTitleContains": "World Trigger",
+      "fixtureRemoteId": "5grzp",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 250,
+      "minimumLatestChapterNumber": 248,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "yomira.en.swarm",
+      "searchQuery": "one piece",
+      "expectedTitleContains": "One Piece",
+      "fixtureRemoteId": "86435",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 1100,
+      "minimumLatestChapterNumber": 1190,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    },
+    {
+      "sourceId": "kagane",
+      "searchQuery": "One Piece Omake",
+      "expectedTitleContains": "One Piece Omake",
+      "fixtureRemoteId": "019f016a-962a-7286-8f3f-864d5cefdbae",
+      "paginationQuery": "the",
+      "browseListings": [
+        "popular",
+        "latest"
+      ],
+      "minimumResults": 1,
+      "minimumPaginationResults": 3,
+      "minimumChapters": 14,
+      "minimumLatestChapterNumber": 1,
+      "minimumNumberedChapterCoveragePercent": 95,
+      "minimumPages": 2,
+      "minimumCoverCoveragePercent": 90,
+      "requireCover": true,
+      "verifyPagination": true,
+      "requireExplicitCapabilities": true,
+      "requiredCapabilities": [
+        "search",
+        "browse",
+        "details",
+        "chapters",
+        "pages",
+        "pagination",
+        "imagePages"
+      ]
+    }
+  ]
+}

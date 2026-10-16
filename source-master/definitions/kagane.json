@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "kagane",
+  "sourceId": "kagane",
+  "name": "Kagane",
+  "displayName": "Kagane",
+  "version": "1.1.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://kagane.si",
+  "baseUrl": "https://kagane.si",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "tags": [
+    "Curated",
+    "Manga",
+    "Manhwa"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "flags": {
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+  "rate_limit_ms": 1100,
+  "rateLimit": {
+    "minDelayMs": 1100,
+    "requestsPerMinute": 50
+  },
+  "headers": {
+    "Referer": "https://kagane.si/"
+  },
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": false,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "popular",
+      "latest"
+    ]
+  },
+  "presentation": {
+    "primaryListing": "popular",
+    "sections": [
+      "popular",
+      "latest"
+    ]
+  },
+  "description": "Kagane English catalog using the kagane.si mirror listed by the canonical kagane.org address directory. Native integrity sessions and reader manifests stay in the built-in connector engine.",
+  "endpoints": {
+    "search": {
+      "url": "{base}/api/v2/search/series?page={page}&size=24",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"source_type\":[\"Official\",\"Unofficial\",\"Mixed\"],\"content_lang\":[\"en\"],\"title\":{query_json}}"
+    },
+    "popular": {
+      "url": "{base}/api/v2/search/series?page={page}&size=24&sort=total_views,desc",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"source_type\":[\"Official\",\"Unofficial\",\"Mixed\"],\"content_lang\":[\"en\"],\"title\":{query_json}}"
+    },
+    "latest": {
+      "url": "{base}/api/v2/search/series?page={page}&size=24&sort=updated_at,desc",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"source_type\":[\"Official\",\"Unofficial\",\"Mixed\"],\"content_lang\":[\"en\"],\"title\":{query_json}}"
+    },
+    "details": {
+      "url": "{base}/api/v2/series/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/api/v2/series/{id}/books/index?fields=List",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".yomira-json-list-fallback",
+      "title": "a@text",
+      "cover": "img@src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text",
+      "cover": "img@src",
+      "description": ".description@text",
+      "authors": ".author@text",
+      "genres": ".genres@text",
+      "status": ".status@text"
+    },
+    "chapter_list": {
+      "container": ".yomira-json-chapter-fallback",
+      "title": "a@text",
+      "link": "a@href"
+    },
+    "page_list": {
+      "container": ".yomira-json-page-fallback",
+      "image": "img@src"
+    }
+  },
+  "pagination": {
+    "param": "page",
+    "start": 0
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "Selector",
+    "originalLanguage": "en",
+    "originalSourceName": "Kagane",
+    "analyzerBucket": "curated_selector_profile"
+  },
+  "downloadPolicy": {
+    "transport": "foregroundCore",
+    "maximumConcurrentPages": 1,
+    "maximumAttempts": 4,
+    "minimumDelayMs": 1100
+  }
+}

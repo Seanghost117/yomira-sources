@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.xcomic",
+  "sourceId": "keiyoushi.en.xcomic",
+  "name": "XComic",
+  "displayName": "XComic",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://xcomic.me",
+  "baseUrl": "https://xcomic.me",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "tags": [
+    "Curated",
+    "Manga",
+    "Manhwa"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "flags": {
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+  "rate_limit_ms": 1100,
+  "rateLimit": {
+    "minDelayMs": 1100,
+    "requestsPerMinute": 50
+  },
+  "headers": {
+    "Referer": "https://xcomic.me/"
+  },
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": false,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "popular",
+      "latest"
+    ]
+  },
+  "presentation": {
+    "primaryListing": "popular",
+    "sections": [
+      "popular",
+      "latest"
+    ]
+  },
+  "description": "XComic English catalog and provider editions via the public GraphQL API, consumed by the built-in connector engine. XComic.net is an equivalent mirror.",
+  "endpoints": {
+    "search": {
+      "url": "{base}/query/",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"query\":\"query($select:Title_Browse_Select){get_title_browse_items(select:$select){id data{title cover_local_url cover_url}}}\",\"variables\":{\"select\":{\"word\":{query_json},\"page\":{page},\"size\":24,\"where\":\"browse\",\"incTLangs\":[\"en\"]}}}"
+    },
+    "popular": {
+      "url": "{base}/query/",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"query\":\"query($select:Title_Browse_Select){get_title_browse_items(select:$select){id data{title cover_local_url cover_url}}}\",\"variables\":{\"select\":{\"word\":\"\",\"page\":{page},\"size\":24,\"sortby\":\"field_score\",\"where\":\"browse\",\"incTLangs\":[\"en\"]}}}"
+    },
+    "latest": {
+      "url": "{base}/query/",
+      "method": "POST",
+      "content_type": "application/json",
+      "body": "{\"query\":\"query($select:Title_Browse_Select){get_title_browse_items(select:$select){id data{title cover_local_url cover_url}}}\",\"variables\":{\"select\":{\"word\":\"\",\"page\":{page},\"size\":24,\"sortby\":\"field_update\",\"where\":\"browse\",\"incTLangs\":[\"en\"]}}}"
+    },
+    "details": {
+      "url": "{base}/title/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/title/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".yomira-json-list-fallback",
+      "title": "a@text",
+      "cover": "img@src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text",
+      "cover": "img@src",
+      "description": ".description@text",
+      "authors": ".author@text",
+      "genres": ".genres@text",
+      "status": ".status@text"
+    },
+    "chapter_list": {
+      "container": ".yomira-json-chapter-fallback",
+      "title": "a@text",
+      "link": "a@href"
+    },
+    "page_list": {
+      "container": ".yomira-json-page-fallback",
+      "image": "img@src"
+    }
+  },
+  "pagination": {
+    "param": "page",
+    "start": 1
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalFamily": "Selector",
+    "originalSourcePath": "src/all/xcomic",
+    "originalLanguage": "en",
+    "originalSourceName": "XComic",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

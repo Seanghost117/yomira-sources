@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.manhwatoon",
+  "sourceId": "keiyoushi.en.manhwatoon",
+  "name": "Manhwa Toon",
+  "displayName": "Manhwa Toon",
+  "version": "1.1.0",
+  "connectorEngine": "madara",
+  "sourceType": "madara",
+  "base_url": "https://www.manhwatoon.me",
+  "baseUrl": "https://www.manhwatoon.me",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "tags": [
+    "Curated",
+    "Manga",
+    "Manhwa"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "flags": {
+    "requires_js": false,
+    "uses_cloudflare": false,
+    "is_madara": true
+  },
+  "rate_limit_ms": 1100,
+  "rateLimit": {
+    "minDelayMs": 1100,
+    "requestsPerMinute": 50
+  },
+  "headers": {
+    "Referer": "https://www.manhwatoon.me/"
+  },
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": false,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "popular",
+      "latest"
+    ]
+  },
+  "presentation": {
+    "primaryListing": "popular",
+    "sections": [
+      "popular",
+      "latest"
+    ]
+  },
+  "description": "Manhwa Toon current /manhwa/ routes and public chapter POST endpoint, preserving its existing source identity.",
+  "extends": "madara",
+  "endpoints": {
+    "search": {
+      "url": "{base}/page/{page}/?s={query}&post_type=wp-manga",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/manga/page/{page}/?m_orderby=views",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/manga/page/{page}/?m_orderby=latest",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/manhwa/{id}/",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/manhwa/{id}/ajax/chapters/",
+      "method": "POST",
+      "body": ""
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".c-tabs-item__content, .page-item-detail",
+      "title": "a[title]@title || .post-title a@text || h3 a@text",
+      "cover": "img@data-src || img@data-lazy-src || img@src",
+      "link": ".post-title a@href || h3 a@href || a@href"
+    },
+    "manga_details": {
+      "title": ".post-title h1@text || h1@text",
+      "cover": ".summary_image img@data-src || .summary_image img@data-lazy-src || .summary_image img@src || .tab-summary img@data-src || .tab-summary img@src",
+      "description": ".summary__content p@text || .manga-excerpt p@text || .description-summary p@text",
+      "authors": ".author-content a@text",
+      "artists": ".artist-content a@text",
+      "genres": ".genres-content a@text",
+      "status": ".post-status .summary-content@text"
+    },
+    "chapter_list": {
+      "container": "li.wp-manga-chapter",
+      "title": "a@text",
+      "link": "a@href",
+      "date": ".chapter-release-date i@title || .chapter-release-date a@title || time@datetime || .chapter-release-date@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".reading-content",
+      "image": "img@data-src || img@data-lazy-src || img@data-cfsrc || img@data-original || img@src",
+      "exclude": [
+        ".svg",
+        "data:",
+        "logo",
+        "icon",
+        "avatar",
+        "gravatar"
+      ]
+    }
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/manhwatoon",
+    "originalLanguage": "en",
+    "originalSourceName": "manhwatoon",
+    "originalFamily": "Madara",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

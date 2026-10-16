@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "keiyoushi.en.likemangain",
+  "sourceId": "keiyoushi.en.likemangain",
+  "name": "LikeManga",
+  "displayName": "LikeManga",
+  "version": "1.1.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://likemanga.ink",
+  "baseUrl": "https://likemanga.ink",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "tags": [
+    "Curated",
+    "Manga",
+    "Manhwa"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "flags": {
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+  "rate_limit_ms": 1100,
+  "rateLimit": {
+    "minDelayMs": 1100,
+    "requestsPerMinute": 50
+  },
+  "headers": {
+    "Referer": "https://likemanga.ink/"
+  },
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": false,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "popular",
+      "latest"
+    ]
+  },
+  "presentation": {
+    "primaryListing": "popular",
+    "sections": [
+      "popular",
+      "latest"
+    ]
+  },
+  "description": "LikeManga current public HTML catalog and reader with complete chapter retrieval by the built-in connector engine, preserving its existing source identity.",
+  "endpoints": {
+    "search": {
+      "url": "{base}/?act=search&f[status]=all&f[sortby]=lastest-chap&f[keyword]={query}",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "{base}/?act=search&f[status]=all&f[sortby]=top-manga",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "{base}/?act=search&f[status]=all&f[sortby]=lastest-chap",
+      "method": "GET"
+    },
+    "details": {
+      "url": "{base}/{id}/",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "{base}/{id}/",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".video",
+      "title": ".title-manga a@text",
+      "cover": "img@src",
+      "link": ".title-manga a@href"
+    },
+    "manga_details": {
+      "title": "#title-detail-manga@text",
+      "cover": ".detail-info .col-image img@src",
+      "description": "#summary_shortened@text || meta[name=\"description\"]@content",
+      "authors": ".list-info .author a@text || .list-info .author .col-8@text",
+      "genres": ".list-info .kind a@text",
+      "status": ".list-info .status .col-8@text"
+    },
+    "chapter_list": {
+      "container": "#list_chapter_id_detail li.wp-manga-chapter",
+      "title": "a@text",
+      "link": "a@href",
+      "date": ".chapter-release-date@text",
+      "number_regex": "(?i)chapter[\\s/\\-_]*([0-9]+(?:\\.[0-9]+)?)"
+    },
+    "page_list": {
+      "container": ".reading-detail",
+      "image": ".page-chapter img@src",
+      "exclude": [
+        "logo",
+        "icon",
+        "avatar"
+      ]
+    }
+  },
+  "pagination": {
+    "param": "pageNum",
+    "start": 1
+  },
+  "provenance": {
+    "ecosystem": "keiyoushi",
+    "originalSourcePath": "src/en/likemangain",
+    "originalLanguage": "en",
+    "originalSourceName": "likemangain",
+    "originalFamily": "Madara",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

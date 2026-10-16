@@ -1,0 +1,124 @@
+{
+  "schemaVersion": "1.0",
+  "sourceDefinitionKind": "curated_source_config",
+  "id": "yomira.en.toonverse",
+  "sourceId": "yomira.en.toonverse",
+  "name": "ToonVerse",
+  "displayName": "ToonVerse",
+  "version": "1.0.0",
+  "connectorEngine": "selector",
+  "sourceType": "selector",
+  "base_url": "https://toonverse.net",
+  "baseUrl": "https://toonverse.net",
+  "language": "en",
+  "region": "en",
+  "nsfw": true,
+  "adultContent": true,
+  "tags": [
+    "Curated",
+    "Manga",
+    "Manhwa"
+  ],
+  "appStoreSafe": true,
+  "containsExecutableCode": false,
+  "requiresExternalBridge": false,
+  "flags": {
+    "requires_js": false,
+    "uses_cloudflare": false
+  },
+  "rate_limit_ms": 1100,
+  "rateLimit": {
+    "minDelayMs": 1100,
+    "requestsPerMinute": 50
+  },
+  "headers": {
+    "Referer": "https://toonverse.net/"
+  },
+  "capabilities": {
+    "search": true,
+    "browse": true,
+    "details": true,
+    "chapters": true,
+    "pages": true,
+    "filters": false,
+    "pagination": true,
+    "imagePages": true,
+    "textPages": false,
+    "browserVerification": false,
+    "listings": [
+      "popular",
+      "latest"
+    ]
+  },
+  "presentation": {
+    "primaryListing": "popular",
+    "sections": [
+      "popular",
+      "latest"
+    ]
+  },
+  "description": "ToonVerse public catalog and reader manifests with complete chapter retrieval by the built-in connector engine.",
+  "endpoints": {
+    "search": {
+      "url": "https://api.toonverse.net/api/series/search?q={query}&limit=24",
+      "method": "GET"
+    },
+    "popular": {
+      "url": "https://api.toonverse.net/api/series?sortBy=members&limit=24",
+      "method": "GET"
+    },
+    "latest": {
+      "url": "https://api.toonverse.net/api/series?sortBy=updatedAt&sortOrder=desc&limit=24",
+      "method": "GET"
+    },
+    "details": {
+      "url": "https://api.toonverse.net/api/series/slug/{id}",
+      "method": "GET"
+    },
+    "chapters": {
+      "url": "https://api.toonverse.net/api/series/slug/{id}",
+      "method": "GET"
+    },
+    "pages": {
+      "url": "{chapter_url}",
+      "method": "GET"
+    }
+  },
+  "selectors": {
+    "manga_list": {
+      "container": ".yomira-json-list-fallback",
+      "title": "a@text",
+      "cover": "img@src",
+      "link": "a@href"
+    },
+    "manga_details": {
+      "title": "h1@text",
+      "cover": "img@src",
+      "description": ".description@text",
+      "authors": ".author@text",
+      "genres": ".genres@text",
+      "status": ".status@text"
+    },
+    "chapter_list": {
+      "container": ".yomira-json-chapter-fallback",
+      "title": "a@text",
+      "link": "a@href"
+    },
+    "page_list": {
+      "container": ".yomira-json-page-fallback",
+      "image": "img@src"
+    }
+  },
+  "pagination": {
+    "param": "offset",
+    "start": 0,
+    "step": 24
+  },
+  "provenance": {
+    "ecosystem": "yomira",
+    "originalFamily": "Selector",
+    "originalLanguage": "en",
+    "originalSourceName": "ToonVerse",
+    "analyzerBucket": "curated_selector_profile"
+  }
+}

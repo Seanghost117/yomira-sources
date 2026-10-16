@@ -5,7 +5,7 @@
   "base_url": "https://kuramanga.com",
   "connectorEngine": "selector",
   "containsExecutableCode": false,
-  "description": "KuraManga public reader. Search returns the first result batch; offset pagination is not supported by this connector profile.",
+  "description": "KuraManga public reader with offset-based search pagination.",
   "displayName": "KuraManga",
   "endpoints": {
     "chapters": {
@@ -30,7 +30,7 @@
     },
     "search": {
       "method": "GET",
-      "url": "{base}/search?name={query}&offset=0&ajax=1"
+      "url": "{base}/search?name={query}&ajax=1"
     }
   },
   "flags": {
@@ -109,7 +109,7 @@
     "Selector",
     "Curated"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "downloadPolicy": {
     "transport": "automatic",
     "maximumConcurrentPages": 1,
@@ -121,7 +121,7 @@
     "details": true,
     "chapters": true,
     "pages": true,
-    "pagination": false,
+    "pagination": true,
     "filters": false,
     "imagePages": true,
     "textPages": false,
@@ -130,5 +130,10 @@
       "popular",
       "latest"
     ]
+  },
+  "pagination": {
+    "param": "offset",
+    "start": 0,
+    "step": 10
   }
 }
