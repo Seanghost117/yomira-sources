@@ -112,10 +112,9 @@
     },
     "page_list": {
       "container": ".reading-content",
-      "image": "img@data-src || img@data-lazy-src || img@data-cfsrc || img@data-original || img@src",
+      "image": "img@data-src || img@data-lazy-src || img@data-cfsrc || img@data-original || img:not([src^='data'])@src",
       "exclude": [
         ".svg",
-        "data",
         "logo",
         "icon",
         "avatar",
