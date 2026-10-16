@@ -5,7 +5,7 @@
   "base_url": "https://kuramanga.com",
   "connectorEngine": "selector",
   "containsExecutableCode": false,
-  "description": "KuraManga public reader with offset-based search pagination.",
+  "description": "KuraManga public reader with current page-based search pagination.",
   "displayName": "KuraManga",
   "endpoints": {
     "chapters": {
@@ -30,7 +30,7 @@
     },
     "search": {
       "method": "GET",
-      "url": "{base}/search?name={query}&ajax=1"
+      "url": "{base}/search?name={query}&ajax=1&page={page}"
     }
   },
   "flags": {
@@ -132,8 +132,7 @@
     ]
   },
   "pagination": {
-    "param": "offset",
-    "start": 0,
-    "step": 10
+    "param": "page",
+    "start": 1
   }
 }
