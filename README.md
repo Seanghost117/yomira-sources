@@ -23,9 +23,16 @@ stable repository without changing the stable repository URL.
 
 Internal reader beta candidate: see [release notes and acceptance status](releases/2026.09.07.1/README.md).
 `repository-beta.json` uses a separate repository identity and versioned pack
-paths. It delivers only the six-source `yomira-reader-beta` pack in the canary channel.
+paths. It delivers only the 23-source `yomira-reader-beta` pack in the canary channel.
 The dedicated pack has passing bounded live evidence; the larger pending packs
 are excluded. Device acceptance remains separate.
+
+The default `repository.json` on both `main` and `release/internal-reader-beta`
+publishes the updated Curated and Expanded packs as version `2026.10.17.1`.
+Existing installations can check and apply these updates without changing their
+repository link or importing the separate reader beta pack. Existing Source IDs
+and My Sources selections are preserved. The larger packs retain pending canary
+validation status; the 23-source beta evidence does not verify every source in them.
 
 Expanded Source Pack:
 
@@ -63,8 +70,8 @@ extensions/
 
 ## Current Packs
 
-- `keiyoushi-core-expanded`: 421 generated and curated Source Definitions from currently supported connector families
-- `yomira-curated`: 27 hand-curated Source Definitions used for focused source iteration
+- `keiyoushi-core-expanded`: 427 generated and curated Source Definitions from currently supported connector families
+- `yomira-curated`: 42 hand-curated Source Definitions used for focused source iteration
 - `yomira-nsfw`: 28 explicit adult Source Definitions split out from the main packs
 - `yomira-novels`: 9 light novel Source Definitions for prose reader support
 

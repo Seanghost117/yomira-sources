@@ -7,7 +7,7 @@
   "maintainerUrl": "https://github.com/Seanghost117",
   "homepageUrl": "https://github.com/Seanghost117/yomira-sources",
   "termsUrl": "https://github.com/Seanghost117/yomira-sources",
-  "updatedAt": "2026-08-20T06:00:00Z",
+  "updatedAt": "2026-10-17T13:10:00Z",
   "releasePolicy": {
     "channels": [
       "canary",
@@ -24,9 +24,9 @@
       "packId": "keiyoushi-core-expanded",
       "displayName": "Keiyoushi Expanded Core Source Pack",
       "description": "Expanded Yomira-compatible source definitions generated from supported Keiyoushi families.",
-      "version": "2026.08.20.1",
-      "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/keiyoushi-core-expanded/source-pack.json",
-      "checksum": "sha256:fc673076478d946f6789df8b96e784be3f3fd50ca5a3a9722d9e242472558d4d",
+      "version": "2026.10.17.1",
+      "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/releases/2026.10.17.1/keiyoushi-core-expanded/source-pack.json",
+      "checksum": "sha256:d35b661f09d0928d654d6b227f50239e739c5b5278976f39cf92b5be28ae5cb8",
       "checksumAlgorithm": "sha256",
       "language": "multi",
       "region": "global",
@@ -37,27 +37,28 @@
         "self_hosted",
         "internal"
       ],
-      "sourceCount": 421,
+      "sourceCount": 427,
       "artifactKind": "source_pack",
       "releaseChannel": "canary",
       "contractTier": "live",
       "contractStatus": "pending",
-      "publishedAt": "2026-08-20T06:00:00Z",
+      "publishedAt": "2026-10-17T13:10:00Z",
       "releaseNotes": [
-        "Added safe per-Source download policy metadata for priority aggregators.",
-        "Added Atsumaru and MangaPill and promoted the curated Manhua Plus definition.",
-        "Publication remains gated: VyManga's pre-existing live contract returns HTTP 522.",
-        "Recorded dated EverythingMoe host-mapping provenance; unverified cross-host mappings remain candidates."
+        "Delivers the current reader definitions through the existing Curated and Expanded pack identities; no separate Reader Beta import is required.",
+        "Adds LikeManga, ManhwaToon, Chikari, ToonVerse, XComic (.me/.net), Swarm and Kagane, plus the previously verified reader profiles. Includes current KuraManga and ManhwaDen profiles.",
+        "Retains every prior Source ID. Library links and existing My Sources selections are preserved; new definitions are available inside the pack without automatically adding them to My Sources.",
+        "Requires Yomira iOS 0.2.27 (20) or newer for the newer built-in connector profiles.",
+        "Canary publication: the 23 Reader Beta profiles retain their dated bounded live evidence. The legacy catalog is not certified as fully working; Browser Verification or unavailable upstreams may affect individual sources."
       ],
-      "updatedAt": "2026-08-20T06:00:00Z"
+      "updatedAt": "2026-10-17T13:10:00Z"
     },
     {
       "packId": "yomira-curated",
       "displayName": "Yomira Curated Source Pack",
       "description": "Curated Yomira-compatible source definitions maintained separately from the app.",
-      "version": "2026.08.20.1",
-      "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/packs/yomira-curated/source-pack.json",
-      "checksum": "sha256:e3a2706de2b4162744fb04783e900d81f1e813cddbc7fc8570587eda391b668e",
+      "version": "2026.10.17.1",
+      "manifestUrl": "https://raw.githubusercontent.com/Seanghost117/yomira-sources/main/releases/2026.10.17.1/yomira-curated/source-pack.json",
+      "checksum": "sha256:f78033be1c335fe0d58ca4d25dc11159135fdfe08ba7250ffce0518095872476",
       "checksumAlgorithm": "sha256",
       "language": "en",
       "region": "en",
@@ -68,19 +69,20 @@
         "self_hosted",
         "internal"
       ],
-      "sourceCount": 27,
+      "sourceCount": 42,
       "artifactKind": "source_pack",
       "releaseChannel": "canary",
       "contractTier": "live",
       "contractStatus": "pending",
-      "publishedAt": "2026-08-20T06:00:00Z",
+      "publishedAt": "2026-10-17T13:10:00Z",
       "releaseNotes": [
-        "Added safe per-Source download policy metadata for priority aggregators.",
-        "Added Atsumaru, MangaPill, and curated Manhua Plus coverage.",
-        "Publication remains gated: VyManga's pre-existing live contract returns HTTP 522.",
-        "Recorded dated EverythingMoe host-mapping provenance; unverified cross-host mappings remain candidates."
+        "Delivers the current reader definitions through the existing Curated and Expanded pack identities; no separate Reader Beta import is required.",
+        "Adds LikeManga, ManhwaToon, Chikari, ToonVerse, XComic (.me/.net), Swarm and Kagane, plus the previously verified reader profiles. Includes current KuraManga and ManhwaDen profiles.",
+        "Retains every prior Source ID. Library links and existing My Sources selections are preserved; new definitions are available inside the pack without automatically adding them to My Sources.",
+        "Requires Yomira iOS 0.2.27 (20) or newer for the newer built-in connector profiles.",
+        "Canary publication: the 23 Reader Beta profiles retain their dated bounded live evidence. The legacy catalog is not certified as fully working; Browser Verification or unavailable upstreams may affect individual sources."
       ],
-      "updatedAt": "2026-08-20T06:00:00Z"
+      "updatedAt": "2026-10-17T13:10:00Z"
     },
     {
       "packId": "yomira-nsfw",

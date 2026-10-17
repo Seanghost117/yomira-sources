@@ -416,7 +416,10 @@
       "connectorEngine": "selector",
       "definitionPath": "extensions/source-master/definitions/keiyoushi.en.atsumaru.json",
       "status": "ready",
-      "notes": ["Public safe Typesense search, two-page Typesense pagination, and JSON catalog/detail/chapter/page responses were verified on 2026-08-18 with the Built-in Connector Engine contract tool.", "The Source Definition is declarative and consumed only by the Built-in Connector Engine."]
+      "notes": [
+        "Public safe Typesense search, two-page Typesense pagination, and JSON catalog/detail/chapter/page responses were verified on 2026-08-18 with the Built-in Connector Engine contract tool.",
+        "The Source Definition is declarative and consumed only by the Built-in Connector Engine."
+      ]
     },
     {
       "sourceId": "keiyoushi.en.mangapill",
@@ -424,7 +427,10 @@
       "connectorEngine": "selector",
       "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangapill.json",
       "status": "ready",
-      "notes": ["Corrected stale popular/latest routes and /chapters listing selectors; the public Built-in Connector Engine contract passed on 2026-08-18.", "Listing pagination is not declared because the public search/listing flow did not provide a verified second page."]
+      "notes": [
+        "Corrected stale popular/latest routes and /chapters listing selectors; the public Built-in Connector Engine contract passed on 2026-08-18.",
+        "Listing pagination is not declared because the public search/listing flow did not provide a verified second page."
+      ]
     },
     {
       "sourceId": "keiyoushi.en.manhuaplus",
@@ -432,7 +438,175 @@
       "connectorEngine": "madara",
       "definitionPath": "extensions/source-master/definitions/keiyoushi.en.manhuaplus.json",
       "status": "ready",
-      "notes": ["Promoted from generated-only input to a curated overlay with explicit capabilities and a passing public Built-in Connector Engine contract on 2026-08-18.", "Listing pagination is not declared because the public Madara page-two form could not be verified without Browser Verification."]
+      "notes": [
+        "Promoted from generated-only input to a curated overlay with explicit capabilities and a passing public Built-in Connector Engine contract on 2026-08-18.",
+        "Listing pagination is not declared because the public Madara page-two form could not be verified without Browser Verification."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwatop",
+      "displayName": "Manhwatop",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.manhwatop.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.s2manga",
+      "displayName": "S2Read",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.s2manga.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "asurascans",
+      "displayName": "Asura Scans",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/asurascans.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.mangareadorg",
+      "displayName": "MangaRead.org",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangareadorg.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.kingofshojo",
+      "displayName": "King of Shojo",
+      "connectorEngine": "manga_themesia",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.kingofshojo.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.lhtranslation",
+      "displayName": "LHTranslation",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.lhtranslation.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.mangasushi",
+      "displayName": "Mangasushi",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.mangasushi.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.galaxydegenscans",
+      "displayName": "GalaxyDegenScans",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.galaxydegenscans.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.likemangain",
+      "displayName": "LikeManga",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.likemangain.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.manhwatoon",
+      "displayName": "Manhwa Toon",
+      "connectorEngine": "madara",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.manhwatoon.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.chikari",
+      "displayName": "Chikari",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.chikari.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.swarm",
+      "displayName": "Swarm",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.swarm.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "keiyoushi.en.xcomic",
+      "displayName": "XComic",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/keiyoushi.en.xcomic.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "yomira.en.toonverse",
+      "displayName": "ToonVerse",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/yomira.en.toonverse.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
+    },
+    {
+      "sourceId": "kagane",
+      "displayName": "Kagane",
+      "connectorEngine": "selector",
+      "definitionPath": "extensions/source-master/definitions/kagane.json",
+      "status": "ready_for_device_validation",
+      "notes": [
+        "Promoted into existing Curated and Expanded identities in2026.10.17.1.",
+        "Bounded reader evidence: releases/2026.10.15.1; physical-device acceptance remains separate."
+      ]
     }
   ],
   "alreadyCoveredByGeneratedPack": [
